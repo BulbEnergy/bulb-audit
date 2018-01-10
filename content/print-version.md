@@ -1,6 +1,6 @@
 +++
-date = "2017-07-29T22:48:43+01:00"
-title = "Print version"
+date = "2018-01-02T17:11:56Z"
+title = "Cupper"
 type = "print-version"
 
 +++

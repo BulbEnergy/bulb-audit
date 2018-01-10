@@ -1,18 +1,16 @@
 +++
-date = "2017-06-26T18:27:58+01:00"
-title = "The Cupper Documentation Builder"
+date = "2018-01-02T17:11:55Z"
+title = "Bulb Inclusive Design Audit"
 +++
 
-Welcome to **Cupper**: a documentation builder for inclusive designers and those trying to be inclusive designers. These are **Cupper's** docs, but they are also an example of a site built with **Cupper**. Here are some of its features:
+This site represents the report for the inclusive deign audit, carried out by Heydon Pickering for **Bulb**. The purpose of this report is to identify and provide advice for fixing and improving accessibility and inclusive design across three key **Bulb** sites:
 
-{{% ticks %}}
-* Built with [Hugo](https://gohugo.io/), so easy to structure content and fast to compile it
-* Available to read offline, as a [Progressive Web App](https://developers.google.com/web/progressive-web-apps/)
-* Include encapsulated live demos, inline with your markdown, [using Shadow DOM](https://www.smashingmagazine.com/2017/07/pattern-libraries-in-markdown/)
-* Quickly include WCAG and [Inclusive Design Principles](http://inclusivedesignprinciples.org/) references
-* A responsive, screen reader and keyboard accessible static site as output
-* Automated Github Pages deployment
-* Includes a single-page printable version suitable for PDF conversion
-{{% /ticks %}}
+* The marketing site ([https://bulb.co.uk/](https://bulb.co.uk/))
+* The 'join' site ([https://join.bulb.co.uk](https://join.bulb.co.uk))
+* The 'My Bulb' account application ([https://my.bulb.co.uk](https://my.bulb.co.uk))
 
-To get started, take a look at {{% pattern "Installation" %}}.
+The precise scope for the testing and evaluation carried out is detailed in {{% pattern "Scope" %}}.
+
+{{% note %}}
+This report does not catalogue every instance of any one issue. That is the work of an automated test setup. Instead, it is intended as an educational tool for helping the developer to improve the interface at a component design level.
+{{% /note %}}
