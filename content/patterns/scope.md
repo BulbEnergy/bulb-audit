@@ -7,7 +7,7 @@ title = "Scope"
 
 This document sets out the scope for the testing and evaluation of the **Bulb** websites. For efficient reporting, not every page and component is included in the scope. However, samples are chosen such that each important design pattern is covered.
 
-In the report, issues are divided into **General** and **Components** categories. General issues may include problems with document structure, or absence of focus styles. **Components** issues organize issues by isolated component, such as a tab interface or dialog window. The scope simply defines the URLs at which issues may be found.
+In the report, issues are divided into **General** and **Components** categories. General issues may include problems with — for example — document structure, or absence of focus styles. **Components** issues organize advice by isolated component, such as a tab interface or dialog window. The scope simply defines the URLs at which issues may be found.
 
 {{% note %}}
 Color contrast issues are considered out of scope since there is an effort underway already to bring the color palette under WCAG compliance.
