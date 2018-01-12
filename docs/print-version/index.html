@@ -1039,9 +1039,9 @@ a, button, input, textarea /* etc */ {
 <h3 id="marketing-site">Marketing site</h3>
 
 <ul>
-<li><a href="https://bulb.co.uk/energy">About → Our energy</a> (✖️ A false <code>&lt;h2&gt;</code> main heading followed by further <code>&lt;h2&gt;</code> elements)</li>
+<li><a href="https://bulb.co.uk/energy">About → Our energy</a> (✖️ An <code>&lt;h2&gt;</code> for the main heading followed by further <code>&lt;h2&gt;</code> elements)</li>
 <li><a href="https://bulb.co.uk/careers">About → Careers</a> (✖️ Multiple <code>&lt;h1&gt;</code> elements)</li>
-<li><a href="https://bulb.co.uk/business">About → Business</a> (✖️ A false <code>&lt;h2&gt;</code> main heading followed by further <code>&lt;h2&gt;</code> elements)</li>
+<li><a href="https://bulb.co.uk/business">About → Business</a> (✖️ An <code>&lt;h2&gt;</code> for the main heading followed by further <code>&lt;h2&gt;</code> elements)</li>
 </ul>
 
 <h3 id="join-site">Join site</h3>
@@ -1065,12 +1065,10 @@ a, button, input, textarea /* etc */ {
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
-<p>In general:</p>
-
 <ul>
-<li>Each page should have an <code>&lt;h1&gt;</code> heading at the start of the main content</li>
+<li>Each page should have a singular <code>&lt;h1&gt;</code> heading, at the start of the main content</li>
 <li>Each subsection should take a heading level that reflects its nesting level in the document outline</li>
-<li>Each element that is used as a heading visually should use the correct heading element (of the appropriate level)</li>
+<li>Each element that is used as a heading visually should use the correct heading element (of the appropriate level) to mark it up</li>
 <li>Make sure only content that forms the heading text is found inside the heading element (place the &ldquo;Back to Bulb&rdquo; links outside and above the <code>&lt;h1&gt;</code> headings to which they currently belong)</li>
 </ul>
 
@@ -1089,14 +1087,14 @@ h4, .h4 {
 </code></div>
 
 
-<p>You can then apply the (higher specificity) class to the correct level and change its appearance without breaking the hierarchy:</p>
+<p>You can then apply the (higher specificity) class to the heading and change its appearance without breaking the hierarchy:</p>
 
 
 
 
 
 <div class="code-annotated "><code>
-&lt;h2 class=&#34;h4&#34;&gt; Meter readings&lt;/h2&gt;
+&lt;h2 class=&#34;h4&#34;&gt;Meter readings&lt;/h2&gt;
 </code></div>
 
 

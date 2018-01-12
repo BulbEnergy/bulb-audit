@@ -32,9 +32,9 @@ Headings are relied upon by assistive technology users such as screen reader use
 
 ### Marketing site
 
-* [About → Our energy](https://bulb.co.uk/energy) (✖️ A false `<h2>` main heading followed by further `<h2>` elements)
+* [About → Our energy](https://bulb.co.uk/energy) (✖️ An `<h2>` for the main heading followed by further `<h2>` elements)
 * [About → Careers](https://bulb.co.uk/careers) (✖️ Multiple `<h1>` elements)
-* [About → Business](https://bulb.co.uk/business) (✖️ A false `<h2>` main heading followed by further `<h2>` elements)
+* [About → Business](https://bulb.co.uk/business) (✖️ An `<h2>` for the main heading followed by further `<h2>` elements)
 
 ### Join site
 
@@ -53,16 +53,12 @@ Headings are relied upon by assistive technology users such as screen reader use
 
 ## Fixing the issue
 
-In general:
-
-* Each page should have an `<h1>` heading at the start of the main content
+* Each page should have a singular `<h1>` heading, at the start of the main content
 * Each subsection should take a heading level that reflects its nesting level in the document outline
-* Each element that is used as a heading visually should use the correct heading element (of the appropriate level)
+* Each element that is used as a heading visually should use the correct heading element (of the appropriate level) to mark it up
 * Make sure only content that forms the heading text is found inside the heading element (place the "Back to Bulb" links outside and above the `<h1>` headings to which they currently belong)
 
 Where you wish to use a smaller font size for a heading (such as for the "Meter readings" heading, pictured) do not choose a different level. Instead, adjust the heading style with a `class`.
-
-
 
 It may help to pair classes and element selectors like so:
 
@@ -72,8 +68,8 @@ h4, .h4 {
 }
 {{</code>}}
 
-You can then apply the (higher specificity) class to the correct level and change its appearance without breaking the hierarchy:
+You can then apply the (higher specificity) class to the heading and change its appearance without breaking the hierarchy:
 
 {{<code>}}
-<h2 class="h4"> Meter readings</h2>
+<h2 class="h4">Meter readings</h2>
 {{</code>}}
