@@ -18,12 +18,20 @@
   </url>
   
   <url>
-    <loc>https://heydon.github.io/bulb-audit/general/</loc>
+    <loc>https://heydon.github.io/bulb-audit/categories/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://heydon.github.io/bulb-audit/categories/</loc>
-    <priority>0</priority>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/</loc>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/heading-structure/</loc>
   </url>
   
   <url>
@@ -33,8 +41,21 @@
   </url>
   
   <url>
+    <loc>https://heydon.github.io/bulb-audit/tags/priorityhigh/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/skip-links/</loc>
+  </url>
+  
+  <url>
     <loc>https://heydon.github.io/bulb-audit/tags/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/wording/</loc>
   </url>
   
 </urlset>

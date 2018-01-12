@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.22.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -32,11 +31,9 @@
     </style>
     <title>
       
-  Bulb Audit
-
+        Skip links | Bulb Audit
+      
     </title>
-    
-      <link rel="manifest" href="manifest.json">
     
   </head>
   <body>
@@ -197,7 +194,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -227,27 +224,244 @@
         <div>
           
   <main id="main">
-    <h1>Bulb Inclusive Design Audit</h1>
-    <p>This site represents the report for the inclusive deign audit, carried out by Heydon Pickering for <strong>Bulb</strong>. The purpose of this report is to identify and provide advice for fixing and improving accessibility and inclusive design across three key <strong>Bulb</strong> sites:</p>
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Skip links
+    </h1>
+    
+    
+      
 
-<ul>
-<li>The marketing site (<a href="https://bulb.co.uk/">https://bulb.co.uk/</a>)</li>
-<li>The &lsquo;join&rsquo; site (<a href="https://join.bulb.co.uk">https://join.bulb.co.uk</a>)</li>
-<li>The &lsquo;My Bulb&rsquo; account application (<a href="https://my.bulb.co.uk">https://my.bulb.co.uk</a>)</li>
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          <a href="#introduction">
+            Introduction
+          </a>
+        </li>
+      
+        <li>
+          <a href="#wcag-criteria">
+            WCAG criteria
+          </a>
+        </li>
+      
+        <li>
+          <a href="#scope-of-the-issue">
+            Scope of the issue
+          </a>
+        </li>
+      
+        <li>
+          <a href="#fixing-the-issue">
+            Fixing the issue
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p><strong>WCAG 2.0</strong> mandates a &lsquo;bypass&rsquo; mechanism to enable users that navigate web pages by keyboard to skip over introductory content and go directly to the main (unique) content of the page. Without such a provision, accessing page content can be time consuming and arduous.</p>
+
+<p>With the introduction of landmark elements like <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/main.html"><code>&lt;main&gt;</code></a>, it has become easier for screen reader users to navigate between the larger sections of the page using software-specific shortcuts. However, sighted keyboard users frequently do not run screen readers, and many screen reader users are not aware of these new features.</p>
+
+<p>A special same-page hyperlink (often called a &lsquo;skip link&rsquo;) at the beginning of the page source, and pointing to the <code>&lt;main&gt;</code> element, allows the user to skip over the header and navigation of the page where desired.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 </ul>
 
-<p>The precise scope for the testing and evaluation carried out is detailed in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/scope/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Scope</a>.</p>
 
-<aside aria-label="note" class="note">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
-    </svg>
-    <p>This report does not catalogue every instance of any one issue. That is the work of an automated test setup. Instead, it is intended as an educational tool for helping the developer to improve the interface at a component design level.</p>
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
 
-  </div>
-</aside>
+<p>None of the <strong>Bulb</strong> sites&rsquo; pages provide skip links.</p>
 
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>The skip link element needs an <code>href</code> that points to the <code>id</code> (document fragment) of the <code>&lt;main&gt;</code> element. Fortunately, a <code>&lt;main&gt;</code> element is already provided in some cases. Where it is not, you must provide one. It should wrap the main content of the page — the content below the header and above the footer, basically.</p>
+
+<h3 id="html">HTML</h3>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;body&gt;
+  &lt;a href=&#34;#main&#34;&gt;skip to content&lt;/a&gt;
+  &lt;!-- header and navigation, etc --&gt;
+  &lt;main id=&#34;main&#34; <span class='highlight'>tabindex=&#34;-1&#34;</span>&gt;
+    ...
+  &lt;/main&gt;
+</code></div>
+
+
+<ol>
+<li>Note that <code>tabindex=&quot;-1&quot;</code> has been applied. This fixes same-page focus behavior in some older browsers.</li>
+</ol>
+
+<h3 id="css">CSS</h3>
+
+<p>A persistent skip link at the top of the page is considered clutter by many designers. Instead, you can hide the skip link off-screen until it is focused by keyboard.</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+[href=&#34;#main&#34;] {
+  position: absolute;
+  <span class='highlight'>right: 100%</span>;
+}
+
+[href=&#34;#main&#34;]:focus {
+  <span class='highlight'>position: static</span>;
+}
+</code></div>
+
+
+<ol>
+<li>Hiding the link off-screen can be done a number of ways, but using a <code>100%</code> positioning value is probably one of the more efficient</li>
+<li>To place the link back into the flow of the page on focus, simply change the position property to <code>static</code>. If you want the link to overlay the page, keep the <code>absolute</code> positioning and change  the <code>left</code>, <code>right</code>, and <code>top</code> values to your liking.</li>
+</ol>
 
   </main>
 
@@ -266,8 +480,6 @@
     </div>
     <script src="https://heydon.github.io/bulb-audit/js/prism.js"></script>
     <script src="https://heydon.github.io/bulb-audit/js/dom-scripts.js"></script>
-    
-      <script src="https://heydon.github.io/bulb-audit/js/service-worker-registration.js"></script>
     
   </body>
 </html>

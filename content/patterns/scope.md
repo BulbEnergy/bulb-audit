@@ -217,7 +217,7 @@ Included
 
 URL
 :  
-[https://my.staging.bulb.co.uk/dashboard/usage](https://my.staging.bulb.co.uk/dashboard/usage)
+[https://my.staging.bulb.co.uk/dashboard/statements](https://my.staging.bulb.co.uk/dashboard/statements)
 
 Included
 :  

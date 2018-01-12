@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.22.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/wording/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -32,11 +31,9 @@
     </style>
     <title>
       
-  Bulb Audit
-
+        Wording | Bulb Audit
+      
     </title>
-    
-      <link rel="manifest" href="manifest.json">
     
   </head>
   <body>
@@ -206,7 +203,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/wording/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/wording/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -227,27 +224,277 @@
         <div>
           
   <main id="main">
-    <h1>Bulb Inclusive Design Audit</h1>
-    <p>This site represents the report for the inclusive deign audit, carried out by Heydon Pickering for <strong>Bulb</strong>. The purpose of this report is to identify and provide advice for fixing and improving accessibility and inclusive design across three key <strong>Bulb</strong> sites:</p>
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Wording
+    </h1>
+    
+    
+      
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          <a href="#introduction">
+            Introduction
+          </a>
+        </li>
+      
+        <li>
+          <a href="#wcag-criteria">
+            WCAG criteria
+          </a>
+        </li>
+      
+        <li>
+          <a href="#scope-of-the-issue">
+            Scope of the issue
+          </a>
+        </li>
+      
+        <li>
+          <a href="#fixing-the-issue">
+            Fixing the issue
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>It&rsquo;s not enough that elements in a web page&rsquo;s HTML are marked up correctly. Where they provide textual labels, these labels need to be readable and descriptive.</p>
 
 <ul>
-<li>The marketing site (<a href="https://bulb.co.uk/">https://bulb.co.uk/</a>)</li>
-<li>The &lsquo;join&rsquo; site (<a href="https://join.bulb.co.uk">https://join.bulb.co.uk</a>)</li>
-<li>The &lsquo;My Bulb&rsquo; account application (<a href="https://my.bulb.co.uk">https://my.bulb.co.uk</a>)</li>
+<li><strong>Headings</strong> must clearly describe the sections they introduce</li>
+<li><strong>Labels</strong> for links, buttons and form elements must clearly describe the purpose of those controls</li>
+<li><strong>Page titles</strong> must sufficiently describe the page and its purpose</li>
 </ul>
 
-<p>The precise scope for the testing and evaluation carried out is detailed in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/scope/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Scope</a>.</p>
+<p>Since headings and links are aggregated into lists by screen reader software, it is important they make sense independent of context. For example, <em>&ldquo;It&rsquo;s Great!&rdquo;</em> may make sense proceeding a paragraph where the &ldquo;it&rdquo; of the heading is defined, but will be mysterious as a heading in a reductive list of just the headings present in the page. Similarly, links reading &ldquo;click me&rdquo; or &ldquo;more&rdquo; are of little use in an aggregated list, especially where there are many sharing the same generic label.</p>
 
-<aside aria-label="note" class="note">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
-    </svg>
-    <p>This report does not catalogue every instance of any one issue. That is the work of an automated test setup. Instead, it is intended as an educational tool for helping the developer to improve the interface at a component design level.</p>
+<p>The page&rsquo;s main (<code>&lt;h1&gt;</code>) heading must be a subset of the page&rsquo;s <code>&lt;title&gt;</code>. Ordinarily you would include the name of the site along with the name of the page, e.g. <em>&ldquo;Bulb: About Our Energy&rdquo;</em>  or <em>&ldquo;About Our Energy — Bulb&rdquo;</em>. This way, a user with many tabs open know which pages belong to which sites. The name of the page should be similar to the content of the <code>&lt;h1&gt;</code>.</p>
 
-  </div>
-</aside>
+<p>Finally, it is important that parts of the interface are identified consistently, using the same terminology. This includes pairing the terminology in link text to the destination page&rsquo;s <code>&lt;title&gt;</code> and main heading text.</p>
 
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.2 Page Titled</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-refs">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.4 Link Purpose (In Context)</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-descriptive">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.6 Headings and Labels</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#consistent-behavior-consistent-functionality">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.2.4 Consistent Identification</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="marketing-site">Marketing site</h3>
+
+<ul>
+<li><a href="https://bulb.co.uk/">Home page</a> (✖️ The &ldquo;Read more&rdquo; link in the press section doesn&rsquo;t mean anything out of context.)</li>
+<li><a href="https://bulb.co.uk/energy">About → Our energy</a> (✖️ The page&rsquo;s main heading is not &ldquo;Our energy&rdquo; or anything similar to the <code>&lt;title&gt;</code>; the <code>&lt;title&gt;</code> includes the imperative &ldquo;Join Bulb&rdquo;, which is not the primary purpose of the page.)</li>
+<li><a href="https://bulb.co.uk/careers">About → Careers</a> (✖️ The main heading &ldquo;Bulb is growing&rdquo; does not use the &ldquo;careers&rdquo; term of the <code>&lt;title&gt;</code> and navigational link text, which those with cognitive impairments may find confusing; the <code>&lt;title&gt;</code> includes the imperative &ldquo;Join Bulb&rdquo;, which is not the primary purpose of the page.)</li>
+<li><a href="https://bulb.co.uk/business">About → Business</a> (✖️ The <code>&lt;title&gt;</code> includes the imperative &ldquo;Join Bulb&rdquo;, which is not the primary purpose of the page.)</li>
+</ul>
+
+<h3 id="join-site">Join site</h3>
+
+<ul>
+<li>Between each screen, the page URL and the page content changes, but the <code>&lt;title&gt;</code> remains &ldquo;Bulb — Get A Quote&rdquo;.</li>
+<li>The second and third question pages (pictured) have the main headings <em>&ldquo;And it&rsquo;s a:&rdquo;</em> and <em>&ldquo;With:&rdquo;</em> respectively, which is fragmentary and unhelpful, especially given that screen reader users are likely to have content in the page preceding these headings read to them as they arrive.</li>
+</ul>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/and_its_a.png" alt="Fragment heading on 'My home' page" /></p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="marketing-site-1">Marketing site</h3>
+
+<ul>
+<li>Remove the &lsquo;Join Bulb&rsquo; terminology from the <code>&lt;title&gt;</code>s. This imperative only really applies to the <strong>Join site</strong> and may cause confusion when used too prolifically in this way.</li>
+<li>Avoid generic terms like &ldquo;Read more&rdquo;. The link under the press logos can read something like <em>&ldquo;Bulb press&rdquo;</em>, <em>&ldquo;In the press&rdquo;</em>, <em>&ldquo;More press mentions&rdquo;</em>, or similar.</li>
+</ul>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/press.png" alt="Press section" /></p>
+
+<h3 id="join-site-1">Join site</h3>
+
+<ul>
+<li>Add a third part to each <code>&lt;title&gt;</code> identifying the specific screen in the form <em>&ldquo;Bulb — Get A Quote — [specific page description]&rdquo;</em>. For example, <em>&ldquo;Bulb — Get A Quote — Bedrooms&rdquo;</em> for the bedrooms screen.</li>
+<li>Avoid trying to compose sentences across screens/pages. This will not work for many assistive technology users, and all sorts of users will simply forget what came before in the sentence. Try headings like <em>&ldquo;The energy I use is&rdquo;</em>, <em>&ldquo;I live in a&rdquo;</em>, and _&ldquo;The number of bedrooms I have is&rdquo;.</li>
+</ul>
 
   </main>
 
@@ -266,8 +513,6 @@
     </div>
     <script src="https://heydon.github.io/bulb-audit/js/prism.js"></script>
     <script src="https://heydon.github.io/bulb-audit/js/dom-scripts.js"></script>
-    
-      <script src="https://heydon.github.io/bulb-audit/js/service-worker-registration.js"></script>
     
   </body>
 </html>

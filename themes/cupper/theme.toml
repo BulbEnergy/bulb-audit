@@ -12,5 +12,4 @@ SectionPagesMenu = "main"
 
 [taxonomies]
   tag = "tags"
-  wcag = "wcag"
-  principle = "principles"
+  priority = "priorities"

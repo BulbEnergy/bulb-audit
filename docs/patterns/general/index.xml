@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bulb Inclusive Design Audit on Bulb Audit</title>
-    <link>https://heydon.github.io/bulb-audit/</link>
-    <description>Recent content in Bulb Inclusive Design Audit on Bulb Audit</description>
+    <title>General issues on Bulb Audit</title>
+    <link>https://heydon.github.io/bulb-audit/patterns/general/</link>
+    <description>Recent content in General issues on Bulb Audit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jan 2018 17:11:55 +0000</lastBuildDate>
     
-	<atom:link href="https://heydon.github.io/bulb-audit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://heydon.github.io/bulb-audit/patterns/general/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Cupper</title>
-      <link>https://heydon.github.io/bulb-audit/print-version/</link>
-      <pubDate>Tue, 02 Jan 2018 17:11:56 +0000</pubDate>
-      
-      <guid>https://heydon.github.io/bulb-audit/print-version/</guid>
-      <description>You don&amp;rsquo;t want to edit this file :-)</description>
-    </item>
-    
-    <item>
-      <title>Scope</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/scope/</link>
-      <pubDate>Tue, 02 Jan 2018 17:11:55 +0000</pubDate>
-      
-      <guid>https://heydon.github.io/bulb-audit/patterns/scope/</guid>
-      <description>Introduction This document sets out the scope for the testing and evaluation of the Bulb websites. For efficient reporting, not every page and component is included in the scope. However, samples are chosen such that each important design pattern is covered.
-In the report, issues are divided into General and Components categories. General issues may include problems with — for example — document structure, or absence of focus styles. Components issues organize advice by isolated component, such as a tab interface or dialog window.</description>
-    </item>
     
     <item>
       <title>Focus styles</title>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.22.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/focus-styles/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -32,11 +31,9 @@
     </style>
     <title>
       
-  Bulb Audit
-
+        Focus styles | Bulb Audit
+      
     </title>
-    
-      <link rel="manifest" href="manifest.json">
     
   </head>
   <body>
@@ -179,7 +176,7 @@
                         <ul>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/focus-styles/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/focus-styles/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -227,23 +224,330 @@
         <div>
           
   <main id="main">
-    <h1>Bulb Inclusive Design Audit</h1>
-    <p>This site represents the report for the inclusive deign audit, carried out by Heydon Pickering for <strong>Bulb</strong>. The purpose of this report is to identify and provide advice for fixing and improving accessibility and inclusive design across three key <strong>Bulb</strong> sites:</p>
+    <h1>
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Focus styles
+    </h1>
+    
+    
+      
 
-<ul>
-<li>The marketing site (<a href="https://bulb.co.uk/">https://bulb.co.uk/</a>)</li>
-<li>The &lsquo;join&rsquo; site (<a href="https://join.bulb.co.uk">https://join.bulb.co.uk</a>)</li>
-<li>The &lsquo;My Bulb&rsquo; account application (<a href="https://my.bulb.co.uk">https://my.bulb.co.uk</a>)</li>
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          <a href="#introduction">
+            Introduction
+          </a>
+        </li>
+      
+        <li>
+          <a href="#wcag-criteria">
+            WCAG Criteria
+          </a>
+        </li>
+      
+        <li>
+          <a href="#scope-of-the-issue">
+            Scope of the issue
+          </a>
+        </li>
+      
+        <li>
+          <a href="#fixing-the-issue">
+            Fixing the issue
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Focus styling, provided by user agents by default, is used to indicate which element is currently being focused by keyboard. Typically, focus is achieved by pressing the <kbd>Tab</kbd> key. Pressing <kbd>Tab</kbd> should focus the next interactive element in the source, invoking the focus style.</p>
+
+<p>Users who rely on the keyboard for page navigation include those with motor impairments due to long term ailments (such as rheumatism) or temporary injuries (like a broken wrist). Where focus styles are not provided, it is left for them to guess which element they have under focus, and is therefore ready to be activated. Their experience of using the interface will be confusing and frustrating, and they may give up on trying to achieve some tasks.</p>
+
+<h2 id="wcag-criteria">WCAG Criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-visible">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.7 Focus Visible</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 </ul>
 
-<p>The precise scope for the testing and evaluation carried out is detailed in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/scope/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Scope</a>.</p>
 
-<aside aria-label="note" class="note">
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<p>Most of the <strong>Marketing site</strong> is missing focus styles. The <strong>Join site</strong> has a mixture of missing focus styles and somewhat inadequate default focus styles, and the <strong>Account dashboard</strong> relies almost entirely on default user agent styles.</p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>Contrary to popular belief, it is possible to provide clear but attractive focus styles without JavaScript and without adversely affecting mouse users. On the <strong>Bulb</strong> sites, I recommend an animated <code>outline</code> property. Press the <kbd>Tab</kbd> key to invoke the focus style on the example link provided:</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" style="background-color:#ca488d; padding: 2rem; color: #fff;">
+        <div class="demo" id="js-demo-45f27918844caa460b3ffe559779081c"></div>
+        <button data-launch="js-demo-45f27918844caa460b3ffe559779081c">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-45f27918844caa460b3ffe559779081c">
+      
+<style>
+a, button, input, textarea {
+  color: #fff;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  outline: 0.125em solid transparent;
+  outline-offset: 0.5em;
+}
+
+:focus {
+  outline-color: currentColor;
+  outline-offset: 0.125em;
+  transition: all 0.25s ease-out;
+}
+
+:hover:focus {
+  outline: none;
+}
+</style>
+<a href="#">A link element</a>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-45f27918844caa460b3ffe559779081c');
+      var template = document.getElementById('template-45f27918844caa460b3ffe559779081c');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; document.body.setAttribute(\'style\', \'background-color:#ca488d; padding: 2rem; color: #fff;\')' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-45f27918844caa460b3ffe559779081c\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-45f27918844caa460b3ffe559779081c"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "45f27918844caa460b3ffe559779081c";
+      });
+    })();
+  </script>
+</div>
+
+
+<h3 id="code">Code</h3>
+
+<p>
+
+
+
+<div class="code-annotated numbered"><code>
+a, button, input, textarea /* etc */ {
+  outline: 0.125em solid <span class='highlight'>transparent</span>;
+  <span class='highlight'>outline-offset: 0.5em</span>;  
+}
+
+:focus {
+  outline-color: <span class='highlight'>currentColor</span>;
+  outline-offset: <span class='highlight'>0.125em</span>;
+  transition: all 0.25s ease-out;
+}
+
+<span class='highlight'>:hover:focus</span> {
+  outline: none;
+}
+</code></div>
+</p>
+
+<ol>
+<li>The initial outline is invisible&hellip;</li>
+<li>&hellip; and has a wide offset.</li>
+<li>On focus, the outline takes the font color. In most cases this will be the correct (visible against the background) color for the context.</li>
+<li>The <code>outline-offset</code> is shrunk via a transition, drawing the eye.</li>
+<li>(<em>optional</em>) By concatenating <code>:hover</code> and <code>:focus</code>, the focus style is partially suppressed for mouse users who may find it distracting.</li>
+</ol>
+
+<aside aria-label="warning" class="note warning">
   <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
     </svg>
-    <p>This report does not catalogue every instance of any one issue. That is the work of an automated test setup. Instead, it is intended as an educational tool for helping the developer to improve the interface at a component design level.</p>
+    <p>Buttons, such as the &ldquo;Get My Quote&rdquo; button for the join site (pictured), have a white font color. In which case, using <code>currentColor</code> will not work because the white outline will be invisible against the page background, which is also white.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/get_quote_button.png" alt="Get my quote green button" /></p>
+
+<p>To fit a style around the button&rsquo;s curved corners, a <code>box-shadow</code> would be more suitable than an <code>outline</code>.</p>
 
   </div>
 </aside>
@@ -266,8 +570,6 @@
     </div>
     <script src="https://heydon.github.io/bulb-audit/js/prism.js"></script>
     <script src="https://heydon.github.io/bulb-audit/js/dom-scripts.js"></script>
-    
-      <script src="https://heydon.github.io/bulb-audit/js/service-worker-registration.js"></script>
     
   </body>
 </html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Priorityhigh on Bulb Audit</title>
+    <link>https://heydon.github.io/bulb-audit/tags/priorityhigh/</link>
+    <description>Recent content in Priorityhigh on Bulb Audit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://heydon.github.io/bulb-audit/tags/priorityhigh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>General issues</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
