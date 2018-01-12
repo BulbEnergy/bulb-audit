@@ -48,4 +48,4 @@ Finally, it is important that parts of the interface are identified consistently
 ### Join site
 
 * Add a third part to each `<title>` identifying the specific screen in the form _"Bulb — Get A Quote — [specific page description]"_. For example, _"Bulb — Get A Quote — Bedrooms"_ for the bedrooms screen.
-* Avoid trying to compose sentences across screens/pages. This will not work for many assistive technology users, and all sorts of users will simply forget what came before in the sentence. Try headings like _"The energy I use is"_, _"I live in a"_, and _"The number of bedrooms I have is".
+* Avoid trying to compose sentences across screens/pages. This will not work for many assistive technology users, and all sorts of users will simply forget what came before in the sentence. Try headings like _"The energy I use is"_, _"I live in a"_, and _"The number of bedrooms I have is"_.
