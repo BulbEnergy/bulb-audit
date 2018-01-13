@@ -35,6 +35,7 @@ Headings are relied upon by assistive technology users such as screen reader use
 * [About → Our energy](https://bulb.co.uk/energy) (✖️ An `<h2>` for the main heading followed by further `<h2>` elements)
 * [About → Careers](https://bulb.co.uk/careers) (✖️ Multiple `<h1>` elements)
 * [About → Business](https://bulb.co.uk/business) (✖️ An `<h2>` for the main heading followed by further `<h2>` elements)
+* Footer (✖️ The footer on each page has headings starting at the `<h3>` level, but this is not thematically correct, since the content here does not belong to the `<h2>` introduced section that typically resides above the footer in the main content.)
 
 ### Join site
 
@@ -53,10 +54,11 @@ Headings are relied upon by assistive technology users such as screen reader use
 
 ## Fixing the issue
 
-* Each page should have a singular `<h1>` heading, at the start of the main content
-* Each subsection should take a heading level that reflects its nesting level in the document outline
-* Each element that is used as a heading visually should use the correct heading element (of the appropriate level) to mark it up
-* Make sure only content that forms the heading text is found inside the heading element (place the "Back to Bulb" links outside and above the `<h1>` headings to which they currently belong)
+* Each page should have a singular `<h1>` heading, at the start of the main content.
+* Each subsection should take a heading level that reflects its nesting level in the document outline.
+* Each element that is used as a heading visually should use the correct heading element (of the appropriate level) to mark it up.
+* Make sure only content that forms the heading text is found inside the heading element (place the "Back to Bulb" links outside and above the `<h1>` headings to which they currently belong).
+* The **Marketing site** footer must either replace the `<h3>` headings with `<h2>`s _or_ provide an introductory `<h2>` heading to which the `<h3>`s can belong.
 
 Where you wish to use a smaller font size for a heading (such as for the "Meter readings" heading, pictured) do not choose a different level. Instead, adjust the heading style with a `class`.
 

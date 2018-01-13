@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Patterns | Bulb Audit
+        List structure | Bulb Audit
       
     </title>
     
@@ -194,7 +194,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -234,23 +234,313 @@
           
   <main id="main">
     <h1>
-      Patterns
-    </h1>
-    <ul class="patterns-list">
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/scope/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Scope
-    </a>
-  </h2>
-</li>
-
+      List structure
+    </h1>
+    
+    
       
-    </ul>
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          <a href="#introduction">
+            Introduction
+          </a>
+        </li>
+      
+        <li>
+          <a href="#wcag-criteria">
+            WCAG criteria
+          </a>
+        </li>
+      
+        <li>
+          <a href="#scope-of-the-issue">
+            Scope of the issue
+          </a>
+        </li>
+      
+        <li>
+          <a href="#fixing-the-issue">
+            Fixing the issue
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Along with headings, lists give structure to a web page. They group items together so users know they are related or equivalent.</p>
+
+<p>Assistive technology users find lists especially helpful because most software will identify a list semantically, enumerate its items, and provide shortcuts for navigating between the list items. The NVDA screen reader provides the <kbd>L</kbd> shortcut key for navigating between lists, and the <kbd>I</kbd> shortcut key for jumping between list items.</p>
+
+<p>Where lists are not used appropriately, the structure of content can be unclear and difficult to traverse.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.3.1 Info and Relationships</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="marketing-site">Marketing site</h3>
+
+<p>The navigation schema for the marketing site (pictured) does not use list markup. While some assistive technologies will identify the <code>&lt;nav&gt;</code> and enumerate the links within it, this is no substitute for a <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>s to wrap each item.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/navigation.png" alt="navigation schema" /></p>
+
+<p>This also applies to the social media navigation region, but <em>does not</em> apply to the <strong>Account dashboard</strong> navigation.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/social.png" alt="social media links" /></p>
+
+<p>That the navigation is constructed differently across the sites represents an issue of inconsistency. Note the &ldquo;Be consistent&rdquo; inclusive design principle:</p>
+
+
+
+
+
+<ul class="principles with-desc">
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong>
+          <a href="https://inclusivedesignprinciples.org#be-consistent">
+            <svg class="balloon-icon" viewBox="0 0 141.73228 177.16535" aria-hidden="true" focusable="false">
+              <use xlink:href="#balloon"></use>
+            </svg>
+            Be consistent
+          </a>:
+        </strong>
+        <em>Use familiar conventions and apply them consistently.</em>
+        
+          <p>Familiar interfaces borrow from well-established patterns. These should be used consistently within the interface to reinforce their meaning and purpose. This should be applied to functionality, behavior, editorial, and presentation. You should say the same things in the same way and users should be able to do the same things in the same way.</p>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<p>In addition, the &ldquo;1, 2, 3 Switch&rdquo; section (pictured) features a list of illustrated steps, but they are marked up as plain text within <code>&lt;div&gt;</code> elements.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/123.png" alt="1 2 3 Switch numbered list" /></p>
+
+<h3 id="account-dashboard">Account dashboard</h3>
+
+<p>A green of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert <code>&lt;div&gt;</code> markup is used instead).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/green_boxes.png" alt="green choice boxes" /></p>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>This applies to the twoo choices of meter offered at <strong>/meters</strong> as well.</p>
+
+  </div>
+</aside>
+
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<ul>
+<li>Ensure all instances of <code>&lt;nav&gt;</code> regions use list markup.</li>
+<li>In the case of the <strong>Account dashboard</strong> grid, make it a <code>&lt;nav&gt;</code> and use a combination of list markup and headings to give a clear, easily navigable structure. For extra credit, differentiate different <code>&lt;nav&gt;</code> regions with labels. See the code example and notes to follow.</li>
+</ul>
+
+<h3 id="code">Code</h3>
+
+<p><em>(Dashboard example; code is simplified and elided)</em></p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;nav <span class='highlight'>aria-labelledby=&#34;manage-heading&#34;</span>&gt;
+  &lt;h2 <span class='highlight'>id=&#34;manage-heading&#34;</span>&gt;Manage your account&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;h3&gt;&lt;a href=&#34;[url]&#34;&gt;Submit reading&lt;/a&gt;&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;h3&gt;&lt;a href=&#34;[url]&#34;&gt;View my energy usage&lt;/a&gt;&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;h3&gt;&lt;a href=&#34;[url]&#34;&gt;Statements and payments&lt;/a&gt;&lt;/h3&gt;
+    &lt;/li&gt;
+    &lt;!-- other options --&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></div>
+
+
+<ol>
+<li>The navigation region is labeled using the <code>&lt;h2&gt;</code> heading. On focusing the first link inside the region, assistive technologies will communicate <em>&ldquo;manage your account, navigation, list, 6 items, Submit your reading, link&rdquo;</em> or similar.</li>
+<li>For this relationship to work, the value of <code>aria-labelledby</code> and the value of the <code>&lt;h2&gt;</code>&rsquo;s <code>id</code> need to match.</li>
+</ol>
+
   </main>
 
           <footer role="contentinfo">
