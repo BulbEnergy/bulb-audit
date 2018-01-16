@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        General issues | Bulb Audit
+        Placeholder labels | Bulb Audit
       
     </title>
     
@@ -221,7 +221,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -261,107 +261,251 @@
           
   <main id="main">
     <h1>
-      General issues
-    </h1>
-    <ul class="patterns-list">
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/color-dependence/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Color dependence
-    </a>
-  </h2>
-</li>
-
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/focus-styles/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Focus styles
-    </a>
-  </h2>
-</li>
-
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/form-errors/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Form errors
-    </a>
-  </h2>
-</li>
-
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Heading structure
-    </a>
-  </h2>
-</li>
-
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      List structure
-    </a>
-  </h2>
-</li>
-
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
       Placeholder labels
-    </a>
-  </h2>
-</li>
-
+    </h1>
+    
+    
       
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Skip links
-    </a>
-  </h2>
-</li>
 
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
       
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/wording/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Wording
-    </a>
-  </h2>
-</li>
+        <li>
+          <a href="#introduction">
+            Introduction
+          </a>
+        </li>
+      
+        <li>
+          <a href="#wcag-criteria">
+            WCAG criteria
+          </a>
+        </li>
+      
+        <li>
+          <a href="#scope-of-the-issue">
+            Scope of the issue
+          </a>
+        </li>
+      
+        <li>
+          <a href="#fixing-the-issue">
+            Fixing the issue
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
 
-      
-    </ul>
+
+    
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The <code>placeholder</code> attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.</p>
+
+<p>Where <code>placeholder</code>s are used as primary labels, a number of accessibility and usability issues emerge.</p>
+
+<p>Firstly, the <code>placeholder</code> is not supported as an accessible label in legacy browsers and assistive technologies, meaning those users will not hear a label as they focus the control.</p>
+
+<p>For sighted users, there are cognitive challenges with the intermittent nature of the <code>placeholder</code> label, resulting in some getting confused and frustrated as they try to remember what it was they were supposed to be entering. Others mistake the <code>placeholder</code> text as content and think the field is already complete.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#minimize-error-cues">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.3.2 Labels or Instructions</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<p>Placeholders-as-labels are found wherever there is a &ldquo;Get A Quote&rdquo; / &ldquo;Get My Quote&rdquo; form.</p>
+
+<ul>
+<li><a href="https://bulb.co.uk/">Home page</a></li>
+<li><a href="https://bulb.co.uk/energy">About → Our energy</a></li>
+<li><a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (<strong>Join site</strong>)</li>
+</ul>
+
+<p>In addition, the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> has no visible and persistent labels:</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/my-info-form.png" alt="The My Information form" /></p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>In some cases, such as search fields where the label of the submit button, &ldquo;search&rdquo;, acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the <strong>Bulb</strong> sites the &ldquo;Get a quote&rdquo; (or &ldquo;Get my quote&rdquo;) label for the submit button does not match the &ldquo;Your postcode&rdquo; <code>placeholder</code> label.</p>
+
+<p>A label that is both visually persistent <em>and</em> forms the accessible label for the field is therefore recommended.</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;label <span class='highlight'>for=&#34;postcode&#34;</span>&gt;Your postcode&lt;/label&gt;
+&lt;input <span class='highlight'>id=&#34;postcode&#34;</span> name=&#34;postcode&#34; <span class='highlight'>placeholder=&#34;E.g. NR9 5NF&#34;</span>&gt;
+&lt;button type=&#34;submit&#34;&gt;Get my quote&lt;/button&gt;
+</code></div>
+
+
+<ol>
+<li>The <code>&lt;label&gt;</code> element should be associated with the&hellip;</li>
+<li>&hellip;<code>&lt;input&gt;</code> by matching the values of the respective <code>for</code> and <code>id</code> attributes.</li>
+<li>The <code>placeholder</code> is now optional, but should be clearly marked as an example/hint to be replaced, such as by prefixing with &ldquo;E.g.&rdquo; if included.</li>
+</ol>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>To maintain an attractive design for the &ldquo;Get A Quote&rdquo;/&ldquo;Get My Quote&rdquo; forms, it might help to center align the label, input, and submit button along a vertical axis. <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> should left-align its labels as other forms do across the sites.</p>
+
+  </div>
+</aside>
+
+
   </main>
 
           <footer role="contentinfo">

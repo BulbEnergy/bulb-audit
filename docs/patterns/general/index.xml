@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>Color dependence</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/color-dependence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/color-dependence/</guid>
+      <description>Introduction Color makes interfaces attractive and can sometimes help to reinforce meaning. For example, red is associated with danger in many Western cultures, and may form part of a &amp;lsquo;delete&amp;rsquo; button&amp;rsquo;s design.
+But dependence on color alone to communicate important information runs the risk of alienating a range of users, including those with forms of color blindness, and others with monochrome displays.
+In each case color is used to differentiate items, a supplementary alternative method of differentiation should also be present.</description>
+    </item>
+    
+    <item>
       <title>Focus styles</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -18,6 +29,17 @@
       <guid>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</guid>
       <description>Introduction Focus styling, provided by user agents by default, is used to indicate which element is currently being focused by keyboard. Typically, focus is achieved by pressing the Tab key. Pressing Tab should focus the next interactive element in the source, invoking the focus style.
 Users who rely on the keyboard for page navigation include those with motor impairments due to long term ailments (such as rheumatism) or temporary injuries (like a broken wrist).</description>
+    </item>
+    
+    <item>
+      <title>Form errors</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</guid>
+      <description>Introduction As users attempt to complete forms, it is important they are notified promptly and clearly when they make errors, and are provided with assistance in fixing those errors.
+For assistive technology users, completing forms can be especially arduous where one or more of the following are true.
+ The invalid state of a field is not communicated The error message is not associated with the field The presence of errors is not communicated on submission  The careful wording of error messages and descriptions is also important, as well as indicating which text is error text without relying entirely on color (see  Color dependence).</description>
     </item>
     
     <item>
@@ -38,6 +60,17 @@ However, headings levels do not simply denote importance, but a hierarchy of pag
       <guid>https://heydon.github.io/bulb-audit/patterns/general/list-structure/</guid>
       <description>Introduction Along with headings, lists give structure to a web page. They group items together so users know they are related or equivalent.
 Assistive technology users find lists especially helpful because most software will identify a list semantically, enumerate its items, and provide shortcuts for navigating between the list items. The NVDA screen reader provides the L shortcut key for navigating between lists, and the I shortcut key for jumping between list items.</description>
+    </item>
+    
+    <item>
+      <title>Placeholder labels</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</guid>
+      <description>Introduction The placeholder attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.
+Where placeholders are used as primary labels, a number of accessibility and usability issues emerge.
+Firstly, the placeholder is not supported as an accessible label in legacy browsers and assistive technologies, meaning those users will not hear a label as they focus the control.</description>
     </item>
     
     <item>

@@ -23,7 +23,15 @@
   </url>
   
   <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/color-dependence/</loc>
+  </url>
+  
+  <url>
     <loc>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</loc>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</loc>
   </url>
   
   <url>
@@ -42,6 +50,10 @@
     <loc>https://heydon.github.io/bulb-audit/patterns/</loc>
     <lastmod>2018-01-02T17:11:55+00:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</loc>
   </url>
   
   <url>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/color-dependence/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        General issues | Bulb Audit
+        Color dependence | Bulb Audit
       
     </title>
     
@@ -176,7 +176,7 @@
                         <ul>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/color-dependence/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/color-dependence/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -261,107 +261,347 @@
           
   <main id="main">
     <h1>
-      General issues
-    </h1>
-    <ul class="patterns-list">
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/color-dependence/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
       Color dependence
-    </a>
-  </h2>
-</li>
+    </h1>
+    
+    
+      
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          <a href="#introduction">
+            Introduction
+          </a>
+        </li>
+      
+        <li>
+          <a href="#wcag-criteria">
+            WCAG criteria
+          </a>
+        </li>
+      
+        <li>
+          <a href="#scope-of-the-issue">
+            Scope of the issue
+          </a>
+        </li>
+      
+        <li>
+          <a href="#fixing-the-issue">
+            Fixing the issue
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Color makes interfaces attractive and can sometimes help to reinforce meaning. For example, red is associated with danger in many Western cultures, and may form part of a &lsquo;delete&rsquo; button&rsquo;s design.</p>
+
+<p>But dependence on color alone to communicate important information runs the risk of alienating a range of users, including those with forms of color blindness, and others with monochrome displays.</p>
+
+<p>In each case color is used to differentiate items, a supplementary alternative method of differentiation should also be present. The convention of underlining inline links, for example, is considered robust. For keys that differentiate bars in bar charts or segments in pie charts by color, embedded patterns can assist comprehension.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.4.1 Use of Color</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="inline-links">Inline links</h3>
+
+<p>By virtue of convention, users <em>expect</em> links to have underlines of some form. Whether these are provided using <code>text-decoration</code>, <code>border</code>, or a linear gradient is another question. The most readable method for the font&rsquo;s metrics is the soundest choice.</p>
+
+<p>One thing that can improve readability for <code>text-decoration</code> in supporting browsers is the use of <code>text-decoration-skip</code>, which stops the underline intersecting descenders of the font.</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+a {
+  text-decoration: underline;
+  <span class='highlight'>text-decoration-skip: ink</span>;
+}
+</code></div>
+
+
+<p>Here is a demo (you should see the effect in Chrome, Opera, and Safari if you use the <code>-webkit-</code> prefix):</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" style="background-color:#ca488d; padding: 2rem; color: #fff;">
+        <div class="demo" id="js-demo-95fb6a0e2d5745974be34645adc25391"></div>
+        <button data-launch="js-demo-95fb6a0e2d5745974be34645adc25391">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-95fb6a0e2d5745974be34645adc25391">
+      
+<style>
+a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-decoration: underline;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+}
+</style>
+<a href="#">Descenders are the hanging down parts</a>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-95fb6a0e2d5745974be34645adc25391');
+      var template = document.getElementById('template-95fb6a0e2d5745974be34645adc25391');
 
       
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/focus-styles/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Focus styles
-    </a>
-  </h2>
-</li>
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; document.body.setAttribute(\'style\', \'background-color:#ca488d; padding: 2rem; color: #fff;\')' + standaloneScript.textContent + ' })();';
+      }
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/form-errors/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Form errors
-    </a>
-  </h2>
-</li>
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-95fb6a0e2d5745974be34645adc25391\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Heading structure
-    </a>
-  </h2>
-</li>
+      var launchButton = document.querySelector('[data-launch="js-demo-95fb6a0e2d5745974be34645adc25391"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      List structure
-    </a>
-  </h2>
-</li>
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Placeholder labels
-    </a>
-  </h2>
-</li>
+        standalone.document.title = 'demo ' + "95fb6a0e2d5745974be34645adc25391";
+      });
+    })();
+  </script>
+</div>
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Skip links
-    </a>
-  </h2>
-</li>
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/wording/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Wording
-    </a>
-  </h2>
-</li>
+<h3 id="chart-keys">Chart keys</h3>
 
-      
-    </ul>
+<h3 id="form-errors">Form errors</h3>
+
+<p>Use a method to make the error text stand out, such as prefixing the message with <code>&lt;strong&gt;Error:&lt;/strong&gt;</code> or providing a warning icon. Should you opt for an icon, ensure it has an accessible label in the form &ldquo;Error:&ldquo;.</p>
+
+<p>
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;label for=&#34;postcode&#34;&gt;Your postcode:&lt;/label&gt;
+&lt;input id=&#34;postcode&#34; name=&#34;postcode&#34; aria-describedby=&#34;postcode-error&#34;&gt;
+&lt;div id=&#34;postcode-error&#34;&gt;
+  &lt;svg <span class='highlight'>aria-label=&#34;Error:&#34;</span> <span class='highlight'>focusable=&#34;false&#34;</span>&gt;
+    &lt;use xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34; xlink:href=&#34;/assets/images/icons/forms.svg#error&#34;&gt;&lt;/use&gt;
+  &lt;/svg&gt;
+  Please enter a valid postcode.
+&lt;/div&gt;
+</code></div>
+</p>
+
+<ol>
+<li>The <code>aria-label</code> property provides the accessible label</li>
+<li><code>focusable=&quot;false&quot;</code> stops the SVG being focusable in Internet Explorer. This should be applied to all inline SVGs in the <strong>Bulb</strong> sites.</li>
+</ol>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>It is recommended you use <code>currentColor</code> to define the <code>fill</code> property of SVG paths and/or shapes. This way, its color is mapped to the text color and changes accordingly when <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> is switched on.</p>
+
+  </div>
+</aside>
+
+
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    <p>Note that some form errors, such as on the business page (pictured) are colored green, which is confusing. Green is usually associated with success, not failure.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/green-error.png" alt="green error message" /></p>
+
+  </div>
+</aside>
+
+
   </main>
 
           <footer role="contentinfo">

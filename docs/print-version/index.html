@@ -177,11 +177,29 @@
               <ul>
                 
                   <li class="pattern">
+                    <a href="#color-dependence" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Color dependence</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#focus-styles" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
                       </svg>
                       <span class="text">Focus styles</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
+                    <a href="#form-errors" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Form errors</span>
                     </a>
                   </li>
                 
@@ -200,6 +218,15 @@
                         <use xlink:href="#bookmark"></use>
                       </svg>
                       <span class="text">List structure</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
+                    <a href="#placeholder-labels" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Placeholder labels</span>
                     </a>
                   </li>
                 
@@ -563,6 +590,314 @@
       
         
           <div class="pattern-section">
+            <h1 id="color-dependence" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Color dependence
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Color makes interfaces attractive and can sometimes help to reinforce meaning. For example, red is associated with danger in many Western cultures, and may form part of a &lsquo;delete&rsquo; button&rsquo;s design.</p>
+
+<p>But dependence on color alone to communicate important information runs the risk of alienating a range of users, including those with forms of color blindness, and others with monochrome displays.</p>
+
+<p>In each case color is used to differentiate items, a supplementary alternative method of differentiation should also be present. The convention of underlining inline links, for example, is considered robust. For keys that differentiate bars in bar charts or segments in pie charts by color, embedded patterns can assist comprehension.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#visual-audio-contrast-without-color">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.4.1 Use of Color</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="inline-links">Inline links</h3>
+
+<p>By virtue of convention, users <em>expect</em> links to have underlines of some form. Whether these are provided using <code>text-decoration</code>, <code>border</code>, or a linear gradient is another question. The most readable method for the font&rsquo;s metrics is the soundest choice.</p>
+
+<p>One thing that can improve readability for <code>text-decoration</code> in supporting browsers is the use of <code>text-decoration-skip</code>, which stops the underline intersecting descenders of the font.</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+a {
+  text-decoration: underline;
+  <span class='highlight'>text-decoration-skip: ink</span>;
+}
+</code></div>
+
+
+<p>Here is a demo (you should see the effect in Chrome, Opera, and Safari if you use the <code>-webkit-</code> prefix):</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" style="background-color:#ca488d; padding: 2rem; color: #fff;">
+        <div class="demo" id="js-demo-95fb6a0e2d5745974be34645adc25391"></div>
+        <button data-launch="js-demo-95fb6a0e2d5745974be34645adc25391">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-95fb6a0e2d5745974be34645adc25391">
+      
+<style>
+a {
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  text-decoration: underline;
+  -webkit-text-decoration-skip: ink;
+  text-decoration-skip: ink;
+}
+</style>
+<a href="#">Descenders are the hanging down parts</a>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-95fb6a0e2d5745974be34645adc25391');
+      var template = document.getElementById('template-95fb6a0e2d5745974be34645adc25391');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; document.body.setAttribute(\'style\', \'background-color:#ca488d; padding: 2rem; color: #fff;\')' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-95fb6a0e2d5745974be34645adc25391\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-95fb6a0e2d5745974be34645adc25391"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "95fb6a0e2d5745974be34645adc25391";
+      });
+    })();
+  </script>
+</div>
+
+
+<h3 id="chart-keys">Chart keys</h3>
+
+<h3 id="form-errors">Form errors</h3>
+
+<p>Use a method to make the error text stand out, such as prefixing the message with <code>&lt;strong&gt;Error:&lt;/strong&gt;</code> or providing a warning icon. Should you opt for an icon, ensure it has an accessible label in the form &ldquo;Error:&ldquo;.</p>
+
+<p>
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;label for=&#34;postcode&#34;&gt;Your postcode:&lt;/label&gt;
+&lt;input id=&#34;postcode&#34; name=&#34;postcode&#34; aria-describedby=&#34;postcode-error&#34;&gt;
+&lt;div id=&#34;postcode-error&#34;&gt;
+  &lt;svg <span class='highlight'>aria-label=&#34;Error:&#34;</span> <span class='highlight'>focusable=&#34;false&#34;</span>&gt;
+    &lt;use xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34; xlink:href=&#34;/assets/images/icons/forms.svg#error&#34;&gt;&lt;/use&gt;
+  &lt;/svg&gt;
+  Please enter a valid postcode.
+&lt;/div&gt;
+</code></div>
+</p>
+
+<ol>
+<li>The <code>aria-label</code> property provides the accessible label</li>
+<li><code>focusable=&quot;false&quot;</code> stops the SVG being focusable in Internet Explorer. This should be applied to all inline SVGs in the <strong>Bulb</strong> sites.</li>
+</ol>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>It is recommended you use <code>currentColor</code> to define the <code>fill</code> property of SVG paths and/or shapes. This way, its color is mapped to the text color and changes accordingly when <a href="https://support.microsoft.com/en-gb/help/13862/windows-use-high-contrast-mode">Windows High Contrast Mode</a> is switched on.</p>
+
+  </div>
+</aside>
+
+
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    <p>Note that some form errors, such as on the business page (pictured) are colored green, which is confusing. Green is usually associated with success, not failure.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/green-error.png" alt="green error message" /></p>
+
+  </div>
+</aside>
+
+
+          </div>
+        
+          <div class="pattern-section">
             <h1 id="focus-styles" tabindex="-1">
               <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                 <use xlink:href="#bookmark"></use>
@@ -854,6 +1189,354 @@ a, button, input, textarea /* etc */ {
   </div>
 </aside>
 
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="form-errors" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Form errors
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>As users attempt to complete forms, it is important they are notified promptly and clearly when they make errors, and are provided with assistance in fixing those errors.</p>
+
+<p>For assistive technology users, completing forms can be especially arduous where one or more of the following are true.</p>
+
+<ul>
+<li>The invalid state of a field is not communicated</li>
+<li>The error message is not associated with the field</li>
+<li>The presence of errors is not communicated on submission</li>
+</ul>
+
+<p>The careful wording of error messages and descriptions is also important, as well as indicating which text is error text without relying entirely on color (see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/color-dependence/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Color dependence</a>).</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#minimize-error-identified">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.3.1 Error Identification</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#minimize-error-suggestions">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.3.3 Error Suggestion</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="marketing-site">Marketing site</h3>
+
+<ul>
+<li><a href="https://bulb.co.uk">Home page</a> (✖️ The &ldquo;Get A Quote&rdquo; form&rsquo;s error is not associated to the form element and is not announced on form submission.)</li>
+<li><a href="https://bulb.co.uk/energy">About → Our energy</a> (✖️ The &ldquo;Get A Quote&rdquo; form&rsquo;s error is not associated to the form element and is not announced on form submission. Note that, because the field here uses <code>required</code>, a browser error message appears if the field is empty.)</li>
+<li><a href="https://bulb.co.uk/business">About → Business</a> (✖️ Presence of errors not announced on submission; individual errors not associated with their fields; Descriptions not part of field labels.)</li>
+</ul>
+
+<h3 id="join-site">Join site</h3>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (✖️ The &ldquo;Get My Quote&rdquo; form&rsquo;s error is not associated to the form element and is not announced on form submission.)</li>
+<li><a href="https://join.bulb.co.uk/join/quick-signup">My information page</a> (✖️ Individual errors not associated with their fields; form cannot be submitted until fields are corrected, so the presence of errors is not clear.)</li>
+</ul>
+
+<h3 id="accounts-dashboard">Accounts dashboard</h3>
+
+<p>The <strong>Account dashboard&rsquo;s</strong> <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.</p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>Form error messages must be included consistently and accessibly across the sites.</p>
+
+<h3 id="individual-form-errors">Individual form errors</h3>
+
+<p>The following code example exemplifies a typical form field in its invalid/errored state, with notes to follow:</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;label for=&#34;name&#34;&gt;
+  Your name:
+  <span class='highlight'>&lt;div class=&#34;description&#34;&gt;Including your forename and surname&lt;/span&gt;</span>
+&lt;/label&gt;
+&lt;input id=&#34;name&#34; name=&#34;postcode&#34; <span class='highlight'>aria-describedby=&#34;name-error&#34;</span> <span class='highlight'>aria-invalid=&#34;true&#34;</span>&gt;
+&lt;div <span class='highlight'>id=&#34;name-error&#34;</span>&gt;
+  <span class='highlight'>&lt;strong&gt;Error:&lt;/strong&gt;</span> Please enter a valid postcode.
+&lt;/div&gt;
+</code></div>
+
+
+<ol>
+<li>If present, a description should be part of the label, so <em>inside</em> the label element (see <a href="https://bulb.co.uk/business">About → Business</a> where it is currently adjacent).</li>
+<li>The <code>aria-describedby</code> attribute associates the input field to the error message element using the shared &ldquo;<code>name-error</code>&rdquo; cipher, in this case.</li>
+<li>The <code>aria-invalid</code> property sets the state and tells assistive technology users who have focused the field that it is invalid. Note that you must explicitly write <code>=&quot;true&quot;</code>. Just including <code>aria-invalid</code> (boolean) is not reliable.</li>
+<li>The <code>id</code> value matches the <code>aria-describedby</code> value</li>
+<li>To identify the error <em>as</em> an error, use <em>spell it out</em> (or use an icon, as described in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/color-dependence/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Color dependence</a>).</li>
+</ol>
+
+<h3 id="announcing-the-presence-of-errors">Announcing the presence of errors</h3>
+
+<p>You should let users attempt form submission and alert them to errors if they are present.</p>
+
+<p>In the case of forms with multiple fields, a generic message should appear. This is the case on the <a href="https://bulb.co.uk/business">About → Business</a> page already. However, the message is not announced in screen readers because it does not belong to a <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions">live region</a>.</p>
+
+<p>If you are not familiar with live regions, they announce (in screen readers) content as it is  added with JavaScript. The basic markup for an alert live region is as follows.</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;div role=&#34;alert&#34; aria-live=&#34;assertive&#34;&gt;
+  &lt;!-- add anything here to have it announced in screen reader software --&gt;
+&lt;/div&gt;
+</code></div>
+
+
+<p>Here is a little demo, showing you how your form errors live region would work. If you are using a Macbook, simply press <kbd>CMD</kbd> + <kbd>F5</kbd> to activate the Voiceover screen reader, then press &ldquo;submit&rdquo; to both reveal and announce the message.</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-2acc16ac7cb5ea76cd1eedc95f011e57"></div>
+        <button data-launch="js-demo-2acc16ac7cb5ea76cd1eedc95f011e57">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-2acc16ac7cb5ea76cd1eedc95f011e57">
+      
+<form>
+  <button type="submit">Submit</button>
+  <div role="alert"></div>
+</form>
+<style>
+button, div {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+}
+
+button {
+  background: #01cb81;
+  padding: 0.5rem 1rem;
+}
+
+[role="alert"] {
+  padding: 0.5rem;
+  border: 2px solid #f55;
+  margin-top: 0.5rem;
+}
+
+[role="alert"]:empty {
+  display: none;
+}
+</style>
+<script>
+demo.querySelector('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  demo.querySelector('[role="alert"]').innerHTML = '<strong>Errors:</strong> Please fix the form errors and submit again.'
+});
+</script>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-2acc16ac7cb5ea76cd1eedc95f011e57');
+      var template = document.getElementById('template-2acc16ac7cb5ea76cd1eedc95f011e57');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-2acc16ac7cb5ea76cd1eedc95f011e57\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-2acc16ac7cb5ea76cd1eedc95f011e57"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "2acc16ac7cb5ea76cd1eedc95f011e57";
+      });
+    })();
+  </script>
+</div>
+
+
+<h3 id="suppressing-browser-validation">Suppressing browser validation</h3>
+
+<p>Make sure your bespoke error notification system is consistent across the forms and sites, to reduce confusion. Where forms, such as the <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> form (pictured) include automatic browser validation, suppress it by applying <code>novalidate</code> to the <code>&lt;form&gt;</code> element.</p>
 
           </div>
         
@@ -1382,6 +2065,218 @@ h4, .h4 {
 <li>The navigation region is labeled using the <code>&lt;h2&gt;</code> heading. On focusing the first link inside the region, assistive technologies will communicate <em>&ldquo;manage your account, navigation, list, 6 items, Submit your reading, link&rdquo;</em> or similar.</li>
 <li>For this relationship to work, the value of <code>aria-labelledby</code> and the value of the <code>&lt;h2&gt;</code>&rsquo;s <code>id</code> need to match.</li>
 </ol>
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="placeholder-labels" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Placeholder labels
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The <code>placeholder</code> attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.</p>
+
+<p>Where <code>placeholder</code>s are used as primary labels, a number of accessibility and usability issues emerge.</p>
+
+<p>Firstly, the <code>placeholder</code> is not supported as an accessible label in legacy browsers and assistive technologies, meaning those users will not hear a label as they focus the control.</p>
+
+<p>For sighted users, there are cognitive challenges with the intermittent nature of the <code>placeholder</code> label, resulting in some getting confused and frustrated as they try to remember what it was they were supposed to be entering. Others mistake the <code>placeholder</code> text as content and think the field is already complete.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#minimize-error-cues">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.3.2 Labels or Instructions</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<p>Placeholders-as-labels are found wherever there is a &ldquo;Get A Quote&rdquo; / &ldquo;Get My Quote&rdquo; form.</p>
+
+<ul>
+<li><a href="https://bulb.co.uk/">Home page</a></li>
+<li><a href="https://bulb.co.uk/energy">About → Our energy</a></li>
+<li><a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (<strong>Join site</strong>)</li>
+</ul>
+
+<p>In addition, the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> has no visible and persistent labels:</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/my-info-form.png" alt="The My Information form" /></p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>In some cases, such as search fields where the label of the submit button, &ldquo;search&rdquo;, acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the <strong>Bulb</strong> sites the &ldquo;Get a quote&rdquo; (or &ldquo;Get my quote&rdquo;) label for the submit button does not match the &ldquo;Your postcode&rdquo; <code>placeholder</code> label.</p>
+
+<p>A label that is both visually persistent <em>and</em> forms the accessible label for the field is therefore recommended.</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;label <span class='highlight'>for=&#34;postcode&#34;</span>&gt;Your postcode&lt;/label&gt;
+&lt;input <span class='highlight'>id=&#34;postcode&#34;</span> name=&#34;postcode&#34; <span class='highlight'>placeholder=&#34;E.g. NR9 5NF&#34;</span>&gt;
+&lt;button type=&#34;submit&#34;&gt;Get my quote&lt;/button&gt;
+</code></div>
+
+
+<ol>
+<li>The <code>&lt;label&gt;</code> element should be associated with the&hellip;</li>
+<li>&hellip;<code>&lt;input&gt;</code> by matching the values of the respective <code>for</code> and <code>id</code> attributes.</li>
+<li>The <code>placeholder</code> is now optional, but should be clearly marked as an example/hint to be replaced, such as by prefixing with &ldquo;E.g.&rdquo; if included.</li>
+</ol>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>To maintain an attractive design for the &ldquo;Get A Quote&rdquo;/&ldquo;Get My Quote&rdquo; forms, it might help to center align the label, input, and submit button along a vertical axis. <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> should left-align its labels as other forms do across the sites.</p>
+
+  </div>
+</aside>
+
 
           </div>
         
