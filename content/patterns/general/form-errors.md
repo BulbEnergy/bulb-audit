@@ -50,7 +50,7 @@ The following code example exemplifies a typical form field in its invalid/error
 </label>
 <input id="name" name="postcode" [[[aria-describedby="name-error"]]] [[[aria-invalid="true"]]]>
 <div [[[id="name-error"]]]>
-  [[[<strong>Error:</strong>]]] Please enter a valid postcode.
+  [[[<strong>Error:</strong>]]] Please enter a valid post code.
 </div>
 {{</code>}}
 
@@ -110,6 +110,25 @@ demo.querySelector('form').addEventListener('submit', function (e) {
 });
 </script>
 {{</demo>}}
+
+#### "Get A Quote" / "Get My Quote"
+
+These simple, one input forms do not need a separate announcement for invoked errors. Instead, the individual post code error message can be made a live region.
+
+{{<code numbered="true">}}
+<label for="postcode">Your postcode:</label>
+<input id="postcode" name="postcode" aria-describedby="postcode-error">
+<div id="postcode-error" role="alert">
+  <svg aria-label="Error:" focusable="false">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/images/icons/forms.svg#error"></use>
+  </svg>
+  Please enter a valid post code.
+</div>
+{{</code>}}
+
+{{% warning %}}
+It is not reliable to add a live region _with_ its content to the page and expect immediate announcement. Instead, you must add the live region element first, then add the content you wish announced to it. One exception is on page load: If the page loads with a live region present, it will announce the live region in many browser / assistive technology combinations.
+{{% /warning %}}
 
 ### Suppressing browser validation
 

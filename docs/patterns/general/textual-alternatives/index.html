@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Heading structure | Bulb Audit
+        Text alternatives | Bulb Audit
       
     </title>
     
@@ -203,7 +203,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/" aria-current="page">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -239,7 +239,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -273,7 +273,7 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Heading structure
+      Text alternatives
     </h1>
     
     
@@ -316,38 +316,6 @@
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Heading elements are often chosen according to the perceived importance of the text they contain and the sections they introduce. The more &lsquo;important&rsquo; the heading, the higher the heading level and — typically — the larger the font size. An <code>&lt;h3&gt;</code> might be <code>1.5rem</code> and an <code>&lt;h1&gt;</code> <code>3rem</code>.</p>
-
-<p>However, headings levels do not simply denote importance, but a hierarchy of page subsections. There are certain rules to creating a hierarchy (or &lsquo;document outline&rsquo;) that should not be broken:</p>
-
-<ul>
-<li>Levels should not be skipped. A section introduced by an <code>&lt;h2&gt;</code> must use <code>&lt;h3&gt;</code> headings to introduce immediate subsections — no matter how &lsquo;important&rsquo; you feel those subsections are, in terms of content.</li>
-<li>Each page should have a single <code>&lt;h1&gt;</code> which introduces the unique topic of the page.</li>
-<li>Any element that is used visually to denote a heading must use a heading element (<code>&lt;h1&gt; → &lt;h6&gt;</code>)</li>
-</ul>
-
-<p>Here is an example outline, starting with an <code>&lt;h1&gt;</code> heading and using heading levels to denote a nested section/subsection structure:</p>
-
-<div class="file-tree">
-  <ul>
-<li>Main heading (<code>&lt;h1&gt;</code>)
-
-<ul>
-<li>A subheading (<code>&lt;h2&gt;</code>)</li>
-<li>Another subheading (<code>&lt;h2&gt;</code>)
-
-<ul>
-<li>A nested subheading (<code>&lt;h3&gt;</code>)</li>
-</ul></li>
-<li>A final subheading (<code>&lt;h2&gt;</code>)</li>
-</ul></li>
-</ul>
-
-</div>
-
-
-<p>Headings are relied upon by assistive technology users such as screen reader users. They both create a map of the page structure and provide shortcuts to traverse that structure. For example, the JAWS screen reader allows you to skip between headings using the <kbd>h</kbd> key, and between specific headings by level using numeric keys (<kbd>3</kbd> for <code>&lt;h3&gt;</code> headings, for example).</p>
-
 <h2 id="wcag-criteria">WCAG criteria</h2>
 
 
@@ -357,35 +325,35 @@
 <ul class="wcag ">
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
       <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
+        <strong><a href="https://www.w3.org/TR/WCAG20/#text-equiv-all">
           <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
             <use xlink:href="#w3c"></use>
           </svg>
-          1.3.1 Info and Relationships</a> (level A)
+          1.1.1 Non-text Content</a> (level A)
         </strong>
         
       </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
@@ -493,69 +461,7 @@
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
 
-<h3 id="marketing-site">Marketing site</h3>
-
-<ul>
-<li><a href="https://bulb.co.uk/energy">About → Our energy</a> (✖️ An <code>&lt;h2&gt;</code> for the main heading followed by further <code>&lt;h2&gt;</code> elements)</li>
-<li><a href="https://bulb.co.uk/careers">About → Careers</a> (✖️ Multiple <code>&lt;h1&gt;</code> elements)</li>
-<li><a href="https://bulb.co.uk/business">About → Business</a> (✖️ An <code>&lt;h2&gt;</code> for the main heading followed by further <code>&lt;h2&gt;</code> elements)</li>
-<li>Footer (✖️ The footer on each page has headings starting at the <code>&lt;h3&gt;</code> level, but this is not thematically correct, since the content here does not belong to the <code>&lt;h2&gt;</code> introduced section that typically resides above the footer in the main content.)</li>
-</ul>
-
-<h3 id="join-site">Join site</h3>
-
-<ul>
-<li><a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (✖️ An <code>&lt;h2&gt;</code> subheading used as the main and only heading on the page)</li>
-<li><a href="https://join.bulb.co.uk/join/questions/my-energy">Questions</a> (✖️ <code>&lt;h2&gt;</code> headings are used as the main and only heading of each question page)</li>
-<li><a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch Now&rdquo; page</a> (✖️ Heading structure, though correctly nested, begins at the <code>&lt;h2&gt;</code> rather than <code>&lt;h1&gt;</code> level)</li>
-<li><a href="https://join.bulb.co.uk/join/quick-signup">My information page</a> (✖️ An <code>&lt;h2&gt;</code> subheading used as the main and only heading on the page, and the &ldquo;My address&rdquo; heading is marked up not as a heading, but a <code>&lt;div&gt;</code>)</li>
-<li><a href="https://join.bulb.co.uk/join/quick-signup">My payment details page</a> (✖️ An <code>&lt;h2&gt;</code> subheading used as the main and only heading on the page)</li>
-</ul>
-
-<h3 id="account-dashboard">Account dashboard</h3>
-
-<ul>
-<li><a href="https://my.staging.bulb.co.uk/dashboard">Dashboard</a> (✖️ There is a lack of heading structure past the main <code>&lt;h1&gt;</code> heading, despite a number of subsections — the green boxes — being included)</li>
-<li><a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> (✖️ The main <code>&lt;h1&gt;</code> contains the &ldquo;Back to Bulb&rdquo; link, breaking its label; the &ldquo;Meter readings&rdquo; heading is an <code>&lt;h4&gt;</code>, when it should be an <code>&lt;h2&gt;</code>)</li>
-<li><a href="https://my.staging.bulb.co.uk/dashboard/statements">Tariff info</a> (✖️ The main <code>&lt;h1&gt;</code> contains the &ldquo;Back to Bulb&rdquo; link, breaking its label)</li>
-<li><a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a> (✖️ The main <code>&lt;h1&gt;</code> contains the &ldquo;Back to Bulb&rdquo; link, breaking its label; the previous and new reading headings skip two levels to be <code>&lt;h4&gt;</code> when they must be <code>&lt;h2&gt;</code>)</li>
-</ul>
-
 <h2 id="fixing-the-issue">Fixing the issue</h2>
-
-<ul>
-<li>Each page should have a singular <code>&lt;h1&gt;</code> heading, at the start of the main content.</li>
-<li>Each subsection should take a heading level that reflects its nesting level in the document outline.</li>
-<li>Each element that is used as a heading visually should use the correct heading element (of the appropriate level) to mark it up.</li>
-<li>Make sure only content that forms the heading text is found inside the heading element (place the &ldquo;Back to Bulb&rdquo; links outside and above the <code>&lt;h1&gt;</code> headings to which they currently belong).</li>
-<li>The <strong>Marketing site</strong> footer must either replace the <code>&lt;h3&gt;</code> headings with <code>&lt;h2&gt;</code>s <em>or</em> provide an introductory <code>&lt;h2&gt;</code> heading to which the <code>&lt;h3&gt;</code>s can belong.</li>
-</ul>
-
-<p>Where you wish to use a smaller font size for a heading (such as for the &ldquo;Meter readings&rdquo; heading, pictured) do not choose a different level. Instead, adjust the heading style with a <code>class</code>.</p>
-
-<p>It may help to pair classes and element selectors like so:</p>
-
-
-
-
-
-<div class="code-annotated "><code>
-h4, .h4 {
-  font-size: 1.3rem;
-}
-</code></div>
-
-
-<p>You can then apply the (higher specificity) class to the heading and change its appearance without breaking the hierarchy:</p>
-
-
-
-
-
-<div class="code-annotated "><code>
-&lt;h2 class=&#34;h4&#34;&gt;Meter readings&lt;/h2&gt;
-</code></div>
-
 
   </main>
 

@@ -104,6 +104,15 @@ With the introduction of landmark elements like &amp;lt;main&amp;gt;, it has bec
     </item>
     
     <item>
+      <title>Text alternatives</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</guid>
+      <description> Introduction WCAG criteria    1.1.1 Non-text Content (level A)    Scope of the issue Fixing the issue </description>
+    </item>
+    
+    <item>
       <title>Wording</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/wording/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

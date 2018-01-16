@@ -239,6 +239,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Text alternatives</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/wording/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -512,7 +521,7 @@
 &lt;/label&gt;
 &lt;input id=&#34;name&#34; name=&#34;postcode&#34; <span class='highlight'>aria-describedby=&#34;name-error&#34;</span> <span class='highlight'>aria-invalid=&#34;true&#34;</span>&gt;
 &lt;div <span class='highlight'>id=&#34;name-error&#34;</span>&gt;
-  <span class='highlight'>&lt;strong&gt;Error:&lt;/strong&gt;</span> Please enter a valid postcode.
+  <span class='highlight'>&lt;strong&gt;Error:&lt;/strong&gt;</span> Please enter a valid post code.
 &lt;/div&gt;
 </code></div>
 
@@ -636,6 +645,37 @@ demo.querySelector('form').addEventListener('submit', function (e) {
     })();
   </script>
 </div>
+
+
+<h4 id="get-a-quote-get-my-quote">&ldquo;Get A Quote&rdquo; / &ldquo;Get My Quote&rdquo;</h4>
+
+<p>These simple, one input forms do not need a separate announcement for invoked errors. Instead, the individual post code error message can be made a live region.</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;label for=&#34;postcode&#34;&gt;Your postcode:&lt;/label&gt;
+&lt;input id=&#34;postcode&#34; name=&#34;postcode&#34; aria-describedby=&#34;postcode-error&#34;&gt;
+&lt;div id=&#34;postcode-error&#34; role=&#34;alert&#34;&gt;
+  &lt;svg aria-label=&#34;Error:&#34; focusable=&#34;false&#34;&gt;
+    &lt;use xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34; xlink:href=&#34;/assets/images/icons/forms.svg#error&#34;&gt;&lt;/use&gt;
+  &lt;/svg&gt;
+  Please enter a valid post code.
+&lt;/div&gt;
+</code></div>
+
+
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    <p>It is not reliable to add a live region <em>with</em> its content to the page and expect immediate announcement. Instead, you must add the live region element first, then add the content you wish announced to it. One exception is on page load: If the page loads with a live region present, it will announce the live region in many browser / assistive technology combinations.</p>
+
+  </div>
+</aside>
 
 
 <h3 id="suppressing-browser-validation">Suppressing browser validation</h3>
