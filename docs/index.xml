@@ -109,7 +109,8 @@ With the introduction of landmark elements like &amp;lt;main&amp;gt;, it has bec
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</guid>
-      <description> Introduction WCAG criteria    1.1.1 Non-text Content (level A)    Scope of the issue Fixing the issue </description>
+      <description>Introduction For blind users, textual alternatives of important visual information must be provided. Composing that text effectively is a question of context.
+For example, a logo that is intended as a study in logo design should include a textual alternative — typically via an &amp;lt;img&amp;gt; tag&amp;rsquo;s alt attribute — that describes the features of the logo, such as the colors and typography. For Bulb&amp;rsquo;s logo this might read something like, &amp;rdquo; expressive, hand written text, in white, and featuring hooped ascenders&amp;rdquo;.</description>
     </item>
     
     <item>

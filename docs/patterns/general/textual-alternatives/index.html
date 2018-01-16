@@ -316,6 +316,14 @@
 
 <h2 id="introduction">Introduction</h2>
 
+<p>For blind users, textual alternatives of important visual information must be provided. Composing that text effectively is a question of context.</p>
+
+<p>For example, a logo that is intended as a study in logo design should include a textual alternative — typically via an <code>&lt;img&gt;</code> tag&rsquo;s <code>alt</code> attribute — that describes the features of the logo, such as the colors and typography. For <strong>Bulb</strong>&rsquo;s logo this might read something like, <em>&rdquo; expressive, hand written text, in white, and featuring hooped ascenders&rdquo;</em>.</p>
+
+<p>On the other hand, where the logo is used as the content of a link to the site&rsquo;s home page, <em>&ldquo;Bulb home page&rdquo;</em> would suffice. That is, the action of the link is pertinent to the user, not the design of the lettering.</p>
+
+<p>Decorative images, which include no salient information, are obstructive to non-visual users and must be removed from screen reader output. The only reliable way to do this is by providing <code>alt=&quot;&quot;</code> (empty value). Omitting the <code>alt</code> attribute altogether will result in browsers and screen readers falling back to reading the <code>src</code> value, which is rarely helpful.</p>
+
 <h2 id="wcag-criteria">WCAG criteria</h2>
 
 
