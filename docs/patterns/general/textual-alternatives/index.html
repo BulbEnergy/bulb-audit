@@ -212,6 +212,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Inconsistency</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -225,7 +234,7 @@
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
-                                <span class="text">Placeholder labels</span>
+                                <span class="text">Missing and placeholder labels</span>
                               </a>
                             </li>
                           
@@ -323,6 +332,8 @@
 <p>On the other hand, where the logo is used as the content of a link to the site&rsquo;s home page, <em>&ldquo;Bulb home page&rdquo;</em> would suffice. That is, the action of the link is pertinent to the user, not the design of the lettering.</p>
 
 <p>Decorative images, which include no salient information, are obstructive to non-visual users and must be removed from screen reader output. The only reliable way to do this is by providing <code>alt=&quot;&quot;</code> (empty value). Omitting the <code>alt</code> attribute altogether will result in browsers and screen readers falling back to reading the <code>src</code> value, which is rarely helpful.</p>
+
+<p>Be careful to avoid redundant alternative text. Where the same information is provided as text <em>and</em> an image, you should consider the image decorative (see above).</p>
 
 <h2 id="wcag-criteria">WCAG criteria</h2>
 
@@ -468,6 +479,79 @@
 
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="marketing-site">Marketing site</h3>
+
+<h4 id="home-page-https-bulb-co-uk"><a href="https://bulb.co.uk">Home page</a></h4>
+
+<p>The switch steps (pictured) have identical, redundant alternative text to the visible text provided. You must use an empty (<code>alt=&quot;&quot;</code>) value for each of these.</p>
+
+<p><img src="https://bulb.co.uk" alt="Switch steps (three graphics with text)" /></p>
+
+<p>The &lsquo;listening&rsquo; and &lsquo;best of&rsquo; illustrations (pictured) are decorative, but omit the <code>alt</code> attribute, meaning their role and <code>src</code> will be announced. Include <code>alt=&quot;&quot;</code> to suppress this.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/listen.png" alt="listen illustration" /></p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/best_of.png" alt="best of illustration" /></p>
+
+<p>The social media links (pictured) have strange alternative text, derived from the SVG data. For example, the Facebook link is just &ldquo;bulb&rdquo;, and the YouTube link is a random string of characters. In each case, use the form <em>&ldquo;Bulb on [social media company]&rdquo;</em> and apply this label as an <code>aria-label</code> attribute to the outer SVG element (<code>aria-label=&quot;Bulb on [social media company]&quot;</code>).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/social_big.png" alt="Large, green social media icons" /></p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/social_small.png" alt="Small, blue social media icons from the footer" /></p>
+
+<h4 id="about-our-energy-https-bulb-co-uk-energy"><a href="https://bulb.co.uk/energy">About → Our energy</a></h4>
+
+<p>The &ldquo;Greening up the grid&rdquo; illustration (pictured) is decorative but omits an empty (<code>alt=&quot;&quot;</code>) attribute. Ensure that this is present to suppress readout of the image.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/greening.png" alt="illustration with power going to toaster" /></p>
+
+<h4 id="about-careers-https-bulb-co-uk-careers"><a href="https://bulb.co.uk/careers">About → Careers</a></h4>
+
+<p>The living wage and &lsquo;certified B&rsquo; images have a filename as the <code>alt</code> and a missing alt, respectively. These are not decorative images, so should have &ldquo;We are a living wage employer&rdquo; and &ldquo;Certified B Corporation&rdquo; alternative texts.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/living-b.png" alt="living wage and certified b graphics side-by-side" /></p>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>Should these images not be linked as their equivalents are on the home page?</p>
+
+  </div>
+</aside>
+
+
+<p>The &ldquo;Come make energy better&rdquo; and &ldquo;Working At Bulb&rdquo; photos have poor alternative texts of <em>&ldquo;Bulb March 3rd-147.jpg&rdquo;</em> and <em>&ldquo;Bulb March 3rd-262.jpg&rdquo;</em>, respectively. You can consider these images decorative and supply empty alternatives (<code>alt=&quot;&quot;</code>).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/come.png" alt="Come make energy better office photo" /></p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/working_at.png" alt="Working at bulb office photo" /></p>
+
+<h4 id="about-business-https-bulb-co-uk-careers"><a href="https://bulb.co.uk/careers">About → Business</a></h4>
+
+<p>The alternative text for the &lsquo;Big Six versus Bulb&rsquo; chart (pictured) is inadequate as simply <em>&ldquo;bulb-business-chart&rdquo;</em>. Since the information it provides (that <strong>Bulb</strong>&rsquo;s prices are 20% cheaper) is covered in the accompanying text, it can be treated as decorative. Empty the <code>alt</code> attribute but leave it in place (<code>alt=&quot;&quot;</code>).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/big-six.png" alt="Bulb versus big six bar chart" /></p>
+
+<p>The photo of the beach is also decorative and should have <code>alt=&quot;&quot;</code>.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/beach.png" alt="beach photograph" /></p>
+
+<h3 id="join-site">Join site</h3>
+
+<p>The graphics throughout the <strong>Join site</strong> (example pictured) are rendered as CSS background images on <code>&lt;div&gt;</code> elements. Since they are exclusively decorative images, this is not an issue in terms of alternative text (they already will not be announced). <strong>However</strong>, background images are typically eliminated when users (some of whom with impaired vision) activate <a href="https://support.microsoft.com/en-gb/help/4026951/windows-turn-high-contrast-mode-on-or-off-in-windows">Windows High Contrast Mode</a>.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/house.png" alt="House, from one of the question pages" /></p>
+
+<p>Since the graphics assist comprehension for sighted users, it is recommended that the high contrast mode-proof method of supplying <code>&lt;img&gt;</code> tags with <code>alt=&quot;&quot;</code> is employed.</p>
+
+<p>One exception is the price comparison bar chart found on the <a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch Now&rdquo; page</a>. This must have a proper description in a form similar to <em>&ldquo;Bar chart shows Bulb&rsquo;s price at around £80 compared to the prices of the big six energy companies, all significantly over £1000&rdquo;</em>.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/compare.png" alt="Price comparison bar chart" /></p>
+
+<h3 id="account-dashboard">Account dashboard</h3>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 

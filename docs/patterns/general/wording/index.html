@@ -212,6 +212,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Inconsistency</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -225,7 +234,7 @@
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
-                                <span class="text">Placeholder labels</span>
+                                <span class="text">Missing and placeholder labels</span>
                               </a>
                             </li>
                           
@@ -523,6 +532,13 @@
 
 <p><img src="https://heydon.github.io/bulb-audit/images/and_its_a.png" alt="Fragment heading on 'My home' page" /></p>
 
+<h3 id="account-dashboard">Account dashboard</h3>
+
+<ul>
+<li>On the <a href="https://my.staging.bulb.co.uk/login">Login page</a>, the page <code>&lt;title&gt;</code> is <em>&ldquo;MyBulb — Your account&rdquo;</em> suggesting the user is already logged in.</li>
+<li>On the <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a> page, the back button reads <em>&ldquo;Back to MyBulb&rdquo;</em>, but points to the page where you choose which type of reading — gas or electricity.</li>
+</ul>
+
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
 <h3 id="marketing-site-1">Marketing site</h3>
@@ -539,6 +555,13 @@
 <ul>
 <li>Add a third part to each <code>&lt;title&gt;</code> identifying the specific screen in the form <em>&ldquo;Bulb — Get A Quote — [specific page description]&rdquo;</em>. For example, <em>&ldquo;Bulb — Get A Quote — Bedrooms&rdquo;</em> for the bedrooms screen.</li>
 <li>Avoid trying to compose sentences across screens/pages. This will not work for many assistive technology users, and all sorts of users will simply forget what came before in the sentence. Try headings like <em>&ldquo;The energy I use is&rdquo;</em>, <em>&ldquo;I live in a&rdquo;</em>, and <em>&ldquo;The number of bedrooms I have is&rdquo;</em>.</li>
+</ul>
+
+<h3 id="account-dashboard-1">Account dashboard</h3>
+
+<ul>
+<li>Change the login page title to something similar to <em>&ldquo;MyBulb — Log in to your account&rdquo;</em>.</li>
+<li>Instead of changing the wording of the back button on the reading page, actually link back to the main dashboard page. There is no need to step back through the intermediary page.</li>
 </ul>
 
   </main>

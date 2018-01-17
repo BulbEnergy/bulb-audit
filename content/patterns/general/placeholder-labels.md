@@ -1,5 +1,5 @@
 +++
-title = "Placeholder labels"
+title = "Missing and placeholder labels"
 +++
 
 ## Introduction
@@ -18,6 +18,8 @@ For sighted users, there are cognitive challenges with the intermittent nature o
 
 ## Scope of the issue
 
+### Marketing site & Join site
+
 Placeholders-as-labels are found wherever there is a "Get A Quote" / "Get My Quote" form.
 
 * [Home page](https://bulb.co.uk/)
@@ -27,6 +29,14 @@ Placeholders-as-labels are found wherever there is a "Get A Quote" / "Get My Quo
 In addition, the **Join site's** ["My Information" form](https://join.bulb.co.uk/join/quick-signup) has no visible and persistent labels:
 
 ![The My Information form](/images/my-info-form.png)
+
+In the **Join site's** [Payment details page](https://join.bulb.co.uk/join/quick-signup), persistent visual labels accompany placeholders. The issue here is that the `<label>`s are actually `<div>`s and are not associated accessibly with the form inputs.
+
+![Payment details form](/images/debit.png)
+
+### Account dashboard
+
+The [Submit an electricity meter reading](https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity) page's inputs (pictured) each have a missing label and no placeholder as a substitute.
 
 ## Fixing the issue
 
@@ -46,4 +56,45 @@ A label that is both visually persistent _and_ forms the accessible label for th
 
 {{% note %}}
 To maintain an attractive design for the "Get A Quote"/"Get My Quote" forms, it might help to center align the label, input, and submit button along a vertical axis. ["My Information" form](https://join.bulb.co.uk/join/quick-signup) should left-align its labels as other forms do across the sites.
+{{% /note %}}
+
+### Payment details page
+
+For the [Payment details page](https://join.bulb.co.uk/join/quick-signup), ensure a proper `<label>` element is used, and is associated to the `<input>` using `for` and `id` as in the above code example.
+
+### Submit an electricity meter reading
+
+In this case, both a group label and individual labels are missing.
+
+For the [Submit an electricity meter reading](https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity), include invisible but accessible labels in the form "First number", "Second number" etc for each input/number. In addition, put the `<h4>` (which ought to be an `<h2>` — see {{% pattern "Heading structure" %}}) and description inside a `<legend>` and group all the controls inside a `<fieldset>` as in the following code example:
+
+{{<code numbered="true">}}
+<fieldset>
+  <legend>
+    <h2>New electricity reading</h2>
+    <p>Enter all the numbers you see on your meter</p>
+  </legend>
+  <!-- each loop -->
+  <label for="number-1" [[[class="visually-hidden"]]]>First number</label>
+  <input type="number" id="number-1" class="sc-RefOD cAjWea" name="number-1" value="0" required="">
+  <!-- end each loop -->
+</fieldset>
+{{</code>}}
+
+1. A special class must be used to hide the label visually, but not from assistive technologies (screen readers). The class is defined below.
+
+{{<code>}}
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+{{</code>}}
+
+{{% note %}}
+The above advice also applies to the previous meter reading, even though the inputs are inactive. It is important that the two alike widgets are presented in the same way.
 {{% /note %}}

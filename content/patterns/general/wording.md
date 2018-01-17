@@ -36,6 +36,11 @@ Finally, it is important that parts of the interface are identified consistently
 
 ![Fragment heading on 'My home' page](/images/and_its_a.png)
 
+### Account dashboard
+
+* On the [Login page](https://my.staging.bulb.co.uk/login), the page `<title>` is _"MyBulb — Your account"_ suggesting the user is already logged in.
+* On the [Submit an electricity meter reading](https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity) page, the back button reads _"Back to MyBulb"_, but points to the page where you choose which type of reading — gas or electricity.
+
 ## Fixing the issue
 
 ### Marketing site
@@ -49,3 +54,8 @@ Finally, it is important that parts of the interface are identified consistently
 
 * Add a third part to each `<title>` identifying the specific screen in the form _"Bulb — Get A Quote — [specific page description]"_. For example, _"Bulb — Get A Quote — Bedrooms"_ for the bedrooms screen.
 * Avoid trying to compose sentences across screens/pages. This will not work for many assistive technology users, and all sorts of users will simply forget what came before in the sentence. Try headings like _"The energy I use is"_, _"I live in a"_, and _"The number of bedrooms I have is"_.
+
+### Account dashboard
+
+* Change the login page title to something similar to _"MyBulb — Log in to your account"_.
+* Instead of changing the wording of the back button on the reading page, actually link back to the main dashboard page. There is no need to step back through the intermediary page.

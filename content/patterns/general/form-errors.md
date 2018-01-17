@@ -33,7 +33,8 @@ The careful wording of error messages and descriptions is also important, as wel
 
 ### Accounts dashboard
 
-The **Account dashboard's** [Select an electricity meter reading](https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity) page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.
+* [Login page](https://my.staging.bulb.co.uk/login) (✖️ Individual errors not associated with their fields; generic "Wrong email or password" error not announced on attempted submission.)
+* [Select an electricity meter reading](https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity) (✖️ The page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.)
 
 ## Fixing the issue
 
@@ -73,6 +74,10 @@ If you are not familiar with live regions, they announce (in screen readers) con
   <!-- add anything here to have it announced in screen reader software -->
 </div>
 {{</code>}}
+
+{{% note %}}
+In the case of the [Login page](https://my.staging.bulb.co.uk/login), the non-field-specific "Wrong email or password" error should belong to a live region so that it is announced on attempted submission.
+{{% /note %}}
 
 Here is a little demo, showing you how your form errors live region would work. If you are using a Macbook, simply press <kbd>CMD</kbd> + <kbd>F5</kbd> to activate the Voiceover screen reader, then press "submit" to both reveal and announce the message.
 

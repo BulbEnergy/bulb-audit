@@ -34,6 +34,13 @@ In addition, the "1, 2, 3 Switch" section (pictured) features a list of illustra
 
 ![1 2 3 Switch numbered list](/images/123.png)
 
+### Join site
+
+As in the "1, 2, 3 Switch" section, the **Join site's** [Welcome page](https://join.bulb.co.uk/join/quote) includes a set of features/benefits not formed as a list (pictured).
+
+![Feature set](/images/join-features.png)
+
+
 ### Account dashboard
 
 A green of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert `<div>` markup is used instead).

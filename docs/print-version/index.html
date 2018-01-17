@@ -213,6 +213,15 @@
                   </li>
                 
                   <li class="pattern">
+                    <a href="#inconsistency" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Inconsistency</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#list-structure" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -222,11 +231,11 @@
                   </li>
                 
                   <li class="pattern">
-                    <a href="#placeholder-labels" >
+                    <a href="#missing-and-placeholder-labels" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
                       </svg>
-                      <span class="text">Placeholder labels</span>
+                      <span class="text">Missing and placeholder labels</span>
                     </a>
                   </li>
                 
@@ -1396,7 +1405,10 @@ a, button, input, textarea /* etc */ {
 
 <h3 id="accounts-dashboard">Accounts dashboard</h3>
 
-<p>The <strong>Account dashboard&rsquo;s</strong> <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.</p>
+<ul>
+<li><a href="https://my.staging.bulb.co.uk/login">Login page</a> (✖️ Individual errors not associated with their fields; generic &ldquo;Wrong email or password&rdquo; error not announced on attempted submission.)</li>
+<li><a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> (✖️ The page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.)</li>
+</ul>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
@@ -1447,6 +1459,17 @@ a, button, input, textarea /* etc */ {
   &lt;!-- add anything here to have it announced in screen reader software --&gt;
 &lt;/div&gt;
 </code></div>
+
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>In the case of the <a href="https://my.staging.bulb.co.uk/login">Login page</a>, the non-field-specific &ldquo;Wrong email or password&rdquo; error should belong to a live region so that it is announced on attempted submission.</p>
+
+  </div>
+</aside>
 
 
 <p>Here is a little demo, showing you how your form errors live region would work. If you are using a Macbook, simply press <kbd>CMD</kbd> + <kbd>F5</kbd> to activate the Voiceover screen reader, then press &ldquo;submit&rdquo; to both reveal and announce the message.</p>
@@ -1790,6 +1813,7 @@ demo.querySelector('form').addEventListener('submit', function (e) {
 <h3 id="account-dashboard">Account dashboard</h3>
 
 <ul>
+<li><a href="https://my.bulb.co.uk/login/password">Login page</a> (✖️ There is no <code>&lt;h1&gt;</code>; &ldquo;Sign into your Bulb account&rdquo; acts as the <code>&lt;h1&gt;</code> but is marked up as a <code>&lt;p&gt;</code>.)</li>
 <li><a href="https://my.staging.bulb.co.uk/dashboard">Dashboard</a> (✖️ There is a lack of heading structure past the main <code>&lt;h1&gt;</code> heading, despite a number of subsections — the green boxes — being included)</li>
 <li><a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> (✖️ The main <code>&lt;h1&gt;</code> contains the &ldquo;Back to Bulb&rdquo; link, breaking its label; the &ldquo;Meter readings&rdquo; heading is an <code>&lt;h4&gt;</code>, when it should be an <code>&lt;h2&gt;</code>)</li>
 <li><a href="https://my.staging.bulb.co.uk/dashboard/statements">Tariff info</a> (✖️ The main <code>&lt;h1&gt;</code> contains the &ldquo;Back to Bulb&rdquo; link, breaking its label)</li>
@@ -1831,6 +1855,192 @@ h4, .h4 {
 &lt;h2 class=&#34;h4&#34;&gt;Meter readings&lt;/h2&gt;
 </code></div>
 
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="inconsistency" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Inconsistency
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>An important inclusive design principle, is <a href="http://inclusivedesignprinciples.org/#be-consistent">&ldquo;Be consistent&rdquo;</a>. Interfaces that fail to do so present unnecessay burdens of comprehension to users — especially those who consume HTML semantics, such as screen reader users. In particular, inconsistent navigation schema and page structure can make the user feel disoriented and unsure.</p>
+
+<p>It is appreciated that a consistent experience can be difficult to achieve  when managing three separate projects, built on separate technologies, and it is noted that a design system is currently being developed to help diminish the issue.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#consistent-behavior-consistent-locations">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.2.3 Consistent Navigation</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#consistent-behavior-consistent-functionality">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.2.4 Consistent Identification</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="navigation">Navigation</h3>
+
+<p>The main navigation differs across the three properties. The <strong>Marketing site</strong> offers a number of options (pictured), the <strong>Join site</strong> excludes navigation altogether, and the <strong>Account dashboard</strong> (also pictured) offers just three navigation options: &ldquo;Community&rdquo;, &ldquo;Help&rdquo;, and &ldquo;Sign out&rdquo;.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/nav-marketing.png" alt="Marketing site navigation region, with several links" /></p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/nav-dash.png" alt="Account dashboard navigation region, with three links" /></p>
+
+<p>Note that, while these sites are built and managed separately, users do not necessarily access them separately or consider them autonomous. The severity of this issue of consistency depends on user journeys and behavior.</p>
+
+<p>In general, every <a href="https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page">landmark region</a> <em>except</em> the <code>&lt;main&gt;</code> (or <code>role=&quot;main&quot;</code>) region is expected to have consistent content between pages. The <code>&lt;main&gt;</code> region defines the unique content of the page.</p>
+
+<h3 id="forms">Forms</h3>
 
           </div>
         
@@ -2050,6 +2260,12 @@ h4, .h4 {
 
 <p><img src="https://heydon.github.io/bulb-audit/images/123.png" alt="1 2 3 Switch numbered list" /></p>
 
+<h3 id="join-site">Join site</h3>
+
+<p>As in the &ldquo;1, 2, 3 Switch&rdquo; section, the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quote">Welcome page</a> includes a set of features/benefits not formed as a list (pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/join-features.png" alt="Feature set" /></p>
+
 <h3 id="account-dashboard">Account dashboard</h3>
 
 <p>A green of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert <code>&lt;div&gt;</code> markup is used instead).</p>
@@ -2109,11 +2325,11 @@ h4, .h4 {
           </div>
         
           <div class="pattern-section">
-            <h1 id="placeholder-labels" tabindex="-1">
+            <h1 id="missing-and-placeholder-labels" tabindex="-1">
               <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                 <use xlink:href="#bookmark"></use>
               </svg>
-              Placeholder labels
+              Missing and placeholder labels
             </h1>
             
 
@@ -2272,6 +2488,8 @@ h4, .h4 {
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
 
+<h3 id="marketing-site-join-site">Marketing site &amp; Join site</h3>
+
 <p>Placeholders-as-labels are found wherever there is a &ldquo;Get A Quote&rdquo; / &ldquo;Get My Quote&rdquo; form.</p>
 
 <ul>
@@ -2283,6 +2501,14 @@ h4, .h4 {
 <p>In addition, the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> has no visible and persistent labels:</p>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/my-info-form.png" alt="The My Information form" /></p>
+
+<p>In the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quick-signup">Payment details page</a>, persistent visual labels accompany placeholders. The issue here is that the <code>&lt;label&gt;</code>s are actually <code>&lt;div&gt;</code>s and are not associated accessibly with the form inputs.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/debit.png" alt="Payment details form" /></p>
+
+<h3 id="account-dashboard">Account dashboard</h3>
+
+<p>The <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a> page&rsquo;s inputs (pictured) each have a missing label and no placeholder as a substitute.</p>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
@@ -2313,6 +2539,66 @@ h4, .h4 {
       <use xlink:href="#info"></use>
     </svg>
     <p>To maintain an attractive design for the &ldquo;Get A Quote&rdquo;/&ldquo;Get My Quote&rdquo; forms, it might help to center align the label, input, and submit button along a vertical axis. <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> should left-align its labels as other forms do across the sites.</p>
+
+  </div>
+</aside>
+
+
+<h3 id="payment-details-page">Payment details page</h3>
+
+<p>For the <a href="https://join.bulb.co.uk/join/quick-signup">Payment details page</a>, ensure a proper <code>&lt;label&gt;</code> element is used, and is associated to the <code>&lt;input&gt;</code> using <code>for</code> and <code>id</code> as in the above code example.</p>
+
+<h3 id="submit-an-electricity-meter-reading">Submit an electricity meter reading</h3>
+
+<p>In this case, both a group label and individual labels are missing.</p>
+
+<p>For the <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a>, include invisible but accessible labels in the form &ldquo;First number&rdquo;, &ldquo;Second number&rdquo; etc for each input/number. In addition, put the <code>&lt;h4&gt;</code> (which ought to be an <code>&lt;h2&gt;</code> — see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Heading structure</a>) and description inside a <code>&lt;legend&gt;</code> and group all the controls inside a <code>&lt;fieldset&gt;</code> as in the following code example:</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;fieldset&gt;
+  &lt;legend&gt;
+    &lt;h2&gt;New electricity reading&lt;/h2&gt;
+    &lt;p&gt;Enter all the numbers you see on your meter&lt;/p&gt;
+  &lt;/legend&gt;
+  &lt;!-- each loop --&gt;
+  &lt;label for=&#34;number-1&#34; <span class='highlight'>class=&#34;visually-hidden&#34;</span>&gt;First number&lt;/label&gt;
+  &lt;input type=&#34;number&#34; id=&#34;number-1&#34; class=&#34;sc-RefOD cAjWea&#34; name=&#34;number-1&#34; value=&#34;0&#34; required=&#34;&#34;&gt;
+  &lt;!-- end each loop --&gt;
+&lt;/fieldset&gt;
+</code></div>
+
+
+<ol>
+<li>A special class must be used to hide the label visually, but not from assistive technologies (screen readers). The class is defined below.</li>
+</ol>
+
+
+
+
+
+<div class="code-annotated "><code>
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+</code></div>
+
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>The above advice also applies to the previous meter reading, even though the inputs are inactive. It is important that the two alike widgets are presented in the same way.</p>
 
   </div>
 </aside>
@@ -2544,6 +2830,8 @@ h4, .h4 {
 
 <p>Decorative images, which include no salient information, are obstructive to non-visual users and must be removed from screen reader output. The only reliable way to do this is by providing <code>alt=&quot;&quot;</code> (empty value). Omitting the <code>alt</code> attribute altogether will result in browsers and screen readers falling back to reading the <code>src</code> value, which is rarely helpful.</p>
 
+<p>Be careful to avoid redundant alternative text. Where the same information is provided as text <em>and</em> an image, you should consider the image decorative (see above).</p>
+
 <h2 id="wcag-criteria">WCAG criteria</h2>
 
 
@@ -2688,6 +2976,79 @@ h4, .h4 {
 
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="marketing-site">Marketing site</h3>
+
+<h4 id="home-page-https-bulb-co-uk"><a href="https://bulb.co.uk">Home page</a></h4>
+
+<p>The switch steps (pictured) have identical, redundant alternative text to the visible text provided. You must use an empty (<code>alt=&quot;&quot;</code>) value for each of these.</p>
+
+<p><img src="https://bulb.co.uk" alt="Switch steps (three graphics with text)" /></p>
+
+<p>The &lsquo;listening&rsquo; and &lsquo;best of&rsquo; illustrations (pictured) are decorative, but omit the <code>alt</code> attribute, meaning their role and <code>src</code> will be announced. Include <code>alt=&quot;&quot;</code> to suppress this.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/listen.png" alt="listen illustration" /></p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/best_of.png" alt="best of illustration" /></p>
+
+<p>The social media links (pictured) have strange alternative text, derived from the SVG data. For example, the Facebook link is just &ldquo;bulb&rdquo;, and the YouTube link is a random string of characters. In each case, use the form <em>&ldquo;Bulb on [social media company]&rdquo;</em> and apply this label as an <code>aria-label</code> attribute to the outer SVG element (<code>aria-label=&quot;Bulb on [social media company]&quot;</code>).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/social_big.png" alt="Large, green social media icons" /></p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/social_small.png" alt="Small, blue social media icons from the footer" /></p>
+
+<h4 id="about-our-energy-https-bulb-co-uk-energy"><a href="https://bulb.co.uk/energy">About → Our energy</a></h4>
+
+<p>The &ldquo;Greening up the grid&rdquo; illustration (pictured) is decorative but omits an empty (<code>alt=&quot;&quot;</code>) attribute. Ensure that this is present to suppress readout of the image.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/greening.png" alt="illustration with power going to toaster" /></p>
+
+<h4 id="about-careers-https-bulb-co-uk-careers"><a href="https://bulb.co.uk/careers">About → Careers</a></h4>
+
+<p>The living wage and &lsquo;certified B&rsquo; images have a filename as the <code>alt</code> and a missing alt, respectively. These are not decorative images, so should have &ldquo;We are a living wage employer&rdquo; and &ldquo;Certified B Corporation&rdquo; alternative texts.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/living-b.png" alt="living wage and certified b graphics side-by-side" /></p>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>Should these images not be linked as their equivalents are on the home page?</p>
+
+  </div>
+</aside>
+
+
+<p>The &ldquo;Come make energy better&rdquo; and &ldquo;Working At Bulb&rdquo; photos have poor alternative texts of <em>&ldquo;Bulb March 3rd-147.jpg&rdquo;</em> and <em>&ldquo;Bulb March 3rd-262.jpg&rdquo;</em>, respectively. You can consider these images decorative and supply empty alternatives (<code>alt=&quot;&quot;</code>).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/come.png" alt="Come make energy better office photo" /></p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/working_at.png" alt="Working at bulb office photo" /></p>
+
+<h4 id="about-business-https-bulb-co-uk-careers"><a href="https://bulb.co.uk/careers">About → Business</a></h4>
+
+<p>The alternative text for the &lsquo;Big Six versus Bulb&rsquo; chart (pictured) is inadequate as simply <em>&ldquo;bulb-business-chart&rdquo;</em>. Since the information it provides (that <strong>Bulb</strong>&rsquo;s prices are 20% cheaper) is covered in the accompanying text, it can be treated as decorative. Empty the <code>alt</code> attribute but leave it in place (<code>alt=&quot;&quot;</code>).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/big-six.png" alt="Bulb versus big six bar chart" /></p>
+
+<p>The photo of the beach is also decorative and should have <code>alt=&quot;&quot;</code>.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/beach.png" alt="beach photograph" /></p>
+
+<h3 id="join-site">Join site</h3>
+
+<p>The graphics throughout the <strong>Join site</strong> (example pictured) are rendered as CSS background images on <code>&lt;div&gt;</code> elements. Since they are exclusively decorative images, this is not an issue in terms of alternative text (they already will not be announced). <strong>However</strong>, background images are typically eliminated when users (some of whom with impaired vision) activate <a href="https://support.microsoft.com/en-gb/help/4026951/windows-turn-high-contrast-mode-on-or-off-in-windows">Windows High Contrast Mode</a>.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/house.png" alt="House, from one of the question pages" /></p>
+
+<p>Since the graphics assist comprehension for sighted users, it is recommended that the high contrast mode-proof method of supplying <code>&lt;img&gt;</code> tags with <code>alt=&quot;&quot;</code> is employed.</p>
+
+<p>One exception is the price comparison bar chart found on the <a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch Now&rdquo; page</a>. This must have a proper description in a form similar to <em>&ldquo;Bar chart shows Bulb&rsquo;s price at around £80 compared to the prices of the big six energy companies, all significantly over £1000&rdquo;</em>.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/compare.png" alt="Price comparison bar chart" /></p>
+
+<h3 id="account-dashboard">Account dashboard</h3>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
@@ -2911,6 +3272,13 @@ h4, .h4 {
 
 <p><img src="https://heydon.github.io/bulb-audit/images/and_its_a.png" alt="Fragment heading on 'My home' page" /></p>
 
+<h3 id="account-dashboard">Account dashboard</h3>
+
+<ul>
+<li>On the <a href="https://my.staging.bulb.co.uk/login">Login page</a>, the page <code>&lt;title&gt;</code> is <em>&ldquo;MyBulb — Your account&rdquo;</em> suggesting the user is already logged in.</li>
+<li>On the <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a> page, the back button reads <em>&ldquo;Back to MyBulb&rdquo;</em>, but points to the page where you choose which type of reading — gas or electricity.</li>
+</ul>
+
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
 <h3 id="marketing-site-1">Marketing site</h3>
@@ -2927,6 +3295,13 @@ h4, .h4 {
 <ul>
 <li>Add a third part to each <code>&lt;title&gt;</code> identifying the specific screen in the form <em>&ldquo;Bulb — Get A Quote — [specific page description]&rdquo;</em>. For example, <em>&ldquo;Bulb — Get A Quote — Bedrooms&rdquo;</em> for the bedrooms screen.</li>
 <li>Avoid trying to compose sentences across screens/pages. This will not work for many assistive technology users, and all sorts of users will simply forget what came before in the sentence. Try headings like <em>&ldquo;The energy I use is&rdquo;</em>, <em>&ldquo;I live in a&rdquo;</em>, and <em>&ldquo;The number of bedrooms I have is&rdquo;</em>.</li>
+</ul>
+
+<h3 id="account-dashboard-1">Account dashboard</h3>
+
+<ul>
+<li>Change the login page title to something similar to <em>&ldquo;MyBulb — Log in to your account&rdquo;</em>.</li>
+<li>Instead of changing the wording of the back button on the reading page, actually link back to the main dashboard page. There is no need to step back through the intermediary page.</li>
 </ul>
 
           </div>

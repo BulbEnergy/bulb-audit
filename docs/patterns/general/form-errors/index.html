@@ -212,6 +212,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Inconsistency</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -225,7 +234,7 @@
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
-                                <span class="text">Placeholder labels</span>
+                                <span class="text">Missing and placeholder labels</span>
                               </a>
                             </li>
                           
@@ -500,7 +509,10 @@
 
 <h3 id="accounts-dashboard">Accounts dashboard</h3>
 
-<p>The <strong>Account dashboard&rsquo;s</strong> <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.</p>
+<ul>
+<li><a href="https://my.staging.bulb.co.uk/login">Login page</a> (✖️ Individual errors not associated with their fields; generic &ldquo;Wrong email or password&rdquo; error not announced on attempted submission.)</li>
+<li><a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> (✖️ The page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.)</li>
+</ul>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
@@ -551,6 +563,17 @@
   &lt;!-- add anything here to have it announced in screen reader software --&gt;
 &lt;/div&gt;
 </code></div>
+
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>In the case of the <a href="https://my.staging.bulb.co.uk/login">Login page</a>, the non-field-specific &ldquo;Wrong email or password&rdquo; error should belong to a live region so that it is announced on attempted submission.</p>
+
+  </div>
+</aside>
 
 
 <p>Here is a little demo, showing you how your form errors live region would work. If you are using a Macbook, simply press <kbd>CMD</kbd> + <kbd>F5</kbd> to activate the Voiceover screen reader, then press &ldquo;submit&rdquo; to both reveal and announce the message.</p>

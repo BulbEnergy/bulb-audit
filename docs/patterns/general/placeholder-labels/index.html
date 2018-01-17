@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Placeholder labels | Bulb Audit
+        Missing and placeholder labels | Bulb Audit
       
     </title>
     
@@ -212,6 +212,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Inconsistency</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -225,7 +234,7 @@
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
-                                <span class="text">Placeholder labels</span>
+                                <span class="text">Missing and placeholder labels</span>
                               </a>
                             </li>
                           
@@ -273,7 +282,7 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Placeholder labels
+      Missing and placeholder labels
     </h1>
     
     
@@ -469,6 +478,8 @@
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
 
+<h3 id="marketing-site-join-site">Marketing site &amp; Join site</h3>
+
 <p>Placeholders-as-labels are found wherever there is a &ldquo;Get A Quote&rdquo; / &ldquo;Get My Quote&rdquo; form.</p>
 
 <ul>
@@ -480,6 +491,14 @@
 <p>In addition, the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> has no visible and persistent labels:</p>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/my-info-form.png" alt="The My Information form" /></p>
+
+<p>In the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quick-signup">Payment details page</a>, persistent visual labels accompany placeholders. The issue here is that the <code>&lt;label&gt;</code>s are actually <code>&lt;div&gt;</code>s and are not associated accessibly with the form inputs.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/debit.png" alt="Payment details form" /></p>
+
+<h3 id="account-dashboard">Account dashboard</h3>
+
+<p>The <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a> page&rsquo;s inputs (pictured) each have a missing label and no placeholder as a substitute.</p>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
@@ -510,6 +529,66 @@
       <use xlink:href="#info"></use>
     </svg>
     <p>To maintain an attractive design for the &ldquo;Get A Quote&rdquo;/&ldquo;Get My Quote&rdquo; forms, it might help to center align the label, input, and submit button along a vertical axis. <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> should left-align its labels as other forms do across the sites.</p>
+
+  </div>
+</aside>
+
+
+<h3 id="payment-details-page">Payment details page</h3>
+
+<p>For the <a href="https://join.bulb.co.uk/join/quick-signup">Payment details page</a>, ensure a proper <code>&lt;label&gt;</code> element is used, and is associated to the <code>&lt;input&gt;</code> using <code>for</code> and <code>id</code> as in the above code example.</p>
+
+<h3 id="submit-an-electricity-meter-reading">Submit an electricity meter reading</h3>
+
+<p>In this case, both a group label and individual labels are missing.</p>
+
+<p>For the <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a>, include invisible but accessible labels in the form &ldquo;First number&rdquo;, &ldquo;Second number&rdquo; etc for each input/number. In addition, put the <code>&lt;h4&gt;</code> (which ought to be an <code>&lt;h2&gt;</code> — see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Heading structure</a>) and description inside a <code>&lt;legend&gt;</code> and group all the controls inside a <code>&lt;fieldset&gt;</code> as in the following code example:</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;fieldset&gt;
+  &lt;legend&gt;
+    &lt;h2&gt;New electricity reading&lt;/h2&gt;
+    &lt;p&gt;Enter all the numbers you see on your meter&lt;/p&gt;
+  &lt;/legend&gt;
+  &lt;!-- each loop --&gt;
+  &lt;label for=&#34;number-1&#34; <span class='highlight'>class=&#34;visually-hidden&#34;</span>&gt;First number&lt;/label&gt;
+  &lt;input type=&#34;number&#34; id=&#34;number-1&#34; class=&#34;sc-RefOD cAjWea&#34; name=&#34;number-1&#34; value=&#34;0&#34; required=&#34;&#34;&gt;
+  &lt;!-- end each loop --&gt;
+&lt;/fieldset&gt;
+</code></div>
+
+
+<ol>
+<li>A special class must be used to hide the label visually, but not from assistive technologies (screen readers). The class is defined below.</li>
+</ol>
+
+
+
+
+
+<div class="code-annotated "><code>
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+</code></div>
+
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>The above advice also applies to the previous meter reading, even though the inputs are inactive. It is important that the two alike widgets are presented in the same way.</p>
 
   </div>
 </aside>
