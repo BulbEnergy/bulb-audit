@@ -5,7 +5,7 @@ priorities = ["3"]
 
 ## Introduction
 
-An important inclusive design principle, is ["Be consistent"](http://inclusivedesignprinciples.org/#be-consistent). Interfaces that fail to do so present unnecessay burdens of comprehension to users — especially those who consume HTML semantics, such as screen reader users. In particular, inconsistent navigation schema and page structure can make the user feel disoriented and unsure.
+An important inclusive design principle, is ["Be consistent"](http://inclusivedesignprinciples.org/#be-consistent). Interfaces that fail to do so present unnecessary burdens of comprehension to users — especially those who consume HTML semantics, such as screen reader users. In particular, inconsistent navigation schema and page structure can make the user feel disoriented and unsure.
 
 It is appreciated that a consistent experience can be difficult to achieve  when managing three separate projects, built on separate technologies, and it is noted that a design system is currently being developed to help diminish the issue.
 

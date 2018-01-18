@@ -27,7 +27,7 @@ Be careful to avoid redundant alternative text. Where the same information is pr
 
 The switch steps (pictured) have identical, redundant alternative text to the visible text provided. You must use an empty (`alt=""`) value for each of these.
 
-![Switch steps (three graphics with text)](https://bulb.co.uk)
+![Switch steps (three graphics with text)](/images/steps.png)
 
 The 'listening' and 'best of' illustrations (pictured) are decorative, but omit the `alt` attribute, meaning their role and `src` will be announced. Include `alt=""` to suppress this.
 

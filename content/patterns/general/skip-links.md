@@ -13,7 +13,7 @@ A special same-page hyperlink (often called a 'skip link') at the beginning of t
 
 ## WCAG criteria
 
-{{% wcag includes="2.4.1" %}}
+{{% wcag include="2.4.1" %}}
 
 ## Scope of the issue
 

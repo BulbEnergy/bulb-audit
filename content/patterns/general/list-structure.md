@@ -55,7 +55,7 @@ On the [Tariff info](https://my.staging.bulb.co.uk/dashboard/personal-details) p
 
 ![tariff table](/images/definition.png)
 
-This is an incorrect use of `<tbale>` semantics, and should instead be marked up as a definition list (using `<dl>`).
+This is an incorrect use of `<table>` semantics, and should instead be marked up as a definition list (using `<dl>`).
 
 ## Fixing the issue
 

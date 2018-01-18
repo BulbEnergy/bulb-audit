@@ -2058,7 +2058,7 @@ h4, .h4 {
 
 <h2 id="introduction">Introduction</h2>
 
-<p>An important inclusive design principle, is <a href="http://inclusivedesignprinciples.org/#be-consistent">&ldquo;Be consistent&rdquo;</a>. Interfaces that fail to do so present unnecessay burdens of comprehension to users — especially those who consume HTML semantics, such as screen reader users. In particular, inconsistent navigation schema and page structure can make the user feel disoriented and unsure.</p>
+<p>An important inclusive design principle, is <a href="http://inclusivedesignprinciples.org/#be-consistent">&ldquo;Be consistent&rdquo;</a>. Interfaces that fail to do so present unnecessary burdens of comprehension to users — especially those who consume HTML semantics, such as screen reader users. In particular, inconsistent navigation schema and page structure can make the user feel disoriented and unsure.</p>
 
 <p>It is appreciated that a consistent experience can be difficult to achieve  when managing three separate projects, built on separate technologies, and it is noted that a design system is currently being developed to help diminish the issue.</p>
 
@@ -2488,7 +2488,7 @@ h4, .h4 {
 
 <p><img src="https://heydon.github.io/bulb-audit/images/definition.png" alt="tariff table" /></p>
 
-<p>This is an incorrect use of <code>&lt;tbale&gt;</code> semantics, and should instead be marked up as a definition list (using <code>&lt;dl&gt;</code>).</p>
+<p>This is an incorrect use of <code>&lt;table&gt;</code> semantics, and should instead be marked up as a definition list (using <code>&lt;dl&gt;</code>).</p>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
@@ -2744,7 +2744,7 @@ h4, .h4 {
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
-<p>In some cases, such as search fields where the label of the submit button, &ldquo;search&rdquo;, acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the <strong>Bulb</strong> sites the &ldquo;Get a quote&rdquo; (or &ldquo;Get my quote&rdquo;) label for the submit button does not match the &ldquo;Your postcode&rdquo; <code>placeholder</code> label.</p>
+<p>In some cases, such as search fields where the label of the submit button, &ldquo;search&rdquo;, acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the <strong>Bulb</strong> sites the &ldquo;Get a quote&rdquo; (or &ldquo;Get my quote&rdquo;) label for the submit button does not match the &ldquo;Your post code&rdquo; <code>placeholder</code> label.</p>
 
 <p>A label that is both visually persistent <em>and</em> forms the accessible label for the field is therefore recommended.</p>
 
@@ -3061,7 +3061,7 @@ componentDidMount() {
 
 
 <ol>
-<li>Before being able to focus the heading, a <code>tabindex</code> value of <code>-1</code> is applied. This value allows elements to be focused programmatically (with the <code>focus()</code> method) but does not place the uninteractive element into &lsquo;focus order&rsquo;, which would be confusing to the user.</li>
+<li>Before being able to focus the heading, a <code>tabindex</code> value of <code>-1</code> is applied. This value allows elements to be focused programmatically (with the <code>focus()</code> method) but does not place the non-interactive element into &lsquo;focus order&rsquo;, which would be confusing to the user.</li>
 </ol>
 
           </div>
@@ -3155,6 +3155,16 @@ componentDidMount() {
   
     
   
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-skip">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.1 Bypass Blocks</a> (level A)
+        </strong>
+        
+      </li>
     
   
     
@@ -3443,7 +3453,7 @@ componentDidMount() {
 
 <p>The switch steps (pictured) have identical, redundant alternative text to the visible text provided. You must use an empty (<code>alt=&quot;&quot;</code>) value for each of these.</p>
 
-<p><img src="https://bulb.co.uk" alt="Switch steps (three graphics with text)" /></p>
+<p><img src="https://heydon.github.io/bulb-audit/images/steps.png" alt="Switch steps (three graphics with text)" /></p>
 
 <p>The &lsquo;listening&rsquo; and &lsquo;best of&rsquo; illustrations (pictured) are decorative, but omit the <code>alt</code> attribute, meaning their role and <code>src</code> will be announced. Include <code>alt=&quot;&quot;</code> to suppress this.</p>
 

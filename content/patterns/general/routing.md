@@ -48,4 +48,4 @@ componentDidMount() {
 }
 {{</code>}}
 
-1. Before being able to focus the heading, a `tabindex` value of `-1` is applied. This value allows elements to be focused programmatically (with the `focus()` method) but does not place the uninteractive element into 'focus order', which would be confusing to the user.
+1. Before being able to focus the heading, a `tabindex` value of `-1` is applied. This value allows elements to be focused programmatically (with the `focus()` method) but does not place the non-interactive element into 'focus order', which would be confusing to the user.

@@ -43,7 +43,7 @@ The [Submit an electricity meter reading](https://my.staging.bulb.co.uk/dashboar
 
 ## Fixing the issue
 
-In some cases, such as search fields where the label of the submit button, "search", acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the **Bulb** sites the "Get a quote" (or "Get my quote") label for the submit button does not match the "Your postcode" `placeholder` label.
+In some cases, such as search fields where the label of the submit button, "search", acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the **Bulb** sites the "Get a quote" (or "Get my quote") label for the submit button does not match the "Your post code" `placeholder` label.
 
 A label that is both visually persistent _and_ forms the accessible label for the field is therefore recommended.
 
