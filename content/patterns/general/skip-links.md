@@ -1,5 +1,6 @@
 +++
 title = "Skip links"
+priorities = ["3"]
 +++
 
 ## Introduction

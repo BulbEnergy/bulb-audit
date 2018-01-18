@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3 on Bulb Audit</title>
+    <link>https://heydon.github.io/bulb-audit/priorities/3/</link>
+    <description>Recent content in 3 on Bulb Audit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://heydon.github.io/bulb-audit/priorities/3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Color dependence</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/color-dependence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/color-dependence/</guid>
+      <description>Introduction Color makes interfaces attractive and can sometimes help to reinforce meaning. For example, red is associated with danger in many Western cultures, and may form part of a &amp;lsquo;delete&amp;rsquo; button&amp;rsquo;s design.
+But dependence on color alone to communicate important information runs the risk of alienating a range of users, including those with forms of color blindness, and others with monochrome displays.
+In each case color is used to differentiate items, a supplementary alternative method of differentiation should also be present.</description>
+    </item>
+    
+    <item>
+      <title>Inconsistency</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/inconsistency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/inconsistency/</guid>
+      <description>Introduction An important inclusive design principle, is &amp;ldquo;Be consistent&amp;rdquo;. Interfaces that fail to do so present unnecessay burdens of comprehension to users — especially those who consume HTML semantics, such as screen reader users. In particular, inconsistent navigation schema and page structure can make the user feel disoriented and unsure.
+It is appreciated that a consistent experience can be difficult to achieve when managing three separate projects, built on separate technologies, and it is noted that a design system is currently being developed to help diminish the issue.</description>
+    </item>
+    
+    <item>
+      <title>Skip links</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/skip-links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/skip-links/</guid>
+      <description>Introduction WCAG 2.0 mandates a &amp;lsquo;bypass&amp;rsquo; mechanism to enable users that navigate web pages by keyboard to skip over introductory content and go directly to the main (unique) content of the page. Without such a provision, accessing page content can be time consuming and arduous.
+With the introduction of landmark elements like &amp;lt;main&amp;gt;, it has become easier for screen reader users to navigate between the larger sections of the page using software-specific shortcuts.</description>
+    </item>
+    
+    <item>
+      <title>Wording</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/wording/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/wording/</guid>
+      <description>Introduction It&amp;rsquo;s not enough that elements in a web page&amp;rsquo;s HTML are marked up correctly. Where they provide textual labels, these labels need to be readable and descriptive.
+ Headings must clearly describe the sections they introduce Labels for links, buttons and form elements must clearly describe the purpose of those controls Page titles must sufficiently describe the page and its purpose  Since headings and links are aggregated into lists by screen reader software, it is important they make sense independent of context.</description>
+    </item>
+    
+  </channel>
+</rss>

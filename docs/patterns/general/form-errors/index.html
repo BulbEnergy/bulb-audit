@@ -239,6 +239,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/routing/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Routing</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -284,6 +293,13 @@
       </svg>
       Form errors
     </h1>
+    
+      <p class="priority">
+        <strong>Priority: </strong>
+          
+              <a href="https://heydon.github.io/bulb-audit/priorities/2">2</a>
+          
+      </p>
     
     
       
@@ -512,7 +528,10 @@
 <ul>
 <li><a href="https://my.staging.bulb.co.uk/login">Login page</a> (✖️ Individual errors not associated with their fields; generic &ldquo;Wrong email or password&rdquo; error not announced on attempted submission.)</li>
 <li><a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> (✖️ The page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.)</li>
+<li><a href="https://my.staging.bulb.co.uk/dashboard/personal-details">Tariff info</a> (✖️ See image below — a message is provided to alert users of errors, but not as an accessible live region; the fields that have errors are not indicated at all, let alone accessibly with <code>aria-invalid=&quot;true&quot;</code>. Note that the &ldquo;Okay&rdquo; button is not necessary for any users. The error can simply disappear when the form successfully submits. Remove this button.)</li>
 </ul>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/tariff-error.png" alt="Tariff page error message" /></p>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
@@ -704,6 +723,10 @@ demo.querySelector('form').addEventListener('submit', function (e) {
 <h3 id="suppressing-browser-validation">Suppressing browser validation</h3>
 
 <p>Make sure your bespoke error notification system is consistent across the forms and sites, to reduce confusion. Where forms, such as the <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> form (pictured) include automatic browser validation, suppress it by applying <code>novalidate</code> to the <code>&lt;form&gt;</code> element.</p>
+
+<p>The <strong>Marketing site</strong> <a href="https://bulb.co.uk">Home page</a> quote form differs from the <strong>Join site</strong> <a href="https://join.bulb.co.uk/join/quote">Welcome page</a> quote form in that browser validation is used for an empty field. Browser validation is not consistent between browsers, so each quote form should use the bespoke/JavaScript validation.</p>
+
+<p>See <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Inconsistency</a> for more.</p>
 
   </main>
 

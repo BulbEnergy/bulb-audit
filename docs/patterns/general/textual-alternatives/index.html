@@ -239,6 +239,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/routing/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Routing</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -284,6 +293,13 @@
       </svg>
       Text alternatives
     </h1>
+    
+      <p class="priority">
+        <strong>Priority: </strong>
+          
+              <a href="https://heydon.github.io/bulb-audit/priorities/1">1</a>
+          
+      </p>
     
     
       
@@ -500,11 +516,45 @@
 
 <p><img src="https://heydon.github.io/bulb-audit/images/social_small.png" alt="Small, blue social media icons from the footer" /></p>
 
+<p>The <strong>Cost of energy for a typical home</strong> chart is deceptively simple in terms of the information it imparts. Where other charts might need an alternative presentation of the data, as a table, this <code>&lt;canvas&gt;</code> element can simply be given <code>role=&quot;img&quot;</code> and an <code>aria-label</code> for the alternative:</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;canvas <span class='highlight'>role=&#34;img&#34;</span> <span class='highlight'>aria-label=&#34;Chart showing the cost of more than 100 energy providers. Bulb is not only in the 10 cheapest providers, but is also 100% green.&#34;</span>&gt;
+&lt;/canvas&gt;
+</code></div>
+
+
+<p><img src="https://heydon.github.io/bulb-audit/images/landing_chart.png" alt="Landing page comparison chart" /></p>
+
+<p>Since the key for the chart (pictured with the chart above) and title for the chart (&ldquo;Cost of energy for a typical home&rdquo;) are no longer needed non-visually, they can be removed from screen reader output with <code>aria-hidden=&quot;true&quot;</code>.</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;ul class=&#34;chart-labels&#34; <span class='highlight'>aria-hidden=&#34;true&#34;</span>&gt;
+  &lt;li&gt;&lt;div class=&#34;legend-swatch label--navy&#34;&gt;&lt;/div&gt;Big Six standard tariff&lt;/li&gt;
+  &lt;li&gt;&lt;div class=&#34;legend-swatch label--grey&#34;&gt;&lt;/div&gt;Others&lt;/li&gt;
+&lt;/ul&gt;
+</code></div>
+
+
 <h4 id="about-our-energy-https-bulb-co-uk-energy"><a href="https://bulb.co.uk/energy">About → Our energy</a></h4>
 
 <p>The &ldquo;Greening up the grid&rdquo; illustration (pictured) is decorative but omits an empty (<code>alt=&quot;&quot;</code>) attribute. Ensure that this is present to suppress readout of the image.</p>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/greening.png" alt="illustration with power going to toaster" /></p>
+
+<p>The &ldquo;Renewable energy providers&rdquo; chart (pictured) is deceptively simple. The simple solution is to place <code>role=&quot;img&quot;</code> and an <code>aria-label</code> with a value of <em>&ldquo;Chart shows that Bulb&rsquo;s energy is one of only four 100% green energy providers&rdquo;</em>.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/our_energy_chart.png" alt="Renewable providers chart" /></p>
+
+<p>In addition, hide the now unnecessary key (&ldquo;renewable electricity %&rdquo;) and title (&ldquo;Renewable energy providers&rdquo;) from assistive technologies using <code>aria-hidden=&quot;true&quot;</code> on each containing element.</p>
 
 <h4 id="about-careers-https-bulb-co-uk-careers"><a href="https://bulb.co.uk/careers">About → Careers</a></h4>
 
@@ -553,7 +603,11 @@
 
 <h3 id="account-dashboard">Account dashboard</h3>
 
+<p>The <a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> chart is handled in the <strong>Component issues</strong> section because it needs a more complex alternative text approach.</p>
+
 <h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>For convenience, solutions are included inline in the <strong>Scope of the issue</strong> section, above.</p>
 
   </main>
 

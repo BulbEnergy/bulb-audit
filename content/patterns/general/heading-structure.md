@@ -1,5 +1,6 @@
 +++
 title = "Heading structure"
+priorities = ["1"]
 +++
 
 ## Introduction

@@ -239,6 +239,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/routing/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Routing</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -284,6 +293,13 @@
       </svg>
       Color dependence
     </h1>
+    
+      <p class="priority">
+        <strong>Priority: </strong>
+          
+              <a href="https://heydon.github.io/bulb-audit/priorities/3">3</a>
+          
+      </p>
     
     
       
@@ -476,9 +492,54 @@
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
 
+<h3 id="inline-links">Inline links</h3>
+
+<p>The <strong>Join site</strong> <a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch now&rdquo; page</a> <em>&ldquo;Have your bill handy? Refine your quote&rdquo;</em> text:</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/have-bill.png" alt="Inline link in green on white with no underline" /></p>
+
+<p>The <strong>Account dashboard</strong> <a href="https://my.staging.bulb.co.uk/dashboard">Dashboard</a> &ldquo;Need help?&rdquo; text:</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/help-page.png" alt="Inline link in green on blue with no underline" /></p>
+
+<h3 id="chart-keys">Chart keys</h3>
+
+<p>Some charts included depend on color alone for differentiating bars.</p>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch now&rdquo; page</a> (<strong>Join site</strong>)</li>
+<li><a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> (<strong>Account dashboard</strong>)</li>
+</ul>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>The &ldquo;Cost of energy for a typical home&rdquo; chart from the <strong>Marketing site</strong> <a href="https://bulb.co.uk/">Home page</a> is not included because the difference in <em>shade</em> between the colored bars is so significant that it is unlikely anyone can mistake the two types of bar.</p>
+
+  </div>
+</aside>
+
+
+<h3 id="form-errors">Form errors</h3>
+
+<p>Form errors are presented differently around the three sites (see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Inconsistency</a>). But, in some cases, only color is used to differentiate the error. For example: the <strong>Join site</strong> <a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/red.png" alt="Red text error" /></p>
+
+<p>Full list of affected URLs:</p>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (<strong>Join site</strong>)</li>
+<li><a href="https://join.bulb.co.uk/join/quick-signup">My information page</a> (<strong>Join site</strong>)</li>
+</ul>
+
+<p>Elsewhere, &ldquo;✖️&rdquo; symbols are used to mark errors, so there is no problem.</p>
+
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
-<h3 id="inline-links">Inline links</h3>
+<h3 id="inline-links-1">Inline links</h3>
 
 <p>By virtue of convention, users <em>expect</em> links to have underlines of some form. Whether these are provided using <code>text-decoration</code>, <code>border</code>, or a linear gradient is another question. The most readable method for the font&rsquo;s metrics is the soundest choice.</p>
 
@@ -569,13 +630,141 @@ a {
 </div>
 
 
-<h3 id="chart-keys">Chart keys</h3>
+<h3 id="chart-keys-1">Chart keys</h3>
 
-<h3 id="form-errors">Form errors</h3>
+<p>It is recommended that <code>linear-gradient</code> based patterns are used to help differentiate the different bars and bar parts. Following is a demo of some gradient options for the <a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> page:</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-ab0e66d2577bb61cea1994070cf7c652"></div>
+        <button data-launch="js-demo-ab0e66d2577bb61cea1994070cf7c652">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-ab0e66d2577bb61cea1994070cf7c652">
+      
+<style>
+  [class^="pattern"] {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  li span + span {
+    margin-left: 0.5rem;
+  }
+
+  .pattern-1 {
+    background-color: #043464;
+    background-image: linear-gradient(to left, #265686 50%, #043464 50%);
+    background-size:0.5em;
+    background-position: 0.25rem 0.25rem;
+  }
+
+  .pattern-2 {
+    background-color: #19ac58;
+    background-image: linear-gradient(to bottom, #19ac58 50%, #3bce7a 50%);
+    background-size: 0.5em;
+  }
+
+  .pattern-3 {
+    background-color: #8c8c8c;
+    background-image: radial-gradient(#aeaeae 55%, transparent 0%);
+    background-size:0.66em;
+  }
+
+  .pattern-4 {
+    background-color: #dddddd;
+    background-image: radial-gradient(#dddddd 25%, transparent 0%), radial-gradient(#bbbbbb 60%, transparent 0%);
+    background-size:0.75em;
+  }
+</style>
+<ul>
+  <li>
+    <span class="pattern-1"></span>
+    <span class="text">Gas usage</span>
+  </li>
+  <li>
+    <span class="pattern-2"></span>
+    <span class="text">Electricity usage</span>
+  </li>
+  <li>
+    <span class="pattern-3"></span>
+    <span class="text">Projected gas usage</span>
+  </li>
+  <li>
+    <span class="pattern-4"></span>
+    <span class="text">Projected electricity usage</span>
+  </li>
+</ul>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-ab0e66d2577bb61cea1994070cf7c652');
+      var template = document.getElementById('template-ab0e66d2577bb61cea1994070cf7c652');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-ab0e66d2577bb61cea1994070cf7c652\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-ab0e66d2577bb61cea1994070cf7c652"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "ab0e66d2577bb61cea1994070cf7c652";
+      });
+    })();
+  </script>
+</div>
+
+
+<h3 id="form-errors-1">Form errors</h3>
 
 <p>Use a method to make the error text stand out, such as prefixing the message with <code>&lt;strong&gt;Error:&lt;/strong&gt;</code> or providing a warning icon. Should you opt for an icon, ensure it has an accessible label in the form &ldquo;Error:&ldquo;.</p>
 
-<p>
+
 
 
 
@@ -589,7 +778,7 @@ a {
   Please enter a valid postcode.
 &lt;/div&gt;
 </code></div>
-</p>
+
 
 <ol>
 <li>The <code>aria-label</code> property provides the accessible label</li>

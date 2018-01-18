@@ -8,3 +8,7 @@ publishDir = "docs"
 [params]
   description = "The **Bulb** inclusive design audit report."
   codePenUser = "Heydon"
+
+[taxonomies]
+  tag = "tags"
+  priority = "priorities"

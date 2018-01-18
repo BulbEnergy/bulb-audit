@@ -14,3 +14,13 @@ The precise scope for the testing and evaluation carried out is detailed in {{% 
 {{% note %}}
 This report does not catalogue every instance of any one issue. That is the work of an automated test setup. Instead, it is intended as an educational tool for helping the developer to improve the interface at a component design level.
 {{% /note %}}
+
+### Priorities
+
+Each issue has a priority level set from 1 to 3. Priority is set according to the severity of the issue for the user.
+
+* 1 = high
+* 2 = medium
+* 3 = low
+
+The priority setting is found directly under the issue title. Clicking on the number takes you to a list of all issues of that priority level.

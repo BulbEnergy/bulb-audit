@@ -240,6 +240,15 @@
                   </li>
                 
                   <li class="pattern">
+                    <a href="#routing" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Routing</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#skip-links" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -769,9 +778,54 @@
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
 
+<h3 id="inline-links">Inline links</h3>
+
+<p>The <strong>Join site</strong> <a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch now&rdquo; page</a> <em>&ldquo;Have your bill handy? Refine your quote&rdquo;</em> text:</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/have-bill.png" alt="Inline link in green on white with no underline" /></p>
+
+<p>The <strong>Account dashboard</strong> <a href="https://my.staging.bulb.co.uk/dashboard">Dashboard</a> &ldquo;Need help?&rdquo; text:</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/help-page.png" alt="Inline link in green on blue with no underline" /></p>
+
+<h3 id="chart-keys">Chart keys</h3>
+
+<p>Some charts included depend on color alone for differentiating bars.</p>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch now&rdquo; page</a> (<strong>Join site</strong>)</li>
+<li><a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> (<strong>Account dashboard</strong>)</li>
+</ul>
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>The &ldquo;Cost of energy for a typical home&rdquo; chart from the <strong>Marketing site</strong> <a href="https://bulb.co.uk/">Home page</a> is not included because the difference in <em>shade</em> between the colored bars is so significant that it is unlikely anyone can mistake the two types of bar.</p>
+
+  </div>
+</aside>
+
+
+<h3 id="form-errors">Form errors</h3>
+
+<p>Form errors are presented differently around the three sites (see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Inconsistency</a>). But, in some cases, only color is used to differentiate the error. For example: the <strong>Join site</strong> <a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/red.png" alt="Red text error" /></p>
+
+<p>Full list of affected URLs:</p>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (<strong>Join site</strong>)</li>
+<li><a href="https://join.bulb.co.uk/join/quick-signup">My information page</a> (<strong>Join site</strong>)</li>
+</ul>
+
+<p>Elsewhere, &ldquo;✖️&rdquo; symbols are used to mark errors, so there is no problem.</p>
+
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
-<h3 id="inline-links">Inline links</h3>
+<h3 id="inline-links-1">Inline links</h3>
 
 <p>By virtue of convention, users <em>expect</em> links to have underlines of some form. Whether these are provided using <code>text-decoration</code>, <code>border</code>, or a linear gradient is another question. The most readable method for the font&rsquo;s metrics is the soundest choice.</p>
 
@@ -862,13 +916,141 @@ a {
 </div>
 
 
-<h3 id="chart-keys">Chart keys</h3>
+<h3 id="chart-keys-1">Chart keys</h3>
 
-<h3 id="form-errors">Form errors</h3>
+<p>It is recommended that <code>linear-gradient</code> based patterns are used to help differentiate the different bars and bar parts. Following is a demo of some gradient options for the <a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> page:</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-ab0e66d2577bb61cea1994070cf7c652"></div>
+        <button data-launch="js-demo-ab0e66d2577bb61cea1994070cf7c652">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-ab0e66d2577bb61cea1994070cf7c652">
+      
+<style>
+  [class^="pattern"] {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  li span + span {
+    margin-left: 0.5rem;
+  }
+
+  .pattern-1 {
+    background-color: #043464;
+    background-image: linear-gradient(to left, #265686 50%, #043464 50%);
+    background-size:0.5em;
+    background-position: 0.25rem 0.25rem;
+  }
+
+  .pattern-2 {
+    background-color: #19ac58;
+    background-image: linear-gradient(to bottom, #19ac58 50%, #3bce7a 50%);
+    background-size: 0.5em;
+  }
+
+  .pattern-3 {
+    background-color: #8c8c8c;
+    background-image: radial-gradient(#aeaeae 55%, transparent 0%);
+    background-size:0.66em;
+  }
+
+  .pattern-4 {
+    background-color: #dddddd;
+    background-image: radial-gradient(#dddddd 25%, transparent 0%), radial-gradient(#bbbbbb 60%, transparent 0%);
+    background-size:0.75em;
+  }
+</style>
+<ul>
+  <li>
+    <span class="pattern-1"></span>
+    <span class="text">Gas usage</span>
+  </li>
+  <li>
+    <span class="pattern-2"></span>
+    <span class="text">Electricity usage</span>
+  </li>
+  <li>
+    <span class="pattern-3"></span>
+    <span class="text">Projected gas usage</span>
+  </li>
+  <li>
+    <span class="pattern-4"></span>
+    <span class="text">Projected electricity usage</span>
+  </li>
+</ul>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-ab0e66d2577bb61cea1994070cf7c652');
+      var template = document.getElementById('template-ab0e66d2577bb61cea1994070cf7c652');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-ab0e66d2577bb61cea1994070cf7c652\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-ab0e66d2577bb61cea1994070cf7c652"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "ab0e66d2577bb61cea1994070cf7c652";
+      });
+    })();
+  </script>
+</div>
+
+
+<h3 id="form-errors-1">Form errors</h3>
 
 <p>Use a method to make the error text stand out, such as prefixing the message with <code>&lt;strong&gt;Error:&lt;/strong&gt;</code> or providing a warning icon. Should you opt for an icon, ensure it has an accessible label in the form &ldquo;Error:&ldquo;.</p>
 
-<p>
+
 
 
 
@@ -882,7 +1064,7 @@ a {
   Please enter a valid postcode.
 &lt;/div&gt;
 </code></div>
-</p>
+
 
 <ol>
 <li>The <code>aria-label</code> property provides the accessible label</li>
@@ -1408,7 +1590,10 @@ a, button, input, textarea /* etc */ {
 <ul>
 <li><a href="https://my.staging.bulb.co.uk/login">Login page</a> (✖️ Individual errors not associated with their fields; generic &ldquo;Wrong email or password&rdquo; error not announced on attempted submission.)</li>
 <li><a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> (✖️ The page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.)</li>
+<li><a href="https://my.staging.bulb.co.uk/dashboard/personal-details">Tariff info</a> (✖️ See image below — a message is provided to alert users of errors, but not as an accessible live region; the fields that have errors are not indicated at all, let alone accessibly with <code>aria-invalid=&quot;true&quot;</code>. Note that the &ldquo;Okay&rdquo; button is not necessary for any users. The error can simply disappear when the form successfully submits. Remove this button.)</li>
 </ul>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/tariff-error.png" alt="Tariff page error message" /></p>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
@@ -1600,6 +1785,10 @@ demo.querySelector('form').addEventListener('submit', function (e) {
 <h3 id="suppressing-browser-validation">Suppressing browser validation</h3>
 
 <p>Make sure your bespoke error notification system is consistent across the forms and sites, to reduce confusion. Where forms, such as the <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Select an electricity meter reading</a> form (pictured) include automatic browser validation, suppress it by applying <code>novalidate</code> to the <code>&lt;form&gt;</code> element.</p>
+
+<p>The <strong>Marketing site</strong> <a href="https://bulb.co.uk">Home page</a> quote form differs from the <strong>Join site</strong> <a href="https://join.bulb.co.uk/join/quote">Welcome page</a> quote form in that browser validation is used for an empty field. Browser validation is not consistent between browsers, so each quote form should use the bespoke/JavaScript validation.</p>
+
+<p>See <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Inconsistency</a> for more.</p>
 
           </div>
         
@@ -2042,6 +2231,18 @@ h4, .h4 {
 
 <h3 id="forms">Forms</h3>
 
+<p>There is a lot of inconsistency between the sites regarding the way form elements, labels, and errors are marked up and presented visually.</p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="navigation-1">Navigation</h3>
+
+<p>It is recommended that the same (complete) <strong>Marketing site</strong> navigation is used for each of the three sites, with the exception that &ldquo;Sign out&rdquo; is not pertinent except to logged in users of the <strong>Account dashboard</strong>. The visual design (colors, layout, and font size) should also be consistent.</p>
+
+<h3 id="forms-1">Forms</h3>
+
+<p>See <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a> and <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/form-errors/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Form errors</a> for recommendations on form design and error reporting. Use the same behavior and visual design for labels, placeholders, individual error messages, and generic error notification live regions.</p>
+
           </div>
         
           <div class="pattern-section">
@@ -2268,7 +2469,7 @@ h4, .h4 {
 
 <h3 id="account-dashboard">Account dashboard</h3>
 
-<p>A green of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert <code>&lt;div&gt;</code> markup is used instead).</p>
+<p>On the <a href="https://my.staging.bulb.co.uk/dashboard">Dashboard</a> page, a grid of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert <code>&lt;div&gt;</code> markup is used instead).</p>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/green_boxes.png" alt="green choice boxes" /></p>
 
@@ -2277,20 +2478,26 @@ h4, .h4 {
     <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
       <use xlink:href="#info"></use>
     </svg>
-    <p>This applies to the twoo choices of meter offered at <strong>/meters</strong> as well.</p>
+    <p>This applies to the two choices of meter offered at <strong>/meters</strong> as well.</p>
 
   </div>
 </aside>
 
 
+<p>On the <a href="https://my.staging.bulb.co.uk/dashboard/personal-details">Tariff info</a> page, &lsquo;layout tables&rsquo; are used to place keys and their values side by side (pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/definition.png" alt="tariff table" /></p>
+
+<p>This is an incorrect use of <code>&lt;tbale&gt;</code> semantics, and should instead be marked up as a definition list (using <code>&lt;dl&gt;</code>).</p>
+
 <h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="navigation-region-lists">Navigation region lists</h3>
 
 <ul>
 <li>Ensure all instances of <code>&lt;nav&gt;</code> regions use list markup.</li>
 <li>In the case of the <strong>Account dashboard</strong> grid, make it a <code>&lt;nav&gt;</code> and use a combination of list markup and headings to give a clear, easily navigable structure. For extra credit, differentiate different <code>&lt;nav&gt;</code> regions with labels. See the code example and notes to follow.</li>
 </ul>
-
-<h3 id="code">Code</h3>
 
 <p><em>(Dashboard example; code is simplified and elided)</em></p>
 
@@ -2322,6 +2529,29 @@ h4, .h4 {
 <li>For this relationship to work, the value of <code>aria-labelledby</code> and the value of the <code>&lt;h2&gt;</code>&rsquo;s <code>id</code> need to match.</li>
 </ol>
 
+<h3 id="definition-lists">Definition lists</h3>
+
+<p>On the <strong>Account dashboard</strong> <a href="https://my.staging.bulb.co.uk/dashboard/personal-details">Tariff info</a> page, use <code>&lt;dl&gt;</code> markup for each set of keys/values. The &ldquo;Tariff&rdquo; example:</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;h2&gt;Tariff&lt;/h2&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Tariff&lt;/dt&gt;
+  &lt;dd&gt;Vari-Fair&lt;/dd&gt;
+  &lt;dt&gt;Exit Fees&lt;/dt&gt;
+  &lt;dd&gt;£0.00&lt;/dd&gt;
+  &lt;dt&gt;Dual Fuel Discount&lt;/dt&gt;
+  &lt;dd&gt;£30.00 per year&lt;/dd&gt;
+  &lt;dt&gt;Estimated Annual Cost&lt;/dt&gt;
+  &lt;dd&gt;£1377.43&lt;/dd&gt;
+&lt;/dl&gt;
+</code></div>
+
+
           </div>
         
           <div class="pattern-section">
@@ -2334,6 +2564,8 @@ h4, .h4 {
             
 
 <h2 id="introduction">Introduction</h2>
+
+<p>All form elements need labels associated to them. Where a label is not associated, the screen reader user is not informed of the field&rsquo;s purpose upon focusing that field. Screen reader users typically traverse forms by focus, not &lsquo;virtual cursor&rsquo; (element by element).</p>
 
 <p>The <code>placeholder</code> attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.</p>
 
@@ -2603,6 +2835,234 @@ h4, .h4 {
   </div>
 </aside>
 
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="routing" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Routing
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Single-page applications present some unique challenges for accessibility, particularly in regard to routing and the navigation of views.</p>
+
+<p>Views (or &lsquo;screens&rsquo;) in single-page applications attempt to emulate pages in more traditional multi-page sites. Visually, the experience is similar (some content is replace with some other content). However, when replacing content by manipulating the DOM <em>in situ</em>, the experience for screen reader and keyboard users is lacking. Unlike when a page is loaded, a switch in views does not announce the page&rsquo;s <code>&lt;title&gt;</code>.</p>
+
+<p>Keyboard focus is also problematic, since the link focused in the previous view will have been removed from the DOM. When a true page is loaded, focus is moved to the top of the document. Between views, it becomes lost somewhere in the middle of the document.</p>
+
+<p>There are a few basic provisions for accessible routing:</p>
+
+<ul>
+<li>The URL should change, to reflect the new location</li>
+<li>The back button behavior should be intact</li>
+<li>The <code>&lt;title&gt;</code> should change, to reflect the new location</li>
+<li>Focus should be moved to a convenient location after the new DOM structure is in place</li>
+</ul>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-title">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.2 Page Titled</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.3 Focus Order</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-mult-loc">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.5 Multiple Ways</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<p>Both the <strong>Join site</strong> and <strong>Account dashboard</strong> are affected, since they are built in Angular and React respectively.</p>
+
+<p>The <strong>Join site</strong> in particular, has some issues between the &lsquo;question&rsquo; pages, in that the URL and <code>&lt;title&gt;</code> do not change.</p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>The outer element for each view component should either be a <code>&lt;main&gt;</code> or a wrapper <code>&lt;div&gt;</code> within <code>&lt;main&gt;</code>.</p>
+
+<p>When the component that represents the content of the chosen view is mounted (<code>componentDidMount()</code> in React), augment the page in the following ways:</p>
+
+<ul>
+<li>Update the <code>document.title</code> (based on a <code>prop</code> value is probably most efficient).</li>
+<li>Update the URL (this is automatic using <code>React-Router</code>, but this is not taking place on the <strong>Join site</strong>, using Angular),</li>
+<li>Move focus to the <code>&lt;h1&gt;</code> heading within the <code>&lt;main&gt;</code> element. This will announce the heading and place the keyboard user at the start of the view&rsquo;s content. Setting &ldquo;h1&rdquo; as a ref will help.</li>
+</ul>
+
+<h3 id="code">Code</h3>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+componentDidMount() {
+  document.title = this.props.title
+  <span class='highlight'>this.refs.h1.setAttribute(&#39;tabindex&#39;, &#39;-1&#39;)</span>
+  this.refs.h1.focus()
+}
+</code></div>
+
+
+<ol>
+<li>Before being able to focus the heading, a <code>tabindex</code> value of <code>-1</code> is applied. This value allows elements to be focused programmatically (with the <code>focus()</code> method) but does not place the uninteractive element into &lsquo;focus order&rsquo;, which would be confusing to the user.</li>
+</ol>
 
           </div>
         
@@ -2997,11 +3457,45 @@ h4, .h4 {
 
 <p><img src="https://heydon.github.io/bulb-audit/images/social_small.png" alt="Small, blue social media icons from the footer" /></p>
 
+<p>The <strong>Cost of energy for a typical home</strong> chart is deceptively simple in terms of the information it imparts. Where other charts might need an alternative presentation of the data, as a table, this <code>&lt;canvas&gt;</code> element can simply be given <code>role=&quot;img&quot;</code> and an <code>aria-label</code> for the alternative:</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;canvas <span class='highlight'>role=&#34;img&#34;</span> <span class='highlight'>aria-label=&#34;Chart showing the cost of more than 100 energy providers. Bulb is not only in the 10 cheapest providers, but is also 100% green.&#34;</span>&gt;
+&lt;/canvas&gt;
+</code></div>
+
+
+<p><img src="https://heydon.github.io/bulb-audit/images/landing_chart.png" alt="Landing page comparison chart" /></p>
+
+<p>Since the key for the chart (pictured with the chart above) and title for the chart (&ldquo;Cost of energy for a typical home&rdquo;) are no longer needed non-visually, they can be removed from screen reader output with <code>aria-hidden=&quot;true&quot;</code>.</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;ul class=&#34;chart-labels&#34; <span class='highlight'>aria-hidden=&#34;true&#34;</span>&gt;
+  &lt;li&gt;&lt;div class=&#34;legend-swatch label--navy&#34;&gt;&lt;/div&gt;Big Six standard tariff&lt;/li&gt;
+  &lt;li&gt;&lt;div class=&#34;legend-swatch label--grey&#34;&gt;&lt;/div&gt;Others&lt;/li&gt;
+&lt;/ul&gt;
+</code></div>
+
+
 <h4 id="about-our-energy-https-bulb-co-uk-energy"><a href="https://bulb.co.uk/energy">About → Our energy</a></h4>
 
 <p>The &ldquo;Greening up the grid&rdquo; illustration (pictured) is decorative but omits an empty (<code>alt=&quot;&quot;</code>) attribute. Ensure that this is present to suppress readout of the image.</p>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/greening.png" alt="illustration with power going to toaster" /></p>
+
+<p>The &ldquo;Renewable energy providers&rdquo; chart (pictured) is deceptively simple. The simple solution is to place <code>role=&quot;img&quot;</code> and an <code>aria-label</code> with a value of <em>&ldquo;Chart shows that Bulb&rsquo;s energy is one of only four 100% green energy providers&rdquo;</em>.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/our_energy_chart.png" alt="Renewable providers chart" /></p>
+
+<p>In addition, hide the now unnecessary key (&ldquo;renewable electricity %&rdquo;) and title (&ldquo;Renewable energy providers&rdquo;) from assistive technologies using <code>aria-hidden=&quot;true&quot;</code> on each containing element.</p>
 
 <h4 id="about-careers-https-bulb-co-uk-careers"><a href="https://bulb.co.uk/careers">About → Careers</a></h4>
 
@@ -3050,7 +3544,11 @@ h4, .h4 {
 
 <h3 id="account-dashboard">Account dashboard</h3>
 
+<p>The <a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> chart is handled in the <strong>Component issues</strong> section because it needs a more complex alternative text approach.</p>
+
 <h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>For convenience, solutions are included inline in the <strong>Scope of the issue</strong> section, above.</p>
 
           </div>
         

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1 on Bulb Audit</title>
+    <link>https://heydon.github.io/bulb-audit/priorities/1/</link>
+    <description>Recent content in 1 on Bulb Audit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://heydon.github.io/bulb-audit/priorities/1/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Focus styles</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</guid>
+      <description>Introduction Focus styling, provided by user agents by default, is used to indicate which element is currently being focused by keyboard. Typically, focus is achieved by pressing the Tab key. Pressing Tab should focus the next interactive element in the source, invoking the focus style.
+Users who rely on the keyboard for page navigation include those with motor impairments due to long term ailments (such as rheumatism) or temporary injuries (like a broken wrist).</description>
+    </item>
+    
+    <item>
+      <title>Heading structure</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/heading-structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/heading-structure/</guid>
+      <description>Introduction Heading elements are often chosen according to the perceived importance of the text they contain and the sections they introduce. The more &amp;lsquo;important&amp;rsquo; the heading, the higher the heading level and — typically — the larger the font size. An &amp;lt;h3&amp;gt; might be 1.5rem and an &amp;lt;h1&amp;gt; 3rem.
+However, headings levels do not simply denote importance, but a hierarchy of page subsections. There are certain rules to creating a hierarchy (or &amp;lsquo;document outline&amp;rsquo;) that should not be broken:</description>
+    </item>
+    
+    <item>
+      <title>Missing and placeholder labels</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</guid>
+      <description>Introduction All form elements need labels associated to them. Where a label is not associated, the screen reader user is not informed of the field&amp;rsquo;s purpose upon focusing that field. Screen reader users typically traverse forms by focus, not &amp;lsquo;virtual cursor&amp;rsquo; (element by element).
+The placeholder attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.</description>
+    </item>
+    
+    <item>
+      <title>Text alternatives</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</guid>
+      <description>Introduction For blind users, textual alternatives of important visual information must be provided. Composing that text effectively is a question of context.
+For example, a logo that is intended as a study in logo design should include a textual alternative — typically via an &amp;lt;img&amp;gt; tag&amp;rsquo;s alt attribute — that describes the features of the logo, such as the colors and typography. For Bulb&amp;rsquo;s logo this might read something like, &amp;rdquo; expressive, hand written text, in white, and featuring hooped ascenders&amp;rdquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

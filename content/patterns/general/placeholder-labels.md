@@ -1,8 +1,11 @@
 +++
 title = "Missing and placeholder labels"
+priorities = ["1"]
 +++
 
 ## Introduction
+
+All form elements need labels associated to them. Where a label is not associated, the screen reader user is not informed of the field's purpose upon focusing that field. Screen reader users typically traverse forms by focus, not 'virtual cursor' (element by element).
 
 The `placeholder` attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.
 

@@ -1,5 +1,6 @@
 +++
 title = "Focus styles"
+priorities = ["1"]
 +++
 
 ## Introduction

@@ -1,5 +1,6 @@
 +++
 title = "Text alternatives"
+priorities = ["1"]
 +++
 
 ## Introduction
@@ -40,11 +41,35 @@ The social media links (pictured) have strange alternative text, derived from th
 
 ![Small, blue social media icons from the footer](/images/social_small.png)
 
+The **Cost of energy for a typical home** chart is deceptively simple in terms of the information it imparts. Where other charts might need an alternative presentation of the data, as a table, this `<canvas>` element can simply be given `role="img"` and an `aria-label` for the alternative:
+
+{{<code>}}
+<canvas [[[role="img"]]] [[[aria-label="Chart showing the cost of more than 100 energy providers. Bulb is not only in the 10 cheapest providers, but is also 100% green."]]]>
+</canvas>
+{{</code>}}
+
+![Landing page comparison chart](/images/landing_chart.png)
+
+Since the key for the chart (pictured with the chart above) and title for the chart ("Cost of energy for a typical home") are no longer needed non-visually, they can be removed from screen reader output with `aria-hidden="true"`.
+
+{{<code>}}
+<ul class="chart-labels" [[[aria-hidden="true"]]]>
+  <li><div class="legend-swatch label--navy"></div>Big Six standard tariff</li>
+  <li><div class="legend-swatch label--grey"></div>Others</li>
+</ul>
+{{</code>}}
+
 #### [About → Our energy](https://bulb.co.uk/energy)
 
 The "Greening up the grid" illustration (pictured) is decorative but omits an empty (`alt=""`) attribute. Ensure that this is present to suppress readout of the image.
 
 ![illustration with power going to toaster](/images/greening.png)
+
+The "Renewable energy providers" chart (pictured) is deceptively simple. The simple solution is to place `role="img"` and an `aria-label` with a value of _"Chart shows that Bulb's energy is one of only four 100% green energy providers"_.
+
+![Renewable providers chart](/images/our_energy_chart.png)
+
+In addition, hide the now unnecessary key ("renewable electricity %") and title ("Renewable energy providers") from assistive technologies using `aria-hidden="true"` on each containing element.
 
 #### [About → Careers](https://bulb.co.uk/careers)
 
@@ -86,6 +111,8 @@ One exception is the price comparison bar chart found on the ["Switch Now" page]
 
 ### Account dashboard
 
-
+The [My usage](https://my.staging.bulb.co.uk/dashboard/usage) chart is handled in the **Component issues** section because it needs a more complex alternative text approach.
 
 ## Fixing the issue
+
+For convenience, solutions are included inline in the **Scope of the issue** section, above.

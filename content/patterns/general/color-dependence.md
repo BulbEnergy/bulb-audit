@@ -1,5 +1,6 @@
 +++
 title= "Color dependence"
+priorities= ["3"]
 +++
 
 ## Introduction
@@ -15,6 +16,40 @@ In each case color is used to differentiate items, a supplementary alternative m
 {{% wcag include="1.4.1" %}}
 
 ## Scope of the issue
+
+### Inline links
+
+The **Join site** ["Switch now" page](https://join.bulb.co.uk/join/quote-result) _"Have your bill handy? Refine your quote"_ text:
+
+![Inline link in green on white with no underline](/images/have-bill.png)
+
+The **Account dashboard** [Dashboard](https://my.staging.bulb.co.uk/dashboard) "Need help?" text:
+
+![Inline link in green on blue with no underline](/images/help-page.png)
+
+### Chart keys
+
+Some charts included depend on color alone for differentiating bars.
+
+* ["Switch now" page](https://join.bulb.co.uk/join/quote-result) (**Join site**)
+* [My usage](https://my.staging.bulb.co.uk/dashboard/usage) (**Account dashboard**)
+
+{{% note %}}
+The "Cost of energy for a typical home" chart from the **Marketing site** [Home page](https://bulb.co.uk/) is not included because the difference in _shade_ between the colored bars is so significant that it is unlikely anyone can mistake the two types of bar.
+{{% /note %}}
+
+### Form errors
+
+Form errors are presented differently around the three sites (see {{% pattern "Inconsistency" %}}). But, in some cases, only color is used to differentiate the error. For example: the **Join site** [Welcome page](https://join.bulb.co.uk/join/quote) (pictured).
+
+![Red text error](/images/red.png)
+
+Full list of affected URLs:
+
+* [Welcome page](https://join.bulb.co.uk/join/quote) (**Join site**)
+* [My information page](https://join.bulb.co.uk/join/quick-signup) (**Join site**)
+
+Elsewhere, "✖️" symbols are used to mark errors, so there is no problem.
 
 ## Fixing the issue
 
@@ -48,6 +83,77 @@ a {
 {{</demo>}}
 
 ### Chart keys
+
+It is recommended that `linear-gradient` based patterns are used to help differentiate the different bars and bar parts. Following is a demo of some gradient options for the [My usage](https://my.staging.bulb.co.uk/dashboard/usage) page:
+
+{{<demo>}}
+<style>
+  [class^="pattern"] {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.75rem;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  li span + span {
+    margin-left: 0.5rem;
+  }
+
+  .pattern-1 {
+    background-color: #043464;
+    background-image: linear-gradient(to left, #265686 50%, #043464 50%);
+    background-size:0.5em;
+    background-position: 0.25rem 0.25rem;
+  }
+
+  .pattern-2 {
+    background-color: #19ac58;
+    background-image: linear-gradient(to bottom, #19ac58 50%, #3bce7a 50%);
+    background-size: 0.5em;
+  }
+
+  .pattern-3 {
+    background-color: #8c8c8c;
+    background-image: radial-gradient(#aeaeae 55%, transparent 0%);
+    background-size:0.66em;
+  }
+
+  .pattern-4 {
+    background-color: #dddddd;
+    background-image: radial-gradient(#dddddd 25%, transparent 0%), radial-gradient(#bbbbbb 60%, transparent 0%);
+    background-size:0.75em;
+  }
+</style>
+<ul>
+  <li>
+    <span class="pattern-1"></span>
+    <span class="text">Gas usage</span>
+  </li>
+  <li>
+    <span class="pattern-2"></span>
+    <span class="text">Electricity usage</span>
+  </li>
+  <li>
+    <span class="pattern-3"></span>
+    <span class="text">Projected gas usage</span>
+  </li>
+  <li>
+    <span class="pattern-4"></span>
+    <span class="text">Projected electricity usage</span>
+  </li>
+</ul>
+{{</demo>}}
 
 ### Form errors
 

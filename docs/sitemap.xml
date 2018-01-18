@@ -18,7 +18,17 @@
   </url>
   
   <url>
-    <loc>https://heydon.github.io/bulb-audit/categories/</loc>
+    <loc>https://heydon.github.io/bulb-audit/priorities/1/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/priorities/2/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/priorities/3/</loc>
     <priority>0</priority>
   </url>
   
@@ -61,8 +71,12 @@
   </url>
   
   <url>
-    <loc>https://heydon.github.io/bulb-audit/tags/priorityhigh/</loc>
+    <loc>https://heydon.github.io/bulb-audit/priorities/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/routing/</loc>
   </url>
   
   <url>

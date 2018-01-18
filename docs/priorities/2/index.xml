@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 on Bulb Audit</title>
+    <link>https://heydon.github.io/bulb-audit/priorities/2/</link>
+    <description>Recent content in 2 on Bulb Audit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://heydon.github.io/bulb-audit/priorities/2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Form errors</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</guid>
+      <description>Introduction As users attempt to complete forms, it is important they are notified promptly and clearly when they make errors, and are provided with assistance in fixing those errors.
+For assistive technology users, completing forms can be especially arduous where one or more of the following are true.
+ The invalid state of a field is not communicated The error message is not associated with the field The presence of errors is not communicated on submission  The careful wording of error messages and descriptions is also important, as well as indicating which text is error text without relying entirely on color (see  Color dependence).</description>
+    </item>
+    
+    <item>
+      <title>List structure</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/list-structure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/list-structure/</guid>
+      <description>Introduction Along with headings, lists give structure to a web page. They group items together so users know they are related or equivalent.
+Assistive technology users find lists especially helpful because most software will identify a list semantically, enumerate its items, and provide shortcuts for navigating between the list items. The NVDA screen reader provides the L shortcut key for navigating between lists, and the I shortcut key for jumping between list items.</description>
+    </item>
+    
+    <item>
+      <title>Routing</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/routing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/routing/</guid>
+      <description>Introduction Single-page applications present some unique challenges for accessibility, particularly in regard to routing and the navigation of views.
+Views (or &amp;lsquo;screens&amp;rsquo;) in single-page applications attempt to emulate pages in more traditional multi-page sites. Visually, the experience is similar (some content is replace with some other content). However, when replacing content by manipulating the DOM in situ, the experience for screen reader and keyboard users is lacking. Unlike when a page is loaded, a switch in views does not announce the page&amp;rsquo;s &amp;lt;title&amp;gt;.</description>
+    </item>
+    
+  </channel>
+</rss>

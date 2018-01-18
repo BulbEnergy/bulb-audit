@@ -98,9 +98,18 @@ Assistive technology users find lists especially helpful because most software w
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</guid>
-      <description>Introduction The placeholder attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.
-Where placeholders are used as primary labels, a number of accessibility and usability issues emerge.
-Firstly, the placeholder is not supported as an accessible label in legacy browsers and assistive technologies, meaning those users will not hear a label as they focus the control.</description>
+      <description>Introduction All form elements need labels associated to them. Where a label is not associated, the screen reader user is not informed of the field&amp;rsquo;s purpose upon focusing that field. Screen reader users typically traverse forms by focus, not &amp;lsquo;virtual cursor&amp;rsquo; (element by element).
+The placeholder attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.</description>
+    </item>
+    
+    <item>
+      <title>Routing</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/routing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/routing/</guid>
+      <description>Introduction Single-page applications present some unique challenges for accessibility, particularly in regard to routing and the navigation of views.
+Views (or &amp;lsquo;screens&amp;rsquo;) in single-page applications attempt to emulate pages in more traditional multi-page sites. Visually, the experience is similar (some content is replace with some other content). However, when replacing content by manipulating the DOM in situ, the experience for screen reader and keyboard users is lacking. Unlike when a page is loaded, a switch in views does not announce the page&amp;rsquo;s &amp;lt;title&amp;gt;.</description>
     </item>
     
     <item>

@@ -1,5 +1,6 @@
 +++
 title = "Inconsistency"
+priorities = ["3"]
 +++
 
 ## Introduction
@@ -27,3 +28,15 @@ Note that, while these sites are built and managed separately, users do not nece
 In general, every [landmark region](https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page) _except_ the `<main>` (or `role="main"`) region is expected to have consistent content between pages. The `<main>` region defines the unique content of the page.
 
 ### Forms
+
+There is a lot of inconsistency between the sites regarding the way form elements, labels, and errors are marked up and presented visually.
+
+## Fixing the issue
+
+### Navigation
+
+It is recommended that the same (complete) **Marketing site** navigation is used for each of the three sites, with the exception that "Sign out" is not pertinent except to logged in users of the **Account dashboard**. The visual design (colors, layout, and font size) should also be consistent.
+
+### Forms
+
+See {{% pattern "Missing and placeholder labels" %}} and {{% pattern "Form errors" %}} for recommendations on form design and error reporting. Use the same behavior and visual design for labels, placeholders, individual error messages, and generic error notification live regions.

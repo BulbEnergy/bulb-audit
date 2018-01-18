@@ -239,6 +239,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/routing/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Routing</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -285,6 +294,13 @@
       Inconsistency
     </h1>
     
+      <p class="priority">
+        <strong>Priority: </strong>
+          
+              <a href="https://heydon.github.io/bulb-audit/priorities/3">3</a>
+          
+      </p>
+    
     
       
 
@@ -307,6 +323,12 @@
         <li>
           <a href="#scope-of-the-issue">
             Scope of the issue
+          </a>
+        </li>
+      
+        <li>
+          <a href="#fixing-the-issue">
+            Fixing the issue
           </a>
         </li>
       
@@ -491,6 +513,18 @@
 <p>In general, every <a href="https://www.w3.org/WAI/GL/wiki/Using_ARIA_landmarks_to_identify_regions_of_a_page">landmark region</a> <em>except</em> the <code>&lt;main&gt;</code> (or <code>role=&quot;main&quot;</code>) region is expected to have consistent content between pages. The <code>&lt;main&gt;</code> region defines the unique content of the page.</p>
 
 <h3 id="forms">Forms</h3>
+
+<p>There is a lot of inconsistency between the sites regarding the way form elements, labels, and errors are marked up and presented visually.</p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="navigation-1">Navigation</h3>
+
+<p>It is recommended that the same (complete) <strong>Marketing site</strong> navigation is used for each of the three sites, with the exception that &ldquo;Sign out&rdquo; is not pertinent except to logged in users of the <strong>Account dashboard</strong>. The visual design (colors, layout, and font size) should also be consistent.</p>
+
+<h3 id="forms-1">Forms</h3>
+
+<p>See <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a> and <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/form-errors/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Form errors</a> for recommendations on form design and error reporting. Use the same behavior and visual design for labels, placeholders, individual error messages, and generic error notification live regions.</p>
 
   </main>
 

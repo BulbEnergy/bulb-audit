@@ -43,6 +43,9 @@ body,
 p + p {
     margin-top: 0.75rem;
 }
+.priority {
+  margin-top: 0;
+}
 a {
     text-decoration: none;
     border-bottom: 1px solid;

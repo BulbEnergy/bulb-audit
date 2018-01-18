@@ -1,5 +1,6 @@
 +++
 title = "Wording"
+priorities = ["3"]
 +++
 
 ## Introduction

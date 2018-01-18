@@ -239,6 +239,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/routing/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Routing</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -284,6 +293,13 @@
       </svg>
       List structure
     </h1>
+    
+      <p class="priority">
+        <strong>Priority: </strong>
+          
+              <a href="https://heydon.github.io/bulb-audit/priorities/2">2</a>
+          
+      </p>
     
     
       
@@ -538,7 +554,7 @@
 
 <h3 id="account-dashboard">Account dashboard</h3>
 
-<p>A green of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert <code>&lt;div&gt;</code> markup is used instead).</p>
+<p>On the <a href="https://my.staging.bulb.co.uk/dashboard">Dashboard</a> page, a grid of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert <code>&lt;div&gt;</code> markup is used instead).</p>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/green_boxes.png" alt="green choice boxes" /></p>
 
@@ -547,20 +563,26 @@
     <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
       <use xlink:href="#info"></use>
     </svg>
-    <p>This applies to the twoo choices of meter offered at <strong>/meters</strong> as well.</p>
+    <p>This applies to the two choices of meter offered at <strong>/meters</strong> as well.</p>
 
   </div>
 </aside>
 
 
+<p>On the <a href="https://my.staging.bulb.co.uk/dashboard/personal-details">Tariff info</a> page, &lsquo;layout tables&rsquo; are used to place keys and their values side by side (pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/definition.png" alt="tariff table" /></p>
+
+<p>This is an incorrect use of <code>&lt;tbale&gt;</code> semantics, and should instead be marked up as a definition list (using <code>&lt;dl&gt;</code>).</p>
+
 <h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="navigation-region-lists">Navigation region lists</h3>
 
 <ul>
 <li>Ensure all instances of <code>&lt;nav&gt;</code> regions use list markup.</li>
 <li>In the case of the <strong>Account dashboard</strong> grid, make it a <code>&lt;nav&gt;</code> and use a combination of list markup and headings to give a clear, easily navigable structure. For extra credit, differentiate different <code>&lt;nav&gt;</code> regions with labels. See the code example and notes to follow.</li>
 </ul>
-
-<h3 id="code">Code</h3>
 
 <p><em>(Dashboard example; code is simplified and elided)</em></p>
 
@@ -591,6 +613,29 @@
 <li>The navigation region is labeled using the <code>&lt;h2&gt;</code> heading. On focusing the first link inside the region, assistive technologies will communicate <em>&ldquo;manage your account, navigation, list, 6 items, Submit your reading, link&rdquo;</em> or similar.</li>
 <li>For this relationship to work, the value of <code>aria-labelledby</code> and the value of the <code>&lt;h2&gt;</code>&rsquo;s <code>id</code> need to match.</li>
 </ol>
+
+<h3 id="definition-lists">Definition lists</h3>
+
+<p>On the <strong>Account dashboard</strong> <a href="https://my.staging.bulb.co.uk/dashboard/personal-details">Tariff info</a> page, use <code>&lt;dl&gt;</code> markup for each set of keys/values. The &ldquo;Tariff&rdquo; example:</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;h2&gt;Tariff&lt;/h2&gt;
+&lt;dl&gt;
+  &lt;dt&gt;Tariff&lt;/dt&gt;
+  &lt;dd&gt;Vari-Fair&lt;/dd&gt;
+  &lt;dt&gt;Exit Fees&lt;/dt&gt;
+  &lt;dd&gt;£0.00&lt;/dd&gt;
+  &lt;dt&gt;Dual Fuel Discount&lt;/dt&gt;
+  &lt;dd&gt;£30.00 per year&lt;/dd&gt;
+  &lt;dt&gt;Estimated Annual Cost&lt;/dt&gt;
+  &lt;dd&gt;£1377.43&lt;/dd&gt;
+&lt;/dl&gt;
+</code></div>
+
 
   </main>
 

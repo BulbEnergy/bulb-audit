@@ -1,5 +1,6 @@
 +++
 title = "Form errors"
+priorities = ["2"]
 +++
 
 ## Introduction
@@ -35,6 +36,9 @@ The careful wording of error messages and descriptions is also important, as wel
 
 * [Login page](https://my.staging.bulb.co.uk/login) (✖️ Individual errors not associated with their fields; generic "Wrong email or password" error not announced on attempted submission.)
 * [Select an electricity meter reading](https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity) (✖️ The page relies on browser validation, which is inconsistent with the bespoke implementation elsewhere.)
+* [Tariff info](https://my.staging.bulb.co.uk/dashboard/personal-details) (✖️ See image below — a message is provided to alert users of errors, but not as an accessible live region; the fields that have errors are not indicated at all, let alone accessibly with `aria-invalid="true"`. Note that the "Okay" button is not necessary for any users. The error can simply disappear when the form successfully submits. Remove this button.)
+
+![Tariff page error message](/images/tariff-error.png)
 
 ## Fixing the issue
 
@@ -138,3 +142,7 @@ It is not reliable to add a live region _with_ its content to the page and expec
 ### Suppressing browser validation
 
 Make sure your bespoke error notification system is consistent across the forms and sites, to reduce confusion. Where forms, such as the [Select an electricity meter reading](https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity) form (pictured) include automatic browser validation, suppress it by applying `novalidate` to the `<form>` element.
+
+The **Marketing site** [Home page](https://bulb.co.uk) quote form differs from the **Join site** [Welcome page](https://join.bulb.co.uk/join/quote) quote form in that browser validation is used for an empty field. Browser validation is not consistent between browsers, so each quote form should use the bespoke/JavaScript validation.
+
+See {{% pattern "Inconsistency" %}} for more.
