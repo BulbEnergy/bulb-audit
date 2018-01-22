@@ -11,6 +11,17 @@
     
     
     <item>
+      <title>Answer choices</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</guid>
+      <description>Introduction The Join site&amp;rsquo;s question screens include custom radio button-like components for selecting an answer. For example, the &amp;ldquo;My home uses&amp;rdquo; page offers a choice between &amp;ldquo;Gas &amp;amp; Electricity&amp;rdquo; and &amp;ldquo;Electricity only&amp;rdquo; (pictured).
+Despite having the appearance of radio buttons (the familiar encircled dot design is used), these are custom components, built in Angular from &amp;lt;div&amp;gt; and &amp;lt;span&amp;gt; elements. A number of issues emerge:
+ The controls do not offer any semantic information (role, state etc.</description>
+    </item>
+    
+    <item>
       <title>Focus styles</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

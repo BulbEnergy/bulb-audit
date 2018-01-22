@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Component issues on Bulb Audit</title>
+    <link>https://heydon.github.io/bulb-audit/patterns/components/</link>
+    <description>Recent content in Component issues on Bulb Audit</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://heydon.github.io/bulb-audit/patterns/components/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Answer choices</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</guid>
+      <description>Introduction The Join site&amp;rsquo;s question screens include custom radio button-like components for selecting an answer. For example, the &amp;ldquo;My home uses&amp;rdquo; page offers a choice between &amp;ldquo;Gas &amp;amp; Electricity&amp;rdquo; and &amp;ldquo;Electricity only&amp;rdquo; (pictured).
+Despite having the appearance of radio buttons (the familiar encircled dot design is used), these are custom components, built in Angular from &amp;lt;div&amp;gt; and &amp;lt;span&amp;gt; elements. A number of issues emerge:
+ The controls do not offer any semantic information (role, state etc.</description>
+    </item>
+    
+    <item>
+      <title>Bedrooms stepper</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</guid>
+      <description>Introduction The Join Site provides a &amp;ldquo;stepper&amp;rdquo; component for incrementing and decrementing the number of bedrooms the user&amp;rsquo;s house or flat contains (pictured).
+There are a number of issues relating to this implementation:
+ The plus and minus buttons do not have focus styles The plus and minus buttons do not have labels The purpose of the controls is not reported to screen readers The updating of the number of bedrooms is not reported to screen readers  It is also unintuitive that the values &amp;lsquo;cycle&amp;rsquo;.</description>
+    </item>
+    
+  </channel>
+</rss>

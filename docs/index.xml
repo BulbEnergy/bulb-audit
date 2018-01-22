@@ -6,7 +6,7 @@
     <description>Recent content in Bulb Inclusive Design Audit on Bulb Audit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 02 Jan 2018 17:11:55 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jan 2018 17:11:56 +0000</lastBuildDate>
     
 	<atom:link href="https://heydon.github.io/bulb-audit/index.xml" rel="self" type="application/rss+xml" />
     
@@ -28,6 +28,28 @@
       <guid>https://heydon.github.io/bulb-audit/patterns/scope/</guid>
       <description>Introduction This document sets out the scope for the testing and evaluation of the Bulb websites. For efficient reporting, not every page and component is included in the scope. However, samples are chosen such that each important design pattern is covered.
 In the report, issues are divided into General and Components categories. General issues may include problems with — for example — document structure, or absence of focus styles. Components issues organize advice by isolated component, such as a tab interface or dialog window.</description>
+    </item>
+    
+    <item>
+      <title>Answer choices</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</guid>
+      <description>Introduction The Join site&amp;rsquo;s question screens include custom radio button-like components for selecting an answer. For example, the &amp;ldquo;My home uses&amp;rdquo; page offers a choice between &amp;ldquo;Gas &amp;amp; Electricity&amp;rdquo; and &amp;ldquo;Electricity only&amp;rdquo; (pictured).
+Despite having the appearance of radio buttons (the familiar encircled dot design is used), these are custom components, built in Angular from &amp;lt;div&amp;gt; and &amp;lt;span&amp;gt; elements. A number of issues emerge:
+ The controls do not offer any semantic information (role, state etc.</description>
+    </item>
+    
+    <item>
+      <title>Bedrooms stepper</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</guid>
+      <description>Introduction The Join Site provides a &amp;ldquo;stepper&amp;rdquo; component for incrementing and decrementing the number of bedrooms the user&amp;rsquo;s house or flat contains (pictured).
+There are a number of issues relating to this implementation:
+ The plus and minus buttons do not have focus styles The plus and minus buttons do not have labels The purpose of the controls is not reported to screen readers The updating of the number of bedrooms is not reported to screen readers  It is also unintuitive that the values &amp;lsquo;cycle&amp;rsquo;.</description>
     </item>
     
     <item>

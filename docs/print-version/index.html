@@ -173,6 +173,31 @@
           
           
             <li>
+              <h3>Component issues</h3>
+              <ul>
+                
+                  <li class="pattern">
+                    <a href="#answer-choices" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Answer choices</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
+                    <a href="#bedrooms-stepper" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Bedrooms stepper</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </li>
+          
+            <li>
               <h3>General issues</h3>
               <ul>
                 
@@ -614,6 +639,838 @@
 
         </div>
       
+      
+        
+          <div class="pattern-section">
+            <h1 id="answer-choices" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Answer choices
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The <strong>Join site</strong>&rsquo;s question screens include custom radio button-like components for selecting an answer. For example, the &ldquo;My home uses&rdquo; page offers a choice between &ldquo;Gas &amp; Electricity&rdquo; and &ldquo;Electricity only&rdquo; (pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/radios.png" alt="Radio button choices with one selected" /></p>
+
+<p>Despite having the appearance of radio buttons (the familiar encircled dot design is used), these are custom components, built in Angular from <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> elements. A number of issues emerge:</p>
+
+<ul>
+<li>The controls do not offer any semantic information (role, state etc.) to be consumed by assistive technologies</li>
+<li>The controls are not keyboard accessible (they cannot be focused or activated)</li>
+<li>The controls are inefficiently designed and dependent on CSS</li>
+</ul>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.1.1 Keyboard</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-visible">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.7 Focus Visible</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<p>These controls only appear on the <strong>Join site</strong>:</p>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/questions/my-energy">https://join.bulb.co.uk/join/questions/my-energy</a></li>
+<li><a href="https://join.bulb.co.uk/join/questions/my-home">https://join.bulb.co.uk/join/questions/my-home</a></li>
+<li><a href="https://join.bulb.co.uk/join/questions/my-bedrooms">https://join.bulb.co.uk/join/questions/my-bedrooms</a></li>
+</ul>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>There is no reason why these controls should depart with standard radio button (<code>&lt;input type=&quot;radio&quot; /&gt;</code>) markup. With the help of some CSS, it is possible to create a simplified solution which communicates role and state, and is keyboard operable.</p>
+
+<p>I wrote about this in <a href="https://www.sitepoint.com/replacing-radio-buttons-without-replacing-radio-buttons/">Replacing Radio Buttons Without Replacing Radio Buttons</a>. A demo that approximates the current design but using true radio buttons is provided below. Note that the arrow keys switch between selected radio button, and the <kbd>Tab</kbd> key focuses the selected radio button, as standard.</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-3531b8700c221a856c395d1b722ded28"></div>
+        <button data-launch="js-demo-3531b8700c221a856c395d1b722ded28">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-3531b8700c221a856c395d1b722ded28">
+      
+<form>
+  <fieldset>
+    <legend><h1>My home uses</h1></legend>
+    <div class="radios">
+      <div class="radio">
+        <input type="radio" name="energy" id="gas-and-elec" checked />
+        <label for="gas-and-elec">
+          Gas & Electricity
+        </label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="energy" id="elec" />
+        <label for="elec">
+          Electricity only
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <button type="submit">Continue</button>
+</form>
+  <style>
+    form {
+      text-align: center;
+    }
+
+    fieldset {
+      border: 0;
+      text-align: center;
+    }
+
+    .radios {
+      display: flex;
+      justify-content: center;
+      font-family: sans-serif;
+    }
+
+    legend {
+      font-family: sans-serif;
+      color: #ca488d;
+    }
+
+    [type="radio"] {
+      position: absolute;
+      white-space: nowrap;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip-path: inset(100%);
+      clip: rect(1px, 1px, 1px, 1px);
+    }
+
+    label {
+      display: block;
+      padding: 2rem;
+      border: 1px solid #666;
+      border-radius: 0.5rem;
+      margin: 0.5rem;
+      cursor: pointer;
+    }
+
+    label::after {
+      content: '';
+      display: block;
+      margin: 0.25rem auto 0;
+      width: 1rem;
+      height: 1rem;
+      border: 1px solid;
+      border-radius: 50%;
+    }
+
+    [type="radio"]:checked + label {
+      border-bottom: 0.25rem solid #19ac58;
+    }
+
+    [type="radio"]:checked + label::after {
+      background-color: #19ac58;
+      box-shadow: inset 0 0 0 0.25rem #fff;
+    }
+
+    [type="radio"]:focus + label {
+      box-shadow: 0 0 0 0.125rem #ca488d;
+    }
+
+    [type="submit"] {
+      color: #fff;
+      padding: 0.5rem 1.5rem;
+      border: 0;
+      border-radius: 0.25rem;
+      background: #19ac58;
+      font-size: 1.25rem;
+    }
+  </style>
+</form>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-3531b8700c221a856c395d1b722ded28');
+      var template = document.getElementById('template-3531b8700c221a856c395d1b722ded28');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-3531b8700c221a856c395d1b722ded28\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-3531b8700c221a856c395d1b722ded28"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "3531b8700c221a856c395d1b722ded28";
+      });
+    })();
+  </script>
+</div>
+
+
+<p><aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>Illustrations are omitted. They should be included inside the <code>&lt;label&gt;</code>, above the label text and have empty <code>alt</code> attributes (<code>alt=&quot;&quot;</code>). See <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Text alternatives</a>.</p>
+
+  </div>
+</aside>
+</p>
+
+<h3 id="html">HTML</h3>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;fieldset&gt;
+  &lt;legend&gt;<span class='highlight'>&lt;h1&gt;My home uses&lt;/h1&gt;</span>&lt;/legend&gt;
+  &lt;div class=&#34;radios&#34;&gt;
+    &lt;div class=&#34;radio&#34;&gt;
+      &lt;input type=&#34;radio&#34; name=&#34;energy&#34; <span class='highlight'>id=&#34;gas-and-elec&#34;</span> checked /&gt;
+      &lt;label <span class='highlight'>for=&#34;gas-and-elec&#34;</span>&gt;
+        Gas &amp; Electricity
+      &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;radio&#34;&gt;
+      <span class='highlight'>&lt;input type=&#34;radio&#34; name=&#34;energy&#34; id=&#34;elec&#34; /&gt;</span>
+      &lt;label for=&#34;elec&#34;&gt;
+        Electricity only
+      &lt;/label&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;
+&lt;/form&gt;
+</code></div>
+
+
+<ol>
+<li>The page&rsquo;s heading should be an <code>&lt;h1&gt;</code>, not an <code>&lt;h2&gt;</code>. It is used to form the <code>&lt;legend&gt;</code>.</li>
+<li>The radio must be associated to the&hellip;</li>
+<li>&hellip;label using <code>for</code> and <code>id</code></li>
+<li>The input must come directly before the label in the markup for the CSS adjacent sibling combinator to work (see below)</li>
+</ol>
+
+<h3 id="css">CSS</h3>
+
+<p><em>(Only the key CSS is included here.)</em></p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+<span class='highlight'>[type=&#34;radio&#34;</span>] {
+  position: absolute;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+label {
+  display: block;
+  padding: 2rem;
+  border: 1px solid #666;
+  border-radius: 0.5rem;
+  margin: 0.5rem;
+  <span class='highlight'>cursor: pointer;</span>
+}
+
+<span class='highlight'>label::after</span> {
+  content: &#39;&#39;;
+  display: block;
+  margin: 0.25rem auto 0;
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+<span class='highlight'>[type=&#34;radio&#34;]:checked + label</span> {
+  border-bottom: 0.25rem solid #19ac58;
+}
+
+[type=&#34;radio&#34;]:checked + label::after {
+  background-color: #19ac58;
+  box-shadow: inset 0 0 0 0.25rem #fff;
+}
+
+<span class='highlight'>[type=&#34;radio&#34;]:focus + label</span> {
+  box-shadow: 0 0 0 0.125rem #ca488d;
+}
+</code></div>
+
+
+<ol>
+<li>The radio button is hidden from view using an accessible technique (this is moved to a <code>class</code> in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a>)</li>
+<li>The <code>pointer</code> cursor indicates to mouse users that the whole box can be clicked, avoiding potential cognition issues</li>
+<li>A proxy radio button design is included using pseudo-content</li>
+<li>Clear <code>checked</code>&hellip;</li>
+<li>&hellip;and <code>focus</code> styling is provided. See <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/focus-styles/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Focus styles</a></li>
+</ol>
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="bedrooms-stepper" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Bedrooms stepper
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The <strong>Join Site</strong> provides a &ldquo;stepper&rdquo; component for incrementing and decrementing the number of bedrooms the user&rsquo;s house or flat contains (pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/stepper.png" alt="Stepper component with plus and minus buttons" /></p>
+
+<p>There are a number of issues relating to this implementation:</p>
+
+<ul>
+<li>The plus and minus buttons do not have focus styles</li>
+<li>The plus and minus buttons do not have labels</li>
+<li>The purpose of the controls is not reported to screen readers</li>
+<li>The updating of the number of bedrooms is not reported to screen readers</li>
+</ul>
+
+<p>It is also unintuitive that the values &lsquo;cycle&rsquo;. That is, if I&rsquo;m on &ldquo;5+ bedrooms&rdquo; and I try to add another bedroom, the value cycles back to &ldquo;1&rdquo;. This is likely to cause confusion since it means each button does the <em>opposite</em> of what its label claims, under certain conditions.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-visible">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.7 Focus Visible</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#minimize-error-cues">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.3.2 Labels or Instructions</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<p>Only the <strong>Join Site</strong> is affected, at <a href="join.bulb.co.uk/join/questions/my-bedrooms">https://join.bulb.co.uk/join/questions/my-bedrooms</a>.</p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>The component needs to be restructured as a fieldset with a legend, as in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/components/answer-choices/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Answer choices</a>. The other provisions are included in the below code example, with notes to follow.</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;<span class='highlight'>&lt;h1&gt;The number of bedrooms I have is&lt;/h1&gt;</span>&lt;/legend&gt;
+    &lt;button type=&#34;button&#34; <span class='highlight'>aria-label=&#34;add a bedroom&#34;</span> <span class='highlight'>aria-describedby=&#34;current&#34;</span> id=&#34;add&#34;&gt;&lt;/button&gt;
+    &lt;div <span class='highlight'>role=&#34;status&#34;</span> id=&#34;current&#34;&gt;
+      2 bedrooms
+      <span class='highlight'>&lt;span class=&#34;visually-hidden&#34;&gt;currently chosen&lt;/span&gt;</span>
+    &lt;/div&gt;
+    &lt;button <span class='highlight'>type=&#34;button&#34;</span> aria-label=&#34;remove a bedroom&#34; aria-describedby=&#34;current&#34; id=&#34;remove&#34;&gt;&lt;/button&gt;
+  &lt;/fieldset&gt;
+  &lt;button type=&#34;submit&#34;&gt;Continue&lt;/button&gt;
+&lt;/form&gt;
+</code></div>
+
+
+<ol>
+<li>The page&rsquo;s <code>&lt;h1&gt;</code> forms the legend/group label for the button controls. The wording of the <code>&lt;h1&gt;</code> has been changed in accordance with <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/wording/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Wording</a>.</li>
+<li>Screen reader-accessible labels are provided via <code>aria-label</code>.</li>
+<li>The buttons are each described by the <code>#current</code> element, so when they are focused the screen reader user is made aware of the current number of bedrooms chosen.</li>
+<li>The <code>#current</code> element is also an ARIA live region, meaning that changes to its text are announced as feedback in screen readers. See <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/form-errors/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Form errors</a> for more on live regions.</li>
+<li>To make the description more clear non-visually, some visually hidden text is provided to clarify. The special <code>.visually-hidden</code> class is set out in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/form-errors/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Form errors</a>.</li>
+<li>Each button has <code>type=&quot;button&quot;</code>. This prevents browsers from seeing the buttons as submit buttons and using them to submit the form.</li>
+</ol>
+
+<h3 id="demo">Demo</h3>
+
+<p>The following is provided for testing in screen readers. The styling is not intended to match in this case. To test the demo in VoiceOver, press <kbd>CMD</kbd> + <kbd>F5</kbd> and use the <kbd>Tab</kbd> and <kbd>Enter</kbd> keys to operate the component controls</p>
+
+
+<div class="demo-container">
+  
+  <figure role="group" aria-labelledby="caption-ef72042368e3b0bf1c8765feaf741093">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-ef72042368e3b0bf1c8765feaf741093"></div>
+        <button data-launch="js-demo-ef72042368e3b0bf1c8765feaf741093">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+          <figcaption id="caption-ef72042368e3b0bf1c8765feaf741093">Unlike in the current implementation, the demo does not &lsquo;cycle&rsquo; the values. Pressing &lsquo;+&rsquo; can no longer remove bedrooms (for example)</figcaption>
+      
+  
+  </figure>
+  
+  <template id="template-ef72042368e3b0bf1c8765feaf741093">
+      
+<form>
+  <fieldset>
+    <legend><h1>The number of bedrooms I have is</h1></legend>
+    <button type="button" aria-label="add a bedroom" aria-describedby="current" id="add">+</button>
+    <div role="status" id="current">
+      <span id="num">2</span> bedrooms
+      <span class="visually-hidden">currently chosen</span>
+    </div>
+    <button type="button" aria-label="remove a bedroom" aria-describedby="current" id="remove">-</button>
+  </fieldset>
+</form>
+<script>
+var form = demo.querySelector('form');
+var num = demo.getElementById('num');
+form.addEventListener('click', function (e) {
+    var modifier = e.target.id === 'add' ? 1 : e.target.id === 'remove' ? -1 : null;
+    if (modifier) {
+      if (modifier === 1 && parseInt(num.textContent) === 5) {
+        return;
+      }
+
+      if (modifier === -1 && parseInt(num.textContent) === 1) {
+        return;
+      }
+
+      num.textContent = parseInt(num.textContent) + modifier;
+
+      if (parseInt(num.textContent) === 5) {
+        num.textContent += '+'
+      }
+    }
+})
+</script>
+<style>
+form {
+  font-family: sans-serif;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+fieldset {
+  border: 0;
+}
+
+form h1 {
+  font-size: 1.5rem;
+}
+
+button {
+  font-size: inherit;
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border: 0;
+  border-radius: 0.25rem;
+  background: #19ac58;
+  font-size: 1.25rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+}
+</style>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-ef72042368e3b0bf1c8765feaf741093');
+      var template = document.getElementById('template-ef72042368e3b0bf1c8765feaf741093');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-ef72042368e3b0bf1c8765feaf741093\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-ef72042368e3b0bf1c8765feaf741093"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "ef72042368e3b0bf1c8765feaf741093";
+      });
+    })();
+  </script>
+</div>
+
+
+          </div>
+        
       
         
           <div class="pattern-section">

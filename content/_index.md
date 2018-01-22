@@ -1,5 +1,4 @@
 +++
-date = "2018-01-02T17:11:55Z"
 title = "Bulb Inclusive Design Audit"
 +++
 
