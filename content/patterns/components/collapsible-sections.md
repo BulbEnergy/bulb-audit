@@ -15,7 +15,7 @@ Despite the simplicity, there are a number of provisions to ensure collapsible s
 
 ## WCAG criteria
 
-{{% wcag includes="1.3.1, 4.1.2" %}}
+{{% wcag include="1.3.1, 4.1.2" %}}
 
 ## Scope of the issue
 
