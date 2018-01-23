@@ -125,7 +125,7 @@ The radio buttons for choosing between the two panels, chart and table, can use 
 
 label {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem 2rem;
   border: 1px solid #666;
   border-radius: 0.5rem;
   margin: 0.25rem;

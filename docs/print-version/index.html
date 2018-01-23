@@ -195,6 +195,15 @@
                   </li>
                 
                   <li class="pattern">
+                    <a href="#collapsible-sections" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Collapsible sections</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#menu-buttons" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -1499,6 +1508,386 @@ button {
           </div>
         
           <div class="pattern-section">
+            <h1 id="collapsible-sections" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Collapsible sections
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Collapsible sections are one of the simpler interaction design primitives. All they do is toggle the appearance of the flow content they introduce. The advantage of having collapsed section in the first place is that the user is afforded an overview of the page structure without necessitating scrolling through large quantities of content.</p>
+
+<p>Despite the simplicity, there are a number of provisions to ensure collapsible sections are accessible:</p>
+
+<ul>
+<li>The toggle button must behave as a <code>&lt;button&gt;</code> and have the button role (either implicitly, from the element, or via <code>role=&quot;button&quot;</code>)</li>
+<li>The button must not override the heading semantics; typically, it is provided as a child of the section&rsquo;s main heading.</li>
+<li>The toggle button must toggle the <code>aria-expanded</code> state between <code>true</code> (expanded) and <code>false</code> (collapsed)</li>
+<li>The content in its collapsed state must not be available to screen readers and interactive content within it must not be focusable (<code>display: none</code> or the <code>hidden</code> property takes care of both of these)</li>
+</ul>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<p>Of the samples in the <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/scope/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Scope</a>, only the <strong>Marketing site</strong>&rsquo;s <a href="https://bulb.co.uk/careers">About → Careers</a> page appears to be affected. However, collapsibles are a common interaction primitive and the advice to follow should be (broadly speaking) incorporated for any similar pattern.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/open_roles.png" alt="Open roles collapsible sections" /></p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="html">HTML</h3>
+
+<p>The following represents the HTML expected in the collapsible section&rsquo;s <em>collapsed state</em>.</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;li class=&#34;collapsible&#34;&gt;
+  &lt;h3&gt;
+    &lt;button <span class='highlight'>aria-expanded=&#34;false&#34;</span>&gt;
+      &lt;span&gt;Graduate Energy Specialist&lt;/span&gt;
+      &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 10 10&#34; focusable=&#34;false&#34;&gt;
+        &lt;path fill=&#34;currentColor&#34; d=&#34;m1 3 4 5 4-5z&#34;/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/h3&gt;
+  &lt;div class=&#34;section-content&#34; <span class='highlight'>hidden</span>&gt;
+    &lt;!-- section content --&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+</code></div>
+
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>The SVG icon has <code>focusable=&quot;false&quot;</code> to prevent it from receiving focus in Internet Explorer and <code>fill=&quot;currentColor&quot;</code> so that the SVG adopts the font color, even as it changes according to Windows High Contrast Mode.</p>
+
+  </div>
+</aside>
+
+
+<p>In the expanded state, <code>aria-expanded</code> is switched to <code>true</code> and the <code>hidden</code> property is removed:</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;li class=&#34;collapsible&#34;&gt;
+  &lt;h3&gt;
+    &lt;button <span class='highlight'>aria-expanded=&#34;true&#34;</span>&gt;
+      &lt;span&gt;Graduate Energy Specialist&lt;/span&gt;
+      &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 10 10&#34;&gt;
+        &lt;path fill=&#34;currentColor&#34; d=&#34;m1 3 4 5 4-5z&#34;/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/h3&gt;
+  &lt;div class=&#34;section-content&#34;&gt;
+    &lt;!-- section content --&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+</code></div>
+
+
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    <p>The <code>hidden</code> property is not supported in older browsers. But you can polyfill it with the following CSS:</p>
+
+<div class="code-annotated "><code>
+[hidden] {
+  display: none;
+}
+</code></div>
+
+  </div>
+</aside>
+
+
+<h3 id="demo">Demo</h3>
+
+<p>The following demo uses a simple bit of vanilla JavaScript, in ES5. It is believed that this would be most efficient on a static information site such as the <strong>Marketing site</strong>. It can, however, be converted as desired.</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-141eda2435c93a868ad5b313056788a5"></div>
+        <button data-launch="js-demo-141eda2435c93a868ad5b313056788a5">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-141eda2435c93a868ad5b313056788a5">
+      
+<li class="collapsible">
+  <h3>
+    <button aria-expanded="false">
+      <span>Graduate Energy Specialist</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" focusable="false">
+        <path fill="currentColor" d="m1 3 4 5 4-5z"/>
+      </svg>      
+    </button>
+  </h3>
+  <div class="section-content" hidden>
+    <p>Lorem ipsum dolor sit amet</p>
+  </div>
+</li>
+<style>
+li {
+  font-family: sans-serif;
+  list-style: none;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+  background-color: #ddd;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+[aria-expanded] {
+  font-size: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  background-color: #19ac58;
+  border-radius: 0.25rem;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[aria-expanded] svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  display: inline-block;
+  transform: rotate(180deg);
+  transition: transform 0.25s ease-out;
+}
+
+[aria-expanded="true"] svg {
+  transform: rotate(0deg);
+}
+
+.section-content {
+  padding: 1rem;
+}
+
+/* just for the demo */
+.section-content p {
+  margin: 0;
+}
+</style>
+<script>
+var collapsibles = demo.querySelectorAll('.collapsible');
+
+Array.prototype.forEach.call(collapsibles, function(collapsible) {
+  var btn = collapsible.querySelector('[aria-expanded]');
+  var content = collapsible.querySelector('.section-content');
+  btn.addEventListener('click', function () {
+    var expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+    btn.setAttribute('aria-expanded', !expanded);
+    content.hidden = !content.hidden;
+  });
+});
+</script>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-141eda2435c93a868ad5b313056788a5');
+      var template = document.getElementById('template-141eda2435c93a868ad5b313056788a5');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-141eda2435c93a868ad5b313056788a5\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-141eda2435c93a868ad5b313056788a5"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "141eda2435c93a868ad5b313056788a5";
+      });
+    })();
+  </script>
+</div>
+
+
+          </div>
+        
+          <div class="pattern-section">
             <h1 id="menu-buttons" tabindex="-1">
               <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                 <use xlink:href="#bookmark"></use>
@@ -2428,12 +2817,12 @@ checkbox.addEventListener('change', function () {
 <div class="demo-container">
   
       <div class="demo-inner" >
-        <div class="demo" id="js-demo-0cb3f1b1b503c10da7c93e6f69dc09c5"></div>
-        <button data-launch="js-demo-0cb3f1b1b503c10da7c93e6f69dc09c5">Launch <span aria-hidden="true">↗</span></button>
+        <div class="demo" id="js-demo-ad0f76f723e44f2c28272ef88b6bd29c"></div>
+        <button data-launch="js-demo-ad0f76f723e44f2c28272ef88b6bd29c">Launch <span aria-hidden="true">↗</span></button>
       </div>
       
   
-  <template id="template-0cb3f1b1b503c10da7c93e6f69dc09c5">
+  <template id="template-ad0f76f723e44f2c28272ef88b6bd29c">
       
 <style>
 .radios {
@@ -2458,7 +2847,7 @@ checkbox.addEventListener('change', function () {
 
 label {
   display: block;
-  padding: 1rem;
+  padding: 0.5rem 2rem;
   border: 1px solid #666;
   border-radius: 0.5rem;
   margin: 0.25rem;
@@ -2567,8 +2956,8 @@ radios.addEventListener('change', function () {
   </template>
   <script>
     (function() {
-      var root = document.getElementById('js-demo-0cb3f1b1b503c10da7c93e6f69dc09c5');
-      var template = document.getElementById('template-0cb3f1b1b503c10da7c93e6f69dc09c5');
+      var root = document.getElementById('js-demo-ad0f76f723e44f2c28272ef88b6bd29c');
+      var template = document.getElementById('template-ad0f76f723e44f2c28272ef88b6bd29c');
 
       
       var demoDiv = document.createElement('div');
@@ -2581,7 +2970,7 @@ radios.addEventListener('change', function () {
       if (document.head.attachShadow) {
         var templateScript = template.content.querySelector('script');
         if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-0cb3f1b1b503c10da7c93e6f69dc09c5\').shadowRoot;' + templateScript.textContent + '})();';
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-ad0f76f723e44f2c28272ef88b6bd29c\').shadowRoot;' + templateScript.textContent + '})();';
           templateScript.textContent = wrappedScript;
         }
         root.attachShadow({mode: 'open'});
@@ -2590,7 +2979,7 @@ radios.addEventListener('change', function () {
         root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
       }
 
-      var launchButton = document.querySelector('[data-launch="js-demo-0cb3f1b1b503c10da7c93e6f69dc09c5"]');
+      var launchButton = document.querySelector('[data-launch="js-demo-ad0f76f723e44f2c28272ef88b6bd29c"]');
       launchButton.addEventListener('click', function () {
         var standalone = window.open();
         standalone.document.body.innerHTML = demoDiv.innerHTML;
@@ -2605,7 +2994,7 @@ radios.addEventListener('change', function () {
         }
         
 
-        standalone.document.title = 'demo ' + "0cb3f1b1b503c10da7c93e6f69dc09c5";
+        standalone.document.title = 'demo ' + "ad0f76f723e44f2c28272ef88b6bd29c";
       });
     })();
   </script>

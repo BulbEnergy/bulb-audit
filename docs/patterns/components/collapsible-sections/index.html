@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        List structure | Bulb Audit
+        Collapsible sections | Bulb Audit
       
     </title>
     
@@ -194,7 +194,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -282,7 +282,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/" aria-current="page">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -352,15 +352,8 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      List structure
+      Collapsible sections
     </h1>
-    
-      <p class="priority">
-        <strong>Priority: </strong>
-          
-              <a href="https://heydon.github.io/bulb-audit/priorities/2">2</a>
-          
-      </p>
     
     
       
@@ -402,11 +395,16 @@
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Along with headings, lists give structure to a web page. They group items together so users know they are related or equivalent.</p>
+<p>Collapsible sections are one of the simpler interaction design primitives. All they do is toggle the appearance of the flow content they introduce. The advantage of having collapsed section in the first place is that the user is afforded an overview of the page structure without necessitating scrolling through large quantities of content.</p>
 
-<p>Assistive technology users find lists especially helpful because most software will identify a list semantically, enumerate its items, and provide shortcuts for navigating between the list items. The NVDA screen reader provides the <kbd>L</kbd> shortcut key for navigating between lists, and the <kbd>I</kbd> shortcut key for jumping between list items.</p>
+<p>Despite the simplicity, there are a number of provisions to ensure collapsible sections are accessible:</p>
 
-<p>Where lists are not used appropriately, the structure of content can be unclear and difficult to traverse.</p>
+<ul>
+<li>The toggle button must behave as a <code>&lt;button&gt;</code> and have the button role (either implicitly, from the element, or via <code>role=&quot;button&quot;</code>)</li>
+<li>The button must not override the heading semantics; typically, it is provided as a child of the section&rsquo;s main heading.</li>
+<li>The toggle button must toggle the <code>aria-expanded</code> state between <code>true</code> (expanded) and <code>false</code> (collapsed)</li>
+<li>The content in its collapsed state must not be available to screen readers and interactive content within it must not be focusable (<code>display: none</code> or the <code>hidden</code> property takes care of both of these)</li>
+</ul>
 
 <h2 id="wcag-criteria">WCAG criteria</h2>
 
@@ -436,16 +434,6 @@
   
     
   
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          1.3.1 Info and Relationships</a> (level A)
-        </strong>
-        
-      </li>
     
   
     
@@ -553,149 +541,225 @@
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
 
-<h3 id="marketing-site">Marketing site</h3>
+<p>Of the samples in the <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/scope/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Scope</a>, only the <strong>Marketing site</strong>&rsquo;s <a href="https://bulb.co.uk/careers">About → Careers</a> page appears to be affected. However, collapsibles are a common interaction primitive and the advice to follow should be (broadly speaking) incorporated for any similar pattern.</p>
 
-<p>The navigation schema for the marketing site (pictured) does not use list markup. While some assistive technologies will identify the <code>&lt;nav&gt;</code> and enumerate the links within it, this is no substitute for a <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code>s to wrap each item.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/navigation.png" alt="navigation schema" /></p>
-
-<p>This also applies to the social media navigation region, but <em>does not</em> apply to the <strong>Account dashboard</strong> navigation.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/social.png" alt="social media links" /></p>
-
-<p>That the navigation is constructed differently across the sites represents an issue of inconsistency. Note the &ldquo;Be consistent&rdquo; inclusive design principle:</p>
-
-
-
-
-
-<ul class="principles with-desc">
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong>
-          <a href="https://inclusivedesignprinciples.org#be-consistent">
-            <svg class="balloon-icon" viewBox="0 0 141.73228 177.16535" aria-hidden="true" focusable="false">
-              <use xlink:href="#balloon"></use>
-            </svg>
-            Be consistent
-          </a>:
-        </strong>
-        <em>Use familiar conventions and apply them consistently.</em>
-        
-          <p>Familiar interfaces borrow from well-established patterns. These should be used consistently within the interface to reinforce their meaning and purpose. This should be applied to functionality, behavior, editorial, and presentation. You should say the same things in the same way and users should be able to do the same things in the same way.</p>
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</ul>
-
-
-<p>In addition, the &ldquo;1, 2, 3 Switch&rdquo; section (pictured) features a list of illustrated steps, but they are marked up as plain text within <code>&lt;div&gt;</code> elements.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/123.png" alt="1 2 3 Switch numbered list" /></p>
-
-<h3 id="join-site">Join site</h3>
-
-<p>As in the &ldquo;1, 2, 3 Switch&rdquo; section, the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quote">Welcome page</a> includes a set of features/benefits not formed as a list (pictured).</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/join-features.png" alt="Feature set" /></p>
-
-<h3 id="account-dashboard">Account dashboard</h3>
-
-<p>On the <a href="https://my.staging.bulb.co.uk/dashboard">Dashboard</a> page, a grid of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert <code>&lt;div&gt;</code> markup is used instead).</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/green_boxes.png" alt="green choice boxes" /></p>
-
-<aside aria-label="note" class="note">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
-    </svg>
-    <p>This applies to the two choices of meter offered at <strong>/meters</strong> as well.</p>
-
-  </div>
-</aside>
-
-
-<p>On the <a href="https://my.staging.bulb.co.uk/dashboard/personal-details">Tariff info</a> page, &lsquo;layout tables&rsquo; are used to place keys and their values side by side (pictured).</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/definition.png" alt="tariff table" /></p>
-
-<p>This is an incorrect use of <code>&lt;table&gt;</code> semantics, and should instead be marked up as a definition list (using <code>&lt;dl&gt;</code>).</p>
+<p><img src="https://heydon.github.io/bulb-audit/images/open_roles.png" alt="Open roles collapsible sections" /></p>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
-<h3 id="navigation-region-lists">Navigation region lists</h3>
+<h3 id="html">HTML</h3>
 
-<ul>
-<li>Ensure all instances of <code>&lt;nav&gt;</code> regions use list markup.</li>
-<li>In the case of the <strong>Account dashboard</strong> grid, make it a <code>&lt;nav&gt;</code> and use a combination of list markup and headings to give a clear, easily navigable structure. For extra credit, differentiate different <code>&lt;nav&gt;</code> regions with labels. See the code example and notes to follow.</li>
-</ul>
-
-<p><em>(Dashboard example; code is simplified and elided)</em></p>
-
-
-
-
-
-<div class="code-annotated numbered"><code>
-&lt;nav <span class='highlight'>aria-labelledby=&#34;manage-heading&#34;</span>&gt;
-  &lt;h2 <span class='highlight'>id=&#34;manage-heading&#34;</span>&gt;Manage your account&lt;/h2&gt;
-  &lt;ul&gt;
-    &lt;li&gt;
-      &lt;h3&gt;&lt;a href=&#34;[url]&#34;&gt;Submit reading&lt;/a&gt;&lt;/h3&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;h3&gt;&lt;a href=&#34;[url]&#34;&gt;View my energy usage&lt;/a&gt;&lt;/h3&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      &lt;h3&gt;&lt;a href=&#34;[url]&#34;&gt;Statements and payments&lt;/a&gt;&lt;/h3&gt;
-    &lt;/li&gt;
-    &lt;!-- other options --&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
-</code></div>
-
-
-<ol>
-<li>The navigation region is labeled using the <code>&lt;h2&gt;</code> heading. On focusing the first link inside the region, assistive technologies will communicate <em>&ldquo;manage your account, navigation, list, 6 items, Submit your reading, link&rdquo;</em> or similar.</li>
-<li>For this relationship to work, the value of <code>aria-labelledby</code> and the value of the <code>&lt;h2&gt;</code>&rsquo;s <code>id</code> need to match.</li>
-</ol>
-
-<h3 id="definition-lists">Definition lists</h3>
-
-<p>On the <strong>Account dashboard</strong> <a href="https://my.staging.bulb.co.uk/dashboard/personal-details">Tariff info</a> page, use <code>&lt;dl&gt;</code> markup for each set of keys/values. The &ldquo;Tariff&rdquo; example:</p>
+<p>The following represents the HTML expected in the collapsible section&rsquo;s <em>collapsed state</em>.</p>
 
 
 
 
 
 <div class="code-annotated "><code>
-&lt;h2&gt;Tariff&lt;/h2&gt;
-&lt;dl&gt;
-  &lt;dt&gt;Tariff&lt;/dt&gt;
-  &lt;dd&gt;Vari-Fair&lt;/dd&gt;
-  &lt;dt&gt;Exit Fees&lt;/dt&gt;
-  &lt;dd&gt;£0.00&lt;/dd&gt;
-  &lt;dt&gt;Dual Fuel Discount&lt;/dt&gt;
-  &lt;dd&gt;£30.00 per year&lt;/dd&gt;
-  &lt;dt&gt;Estimated Annual Cost&lt;/dt&gt;
-  &lt;dd&gt;£1377.43&lt;/dd&gt;
-&lt;/dl&gt;
+&lt;li class=&#34;collapsible&#34;&gt;
+  &lt;h3&gt;
+    &lt;button <span class='highlight'>aria-expanded=&#34;false&#34;</span>&gt;
+      &lt;span&gt;Graduate Energy Specialist&lt;/span&gt;
+      &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 10 10&#34; focusable=&#34;false&#34;&gt;
+        &lt;path fill=&#34;currentColor&#34; d=&#34;m1 3 4 5 4-5z&#34;/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/h3&gt;
+  &lt;div class=&#34;section-content&#34; <span class='highlight'>hidden</span>&gt;
+    &lt;!-- section content --&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
 </code></div>
+
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>The SVG icon has <code>focusable=&quot;false&quot;</code> to prevent it from receiving focus in Internet Explorer and <code>fill=&quot;currentColor&quot;</code> so that the SVG adopts the font color, even as it changes according to Windows High Contrast Mode.</p>
+
+  </div>
+</aside>
+
+
+<p>In the expanded state, <code>aria-expanded</code> is switched to <code>true</code> and the <code>hidden</code> property is removed:</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;li class=&#34;collapsible&#34;&gt;
+  &lt;h3&gt;
+    &lt;button <span class='highlight'>aria-expanded=&#34;true&#34;</span>&gt;
+      &lt;span&gt;Graduate Energy Specialist&lt;/span&gt;
+      &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 10 10&#34;&gt;
+        &lt;path fill=&#34;currentColor&#34; d=&#34;m1 3 4 5 4-5z&#34;/&gt;
+      &lt;/svg&gt;
+    &lt;/button&gt;
+  &lt;/h3&gt;
+  &lt;div class=&#34;section-content&#34;&gt;
+    &lt;!-- section content --&gt;
+  &lt;/div&gt;
+&lt;/li&gt;
+</code></div>
+
+
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    <p>The <code>hidden</code> property is not supported in older browsers. But you can polyfill it with the following CSS:</p>
+
+<div class="code-annotated "><code>
+[hidden] {
+  display: none;
+}
+</code></div>
+
+  </div>
+</aside>
+
+
+<h3 id="demo">Demo</h3>
+
+<p>The following demo uses a simple bit of vanilla JavaScript, in ES5. It is believed that this would be most efficient on a static information site such as the <strong>Marketing site</strong>. It can, however, be converted as desired.</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-141eda2435c93a868ad5b313056788a5"></div>
+        <button data-launch="js-demo-141eda2435c93a868ad5b313056788a5">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-141eda2435c93a868ad5b313056788a5">
+      
+<li class="collapsible">
+  <h3>
+    <button aria-expanded="false">
+      <span>Graduate Energy Specialist</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" focusable="false">
+        <path fill="currentColor" d="m1 3 4 5 4-5z"/>
+      </svg>      
+    </button>
+  </h3>
+  <div class="section-content" hidden>
+    <p>Lorem ipsum dolor sit amet</p>
+  </div>
+</li>
+<style>
+li {
+  font-family: sans-serif;
+  list-style: none;
+  font-size: 1.25rem;
+  border-radius: 0.25rem;
+  background-color: #ddd;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+
+[aria-expanded] {
+  font-size: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  background-color: #19ac58;
+  border-radius: 0.25rem;
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+[aria-expanded] svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  display: inline-block;
+  transform: rotate(180deg);
+  transition: transform 0.25s ease-out;
+}
+
+[aria-expanded="true"] svg {
+  transform: rotate(0deg);
+}
+
+.section-content {
+  padding: 1rem;
+}
+
+/* just for the demo */
+.section-content p {
+  margin: 0;
+}
+</style>
+<script>
+var collapsibles = demo.querySelectorAll('.collapsible');
+
+Array.prototype.forEach.call(collapsibles, function(collapsible) {
+  var btn = collapsible.querySelector('[aria-expanded]');
+  var content = collapsible.querySelector('.section-content');
+  btn.addEventListener('click', function () {
+    var expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+    btn.setAttribute('aria-expanded', !expanded);
+    content.hidden = !content.hidden;
+  });
+});
+</script>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-141eda2435c93a868ad5b313056788a5');
+      var template = document.getElementById('template-141eda2435c93a868ad5b313056788a5');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-141eda2435c93a868ad5b313056788a5\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-141eda2435c93a868ad5b313056788a5"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "141eda2435c93a868ad5b313056788a5";
+      });
+    })();
+  </script>
+</div>
 
 
   </main>

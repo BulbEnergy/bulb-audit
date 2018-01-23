@@ -33,6 +33,16 @@ There are a number of issues relating to this implementation:
     </item>
     
     <item>
+      <title>Collapsible sections</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/</guid>
+      <description>Introduction Collapsible sections are one of the simpler interaction design primitives. All they do is toggle the appearance of the flow content they introduce. The advantage of having collapsed section in the first place is that the user is afforded an overview of the page structure without necessitating scrolling through large quantities of content.
+Despite the simplicity, there are a number of provisions to ensure collapsible sections are accessible:</description>
+    </item>
+    
+    <item>
       <title>Menu buttons</title>
       <link>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
