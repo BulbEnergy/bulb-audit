@@ -115,6 +115,16 @@ Assistive technology users find lists especially helpful because most software w
     </item>
     
     <item>
+      <title>Menu buttons</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</guid>
+      <description>Introduction A mainstay in responsive design, the &amp;ldquo;hamburger&amp;rdquo; menu button secretes a menu of navigation options that can be revealed on click, press, or — more likely — tap. There is some concern over the usability of hamburger menus meaning they should only be employed where absolutely necessary. If only a few navigation items are provided, simply rearranging them for small screens is probably preferable.
+Where menu buttons are included, they need to conform to accessibility standards like any other control.</description>
+    </item>
+    
+    <item>
       <title>Missing and placeholder labels</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -132,6 +142,17 @@ The placeholder attribute is intended for providing supplemental hints and examp
       <guid>https://heydon.github.io/bulb-audit/patterns/general/routing/</guid>
       <description>Introduction Single-page applications present some unique challenges for accessibility, particularly in regard to routing and the navigation of views.
 Views (or &amp;lsquo;screens&amp;rsquo;) in single-page applications attempt to emulate pages in more traditional multi-page sites. Visually, the experience is similar (some content is replace with some other content). However, when replacing content by manipulating the DOM in situ, the experience for screen reader and keyboard users is lacking. Unlike when a page is loaded, a switch in views does not announce the page&amp;rsquo;s &amp;lt;title&amp;gt;.</description>
+    </item>
+    
+    <item>
+      <title>Show password</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/show-password/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/show-password/</guid>
+      <description>Introduction The option to &amp;ldquo;show password&amp;rdquo; when one is writing it is a sound inclusive design feature, helping users to compose or check their writing of passwords. However, a &amp;ldquo;show password&amp;rdquo; button that is not technically accessible fails some of the users who may want to take advantage of it.
+The pictured show password control ahs a number of problems that need addressing:
+ It functions as a button, but is marked up as a link It is not focusable by keyboard (because, as a link, it is missing an href) Were it focusable, upon clicking it, focus would be lost — because it is actually two controls, with one always hidden It appears before the field to which it relates, which is somewhat confusing visually and represents a backwards reading order non-visually.</description>
     </item>
     
     <item>

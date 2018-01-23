@@ -194,6 +194,24 @@
                     </a>
                   </li>
                 
+                  <li class="pattern">
+                    <a href="#menu-buttons" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Menu buttons</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
+                    <a href="#show-password" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Show password</span>
+                    </a>
+                  </li>
+                
               </ul>
             </li>
           
@@ -1468,6 +1486,617 @@ button {
   </script>
 </div>
 
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="menu-buttons" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Menu buttons
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>A mainstay in responsive design, the &ldquo;hamburger&rdquo; menu button secretes a menu of navigation options that can be revealed on click, press, or — more likely — tap. There is some <a href="https://www.nngroup.com/articles/hamburger-menus/">concern over the usability of hamburger menus</a> meaning they should only be employed where absolutely necessary. If only a few navigation items are provided, simply rearranging them for small screens is probably preferable.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/ham.png" alt="Hamburger style menu on MyBulb account dashboard" /></p>
+
+<p>Where menu buttons <em>are</em> included, they need to conform to accessibility standards like any other control. Be aware that not all users of small screens are operating by touch. Keyboard accessibility is still important.</p>
+
+<p>In the case of the <strong>Bulb</strong> menu buttons (found in both the <strong>Marketing site</strong> and <strong>Account dashboard</strong>), there are multiple problems. These are detailed in the <a href="#scope-of-the-issue"><strong>Scope of the issue</strong></a> section to follow.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.3.1 Info and Relationships</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.1.1 Keyboard</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.3 Focus Order</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-visible">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.7 Focus Visible</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#minimize-error-cues">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          3.3.2 Labels or Instructions</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="marketing-site">Marketing site</h3>
+
+<ul>
+<li>The menu button has no label; it is simply announced as &ldquo;button&rdquo; in screen readers.</li>
+<li>The menu button does not include <code>aria-haspopup</code>, telling the assistive technology user that the menu is a popup menu.</li>
+<li>Focus is not moved to the menu upon opening it, meaning its presence is not announced.</li>
+<li>Focus is not trapped within the popup menu while it is open, meaning users can focus hidden content on the page</li>
+<li>The menu&rsquo;s close button has no label either</li>
+</ul>
+
+<h3 id="account-dashboard">Account dashboard</h3>
+
+<p>The problems are much the same as the version on the <strong>Marketing site</strong>, with the following additional issues:</p>
+
+<ul>
+<li>The menu button uses the incorrect element/role (<code>&lt;a&gt;</code> / link)</li>
+<li>The close button inside the menu uses the incorrect element/role (<code>&lt;a&gt;</code> / link)</li>
+<li>Neither the menu button or close button include an <code>href</code>, making them unfocusable by keyboard</li>
+</ul>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>Neither of the two implementations conform to a standard (WAI-ARIA) pattern. They are, functionally, a hybrid between an ARIA menu button / menu, a dialog, and a basic collapsible region. Therefore, a custom solution is in order. It is recommended the same solution / markup is used for both the <strong>Marketing site</strong> and <strong>Account dashboard</strong>.</p>
+
+<h3 id="html">HTML</h3>
+
+<p>To begin, a basic HTML template is provided below, with notes to follow.</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;button <span class='highlight'>aria-label=&#34;navigation menu&#34;</span> <span class='highlight'>aria-haspopup=&#34;true&#34;</span>&gt;☰&lt;/button&gt;
+&lt;div <span class='highlight'>hidden</span>&gt;
+  &lt;ul <span class='highlight'>role=&#34;menu&#34;</span>&gt;
+    &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;[link text]&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;[link text]&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;[link text]&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  <span class='highlight'>&lt;button aria-label=&#34;close menu&#34;&gt;✖️&lt;/button&gt;</span>
+&lt;/div&gt;
+</code></div>
+
+
+<ol>
+<li>The menu button and close button are labeled with <code>aria-label</code>.</li>
+<li>The <code>aria-haspopup</code> property tells screen reader users that the button will move focus into a popup when clicked.</li>
+<li>The <code>role=&quot;menu&quot;</code> attribute on the list, announces the list as a menu in assistive software. The items are enumerated, just as when using a standard <code>&lt;ul&gt;</code>.</li>
+<li>The close button comes after the menu in the source order.</li>
+</ol>
+
+<h3 id="behavior">Behavior</h3>
+
+<p>The behavior of the menu is paramount, with focus being carefully managed. Here are the steps you need to follow:</p>
+
+<ol>
+<li>When the user clicks the menu button, focus is moved to the <em>first</em> link element within the menu.</li>
+<li>When the user <em>unfocuses</em> the close button, focus moves back to the first menu item, trapping focus within the menu until the user closes it.</li>
+<li>When the user clicks the close button <em>or</em> presses the <kbd>ESC</kbd> key, the menu is hidden and focus is returned to the menu button. It is important the user is returned to their starting point, before the menu was activated.</li>
+</ol>
+
+<p>Below is a <a href="https://codepen.io/heydon/pen/59b9e0007e15c9d71b0664a344c0c27e/">codePen demo</a> which implements this markup and behavior. The JavaScript is written in vanilla ES6 and is commented. It will need to be converted into a React component for the <strong>Account dashboard</strong>.</p>
+
+
+  <iframe height="300" scrolling="no" title="code demonstration with codePen" src="//codepen.io/heydon/embed/59b9e0007e15c9d71b0664a344c0c27e/?height=265&theme-id=dark&default-tab=result,result&embed-version=2" frameborder="no" allowtransparency="true" allowfullscreen="true" style="width: 100%;">
+    <div>
+      <a href="//codepen.io/heydon/pen/59b9e0007e15c9d71b0664a344c0c27e">See the demo on codePen</a>
+    </div>
+  </iframe>
+
+
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="show-password" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Show password
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The option to &ldquo;show password&rdquo; when one is writing it is a sound inclusive design feature, helping users to compose or check their writing of passwords. However, a &ldquo;show password&rdquo; button that is not technically accessible fails some of the users who may want to take advantage of it.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/show.png" alt="Show password designed as a link, above the password input" /></p>
+
+<p>The pictured show password control ahs a number of problems that need addressing:</p>
+
+<ul>
+<li>It functions as a button, but is marked up as a link</li>
+<li>It is not focusable by keyboard (because, as a link, it is missing an <code>href</code>)</li>
+<li>Were it focusable, upon clicking it, focus would be lost — because it is actually two controls, with one always hidden</li>
+<li>It appears <em>before</em> the field to which it relates, which is somewhat confusing visually and represents a backwards reading order non-visually.</li>
+</ul>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.3.2 Meaningful Sequence</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.1.1 Keyboard</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quick-signup"><strong>Join site</strong> My Information page</a></li>
+</ul>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>Fundamentally, a toggle control should not use link semantics, or be styled as a link. Links are expected to perform linking/navigation behavior. Instead, supply the control as a checkbox, which communicates state (checked/on and unchecked/off) implicitly. This removes the necessity of managing two controls, and solves the dropped focus problem.</p>
+
+<p>In the demo provided below, the checkbox is above the form field and a persistently visible label is provided above the input — see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a>.</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-5fd914b7d05f9583bd378b44b13083df"></div>
+        <button data-launch="js-demo-5fd914b7d05f9583bd378b44b13083df">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-5fd914b7d05f9583bd378b44b13083df">
+      
+<div class="password-field">
+  <label for="password">Choose a password:</label>
+  <input type="password" id="password" />
+  <label class="right">
+    <input type="checkbox" id="show">
+    Show password
+  </label>
+</div>
+<style>
+.password-field {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  padding: 1.5rem 0;
+}
+
+.password-field * {
+  font-size: inherit;
+}
+
+label {
+  display: block;
+}
+
+label + input {
+  display: block;
+  width: 100%;
+  border: 2px solid;
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+  box-sizing: border-box;
+}
+
+.right {
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.right * {
+  vertical-align: middle;
+}
+</style>
+<script>
+var checkbox = demo.getElementById('show');
+var input = demo.getElementById('password');
+
+checkbox.addEventListener('change', function () {
+    var type = input.getAttribute('type');
+    input.setAttribute('type', type === 'password' ? 'text' : 'password');
+})
+</script>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-5fd914b7d05f9583bd378b44b13083df');
+      var template = document.getElementById('template-5fd914b7d05f9583bd378b44b13083df');
+
+      
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-5fd914b7d05f9583bd378b44b13083df\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-5fd914b7d05f9583bd378b44b13083df"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "5fd914b7d05f9583bd378b44b13083df";
+      });
+    })();
+  </script>
+</div>
+
+
+<p><aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    <p>The current design of form fields with just a bottom border is likely to cause confusion among users, especially when they become accompanied by persistent labels, as prescribed in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a>. A conventional &lsquo;box&rsquo; style — as in the above demo — is recommended.</p>
+
+  </div>
+</aside>
+</p>
 
           </div>
         

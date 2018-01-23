@@ -22,6 +22,17 @@ Despite having the appearance of radio buttons (the familiar encircled dot desig
     </item>
     
     <item>
+      <title>Bedrooms stepper</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</guid>
+      <description>Introduction The Join Site provides a &amp;ldquo;stepper&amp;rdquo; component for incrementing and decrementing the number of bedrooms the user&amp;rsquo;s house or flat contains (pictured).
+There are a number of issues relating to this implementation:
+ The plus and minus buttons do not have focus styles The plus and minus buttons do not have labels The purpose of the controls is not reported to screen readers The updating of the number of bedrooms is not reported to screen readers  It is also unintuitive that the values &amp;lsquo;cycle&amp;rsquo;.</description>
+    </item>
+    
+    <item>
       <title>Focus styles</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -39,6 +50,16 @@ Users who rely on the keyboard for page navigation include those with motor impa
       <guid>https://heydon.github.io/bulb-audit/patterns/general/heading-structure/</guid>
       <description>Introduction Heading elements are often chosen according to the perceived importance of the text they contain and the sections they introduce. The more &amp;lsquo;important&amp;rsquo; the heading, the higher the heading level and — typically — the larger the font size. An &amp;lt;h3&amp;gt; might be 1.5rem and an &amp;lt;h1&amp;gt; 3rem.
 However, headings levels do not simply denote importance, but a hierarchy of page subsections. There are certain rules to creating a hierarchy (or &amp;lsquo;document outline&amp;rsquo;) that should not be broken:</description>
+    </item>
+    
+    <item>
+      <title>Menu buttons</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</guid>
+      <description>Introduction A mainstay in responsive design, the &amp;ldquo;hamburger&amp;rdquo; menu button secretes a menu of navigation options that can be revealed on click, press, or — more likely — tap. There is some concern over the usability of hamburger menus meaning they should only be employed where absolutely necessary. If only a few navigation items are provided, simply rearranging them for small screens is probably preferable.
+Where menu buttons are included, they need to conform to accessibility standards like any other control.</description>
     </item>
     
     <item>

@@ -73,6 +73,10 @@
   </url>
   
   <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</loc>
+  </url>
+  
+  <url>
     <loc>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</loc>
   </url>
   
@@ -89,6 +93,10 @@
   
   <url>
     <loc>https://heydon.github.io/bulb-audit/patterns/general/routing/</loc>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/components/show-password/</loc>
   </url>
   
   <url>

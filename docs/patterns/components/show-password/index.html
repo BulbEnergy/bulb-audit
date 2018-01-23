@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/components/show-password/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Patterns | Bulb Audit
+        Show password | Bulb Audit
       
     </title>
     
@@ -203,7 +203,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/components/show-password/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/components/show-password/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -331,23 +331,361 @@
           
   <main id="main">
     <h1>
-      Patterns
-    </h1>
-    <ul class="patterns-list">
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/scope/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Scope
-    </a>
-  </h2>
-</li>
+      Show password
+    </h1>
+    
+    
+      
+
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
+      
+        <li>
+          <a href="#introduction">
+            Introduction
+          </a>
+        </li>
+      
+        <li>
+          <a href="#wcag-criteria">
+            WCAG criteria
+          </a>
+        </li>
+      
+        <li>
+          <a href="#scope-of-the-issue">
+            Scope of the issue
+          </a>
+        </li>
+      
+        <li>
+          <a href="#fixing-the-issue">
+            Fixing the issue
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
+
+
+    
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The option to &ldquo;show password&rdquo; when one is writing it is a sound inclusive design feature, helping users to compose or check their writing of passwords. However, a &ldquo;show password&rdquo; button that is not technically accessible fails some of the users who may want to take advantage of it.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/show.png" alt="Show password designed as a link, above the password input" /></p>
+
+<p>The pictured show password control ahs a number of problems that need addressing:</p>
+
+<ul>
+<li>It functions as a button, but is marked up as a link</li>
+<li>It is not focusable by keyboard (because, as a link, it is missing an <code>href</code>)</li>
+<li>Were it focusable, upon clicking it, focus would be lost — because it is actually two controls, with one always hidden</li>
+<li>It appears <em>before</em> the field to which it relates, which is somewhat confusing visually and represents a backwards reading order non-visually.</li>
+</ul>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          1.3.2 Meaningful Sequence</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.1.1 Keyboard</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quick-signup"><strong>Join site</strong> My Information page</a></li>
+</ul>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>Fundamentally, a toggle control should not use link semantics, or be styled as a link. Links are expected to perform linking/navigation behavior. Instead, supply the control as a checkbox, which communicates state (checked/on and unchecked/off) implicitly. This removes the necessity of managing two controls, and solves the dropped focus problem.</p>
+
+<p>In the demo provided below, the checkbox is above the form field and a persistently visible label is provided above the input — see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a>.</p>
+
+
+<div class="demo-container">
+  
+      <div class="demo-inner" >
+        <div class="demo" id="js-demo-5fd914b7d05f9583bd378b44b13083df"></div>
+        <button data-launch="js-demo-5fd914b7d05f9583bd378b44b13083df">Launch <span aria-hidden="true">↗</span></button>
+      </div>
+      
+  
+  <template id="template-5fd914b7d05f9583bd378b44b13083df">
+      
+<div class="password-field">
+  <label for="password">Choose a password:</label>
+  <input type="password" id="password" />
+  <label class="right">
+    <input type="checkbox" id="show">
+    Show password
+  </label>
+</div>
+<style>
+.password-field {
+  font-family: sans-serif;
+  font-size: 1.25rem;
+  padding: 1.5rem 0;
+}
+
+.password-field * {
+  font-size: inherit;
+}
+
+label {
+  display: block;
+}
+
+label + input {
+  display: block;
+  width: 100%;
+  border: 2px solid;
+  margin: 0.25rem 0;
+  padding: 0.25rem;
+  box-sizing: border-box;
+}
+
+.right {
+  text-align: right;
+  font-size: 0.75rem;
+}
+
+.right * {
+  vertical-align: middle;
+}
+</style>
+<script>
+var checkbox = demo.getElementById('show');
+var input = demo.getElementById('password');
+
+checkbox.addEventListener('change', function () {
+    var type = input.getAttribute('type');
+    input.setAttribute('type', type === 'password' ? 'text' : 'password');
+})
+</script>
+
+  </template>
+  <script>
+    (function() {
+      var root = document.getElementById('js-demo-5fd914b7d05f9583bd378b44b13083df');
+      var template = document.getElementById('template-5fd914b7d05f9583bd378b44b13083df');
 
       
-    </ul>
+      var demoDiv = document.createElement('div');
+      demoDiv.innerHTML = template.innerHTML;
+      var standaloneScript = demoDiv.querySelector('script');
+      if (standaloneScript) {
+        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
+      }
+
+      if (document.head.attachShadow) {
+        var templateScript = template.content.querySelector('script');
+        if (templateScript) {
+          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-5fd914b7d05f9583bd378b44b13083df\').shadowRoot;' + templateScript.textContent + '})();';
+          templateScript.textContent = wrappedScript;
+        }
+        root.attachShadow({mode: 'open'});
+        root.shadowRoot.appendChild(document.importNode(template.content, true));
+      } else {
+        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
+      }
+
+      var launchButton = document.querySelector('[data-launch="js-demo-5fd914b7d05f9583bd378b44b13083df"]');
+      launchButton.addEventListener('click', function () {
+        var standalone = window.open();
+        standalone.document.body.innerHTML = demoDiv.innerHTML;
+
+        
+        var newScript = standalone.document.createElement('script');
+        var oldScript = standalone.document.querySelector('script');
+        if (oldScript) {
+          newScript.textContent = oldScript.textContent;
+          oldScript.parentNode.removeChild(oldScript);
+          standalone.document.body.appendChild(newScript);
+        }
+        
+
+        standalone.document.title = 'demo ' + "5fd914b7d05f9583bd378b44b13083df";
+      });
+    })();
+  </script>
+</div>
+
+
+<p><aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    <p>The current design of form fields with just a bottom border is likely to cause confusion among users, especially when they become accompanied by persistent labels, as prescribed in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a>. A conventional &lsquo;box&rsquo; style — as in the above demo — is recommended.</p>
+
+  </div>
+</aside>
+</p>
+
   </main>
 
           <footer role="contentinfo">

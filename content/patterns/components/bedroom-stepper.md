@@ -1,5 +1,6 @@
 +++
 title = "Bedrooms stepper"
+priorities = ["1"]
 +++
 
 ## Introduction
