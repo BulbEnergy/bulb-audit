@@ -59,7 +59,7 @@ lastItem.addEventListener('keydown', e => {
 
 Each page, including the generic [About Bulb](https://bulb.co.uk/about) page found as the first option within the dropdown menu, should include a navigation region within the page and including the same options to other **About** pages as the dropdown menu offers. This should be placed below the page's main `<h1>` heading and include an `<h2>` heading of "About Bulb" (or something similarly descriptive). See the markup template below for more details:
 
-{{<code>}}
+{{<code numbered="true">}}
 <nav [[[aria-labelledby="in-page-nav-title"]]]>
   <h2 [[[id="in-page-nav-title"]]]>About Bulb</h2>
   <ul>
