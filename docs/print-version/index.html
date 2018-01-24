@@ -177,6 +177,15 @@
               <ul>
                 
                   <li class="pattern">
+                    <a href="#about-navigation" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">About navigation</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#answer-choices" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -676,6 +685,296 @@
         </div>
       
       
+        
+          <div class="pattern-section">
+            <h1 id="about-navigation" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              About navigation
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The <strong>About</strong> pages on the marketing site are currently <em>only</em> available via a dropdown submenu  (pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/dropdown.png" alt="Dropdown menu in navigation system" /></p>
+
+<p>Dropdown submenus are precarious interaction design patterns, prone to accessibility issues. In the case of <strong>Bulb</strong>&rsquo;s implementation (which is already keyboard accessible), there are just a few problems:</p>
+
+<ul>
+<li>The link that activates the menu does not communicate state (expanded or collapsed)</li>
+<li>The menu obscures the activating link/control (<a href="https://www.nngroup.com/articles/drop-down-menus/">see point 6 here</a>)</li>
+<li>The menu does not close when focus is moved from its last item to the adjacent (&ldquo;Blog&rdquo;) link.</li>
+<li>The nested list is not identified as a submenu which, though not crucial, would be helpful</li>
+</ul>
+
+<p>It is recommended that dropdown menus are supplemented (or even replaced) by navigation regions placed in the body of each child page. These should contain the same navigation options but do not necessitate being disclosed on click.</p>
+
+
+
+
+
+<ul class="principles ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong>
+          <a href="https://inclusivedesignprinciples.org#offer-choice">
+            <svg class="balloon-icon" viewBox="0 0 141.73228 177.16535" aria-hidden="true" focusable="false">
+              <use xlink:href="#balloon"></use>
+            </svg>
+            Offer choice
+          </a>:
+        </strong>
+        <em>Consider providing different ways for people to complete tasks, especially those that are complex or non standard.</em>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.3 Focus Order</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<p>The <strong>Marketing site</strong> is currently the only site that offers the <strong>About</strong> content, but see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Inconsistency</a> where a more consistent navigation schema is recommended.</p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>It is recommended the enhancements to the dropdown menu noted in the introduction are provided, as well as providing in-page navigation menus for each <strong>About</strong> child page.</p>
+
+<h3 id="dropdown-enhancements">Dropdown enhancements</h3>
+
+<ul>
+<li>Give the top-level &ldquo;About Bulb&rdquo; link <code>role=&quot;button&quot;</code> (since it no longer functions as a link).</li>
+<li>Include <code>aria-expanded</code> on the top level &ldquo;About Bulb&rdquo; link and toggle between <code>false</code> (dropdown menu not showing) and <code>true</code> (dropdown menu showing).</li>
+<li>Move the dropdown lower so as to not obscure the top-level link/control (see the illustration below).</li>
+<li>Add <code>aria-label=&quot;submenu&quot;</code> to the dropdown&rsquo;s <code>&lt;ul&gt;</code>.</li>
+<li>Close the menu when the last item is unfocused in a forwards direction. See the pseudo-code below.</li>
+</ul>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+const lastItem = <span class='highlight'>menu.querySelector(&#39;li:last-child a&#39;)</span>
+
+lastItem.addEventListener(&#39;keydown&#39;, e =&gt; {
+  if (<span class='highlight'>!e.shiftKey &amp;&amp; e.keyCode === 9</span>) {
+    e.preventDefault()
+    <span class='highlight'>menu.hidden = true</span>
+  }
+})
+</code></div>
+
+
+<ol>
+<li>Assuming the menu container is defined as <code>menu</code>, we can use <code>querySelector</code> to get the last item&rsquo;s link</li>
+<li>We only close the menu if the user presses <kbd>Tab</kbd> without <kbd>Shift</kbd> (<kbd>Shift</kbd> + <kbd>Tab</kbd> focuses the previous interactive element — the penultimate item in the submenu, in this case)</li>
+<li>The menu is hidden via the <code>hidden</code> property.</li>
+</ol>
+
+<h3 id="in-page-navigation">In-page navigation</h3>
+
+<p>Each page, including the generic <a href="https://bulb.co.uk/about">About Bulb</a> page found as the first option within the dropdown menu, should include a navigation region within the page and including the same options to other <strong>About</strong> pages as the dropdown menu offers. This should be placed below the page&rsquo;s main <code>&lt;h1&gt;</code> heading and include an <code>&lt;h2&gt;</code> heading of &ldquo;About Bulb&rdquo; (or something similarly descriptive). See the markup template below for more details:</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;nav <span class='highlight'>aria-labelledby=&#34;in-page-nav-title&#34;</span>&gt;
+  &lt;h2 <span class='highlight'>id=&#34;in-page-nav-title&#34;</span>&gt;About Bulb&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/about&#34;&gt;About Bulb&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/energy&#34; <span class='highlight'>aria-current=&#34;page&#34;</span>&gt;Our energy&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/service&#34;&gt;Our service&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/tariff&#34;&gt;Our tariff&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/careers&#34;&gt;Careers&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/business&#34;&gt;Business&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></div>
+
+
+<ol>
+<li>The navigation region is labeled by the&hellip;</li>
+<li>&hellip;<code>&lt;h2&gt;</code>&rsquo;s <code>id</code>. This means that entering the navigation region by <kbd>Tab</kbd> and focusing the first item will elicit screen readers to announce <em>&ldquo;navigation, about bulb, list, 6 items, About Bulb, link&rdquo;</em> (or similar, depending on the screen reader software)</li>
+<li>The <code>aria-current</code> property is an accessible way to indicate the current page/selected option (in this case, we are on the Our energy page). It will elicit <em>&ldquo;current&rdquo;</em> as part of the link information readout.</li>
+</ol>
+
+<p>The below is an illustration of how this in-page navigation might look, including a simple style to indicate the current page via <code>[aria-current]</code>:</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/in-page.png" alt="Our energy page with in-page navigation table of contents below the main title" /></p>
+
+          </div>
         
           <div class="pattern-section">
             <h1 id="answer-choices" tabindex="-1">

@@ -1,5 +1,6 @@
 +++
 title = "Collapsible sections"
+priorities = ["2"]
 +++
 
 ## Introduction

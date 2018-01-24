@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/components/about-navigation/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Text alternatives | Bulb Audit
+        About navigation | Bulb Audit
       
     </title>
     
@@ -176,7 +176,7 @@
                         <ul>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/components/about-navigation/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/components/about-navigation/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -327,7 +327,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/" aria-current="page">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -361,13 +361,13 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Text alternatives
+      About navigation
     </h1>
     
       <p class="priority">
         <strong>Priority: </strong>
           
-              <a href="https://heydon.github.io/bulb-audit/priorities/1">1</a>
+              <a href="https://heydon.github.io/bulb-audit/priorities/2">2</a>
           
       </p>
     
@@ -411,15 +411,56 @@
 
 <h2 id="introduction">Introduction</h2>
 
-<p>For blind users, textual alternatives of important visual information must be provided. Composing that text effectively is a question of context.</p>
+<p>The <strong>About</strong> pages on the marketing site are currently <em>only</em> available via a dropdown submenu  (pictured).</p>
 
-<p>For example, a logo that is intended as a study in logo design should include a textual alternative — typically via an <code>&lt;img&gt;</code> tag&rsquo;s <code>alt</code> attribute — that describes the features of the logo, such as the colors and typography. For <strong>Bulb</strong>&rsquo;s logo this might read something like, <em>&rdquo; expressive, hand written text, in white, and featuring hooped ascenders&rdquo;</em>.</p>
+<p><img src="https://heydon.github.io/bulb-audit/images/dropdown.png" alt="Dropdown menu in navigation system" /></p>
 
-<p>On the other hand, where the logo is used as the content of a link to the site&rsquo;s home page, <em>&ldquo;Bulb home page&rdquo;</em> would suffice. That is, the action of the link is pertinent to the user, not the design of the lettering.</p>
+<p>Dropdown submenus are precarious interaction design patterns, prone to accessibility issues. In the case of <strong>Bulb</strong>&rsquo;s implementation (which is already keyboard accessible), there are just a few problems:</p>
 
-<p>Decorative images, which include no salient information, are obstructive to non-visual users and must be removed from screen reader output. The only reliable way to do this is by providing <code>alt=&quot;&quot;</code> (empty value). Omitting the <code>alt</code> attribute altogether will result in browsers and screen readers falling back to reading the <code>src</code> value, which is rarely helpful.</p>
+<ul>
+<li>The link that activates the menu does not communicate state (expanded or collapsed)</li>
+<li>The menu obscures the activating link/control (<a href="https://www.nngroup.com/articles/drop-down-menus/">see point 6 here</a>)</li>
+<li>The menu does not close when focus is moved from its last item to the adjacent (&ldquo;Blog&rdquo;) link.</li>
+<li>The nested list is not identified as a submenu which, though not crucial, would be helpful</li>
+</ul>
 
-<p>Be careful to avoid redundant alternative text. Where the same information is provided as text <em>and</em> an image, you should consider the image decorative (see above).</p>
+<p>It is recommended that dropdown menus are supplemented (or even replaced) by navigation regions placed in the body of each child page. These should contain the same navigation options but do not necessitate being disclosed on click.</p>
+
+
+
+
+
+<ul class="principles ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong>
+          <a href="https://inclusivedesignprinciples.org#offer-choice">
+            <svg class="balloon-icon" viewBox="0 0 141.73228 177.16535" aria-hidden="true" focusable="false">
+              <use xlink:href="#balloon"></use>
+            </svg>
+            Offer choice
+          </a>:
+        </strong>
+        <em>Consider providing different ways for people to complete tasks, especially those that are complex or non standard.</em>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+</ul>
+
 
 <h2 id="wcag-criteria">WCAG criteria</h2>
 
@@ -430,12 +471,80 @@
 <ul class="wcag ">
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#text-equiv-all">
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order">
           <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
             <use xlink:href="#w3c"></use>
           </svg>
-          1.1.1 Non-text Content</a> (level A)
+          2.4.3 Focus Order</a> (level A)
         </strong>
         
       </li>
@@ -492,73 +601,15 @@
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
     
   
 </ul>
@@ -566,118 +617,76 @@
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
 
-<h3 id="marketing-site">Marketing site</h3>
-
-<h4 id="home-page-https-bulb-co-uk"><a href="https://bulb.co.uk">Home page</a></h4>
-
-<p>The switch steps (pictured) have identical, redundant alternative text to the visible text provided. You must use an empty (<code>alt=&quot;&quot;</code>) value for each of these.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/steps.png" alt="Switch steps (three graphics with text)" /></p>
-
-<p>The &lsquo;listening&rsquo; and &lsquo;best of&rsquo; illustrations (pictured) are decorative, but omit the <code>alt</code> attribute, meaning their role and <code>src</code> will be announced. Include <code>alt=&quot;&quot;</code> to suppress this.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/listen.png" alt="listen illustration" /></p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/best_of.png" alt="best of illustration" /></p>
-
-<p>The social media links (pictured) have strange alternative text, derived from the SVG data. For example, the Facebook link is just &ldquo;bulb&rdquo;, and the YouTube link is a random string of characters. In each case, use the form <em>&ldquo;Bulb on [social media company]&rdquo;</em> and apply this label as an <code>aria-label</code> attribute to the outer SVG element (<code>aria-label=&quot;Bulb on [social media company]&quot;</code>).</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/social_big.png" alt="Large, green social media icons" /></p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/social_small.png" alt="Small, blue social media icons from the footer" /></p>
-
-<p>The <strong>Cost of energy for a typical home</strong> chart is deceptively simple in terms of the information it imparts. Where other charts might need an alternative presentation of the data, as a table, this <code>&lt;canvas&gt;</code> element can simply be given <code>role=&quot;img&quot;</code> and an <code>aria-label</code> for the alternative:</p>
-
-
-
-
-
-<div class="code-annotated "><code>
-&lt;canvas <span class='highlight'>role=&#34;img&#34;</span> <span class='highlight'>aria-label=&#34;Chart showing the cost of more than 100 energy providers. Bulb is not only in the 10 cheapest providers, but is also 100% green.&#34;</span>&gt;
-&lt;/canvas&gt;
-</code></div>
-
-
-<p><img src="https://heydon.github.io/bulb-audit/images/landing_chart.png" alt="Landing page comparison chart" /></p>
-
-<p>Since the key for the chart (pictured with the chart above) and title for the chart (&ldquo;Cost of energy for a typical home&rdquo;) are no longer needed non-visually, they can be removed from screen reader output with <code>aria-hidden=&quot;true&quot;</code>.</p>
-
-
-
-
-
-<div class="code-annotated "><code>
-&lt;ul class=&#34;chart-labels&#34; <span class='highlight'>aria-hidden=&#34;true&#34;</span>&gt;
-  &lt;li&gt;&lt;div class=&#34;legend-swatch label--navy&#34;&gt;&lt;/div&gt;Big Six standard tariff&lt;/li&gt;
-  &lt;li&gt;&lt;div class=&#34;legend-swatch label--grey&#34;&gt;&lt;/div&gt;Others&lt;/li&gt;
-&lt;/ul&gt;
-</code></div>
-
-
-<h4 id="about-our-energy-https-bulb-co-uk-energy"><a href="https://bulb.co.uk/energy">About → Our energy</a></h4>
-
-<p>The &ldquo;Greening up the grid&rdquo; illustration (pictured) is decorative but omits an empty (<code>alt=&quot;&quot;</code>) attribute. Ensure that this is present to suppress readout of the image.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/greening.png" alt="illustration with power going to toaster" /></p>
-
-<p>The &ldquo;Renewable energy providers&rdquo; chart (pictured) is deceptively simple. The simple solution is to place <code>role=&quot;img&quot;</code> and an <code>aria-label</code> with a value of <em>&ldquo;Chart shows that Bulb&rsquo;s energy is one of only four 100% green energy providers&rdquo;</em>.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/our_energy_chart.png" alt="Renewable providers chart" /></p>
-
-<p>In addition, hide the now unnecessary key (&ldquo;renewable electricity %&rdquo;) and title (&ldquo;Renewable energy providers&rdquo;) from assistive technologies using <code>aria-hidden=&quot;true&quot;</code> on each containing element.</p>
-
-<h4 id="about-careers-https-bulb-co-uk-careers"><a href="https://bulb.co.uk/careers">About → Careers</a></h4>
-
-<p>The living wage and &lsquo;certified B&rsquo; images have a filename as the <code>alt</code> and a missing alt, respectively. These are not decorative images, so should have &ldquo;We are a living wage employer&rdquo; and &ldquo;Certified B Corporation&rdquo; alternative texts.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/living-b.png" alt="living wage and certified b graphics side-by-side" /></p>
-
-<aside aria-label="note" class="note">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
-    </svg>
-    <p>Should these images not be linked as their equivalents are on the home page?</p>
-
-  </div>
-</aside>
-
-
-<p>The &ldquo;Come make energy better&rdquo; and &ldquo;Working At Bulb&rdquo; photos have poor alternative texts of <em>&ldquo;Bulb March 3rd-147.jpg&rdquo;</em> and <em>&ldquo;Bulb March 3rd-262.jpg&rdquo;</em>, respectively. You can consider these images decorative and supply empty alternatives (<code>alt=&quot;&quot;</code>).</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/come.png" alt="Come make energy better office photo" /></p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/working_at.png" alt="Working at bulb office photo" /></p>
-
-<h4 id="about-business-https-bulb-co-uk-careers"><a href="https://bulb.co.uk/careers">About → Business</a></h4>
-
-<p>The alternative text for the &lsquo;Big Six versus Bulb&rsquo; chart (pictured) is inadequate as simply <em>&ldquo;bulb-business-chart&rdquo;</em>. Since the information it provides (that <strong>Bulb</strong>&rsquo;s prices are 20% cheaper) is covered in the accompanying text, it can be treated as decorative. Empty the <code>alt</code> attribute but leave it in place (<code>alt=&quot;&quot;</code>).</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/big-six.png" alt="Bulb versus big six bar chart" /></p>
-
-<p>The photo of the beach is also decorative and should have <code>alt=&quot;&quot;</code>.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/beach.png" alt="beach photograph" /></p>
-
-<h3 id="join-site">Join site</h3>
-
-<p>The graphics throughout the <strong>Join site</strong> (example pictured) are rendered as CSS background images on <code>&lt;div&gt;</code> elements. Since they are exclusively decorative images, this is not an issue in terms of alternative text (they already will not be announced). <strong>However</strong>, background images are typically eliminated when users (some of whom with impaired vision) activate <a href="https://support.microsoft.com/en-gb/help/4026951/windows-turn-high-contrast-mode-on-or-off-in-windows">Windows High Contrast Mode</a>.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/house.png" alt="House, from one of the question pages" /></p>
-
-<p>Since the graphics assist comprehension for sighted users, it is recommended that the high contrast mode-proof method of supplying <code>&lt;img&gt;</code> tags with <code>alt=&quot;&quot;</code> is employed.</p>
-
-<p>One exception is the price comparison bar chart found on the <a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch Now&rdquo; page</a>. This must have a proper description in a form similar to <em>&ldquo;Bar chart shows Bulb&rsquo;s price at around £80 compared to the prices of the big six energy companies, all significantly over £1000&rdquo;</em>.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/compare.png" alt="Price comparison bar chart" /></p>
-
-<h3 id="account-dashboard">Account dashboard</h3>
-
-<p>The <a href="https://my.staging.bulb.co.uk/dashboard/usage">My usage</a> chart is handled in the <strong>Component issues</strong> section because it needs a more complex alternative text approach.</p>
+<p>The <strong>Marketing site</strong> is currently the only site that offers the <strong>About</strong> content, but see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Inconsistency</a> where a more consistent navigation schema is recommended.</p>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
-<p>For convenience, solutions are included inline in the <strong>Scope of the issue</strong> section, above.</p>
+<p>It is recommended the enhancements to the dropdown menu noted in the introduction are provided, as well as providing in-page navigation menus for each <strong>About</strong> child page.</p>
+
+<h3 id="dropdown-enhancements">Dropdown enhancements</h3>
+
+<ul>
+<li>Give the top-level &ldquo;About Bulb&rdquo; link <code>role=&quot;button&quot;</code> (since it no longer functions as a link).</li>
+<li>Include <code>aria-expanded</code> on the top level &ldquo;About Bulb&rdquo; link and toggle between <code>false</code> (dropdown menu not showing) and <code>true</code> (dropdown menu showing).</li>
+<li>Move the dropdown lower so as to not obscure the top-level link/control (see the illustration below).</li>
+<li>Add <code>aria-label=&quot;submenu&quot;</code> to the dropdown&rsquo;s <code>&lt;ul&gt;</code>.</li>
+<li>Close the menu when the last item is unfocused in a forwards direction. See the pseudo-code below.</li>
+</ul>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+const lastItem = <span class='highlight'>menu.querySelector(&#39;li:last-child a&#39;)</span>
+
+lastItem.addEventListener(&#39;keydown&#39;, e =&gt; {
+  if (<span class='highlight'>!e.shiftKey &amp;&amp; e.keyCode === 9</span>) {
+    e.preventDefault()
+    <span class='highlight'>menu.hidden = true</span>
+  }
+})
+</code></div>
+
+
+<ol>
+<li>Assuming the menu container is defined as <code>menu</code>, we can use <code>querySelector</code> to get the last item&rsquo;s link</li>
+<li>We only close the menu if the user presses <kbd>Tab</kbd> without <kbd>Shift</kbd> (<kbd>Shift</kbd> + <kbd>Tab</kbd> focuses the previous interactive element — the penultimate item in the submenu, in this case)</li>
+<li>The menu is hidden via the <code>hidden</code> property.</li>
+</ol>
+
+<h3 id="in-page-navigation">In-page navigation</h3>
+
+<p>Each page, including the generic <a href="https://bulb.co.uk/about">About Bulb</a> page found as the first option within the dropdown menu, should include a navigation region within the page and including the same options to other <strong>About</strong> pages as the dropdown menu offers. This should be placed below the page&rsquo;s main <code>&lt;h1&gt;</code> heading and include an <code>&lt;h2&gt;</code> heading of &ldquo;About Bulb&rdquo; (or something similarly descriptive). See the markup template below for more details:</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;nav <span class='highlight'>aria-labelledby=&#34;in-page-nav-title&#34;</span>&gt;
+  &lt;h2 <span class='highlight'>id=&#34;in-page-nav-title&#34;</span>&gt;About Bulb&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/about&#34;&gt;About Bulb&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/energy&#34; <span class='highlight'>aria-current=&#34;page&#34;</span>&gt;Our energy&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/service&#34;&gt;Our service&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/tariff&#34;&gt;Our tariff&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/careers&#34;&gt;Careers&lt;/a&gt;&lt;/li&gt;
+    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/business&#34;&gt;Business&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+</code></div>
+
+
+<ol>
+<li>The navigation region is labeled by the&hellip;</li>
+<li>&hellip;<code>&lt;h2&gt;</code>&rsquo;s <code>id</code>. This means that entering the navigation region by <kbd>Tab</kbd> and focusing the first item will elicit screen readers to announce <em>&ldquo;navigation, about bulb, list, 6 items, About Bulb, link&rdquo;</em> (or similar, depending on the screen reader software)</li>
+<li>The <code>aria-current</code> property is an accessible way to indicate the current page/selected option (in this case, we are on the Our energy page). It will elicit <em>&ldquo;current&rdquo;</em> as part of the link information readout.</li>
+</ol>
+
+<p>The below is an illustration of how this in-page navigation might look, including a simple style to indicate the current page via <code>[aria-current]</code>:</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/in-page.png" alt="Our energy page with in-page navigation table of contents below the main title" /></p>
 
   </main>
 
