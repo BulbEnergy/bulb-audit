@@ -213,6 +213,15 @@
                   </li>
                 
                   <li class="pattern">
+                    <a href="#dialogs" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Dialogs</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#menu-buttons" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -252,6 +261,15 @@
                         <use xlink:href="#bookmark"></use>
                       </svg>
                       <span class="text">Color dependence</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
+                    <a href="#elements-cannot-be-focused" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Elements cannot be focused</span>
                     </a>
                   </li>
                 
@@ -2207,6 +2225,253 @@ Array.prototype.forEach.call(collapsibles, function(collapsible) {
           </div>
         
           <div class="pattern-section">
+            <h1 id="dialogs" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Dialogs
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Dialogs typically serve one of two purposes:</p>
+
+<ol>
+<li>To give the user a choice at a critical juncture</li>
+<li>To alert the user to important information without (entirely) changing their context</li>
+</ol>
+
+<p>Custom dialogs are common, and commonly marked up inaccessibly. For a maximal number of users to be able to perceive and operate dialogs, the following must be catered for:</p>
+
+<ul>
+<li>The dialog must have the <code>dialog</code> or <code>alertdialog</code> role (on its container).</li>
+<li>The <code>role=&quot;dialog&quot;</code>/<code>role=&quot;alertdialog&quot;</code> element must have a label, usually provided by the dialog&rsquo;s heading via <code>aria-labelledby</code>.</li>
+<li>Focus must be moved inside the dialog when it is opened.</li>
+<li>Focus must be moved back to the element that invoked the dialog when it is closed.</li>
+<li>The close button has an accessible label in addition to its &ldquo;✖️&rdquo; symbol</li>
+<li>The dialog&rsquo;s content/message can form the <code>role=&quot;dialog&quot;</code> element&rsquo;s description, using <code>aria-describedby</code>. A basic template is provided below.</li>
+</ul>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;div role=&#34;dialog&#34; aria-labelledby=&#34;dialog-title&#34; aria-describedby=&#34;dialog-content&#34;&gt;
+  &lt;h2 id=&#34;dialog-title&#34;&gt;Dialog title&lt;/h2&gt;
+  &lt;div id=&#34;dialog-content&#34; role=&#34;document&#34;&gt;
+    &lt;p&gt;The body of the dialog / its message&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button aria-label=&#34;close&#34;&gt;x&lt;/button&gt;
+&lt;/div&gt;
+</code></div>
+
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>In this example, the dialog is purely informational. However, you could add interactive form content within the <code>#dialog-content</code> element and/or replace the close button with &ldquo;Okay&rdquo; and &ldquo;Cancel&rdquo; buttons or similar.</p>
+
+  </div>
+</aside>
+
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.1.1 Keyboard</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.3 Focus Order</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-visible">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.7 Focus Visible</a> (level AA)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          4.1.2 Name, Role, Value</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="join-site">Join site</h3>
+
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch now&rdquo; page</a> (✖️ The &ldquo;See tariff details&rdquo; link/button invokes a dialog that has no semantic information and cannot be closed using the keyboard.)</li>
+<li><a href="https://join.bulb.co.uk/join/quick-signup">My information page</a> (✖️ The &ldquo;Is your email address correct&rdquo; dialog omits necessary semantic information and does not have focus sent to it when opened.)</li>
+</ul>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<p>It is recommended that a drop-in component for dialogs is used across the sites. The <a href="https://github.com/edenspiekermann/a11y-dialog">A11y Dialog</a> by Hugo Giraudel is a good example, and has no dependencies, so should be relatively easy to port between sites.</p>
+
+<p>For purely informational dialogs, like the tariff information dialog (pictured) a close button must be supplied and focused when the dialog is opened.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/tariff-dialog.png" alt="Tariff information dialog, currently with no close button" /></p>
+
+          </div>
+        
+          <div class="pattern-section">
             <h1 id="menu-buttons" tabindex="-1">
               <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                 <use xlink:href="#bookmark"></use>
@@ -3806,6 +4071,207 @@ a {
           </div>
         
           <div class="pattern-section">
+            <h1 id="elements-cannot-be-focused" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Elements cannot be focused
+            </h1>
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>All interactive elements — buttons, links, form controls — need to be focusable by keyboard. If they cannot be focused they cannot be activated, meaning users who depend on the keyboard for navigation will miss out on functionality.</p>
+
+<p>Common mistakes include using <code>&lt;div&gt;</code> or <code>&lt;span&gt;</code> elements as substitutes for <code>&lt;button&gt;</code>s and links. Or using a link <em>as</em> a button and omitting its <code>href</code> which makes it a &lsquo;placeholder link&rsquo; that does not receive focus.</p>
+
+<h2 id="wcag-criteria">WCAG criteria</h2>
+
+
+
+
+
+<ul class="wcag ">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.1.1 Keyboard</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.3 Focus Order</a> (level A)
+        </strong>
+        
+      </li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</ul>
+
+
+<h2 id="scope-of-the-issue">Scope of the issue</h2>
+
+<h3 id="join-site">Join site</h3>
+
+<p>There are instances of links being used to trigger JavaScript events, with their <code>href</code> omitted. Critically, the &ldquo;Switch now&rdquo; button (found on the <a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch now&rdquo; page</a>, and pictured below) cannot be focused.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/switch-now.png" alt="Switch now button in green" /></p>
+
+<p>The &ldquo;See tariff details&rdquo; control below it suffers the same issue. Here is the code (note the lack of <code>href</code>):</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;a ng-click=&#34;QuoteResultCtrl.showModal(&#39;tariff&#39;)&#34; class=&#34;quote-result-switch-now-box__link&#34;&gt;See tariff details&lt;/a&gt;
+</code></div>
+
+
+<p>In addition, the &ldquo;Continue to the next step&rdquo; control in the &ldquo;Is your email address correct?&rdquo; dialog (pictured) is a <code>&lt;span&gt;</code> with a <code>ng-click</code> handler, meaning it is not focusable and not communicated as an interactive element in assistive technologies.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/email-correct.png" alt="Is your email address correct dialog" /></p>
+
+<h2 id="fixing-the-issue">Fixing the issue</h2>
+
+<h3 id="join-site-1">Join site</h3>
+
+<p>The <a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch now&rdquo; button</a> should remain a link, because it navigates the user to a new screen. It is recommended the <code>href</code> provided is the URL of the page to which the JavaScript transports the user. The &ldquo;See tariff details&rdquo; control below it should be a <code>&lt;button&gt;</code> since it invokes an in-page dialog screen.</p>
+
+<p>The &ldquo;Continue to the next step&rdquo; control in the &ldquo;Is your email address correct?&rdquo; dialog should be a link with an <code>href</code> pointing to the &ldquo;next step&rdquo;. See <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/routing/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Routing</a> for the related issue about different screens in the <strong>Join site</strong> using the same URL.</p>
+
+          </div>
+        
+          <div class="pattern-section">
             <h1 id="focus-styles" tabindex="-1">
               <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                 <use xlink:href="#bookmark"></use>
@@ -5175,6 +5641,10 @@ h4, .h4 {
 
 <p><img src="https://heydon.github.io/bulb-audit/images/join-features.png" alt="Feature set" /></p>
 
+<p>The &ldquo;Tariff info&rdquo; dialog includes what looks like a definition list, but each row is a <code>&lt;ul&gt;</code> and the keys/values separate <code>&lt;li&gt;</code> elements, meaning there are twice as many &lsquo;items&rsquo; as there should be.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/tariff-info.png" alt="Tariff info dialog contents" /></p>
+
 <h3 id="account-dashboard">Account dashboard</h3>
 
 <p>On the <a href="https://my.staging.bulb.co.uk/dashboard">Dashboard</a> page, a grid of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert <code>&lt;div&gt;</code> markup is used instead).</p>
@@ -5452,6 +5922,8 @@ h4, .h4 {
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
+<h3 id="placeholder-labels">Placeholder labels</h3>
+
 <p>In some cases, such as search fields where the label of the submit button, &ldquo;search&rdquo;, acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the <strong>Bulb</strong> sites the &ldquo;Get a quote&rdquo; (or &ldquo;Get my quote&rdquo;) label for the submit button does not match the &ldquo;Your post code&rdquo; <code>placeholder</code> label.</p>
 
 <p>A label that is both visually persistent <em>and</em> forms the accessible label for the field is therefore recommended.</p>
@@ -5487,6 +5959,36 @@ h4, .h4 {
 <h3 id="payment-details-page">Payment details page</h3>
 
 <p>For the <a href="https://join.bulb.co.uk/join/quick-signup">Payment details page</a>, ensure a proper <code>&lt;label&gt;</code> element is used, and is associated to the <code>&lt;input&gt;</code> using <code>for</code> and <code>id</code> as in the above code example.</p>
+
+<h3 id="input-sets-on-the-my-information-and-payment-details-pages">Input sets on the My information and Payment details pages</h3>
+
+<p>The &ldquo;Date of birth&rdquo; and &ldquo;Sort code&rdquo; fields are related and must have a group label. Using the &ldquo;Date of birth&rdquo; set (pictured) as an example, follow the code example provided.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/dob.png" alt="Date of birth inputs" /></p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;fieldset&gt;
+  <span class='highlight'>&lt;legend&gt;Date of birth&lt;/legend&gt;</span>
+  &lt;label for=&#34;day&#34; <span class='highlight'>class=&#34;visually-hidden&#34;</span>&gt;<span class='highlight'>Day in D D format</span>&lt;/label&gt;
+  &lt;input id=&#34;day&#34; name=&#34;day&#34; <span class='highlight'>placeholder=&#34;DD&#34;</span>&gt;
+  &lt;label for=&#34;month&#34; class=&#34;visually-hidden&#34;&gt;Month in M M format&lt;/label&gt;
+  &lt;input id=&#34;month&#34; name=&#34;month&#34; placeholder=&#34;MM&#34;&gt;
+  &lt;label for=&#34;year&#34; class=&#34;visually-hidden&#34;&gt;Month in Y Y format&lt;/label&gt;
+  &lt;input id=&#34;year&#34; name=&#34;year&#34; placeholder=&#34;YY&#34;&gt;
+&lt;/fieldset&gt;
+</code></div>
+
+
+<ol>
+<li>The <code>&lt;legend&gt;</code> forms the group label (this only works if all the elements are within a <code>&lt;fieldset&gt;</code>, as shown).</li>
+<li>The label is hidden visually but available to screen reader users (see the definition of <code>.visually-hidden</code> in the next section).</li>
+<li>Since the label is hidden, we can provide more helpful information to screen reader users. For the payment page &ldquo;Sort code&rdquo; example, you should use &ldquo;First two digits&rdquo; and so on.</li>
+<li>The placeholder can remain as-is.</li>
+</ol>
 
 <h3 id="submit-an-electricity-meter-reading">Submit an electricity meter reading</h3>
 

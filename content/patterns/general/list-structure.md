@@ -41,6 +41,10 @@ As in the "1, 2, 3 Switch" section, the **Join site's** [Welcome page](https://j
 
 ![Feature set](/images/join-features.png)
 
+The "Tariff info" dialog includes what looks like a definition list, but each row is a `<ul>` and the keys/values separate `<li>` elements, meaning there are twice as many 'items' as there should be.
+
+![Tariff info dialog contents](/images/tariff-info.png)
+
 ### Account dashboard
 
 On the [Dashboard](https://my.staging.bulb.co.uk/dashboard) page, a grid of green boxes are presented as account management options (pictured). Although they are equivalent choices, they are not marked up as a list of options (inert `<div>` markup is used instead).

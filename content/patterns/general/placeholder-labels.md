@@ -43,6 +43,8 @@ The [Submit an electricity meter reading](https://my.staging.bulb.co.uk/dashboar
 
 ## Fixing the issue
 
+### Placeholder labels
+
 In some cases, such as search fields where the label of the submit button, "search", acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the **Bulb** sites the "Get a quote" (or "Get my quote") label for the submit button does not match the "Your post code" `placeholder` label.
 
 A label that is both visually persistent _and_ forms the accessible label for the field is therefore recommended.
@@ -64,6 +66,29 @@ To maintain an attractive design for the "Get A Quote"/"Get My Quote" forms, it 
 ### Payment details page
 
 For the [Payment details page](https://join.bulb.co.uk/join/quick-signup), ensure a proper `<label>` element is used, and is associated to the `<input>` using `for` and `id` as in the above code example.
+
+### Input sets on the My information and Payment details pages
+
+The "Date of birth" and "Sort code" fields are related and must have a group label. Using the "Date of birth" set (pictured) as an example, follow the code example provided.
+
+![Date of birth inputs](/images/dob.png)
+
+{{<code numbered="true">}}
+<fieldset>
+  [[[<legend>Date of birth</legend>]]]
+  <label for="day" [[[class="visually-hidden"]]]>[[[Day in D D format]]]</label>
+  <input id="day" name="day" [[[placeholder="DD"]]]>
+  <label for="month" class="visually-hidden">Month in M M format</label>
+  <input id="month" name="month" placeholder="MM">
+  <label for="year" class="visually-hidden">Month in Y Y format</label>
+  <input id="year" name="year" placeholder="YY">
+</fieldset>
+{{</code>}}
+
+1. The `<legend>` forms the group label (this only works if all the elements are within a `<fieldset>`, as shown).
+2. The label is hidden visually but available to screen reader users (see the definition of `.visually-hidden` in the next section).
+3. Since the label is hidden, we can provide more helpful information to screen reader users. For the payment page "Sort code" example, you should use "First two digits" and so on.
+4. The placeholder can remain as-is.
 
 ### Submit an electricity meter reading
 

@@ -54,6 +54,17 @@ Despite the simplicity, there are a number of provisions to ensure collapsible s
     </item>
     
     <item>
+      <title>Dialogs</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/dialogs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/dialogs/</guid>
+      <description>Introduction Dialogs typically serve one of two purposes:
+ To give the user a choice at a critical juncture To alert the user to important information without (entirely) changing their context  Custom dialogs are common, and commonly marked up inaccessibly. For a maximal number of users to be able to perceive and operate dialogs, the following must be catered for:
+ The dialog must have the dialog or alertdialog role (on its container).</description>
+    </item>
+    
+    <item>
       <title>Menu buttons</title>
       <link>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

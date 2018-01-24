@@ -22,6 +22,16 @@ In each case color is used to differentiate items, a supplementary alternative m
     </item>
     
     <item>
+      <title>Elements cannot be focused</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</guid>
+      <description>Introduction All interactive elements — buttons, links, form controls — need to be focusable by keyboard. If they cannot be focused they cannot be activated, meaning users who depend on the keyboard for navigation will miss out on functionality.
+Common mistakes include using &amp;lt;div&amp;gt; or &amp;lt;span&amp;gt; elements as substitutes for &amp;lt;button&amp;gt;s and links. Or using a link as a button and omitting its href which makes it a &amp;lsquo;placeholder link&amp;rsquo; that does not receive focus.</description>
+    </item>
+    
+    <item>
       <title>Focus styles</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

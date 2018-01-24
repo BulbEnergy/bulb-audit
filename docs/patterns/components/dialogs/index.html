@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/components/dialogs/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Collapsible sections | Bulb Audit
+        Dialogs | Bulb Audit
       
     </title>
     
@@ -203,7 +203,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/" aria-current="page">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -212,7 +212,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/components/dialogs/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/components/dialogs/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -379,15 +379,8 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Collapsible sections
+      Dialogs
     </h1>
-    
-      <p class="priority">
-        <strong>Priority: </strong>
-          
-              <a href="https://heydon.github.io/bulb-audit/priorities/2">2</a>
-          
-      </p>
     
     
       
@@ -429,16 +422,49 @@
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Collapsible sections are one of the simpler interaction design primitives. All they do is toggle the appearance of the flow content they introduce. The advantage of having collapsed section in the first place is that the user is afforded an overview of the page structure without necessitating scrolling through large quantities of content.</p>
+<p>Dialogs typically serve one of two purposes:</p>
 
-<p>Despite the simplicity, there are a number of provisions to ensure collapsible sections are accessible:</p>
+<ol>
+<li>To give the user a choice at a critical juncture</li>
+<li>To alert the user to important information without (entirely) changing their context</li>
+</ol>
+
+<p>Custom dialogs are common, and commonly marked up inaccessibly. For a maximal number of users to be able to perceive and operate dialogs, the following must be catered for:</p>
 
 <ul>
-<li>The toggle button must behave as a <code>&lt;button&gt;</code> and have the button role (either implicitly, from the element, or via <code>role=&quot;button&quot;</code>)</li>
-<li>The button must not override the heading semantics; typically, it is provided as a child of the section&rsquo;s main heading.</li>
-<li>The toggle button must toggle the <code>aria-expanded</code> state between <code>true</code> (expanded) and <code>false</code> (collapsed)</li>
-<li>The content in its collapsed state must not be available to screen readers and interactive content within it must not be focusable (<code>display: none</code> or the <code>hidden</code> property takes care of both of these)</li>
+<li>The dialog must have the <code>dialog</code> or <code>alertdialog</code> role (on its container).</li>
+<li>The <code>role=&quot;dialog&quot;</code>/<code>role=&quot;alertdialog&quot;</code> element must have a label, usually provided by the dialog&rsquo;s heading via <code>aria-labelledby</code>.</li>
+<li>Focus must be moved inside the dialog when it is opened.</li>
+<li>Focus must be moved back to the element that invoked the dialog when it is closed.</li>
+<li>The close button has an accessible label in addition to its &ldquo;✖️&rdquo; symbol</li>
+<li>The dialog&rsquo;s content/message can form the <code>role=&quot;dialog&quot;</code> element&rsquo;s description, using <code>aria-describedby</code>. A basic template is provided below.</li>
 </ul>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;div role=&#34;dialog&#34; aria-labelledby=&#34;dialog-title&#34; aria-describedby=&#34;dialog-content&#34;&gt;
+  &lt;h2 id=&#34;dialog-title&#34;&gt;Dialog title&lt;/h2&gt;
+  &lt;div id=&#34;dialog-content&#34; role=&#34;document&#34;&gt;
+    &lt;p&gt;The body of the dialog / its message&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button aria-label=&#34;close&#34;&gt;x&lt;/button&gt;
+&lt;/div&gt;
+</code></div>
+
+
+<aside aria-label="note" class="note">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
+      <use xlink:href="#info"></use>
+    </svg>
+    <p>In this example, the dialog is purely informational. However, you could add interactive form content within the <code>#dialog-content</code> element and/or replace the close button with &ldquo;Okay&rdquo; and &ldquo;Cancel&rdquo; buttons or similar.</p>
+
+  </div>
+</aside>
+
 
 <h2 id="wcag-criteria">WCAG criteria</h2>
 
@@ -469,12 +495,36 @@
     
   
     
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
       <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-programmatic">
+        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
           <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
             <use xlink:href="#w3c"></use>
           </svg>
-          1.3.1 Info and Relationships</a> (level A)
+          2.1.1 Keyboard</a> (level A)
         </strong>
         
       </li>
@@ -503,7 +553,15 @@
     
   
     
-  
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.3 Focus Order</a> (level A)
+        </strong>
+        
+      </li>
     
   
     
@@ -513,27 +571,15 @@
     
   
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
+      <li>
+        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-visible">
+          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
+            <use xlink:href="#w3c"></use>
+          </svg>
+          2.4.7 Focus Visible</a> (level AA)
+        </strong>
+        
+      </li>
     
   
     
@@ -595,226 +641,20 @@
 
 <h2 id="scope-of-the-issue">Scope of the issue</h2>
 
-<p>Of the samples in the <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/scope/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Scope</a>, only the <strong>Marketing site</strong>&rsquo;s <a href="https://bulb.co.uk/careers">About → Careers</a> page appears to be affected. However, collapsibles are a common interaction primitive and the advice to follow should be (broadly speaking) incorporated for any similar pattern.</p>
+<h3 id="join-site">Join site</h3>
 
-<p><img src="https://heydon.github.io/bulb-audit/images/open_roles.png" alt="Open roles collapsible sections" /></p>
+<ul>
+<li><a href="https://join.bulb.co.uk/join/quote-result">&ldquo;Switch now&rdquo; page</a> (✖️ The &ldquo;See tariff details&rdquo; link/button invokes a dialog that has no semantic information and cannot be closed using the keyboard.)</li>
+<li><a href="https://join.bulb.co.uk/join/quick-signup">My information page</a> (✖️ The &ldquo;Is your email address correct&rdquo; dialog omits necessary semantic information and does not have focus sent to it when opened.)</li>
+</ul>
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
-<h3 id="html">HTML</h3>
+<p>It is recommended that a drop-in component for dialogs is used across the sites. The <a href="https://github.com/edenspiekermann/a11y-dialog">A11y Dialog</a> by Hugo Giraudel is a good example, and has no dependencies, so should be relatively easy to port between sites.</p>
 
-<p>The following represents the HTML expected in the collapsible section&rsquo;s <em>collapsed state</em>.</p>
+<p>For purely informational dialogs, like the tariff information dialog (pictured) a close button must be supplied and focused when the dialog is opened.</p>
 
-
-
-
-
-<div class="code-annotated "><code>
-&lt;li class=&#34;collapsible&#34;&gt;
-  &lt;h3&gt;
-    &lt;button <span class='highlight'>aria-expanded=&#34;false&#34;</span>&gt;
-      &lt;span&gt;Graduate Energy Specialist&lt;/span&gt;
-      &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 10 10&#34; focusable=&#34;false&#34;&gt;
-        &lt;path fill=&#34;currentColor&#34; d=&#34;m1 3 4 5 4-5z&#34;/&gt;
-      &lt;/svg&gt;
-    &lt;/button&gt;
-  &lt;/h3&gt;
-  &lt;div class=&#34;section-content&#34; <span class='highlight'>hidden</span>&gt;
-    &lt;!-- section content --&gt;
-  &lt;/div&gt;
-&lt;/li&gt;
-</code></div>
-
-
-<aside aria-label="note" class="note">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
-    </svg>
-    <p>The SVG icon has <code>focusable=&quot;false&quot;</code> to prevent it from receiving focus in Internet Explorer and <code>fill=&quot;currentColor&quot;</code> so that the SVG adopts the font color, even as it changes according to Windows High Contrast Mode.</p>
-
-  </div>
-</aside>
-
-
-<p>In the expanded state, <code>aria-expanded</code> is switched to <code>true</code> and the <code>hidden</code> property is removed:</p>
-
-
-
-
-
-<div class="code-annotated "><code>
-&lt;li class=&#34;collapsible&#34;&gt;
-  &lt;h3&gt;
-    &lt;button <span class='highlight'>aria-expanded=&#34;true&#34;</span>&gt;
-      &lt;span&gt;Graduate Energy Specialist&lt;/span&gt;
-      &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 10 10&#34;&gt;
-        &lt;path fill=&#34;currentColor&#34; d=&#34;m1 3 4 5 4-5z&#34;/&gt;
-      &lt;/svg&gt;
-    &lt;/button&gt;
-  &lt;/h3&gt;
-  &lt;div class=&#34;section-content&#34;&gt;
-    &lt;!-- section content --&gt;
-  &lt;/div&gt;
-&lt;/li&gt;
-</code></div>
-
-
-<aside aria-label="warning" class="note warning">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
-      <use xlink:href="#warning"></use>
-    </svg>
-    <p>The <code>hidden</code> property is not supported in older browsers. But you can polyfill it with the following CSS:</p>
-
-<div class="code-annotated "><code>
-[hidden] {
-  display: none;
-}
-</code></div>
-
-  </div>
-</aside>
-
-
-<h3 id="demo">Demo</h3>
-
-<p>The following demo uses a simple bit of vanilla JavaScript, in ES5. It is believed that this would be most efficient on a static information site such as the <strong>Marketing site</strong>. It can, however, be converted as desired.</p>
-
-
-<div class="demo-container">
-  
-      <div class="demo-inner" >
-        <div class="demo" id="js-demo-141eda2435c93a868ad5b313056788a5"></div>
-        <button data-launch="js-demo-141eda2435c93a868ad5b313056788a5">Launch <span aria-hidden="true">↗</span></button>
-      </div>
-      
-  
-  <template id="template-141eda2435c93a868ad5b313056788a5">
-      
-<li class="collapsible">
-  <h3>
-    <button aria-expanded="false">
-      <span>Graduate Energy Specialist</span>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" focusable="false">
-        <path fill="currentColor" d="m1 3 4 5 4-5z"/>
-      </svg>      
-    </button>
-  </h3>
-  <div class="section-content" hidden>
-    <p>Lorem ipsum dolor sit amet</p>
-  </div>
-</li>
-<style>
-li {
-  font-family: sans-serif;
-  list-style: none;
-  font-size: 1.25rem;
-  border-radius: 0.25rem;
-  background-color: #ddd;
-  margin-bottom: 1rem;
-}
-
-h3 {
-  margin-bottom: 0;
-}
-
-[aria-expanded] {
-  font-size: inherit;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 1rem;
-  color: #fff;
-  background-color: #19ac58;
-  border-radius: 0.25rem;
-  border: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-[aria-expanded] svg {
-  width: 0.85rem;
-  height: 0.85rem;
-  display: inline-block;
-  transform: rotate(180deg);
-  transition: transform 0.25s ease-out;
-}
-
-[aria-expanded="true"] svg {
-  transform: rotate(0deg);
-}
-
-.section-content {
-  padding: 1rem;
-}
-
-/* just for the demo */
-.section-content p {
-  margin: 0;
-}
-</style>
-<script>
-var collapsibles = demo.querySelectorAll('.collapsible');
-
-Array.prototype.forEach.call(collapsibles, function(collapsible) {
-  var btn = collapsible.querySelector('[aria-expanded]');
-  var content = collapsible.querySelector('.section-content');
-  btn.addEventListener('click', function () {
-    var expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-    btn.setAttribute('aria-expanded', !expanded);
-    content.hidden = !content.hidden;
-  });
-});
-</script>
-
-  </template>
-  <script>
-    (function() {
-      var root = document.getElementById('js-demo-141eda2435c93a868ad5b313056788a5');
-      var template = document.getElementById('template-141eda2435c93a868ad5b313056788a5');
-
-      
-      var demoDiv = document.createElement('div');
-      demoDiv.innerHTML = template.innerHTML;
-      var standaloneScript = demoDiv.querySelector('script');
-      if (standaloneScript) {
-        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
-      }
-
-      if (document.head.attachShadow) {
-        var templateScript = template.content.querySelector('script');
-        if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-141eda2435c93a868ad5b313056788a5\').shadowRoot;' + templateScript.textContent + '})();';
-          templateScript.textContent = wrappedScript;
-        }
-        root.attachShadow({mode: 'open'});
-        root.shadowRoot.appendChild(document.importNode(template.content, true));
-      } else {
-        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
-      }
-
-      var launchButton = document.querySelector('[data-launch="js-demo-141eda2435c93a868ad5b313056788a5"]');
-      launchButton.addEventListener('click', function () {
-        var standalone = window.open();
-        standalone.document.body.innerHTML = demoDiv.innerHTML;
-
-        
-        var newScript = standalone.document.createElement('script');
-        var oldScript = standalone.document.querySelector('script');
-        if (oldScript) {
-          newScript.textContent = oldScript.textContent;
-          oldScript.parentNode.removeChild(oldScript);
-          standalone.document.body.appendChild(newScript);
-        }
-        
-
-        standalone.document.title = 'demo ' + "141eda2435c93a868ad5b313056788a5";
-      });
-    })();
-  </script>
-</div>
-
+<p><img src="https://heydon.github.io/bulb-audit/images/tariff-dialog.png" alt="Tariff information dialog, currently with no close button" /></p>
 
   </main>
 

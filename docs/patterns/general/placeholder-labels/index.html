@@ -212,6 +212,15 @@
                             </li>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/components/dialogs/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Dialogs</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/components/menu-button/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -251,6 +260,15 @@
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
                                 <span class="text">Color dependence</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/" >
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Elements cannot be focused</span>
                               </a>
                             </li>
                           
@@ -590,6 +608,8 @@
 
 <h2 id="fixing-the-issue">Fixing the issue</h2>
 
+<h3 id="placeholder-labels">Placeholder labels</h3>
+
 <p>In some cases, such as search fields where the label of the submit button, &ldquo;search&rdquo;, acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the <strong>Bulb</strong> sites the &ldquo;Get a quote&rdquo; (or &ldquo;Get my quote&rdquo;) label for the submit button does not match the &ldquo;Your post code&rdquo; <code>placeholder</code> label.</p>
 
 <p>A label that is both visually persistent <em>and</em> forms the accessible label for the field is therefore recommended.</p>
@@ -625,6 +645,36 @@
 <h3 id="payment-details-page">Payment details page</h3>
 
 <p>For the <a href="https://join.bulb.co.uk/join/quick-signup">Payment details page</a>, ensure a proper <code>&lt;label&gt;</code> element is used, and is associated to the <code>&lt;input&gt;</code> using <code>for</code> and <code>id</code> as in the above code example.</p>
+
+<h3 id="input-sets-on-the-my-information-and-payment-details-pages">Input sets on the My information and Payment details pages</h3>
+
+<p>The &ldquo;Date of birth&rdquo; and &ldquo;Sort code&rdquo; fields are related and must have a group label. Using the &ldquo;Date of birth&rdquo; set (pictured) as an example, follow the code example provided.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/dob.png" alt="Date of birth inputs" /></p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;fieldset&gt;
+  <span class='highlight'>&lt;legend&gt;Date of birth&lt;/legend&gt;</span>
+  &lt;label for=&#34;day&#34; <span class='highlight'>class=&#34;visually-hidden&#34;</span>&gt;<span class='highlight'>Day in D D format</span>&lt;/label&gt;
+  &lt;input id=&#34;day&#34; name=&#34;day&#34; <span class='highlight'>placeholder=&#34;DD&#34;</span>&gt;
+  &lt;label for=&#34;month&#34; class=&#34;visually-hidden&#34;&gt;Month in M M format&lt;/label&gt;
+  &lt;input id=&#34;month&#34; name=&#34;month&#34; placeholder=&#34;MM&#34;&gt;
+  &lt;label for=&#34;year&#34; class=&#34;visually-hidden&#34;&gt;Month in Y Y format&lt;/label&gt;
+  &lt;input id=&#34;year&#34; name=&#34;year&#34; placeholder=&#34;YY&#34;&gt;
+&lt;/fieldset&gt;
+</code></div>
+
+
+<ol>
+<li>The <code>&lt;legend&gt;</code> forms the group label (this only works if all the elements are within a <code>&lt;fieldset&gt;</code>, as shown).</li>
+<li>The label is hidden visually but available to screen reader users (see the definition of <code>.visually-hidden</code> in the next section).</li>
+<li>Since the label is hidden, we can provide more helpful information to screen reader users. For the payment page &ldquo;Sort code&rdquo; example, you should use &ldquo;First two digits&rdquo; and so on.</li>
+<li>The placeholder can remain as-is.</li>
+</ol>
 
 <h3 id="submit-an-electricity-meter-reading">Submit an electricity meter reading</h3>
 
