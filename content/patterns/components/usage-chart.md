@@ -1,5 +1,5 @@
 +++
-title = "Usage chart"
+title = "My Usage chart"
 +++
 
 ## Introduction

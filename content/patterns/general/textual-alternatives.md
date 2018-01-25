@@ -97,6 +97,14 @@ The photo of the beach is also decorative and should have `alt=""`.
 
 ![beach photograph](/images/beach.png)
 
+#### Trust Pilot instances
+
+The **Trust Pilot** widget (found on the [Home page](https://bulb.co.uk/) and [About → business](https://bulb.co.uk/business) page) is an `<iframe>` with a lot of content and JavaScript, amounting to 80KB+ (!) of payload. The _purpose_ of the widget is simply to link to **Bulb**'s **Trust Pilot** page.
+
+![Trust pilot widget](/images/trust.png) 
+
+In which case, I recommend the `<iframe>` is replaced by a simple image, linked to that page. See the code example below with the
+
 ### Join site
 
 The graphics throughout the **Join site** (example pictured) are rendered as CSS background images on `<div>` elements. Since they are exclusively decorative images, this is not an issue in terms of alternative text (they already will not be announced). **However**, background images are typically eliminated when users (some of whom with impaired vision) activate [Windows High Contrast Mode](https://support.microsoft.com/en-gb/help/4026951/windows-turn-high-contrast-mode-on-or-off-in-windows).

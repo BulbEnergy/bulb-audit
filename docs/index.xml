@@ -177,6 +177,16 @@ The placeholder attribute is intended for providing supplemental hints and examp
     </item>
     
     <item>
+      <title>My Usage chart</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/usage-chart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/usage-chart/</guid>
+      <description>Introduction The Bulb sites use a number of charts and graphs, primarily to illustrate fairly simple concepts. However, the energy usage chart found in the Account dashboard&amp;rsquo;s My usage screen communicates critical, detailed information. It — or an alternative for it — therefore needs to communicate the information it represents in a detailed and structured way.
+Commonly, complex charts are accompanied by invisible data tables, intended for blind screen reader users.</description>
+    </item>
+    
+    <item>
       <title>Routing</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/routing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -215,16 +225,6 @@ With the introduction of landmark elements like &amp;lt;main&amp;gt;, it has bec
       <guid>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</guid>
       <description>Introduction For blind users, textual alternatives of important visual information must be provided. Composing that text effectively is a question of context.
 For example, a logo that is intended as a study in logo design should include a textual alternative — typically via an &amp;lt;img&amp;gt; tag&amp;rsquo;s alt attribute — that describes the features of the logo, such as the colors and typography. For Bulb&amp;rsquo;s logo this might read something like, &amp;rdquo; expressive, hand written text, in white, and featuring hooped ascenders&amp;rdquo;.</description>
-    </item>
-    
-    <item>
-      <title>Usage chart</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/usage-chart/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/usage-chart/</guid>
-      <description>Introduction The Bulb sites use a number of charts and graphs, primarily to illustrate fairly simple concepts. However, the energy usage chart found in the Account dashboard&amp;rsquo;s My usage screen communicates critical, detailed information. It — or an alternative for it — therefore needs to communicate the information it represents in a detailed and structured way.
-Commonly, complex charts are accompanied by invisible data tables, intended for blind screen reader users.</description>
     </item>
     
     <item>
