@@ -1,5 +1,6 @@
 +++
 title = "My Usage chart"
+priorities = ["2"]
 +++
 
 ## Introduction

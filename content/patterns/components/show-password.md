@@ -1,5 +1,6 @@
 +++
 title = "Show password"
+priorities = ["3"]
 +++
 
 ## Introduction

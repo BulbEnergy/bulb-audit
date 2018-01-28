@@ -32,6 +32,17 @@ It is appreciated that a consistent experience can be difficult to achieve when 
     </item>
     
     <item>
+      <title>Show password</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/components/show-password/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/components/show-password/</guid>
+      <description>Introduction The option to &amp;ldquo;show password&amp;rdquo; when one is writing it is a sound inclusive design feature, helping users to compose or check their writing of passwords. However, a &amp;ldquo;show password&amp;rdquo; button that is not technically accessible fails some of the users who may want to take advantage of it.
+The pictured show password control ahs a number of problems that need addressing:
+ It functions as a button, but is marked up as a link It is not focusable by keyboard (because, as a link, it is missing an href) Were it focusable, upon clicking it, focus would be lost — because it is actually two controls, with one always hidden It appears before the field to which it relates, which is somewhat confusing visually and represents a backwards reading order non-visually.</description>
+    </item>
+    
+    <item>
       <title>Skip links</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/skip-links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

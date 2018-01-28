@@ -1,5 +1,6 @@
 +++
 title = "Dialogs"
+priorities = ["1"]
 +++
 
 ## Introduction
