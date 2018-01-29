@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Missing and placeholder labels | Bulb Audit
+        Visually hidden class | Bulb Audit
       
     </title>
     
@@ -318,7 +318,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/" aria-current="page">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -379,7 +379,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -404,358 +404,35 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Missing and placeholder labels
+      Visually hidden class
     </h1>
     
-      <p class="priority">
-        <strong>Priority: </strong>
-          
-              <a href="https://heydon.github.io/bulb-audit/priorities/1">1</a>
-          
-      </p>
-    
     
       
 
-  <nav class="toc" aria-labelledby="toc-heading">
-    <h2 id="toc-heading">Table of contents</h2>
-    <ol>
-      
-        <li>
-          <a href="#introduction">
-            Introduction
-          </a>
-        </li>
-      
-        <li>
-          <a href="#wcag-criteria">
-            WCAG criteria
-          </a>
-        </li>
-      
-        <li>
-          <a href="#scope-of-the-issue">
-            Scope of the issue
-          </a>
-        </li>
-      
-        <li>
-          <a href="#fixing-the-issue">
-            Fixing the issue
-          </a>
-        </li>
-      
-    </ol>
-  </nav>
 
-
-    
-    
-
-<h2 id="introduction">Introduction</h2>
-
-<p>All form elements need labels associated to them. Where a label is not associated, the screen reader user is not informed of the field&rsquo;s purpose upon focusing that field. Screen reader users typically traverse forms by focus, not &lsquo;virtual cursor&rsquo; (element by element).</p>
-
-<p>The <code>placeholder</code> attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.</p>
-
-<p>Where <code>placeholder</code>s are used as primary labels, a number of accessibility and usability issues emerge.</p>
-
-<p>Firstly, the <code>placeholder</code> is not supported as an accessible label in legacy browsers and assistive technologies, meaning those users will not hear a label as they focus the control.</p>
-
-<p>For sighted users, there are cognitive challenges with the intermittent nature of the <code>placeholder</code> label, resulting in some getting confused and frustrated as they try to remember what it was they were supposed to be entering. Others mistake the <code>placeholder</code> text as content and think the field is already complete.</p>
-
-<h2 id="wcag-criteria">WCAG criteria</h2>
-
-
-
-
-
-<ul class="wcag ">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
     
-  
     
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#minimize-error-cues">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          3.3.2 Labels or Instructions</a> (level A)
-        </strong>
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</ul>
-
-
-<h2 id="scope-of-the-issue">Scope of the issue</h2>
-
-<h3 id="marketing-site-join-site">Marketing site &amp; Join site</h3>
-
-<p>Placeholders-as-labels are found wherever there is a &ldquo;Get A Quote&rdquo; / &ldquo;Get My Quote&rdquo; form.</p>
-
-<ul>
-<li><a href="https://bulb.co.uk/">Home page</a></li>
-<li><a href="https://bulb.co.uk/energy">About → Our energy</a></li>
-<li><a href="https://join.bulb.co.uk/join/quote">Welcome page</a> (<strong>Join site</strong>)</li>
-</ul>
-
-<p>In addition, the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> has no visible and persistent labels:</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/my-info-form.png" alt="The My Information form" /></p>
-
-<p>In the <strong>Join site&rsquo;s</strong> <a href="https://join.bulb.co.uk/join/quick-signup">Payment details page</a>, persistent visual labels accompany placeholders. The issue here is that the <code>&lt;label&gt;</code>s are actually <code>&lt;div&gt;</code>s and are not associated accessibly with the form inputs.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/debit.png" alt="Payment details form" /></p>
-
-<h3 id="account-dashboard">Account dashboard</h3>
-
-<p>The <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a> page&rsquo;s inputs (pictured) each have a missing label and no placeholder as a substitute.</p>
-
-<h2 id="fixing-the-issue">Fixing the issue</h2>
-
-<h3 id="placeholder-labels">Placeholder labels</h3>
-
-<p>In some cases, such as search fields where the label of the submit button, &ldquo;search&rdquo;, acts as a visible label, a persistent visual label is not really necessary and an invisible textual label need only be provided for assistive technology users. However, on the <strong>Bulb</strong> sites the &ldquo;Get a quote&rdquo; (or &ldquo;Get my quote&rdquo;) label for the submit button does not match the &ldquo;Your post code&rdquo; <code>placeholder</code> label.</p>
-
-<p>A label that is both visually persistent <em>and</em> forms the accessible label for the field is therefore recommended.</p>
-
-
-
-
-
-<div class="code-annotated numbered"><code>
-&lt;label <span class='highlight'>for=&#34;postcode&#34;</span>&gt;Your postcode&lt;/label&gt;
-&lt;input <span class='highlight'>id=&#34;postcode&#34;</span> name=&#34;postcode&#34; <span class='highlight'>placeholder=&#34;E.g. NR9 5NF&#34;</span>&gt;
-&lt;button type=&#34;submit&#34;&gt;Get my quote&lt;/button&gt;
-</code></div>
-
-
-<ol>
-<li>The <code>&lt;label&gt;</code> element should be associated with the&hellip;</li>
-<li>&hellip;<code>&lt;input&gt;</code> by matching the values of the respective <code>for</code> and <code>id</code> attributes.</li>
-<li>The <code>placeholder</code> is now optional, but should be clearly marked as an example/hint to be replaced, such as by prefixing with &ldquo;E.g.&rdquo; if included.</li>
-</ol>
-
-<aside aria-label="note" class="note">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
-    </svg>
-    <p>To maintain an attractive design for the &ldquo;Get A Quote&rdquo;/&ldquo;Get My Quote&rdquo; forms, it might help to center align the label, input, and submit button along a vertical axis. <a href="https://join.bulb.co.uk/join/quick-signup">&ldquo;My Information&rdquo; form</a> should left-align its labels as other forms do across the sites.</p>
-
-  </div>
-</aside>
-
-
-<h3 id="payment-details-page">Payment details page</h3>
-
-<p>For the <a href="https://join.bulb.co.uk/join/quick-signup">Payment details page</a>, ensure a proper <code>&lt;label&gt;</code> element is used, and is associated to the <code>&lt;input&gt;</code> using <code>for</code> and <code>id</code> as in the above code example.</p>
-
-<h3 id="input-sets-on-the-my-information-and-payment-details-pages">Input sets on the My information and Payment details pages</h3>
-
-<p>The &ldquo;Date of birth&rdquo; and &ldquo;Sort code&rdquo; fields are related and must have a group label. Using the &ldquo;Date of birth&rdquo; set (pictured) as an example, follow the code example provided.</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/dob.png" alt="Date of birth inputs" /></p>
-
-
-
-
-
-<div class="code-annotated numbered"><code>
-&lt;fieldset&gt;
-  <span class='highlight'>&lt;legend&gt;Date of birth&lt;/legend&gt;</span>
-  &lt;label for=&#34;day&#34; <span class='highlight'>class=&#34;visually-hidden&#34;</span>&gt;<span class='highlight'>Day in D D format</span>&lt;/label&gt;
-  &lt;input id=&#34;day&#34; name=&#34;day&#34; <span class='highlight'>placeholder=&#34;DD&#34;</span>&gt;
-  &lt;label for=&#34;month&#34; class=&#34;visually-hidden&#34;&gt;Month in M M format&lt;/label&gt;
-  &lt;input id=&#34;month&#34; name=&#34;month&#34; placeholder=&#34;MM&#34;&gt;
-  &lt;label for=&#34;year&#34; class=&#34;visually-hidden&#34;&gt;Month in Y Y format&lt;/label&gt;
-  &lt;input id=&#34;year&#34; name=&#34;year&#34; placeholder=&#34;YY&#34;&gt;
-&lt;/fieldset&gt;
-</code></div>
-
-
-<ol>
-<li>The <code>&lt;legend&gt;</code> forms the group label (this only works if all the elements are within a <code>&lt;fieldset&gt;</code>, as shown).</li>
-<li>The label is hidden visually but available to screen reader users (see the definition of <code>.visually-hidden</code> in the next section).</li>
-<li>Since the label is hidden, we can provide more helpful information to screen reader users. For the payment page &ldquo;Sort code&rdquo; example, you should use &ldquo;First two digits&rdquo; and so on.</li>
-<li>The placeholder can remain as-is.</li>
-</ol>
-
-<h3 id="submit-an-electricity-meter-reading">Submit an electricity meter reading</h3>
-
-<p>In this case, both a group label and individual labels are missing.</p>
-
-<p>For the <a href="https://my.staging.bulb.co.uk/dashboard/meters/give-reading/electricity">Submit an electricity meter reading</a>, include invisible but accessible labels in the form &ldquo;First number&rdquo;, &ldquo;Second number&rdquo; etc for each input/number. In addition, put the <code>&lt;h4&gt;</code> (which ought to be an <code>&lt;h2&gt;</code> — see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Heading structure</a>) and description inside a <code>&lt;legend&gt;</code> and group all the controls inside a <code>&lt;fieldset&gt;</code> as in the following code example:</p>
-
-
-
-
-
-<div class="code-annotated numbered"><code>
-&lt;fieldset&gt;
-  &lt;legend&gt;
-    &lt;h2&gt;New electricity reading&lt;/h2&gt;
-    &lt;p&gt;Enter all the numbers you see on your meter&lt;/p&gt;
-  &lt;/legend&gt;
-  &lt;!-- each loop --&gt;
-  &lt;label for=&#34;number-1&#34; <span class='highlight'>class=&#34;visually-hidden&#34;</span>&gt;First number&lt;/label&gt;
-  &lt;input type=&#34;number&#34; id=&#34;number-1&#34; class=&#34;sc-RefOD cAjWea&#34; name=&#34;number-1&#34; value=&#34;0&#34; required=&#34;&#34;&gt;
-  &lt;!-- end each loop --&gt;
-&lt;/fieldset&gt;
-</code></div>
-
-
-<ol>
-<li>A special class must be used to hide the label visually, but not from assistive technologies (screen readers). The class is defined below.</li>
-</ol>
-
-
 
+<p>In some circumstances, you will want to provide clarifying text to screen reader users which is not necessary for sighted users. The following <code>.visually-hidden</code> class hides text visually without silencing its element&rsquo;s content in screen readers.</p>
 
+<p>Use it judiciously, since in most cases sighted and unsighted users should be able to read the same content, as part of the same experience.</p>
 
-<div class="code-annotated "><code>
-.visually-hidden {
-  position: absolute;
-  white-space: nowrap;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
+<pre><code class="language-css">.visually-hidden {
   clip-path: inset(100%);
   clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
-</code></div>
+</code></pre>
 
+<h2 id="example-usage">Example usage</h2>
 
-<aside aria-label="note" class="note">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 41.667306 41.66729" focusable="false">
-      <use xlink:href="#info"></use>
-    </svg>
-    <p>The above advice also applies to the previous meter reading, even though the inputs are inactive. It is important that the two alike widgets are presented in the same way.</p>
-
-  </div>
-</aside>
-
+<pre><code class="language-html">&lt;p class=&quot;visually-hidden&quot;&gt;This text is not visible but will be read out in screen reader software&lt;/p&gt;
+</code></pre>
 
   </main>
 

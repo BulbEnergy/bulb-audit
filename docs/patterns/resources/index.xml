@@ -20,5 +20,16 @@
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;[Site name] | [Page name]&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;a href=&amp;quot;#main&amp;quot;&amp;gt;skip to content&amp;lt;/a&amp;gt; &amp;lt;header&amp;gt; &amp;lt;a href=&amp;quot;/&amp;quot; aria-label=&amp;quot;Bulb homepage&amp;quot;&amp;gt; &amp;lt;svg&amp;gt;&amp;lt;!</description>
     </item>
     
+    <item>
+      <title>Visually hidden class</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/</guid>
+      <description> In some circumstances, you will want to provide clarifying text to screen reader users which is not necessary for sighted users. The following .visually-hidden class hides text visually without silencing its element&amp;rsquo;s content in screen readers.
+Use it judiciously, since in most cases sighted and unsighted users should be able to read the same content, as part of the same experience.
+.visually-hidden { clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }  Example usage &amp;lt;p class=&amp;quot;visually-hidden&amp;quot;&amp;gt;This text is not visible but will be read out in screen reader software&amp;lt;/p&amp;gt;  </description>
+    </item>
+    
   </channel>
 </rss>

@@ -379,6 +379,15 @@
                     </a>
                   </li>
                 
+                  <li class="pattern">
+                    <a href="#visually-hidden-class" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Visually hidden class</span>
+                    </a>
+                  </li>
+                
               </ul>
             </li>
           
@@ -7133,6 +7142,37 @@ componentDidMount() {
     &lt;/footer&gt;
   &lt;/body&gt;
 &lt;/html&gt;
+</code></pre>
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="visually-hidden-class" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Visually hidden class
+            </h1>
+            
+
+<p>In some circumstances, you will want to provide clarifying text to screen reader users which is not necessary for sighted users. The following <code>.visually-hidden</code> class hides text visually without silencing its element&rsquo;s content in screen readers.</p>
+
+<p>Use it judiciously, since in most cases sighted and unsighted users should be able to read the same content, as part of the same experience.</p>
+
+<pre><code class="language-css">.visually-hidden {
+  clip-path: inset(100%);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+</code></pre>
+
+<h2 id="example-usage">Example usage</h2>
+
+<pre><code class="language-html">&lt;p class=&quot;visually-hidden&quot;&gt;This text is not visible but will be read out in screen reader software&lt;/p&gt;
 </code></pre>
 
           </div>
