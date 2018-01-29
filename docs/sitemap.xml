@@ -89,6 +89,10 @@
   </url>
   
   <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/</loc>
+  </url>
+  
+  <url>
     <loc>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</loc>
   </url>
   
@@ -109,6 +113,10 @@
   <url>
     <loc>https://heydon.github.io/bulb-audit/priorities/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/resources/</loc>
   </url>
   
   <url>

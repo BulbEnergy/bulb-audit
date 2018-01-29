@@ -366,6 +366,22 @@
               </ul>
             </li>
           
+            <li>
+              <h3>Resources</h3>
+              <ul>
+                
+                  <li class="pattern">
+                    <a href="#marketing-site-homepage-html" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Marketing site homepage HTML</span>
+                    </a>
+                  </li>
+                
+              </ul>
+            </li>
+          
         </ul>
       
     </nav>
@@ -7029,6 +7045,95 @@ componentDidMount() {
 <li>Change the login page title to something similar to <em>&ldquo;MyBulb — Log in to your account&rdquo;</em>.</li>
 <li>Instead of changing the wording of the back button on the reading page, actually link back to the main dashboard page. There is no need to step back through the intermediary page.</li>
 </ul>
+
+          </div>
+        
+      
+        
+          <div class="pattern-section">
+            <h1 id="marketing-site-homepage-html" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Marketing site homepage HTML
+            </h1>
+            <p>The following is a template for the marketing site&rsquo;s HTML documents, using the homepage content to describe an example structure. Each page in the marketing site should follow the prescribed <code>&lt;title&gt;</code> pattern, include <code>lang</code> on the HTML element, and a skip link etc.</p>
+
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;title&gt;[Site name] | [Page name]&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a href=&quot;#main&quot;&gt;skip to content&lt;/a&gt;
+    &lt;header&gt;
+      &lt;a href=&quot;/&quot; aria-label=&quot;Bulb homepage&quot;&gt;
+        &lt;svg&gt;&lt;!-- Path data --&gt;&lt;/svg&gt;
+      &lt;/a&gt;
+
+      &lt;nav&gt;
+        &lt;!--
+          Site naviagtion (get a quote, about etc)
+          Needs to be an unordered list of links!
+        --&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main id=&quot;main&quot; tabindex=&quot;-1&quot;&gt;
+      &lt;div class=&quot;component page-leader&quot;&gt;
+        &lt;h1&gt;Making energy simpler, cheaper, greener&lt;/h1&gt;
+        &lt;p&gt;Switch now and save up to £350&lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;component get-a-quote-form&quot;&gt;
+        &lt;label for=&quot;postcode&quot;&gt;Enter postcode&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;postcode&quot; aria-invalid=&quot;false&quot;&gt;
+        &lt;div class=&quot;error&quot; id=&quot;error-postcode&quot;&gt;
+          &lt;!-- Enter error text here on error --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;component image-and-text&quot;&gt;
+        &lt;div class=&quot;image&quot;&gt;
+          &lt;img src=&quot;[src]&quot; alt=&quot;[empty if decorative, descriptive/evocative if not]&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;text&quot;&gt;
+          &lt;h2&gt;The most trusted energy supplier in the UK&lt;/h2&gt;
+          &lt;p&gt;For us, &lt;a href=&quot;[url]&quot;&gt;customer service&lt;/a&gt;&lt;/p&gt;
+          &lt;!--
+            Start Trust Pilot image example
+            (see https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/#trust-pilot-instances)
+          --&gt;
+          &lt;a href=&quot;[url]&quot;
+            &lt;img src=&quot;[src]&quot; alt=&quot;Bulb on Trust Pilot (9.8 out of 10)&quot;&gt;
+          &lt;/a&gt;
+          &lt;!-- End Trust Pilot image example --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;!--
+        Further text/image sections here.
+        Charts covered in https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/
+      --&gt;
+    &lt;/main&gt;
+
+    &lt;aside aria-labelledby=&quot;press-heading&quot;&gt;
+      &lt;h2 id=&quot;press-heading&quot; class=&quot;visually-hidden&quot;&gt;Bulb in the press&lt;/h2&gt;
+      &lt;!-- Unordered list of images with descriptive alt texts (names of papers) and quotes --&gt;
+    &lt;/aside&gt;
+    &lt;footer&gt;
+      &lt;!--
+      Pink headings should be &lt;h2&gt;.
+      Social media icons should be a list and images should have text alternatives
+      (see https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/#home-page-https-bulb-co-uk and https://heydon.github.io/bulb-audit/patterns/general/list-structure/)
+      --&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
           </div>
         

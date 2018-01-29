@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/components/show-password/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Show password | Bulb Audit
+        Marketing site homepage HTML | Bulb Audit
       
     </title>
     
@@ -239,7 +239,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/components/show-password/" aria-current="page">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/components/show-password/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -370,7 +370,7 @@
                         <ul>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -395,364 +395,91 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Show password
+      Marketing site homepage HTML
     </h1>
     
-      <p class="priority">
-        <strong>Priority: </strong>
-          
-              <a href="https://heydon.github.io/bulb-audit/priorities/3">3</a>
-          
-      </p>
-    
     
       
 
-  <nav class="toc" aria-labelledby="toc-heading">
-    <h2 id="toc-heading">Table of contents</h2>
-    <ol>
-      
-        <li>
-          <a href="#introduction">
-            Introduction
-          </a>
-        </li>
-      
-        <li>
-          <a href="#wcag-criteria">
-            WCAG criteria
-          </a>
-        </li>
-      
-        <li>
-          <a href="#scope-of-the-issue">
-            Scope of the issue
-          </a>
-        </li>
-      
-        <li>
-          <a href="#fixing-the-issue">
-            Fixing the issue
-          </a>
-        </li>
-      
-    </ol>
-  </nav>
-
 
     
-    
+    <p>The following is a template for the marketing site&rsquo;s HTML documents, using the homepage content to describe an example structure. Each page in the marketing site should follow the prescribed <code>&lt;title&gt;</code> pattern, include <code>lang</code> on the HTML element, and a skip link etc.</p>
 
-<h2 id="introduction">Introduction</h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;title&gt;[Site name] | [Page name]&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;a href=&quot;#main&quot;&gt;skip to content&lt;/a&gt;
+    &lt;header&gt;
+      &lt;a href=&quot;/&quot; aria-label=&quot;Bulb homepage&quot;&gt;
+        &lt;svg&gt;&lt;!-- Path data --&gt;&lt;/svg&gt;
+      &lt;/a&gt;
 
-<p>The option to &ldquo;show password&rdquo; when one is writing it is a sound inclusive design feature, helping users to compose or check their writing of passwords. However, a &ldquo;show password&rdquo; button that is not technically accessible fails some of the users who may want to take advantage of it.</p>
+      &lt;nav&gt;
+        &lt;!--
+          Site naviagtion (get a quote, about etc)
+          Needs to be an unordered list of links!
+        --&gt;
+      &lt;/nav&gt;
+    &lt;/header&gt;
 
-<p><img src="https://heydon.github.io/bulb-audit/images/show.png" alt="Show password designed as a link, above the password input" /></p>
+    &lt;main id=&quot;main&quot; tabindex=&quot;-1&quot;&gt;
+      &lt;div class=&quot;component page-leader&quot;&gt;
+        &lt;h1&gt;Making energy simpler, cheaper, greener&lt;/h1&gt;
+        &lt;p&gt;Switch now and save up to £350&lt;/p&gt;
+      &lt;/div&gt;
 
-<p>The pictured show password control ahs a number of problems that need addressing:</p>
+      &lt;div class=&quot;component get-a-quote-form&quot;&gt;
+        &lt;label for=&quot;postcode&quot;&gt;Enter postcode&lt;/label&gt;
+        &lt;input type=&quot;text&quot; id=&quot;postcode&quot; aria-invalid=&quot;false&quot;&gt;
+        &lt;div class=&quot;error&quot; id=&quot;error-postcode&quot;&gt;
+          &lt;!-- Enter error text here on error --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
 
-<ul>
-<li>It functions as a button, but is marked up as a link</li>
-<li>It is not focusable by keyboard (because, as a link, it is missing an <code>href</code>)</li>
-<li>Were it focusable, upon clicking it, focus would be lost — because it is actually two controls, with one always hidden</li>
-<li>It appears <em>before</em> the field to which it relates, which is somewhat confusing visually and represents a backwards reading order non-visually.</li>
-</ul>
+      &lt;div class=&quot;component image-and-text&quot;&gt;
+        &lt;div class=&quot;image&quot;&gt;
+          &lt;img src=&quot;[src]&quot; alt=&quot;[empty if decorative, descriptive/evocative if not]&quot;&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;text&quot;&gt;
+          &lt;h2&gt;The most trusted energy supplier in the UK&lt;/h2&gt;
+          &lt;p&gt;For us, &lt;a href=&quot;[url]&quot;&gt;customer service&lt;/a&gt;&lt;/p&gt;
+          &lt;!--
+            Start Trust Pilot image example
+            (see https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/#trust-pilot-instances)
+          --&gt;
+          &lt;a href=&quot;[url]&quot;
+            &lt;img src=&quot;[src]&quot; alt=&quot;Bulb on Trust Pilot (9.8 out of 10)&quot;&gt;
+          &lt;/a&gt;
+          &lt;!-- End Trust Pilot image example --&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
 
-<h2 id="wcag-criteria">WCAG criteria</h2>
+      &lt;!--
+        Further text/image sections here.
+        Charts covered in https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/
+      --&gt;
+    &lt;/main&gt;
 
-
-
-
-
-<ul class="wcag ">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#content-structure-separation-sequence">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          1.3.2 Meaningful Sequence</a> (level A)
-        </strong>
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#keyboard-operation-keyboard-operable">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          2.1.1 Keyboard</a> (level A)
-        </strong>
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          4.1.2 Name, Role, Value</a> (level A)
-        </strong>
-        
-      </li>
-    
-  
-</ul>
-
-
-<h2 id="scope-of-the-issue">Scope of the issue</h2>
-
-<ul>
-<li><a href="https://join.bulb.co.uk/join/quick-signup"><strong>Join site</strong> My Information page</a></li>
-</ul>
-
-<h2 id="fixing-the-issue">Fixing the issue</h2>
-
-<p>Fundamentally, a toggle control should not use link semantics, or be styled as a link. Links are expected to perform linking/navigation behavior. Instead, supply the control as a checkbox, which communicates state (checked/on and unchecked/off) implicitly. This removes the necessity of managing two controls, and solves the dropped focus problem.</p>
-
-<p>In the demo provided below, the checkbox is above the form field and a persistently visible label is provided above the input — see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a>.</p>
-
-
-<div class="demo-container">
-  
-      <div class="demo-inner" >
-        <div class="demo" id="js-demo-5fd914b7d05f9583bd378b44b13083df"></div>
-        <button data-launch="js-demo-5fd914b7d05f9583bd378b44b13083df">Launch <span aria-hidden="true">↗</span></button>
-      </div>
-      
-  
-  <template id="template-5fd914b7d05f9583bd378b44b13083df">
-      
-<div class="password-field">
-  <label for="password">Choose a password:</label>
-  <input type="password" id="password" />
-  <label class="right">
-    <input type="checkbox" id="show">
-    Show password
-  </label>
-</div>
-<style>
-.password-field {
-  font-family: sans-serif;
-  font-size: 1.25rem;
-  padding: 1.5rem 0;
-}
-
-.password-field * {
-  font-size: inherit;
-}
-
-label {
-  display: block;
-}
-
-label + input {
-  display: block;
-  width: 100%;
-  border: 2px solid;
-  margin: 0.25rem 0;
-  padding: 0.25rem;
-  box-sizing: border-box;
-}
-
-.right {
-  text-align: right;
-  font-size: 0.75rem;
-}
-
-.right * {
-  vertical-align: middle;
-}
-</style>
-<script>
-var checkbox = demo.getElementById('show');
-var input = demo.getElementById('password');
-
-checkbox.addEventListener('change', function () {
-    var type = input.getAttribute('type');
-    input.setAttribute('type', type === 'password' ? 'text' : 'password');
-})
-</script>
-
-  </template>
-  <script>
-    (function() {
-      var root = document.getElementById('js-demo-5fd914b7d05f9583bd378b44b13083df');
-      var template = document.getElementById('template-5fd914b7d05f9583bd378b44b13083df');
-
-      
-      var demoDiv = document.createElement('div');
-      demoDiv.innerHTML = template.innerHTML;
-      var standaloneScript = demoDiv.querySelector('script');
-      if (standaloneScript) {
-        standaloneScript.textContent = '(function() { document.getElementsByTagName(\'html\')[0].setAttribute(\'lang\', \'en\'); var demo = document; ' + standaloneScript.textContent + ' })();';
-      }
-
-      if (document.head.attachShadow) {
-        var templateScript = template.content.querySelector('script');
-        if (templateScript) {
-          var wrappedScript = '(function() { var demo = document.getElementById(\'js-demo-5fd914b7d05f9583bd378b44b13083df\').shadowRoot;' + templateScript.textContent + '})();';
-          templateScript.textContent = wrappedScript;
-        }
-        root.attachShadow({mode: 'open'});
-        root.shadowRoot.appendChild(document.importNode(template.content, true));
-      } else {
-        root.innerHTML = '<p class="site-error"><strong style="font-weight:bold">Site error:</strong> A browser supporting Shadow DOM is needed to run encapsulated demos. You can launch the demo in a separate window ↓</p>';
-      }
-
-      var launchButton = document.querySelector('[data-launch="js-demo-5fd914b7d05f9583bd378b44b13083df"]');
-      launchButton.addEventListener('click', function () {
-        var standalone = window.open();
-        standalone.document.body.innerHTML = demoDiv.innerHTML;
-
-        
-        var newScript = standalone.document.createElement('script');
-        var oldScript = standalone.document.querySelector('script');
-        if (oldScript) {
-          newScript.textContent = oldScript.textContent;
-          oldScript.parentNode.removeChild(oldScript);
-          standalone.document.body.appendChild(newScript);
-        }
-        
-
-        standalone.document.title = 'demo ' + "5fd914b7d05f9583bd378b44b13083df";
-      });
-    })();
-  </script>
-</div>
-
-
-<p><aside aria-label="warning" class="note warning">
-  <div>
-    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
-      <use xlink:href="#warning"></use>
-    </svg>
-    <p>The current design of form fields with just a bottom border is likely to cause confusion among users, especially when they become accompanied by persistent labels, as prescribed in <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Missing and placeholder labels</a>. A conventional &lsquo;box&rsquo; style — as in the above demo — is recommended.</p>
-
-  </div>
-</aside>
-</p>
+    &lt;aside aria-labelledby=&quot;press-heading&quot;&gt;
+      &lt;h2 id=&quot;press-heading&quot; class=&quot;visually-hidden&quot;&gt;Bulb in the press&lt;/h2&gt;
+      &lt;!-- Unordered list of images with descriptive alt texts (names of papers) and quotes --&gt;
+    &lt;/aside&gt;
+    &lt;footer&gt;
+      &lt;!--
+      Pink headings should be &lt;h2&gt;.
+      Social media icons should be a list and images should have text alternatives
+      (see https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/#home-page-https-bulb-co-uk and https://heydon.github.io/bulb-audit/patterns/general/list-structure/)
+      --&gt;
+    &lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
 
   </main>
 
