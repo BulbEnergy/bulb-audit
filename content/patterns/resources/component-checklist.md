@@ -13,5 +13,5 @@ Before any component can be included in the pattern library, ensure it passes al
 - [ ] Images that are non-decorative have appropriate alternative text (see {{% pattern "Text alternatives" %}}
 - [ ] Images that are decorative (contain no useful information non-visually) have an empty `alt` attribute (`alt=""`)
 - [ ] The correct heading structure is employed for the component's placement in the document outline (see {{% pattern "Component heading levels" %}} for changing heading level per instance of a component)
-- [ ] Form elements are associated to their labels using `for` and `id` (see {{% "Missing and placeholder labels" %}})
+- [ ] Form elements are associated to their labels using `for` and `id` (see {{% pattern "Missing and placeholder labels" %}})
 - [ ] Invalid form fields have `aria-invalid="true"` and error messages associated to them using `aria-describedby` (see {{% pattern "Form errors" %}})
