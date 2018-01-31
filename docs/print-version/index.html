@@ -371,6 +371,24 @@
               <ul>
                 
                   <li class="pattern">
+                    <a href="#component-checklist" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Component checklist</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
+                    <a href="#component-heading-levels" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Component heading levels</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#marketing-site-homepage-html" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -7058,6 +7076,54 @@ componentDidMount() {
           </div>
         
       
+        
+          <div class="pattern-section">
+            <h1 id="component-checklist" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Component checklist
+            </h1>
+            <p>Before any component can be included in the pattern library, ensure it passes all of the following tests:</p>
+
+<ul class="task-list">
+<li><input type="checkbox" disabled class="task-list-item"> Each visible interactive element can receive focus and be activated by keyboard, and no invisible elements can be focused using the keyboard</li>
+<li><input type="checkbox" disabled class="task-list-item"> No non-interactive elements can be focused by keyboard</li>
+<li><input type="checkbox" disabled class="task-list-item"> Interactive elements have focus styles and receive focus in a logical order</li>
+<li><input type="checkbox" disabled class="task-list-item"> Each element has the appropriate role — preferably <em>implicitly</em> because it is the correct element (e.g. the button role, because it is a <code>&lt;button&gt;</code>) — or via the ARIA <code>role</code> attribute</li>
+<li><input type="checkbox" disabled class="task-list-item"> Where elements change state, the state is communicated semantically and not just by CSS style (examples: using <code>checked</code>, or <code>aria-expanded=&quot;[true|false]&quot;</code>)</li>
+<li><input type="checkbox" disabled class="task-list-item"> Iconography is provided as inline SVG, and uses <code>currentColor</code> for <code>fill</code> so that Windows High Contrast Mode is honored when switched on</li>
+<li><input type="checkbox" disabled class="task-list-item"> Images that are non-decorative have appropriate alternative text (see {{% pattern &ldquo;Text alternatives&rdquo; %}}</li>
+<li><input type="checkbox" disabled class="task-list-item"> Images that are decorative (contain no useful information non-visually) have an empty <code>alt</code> attribute (<code>alt=&quot;&quot;</code>)</li>
+<li><input type="checkbox" disabled class="task-list-item"> The correct heading structure is employed for the component&rsquo;s placement in the document outline (see {{% pattern &ldquo;Component heading levels&rdquo; %}} for changing heading level per instance of a component)</li>
+<li><input type="checkbox" disabled class="task-list-item"> Form elements are associated to their labels using <code>for</code> and <code>id</code> (see {{% &ldquo;Missing and placeholder labels&rdquo; %}})</li>
+<li><input type="checkbox" disabled class="task-list-item"> Invalid form fields have <code>aria-invalid=&quot;true&quot;</code> and error messages associated to them using <code>aria-describedby</code> (see {{% pattern &ldquo;Form errors&rdquo; %}})</li>
+</ul>
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="component-heading-levels" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Component heading levels
+            </h1>
+            <p>Reusable components will appear in different contexts, at different levels in the document heading structure (see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Heading structure</a>). It should therefore be possible to change the heading level of the component&rsquo;s main heading via a <code>level</code> prop.</p>
+
+<p>The <code>aria-level</code> property/attribute can then be used to change the perceived level in assistive technologies. Note that <code>aria-level</code> only works on heading elements (<code>&lt;h1&gt;</code> — <code>&lt;h6&gt;</code>) or elements with <code>role=&quot;heading&quot;</code>. It is recommended the default prop value is <code>2</code>, since most components will start at that level.</p>
+
+<pre><code class="language-html">&lt;!-- component code --&gt;
+&lt;h2 aria-level=&quot;{this.props.level}&quot;&gt;&lt;/h2&gt;
+
+&lt;!-- instance --&gt;
+&lt;MyComponent level=&quot;3&quot; /&gt;
+
+&lt;!-- how a screen reader perceives the MyComponent heading --&gt;
+&lt;h3&gt;Component name / main component heading text&lt;/h3&gt;
+</code></pre>
+
+          </div>
         
           <div class="pattern-section">
             <h1 id="marketing-site-homepage-html" tabindex="-1">

@@ -11,6 +11,26 @@
     
     
     <item>
+      <title>Component checklist</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/resources/component-checklist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/resources/component-checklist/</guid>
+      <description>Before any component can be included in the pattern library, ensure it passes all of the following tests:
+Each visible interactive element can receive focus and be activated by keyboard, and no invisible elements can be focused using the keyboard No non-interactive elements can be focused by keyboard Interactive elements have focus styles and receive focus in a logical order Each element has the appropriate role — preferably implicitly because it is the correct element (e.</description>
+    </item>
+    
+    <item>
+      <title>Component heading levels</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/resources/level-prop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/resources/level-prop/</guid>
+      <description>Reusable components will appear in different contexts, at different levels in the document heading structure (see  Heading structure). It should therefore be possible to change the heading level of the component&amp;rsquo;s main heading via a level prop.
+The aria-level property/attribute can then be used to change the perceived level in assistive technologies. Note that aria-level only works on heading elements (&amp;lt;h1&amp;gt; — &amp;lt;h6&amp;gt;) or elements with role=&amp;quot;heading&amp;quot;. It is recommended the default prop value is 2, since most components will start at that level.</description>
+    </item>
+    
+    <item>
       <title>Marketing site homepage HTML</title>
       <link>https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
