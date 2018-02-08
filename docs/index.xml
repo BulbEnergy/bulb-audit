@@ -217,6 +217,17 @@ Commonly, complex charts are accompanied by invisible data tables, intended for 
     </item>
     
     <item>
+      <title>Navigation markup</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/</guid>
+      <description>The navigation portion of the pattern library header needs to conform to a certain markup structure for accessibility and efficiency. Here is some code to get you started, with comments to follow.
+The following shows the navigation system in the desktop configuration, with the Menu button hidden and the &amp;ldquo;About us&amp;rdquo; dropdown hidden also.
+ &amp;lt;header&amp;gt; &amp;lt;!-- skip link here (see `&amp;lt;SkipLink/&amp;gt;`) --&amp;gt; &amp;lt;div class=&amp;#34;navigation&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;logo&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;/&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;path/to/logo.</description>
+    </item>
+    
+    <item>
       <title>Routing</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/routing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

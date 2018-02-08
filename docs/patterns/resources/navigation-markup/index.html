@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/components/about-navigation/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        About navigation | Bulb Audit
+        Navigation markup | Bulb Audit
       
     </title>
     
@@ -176,7 +176,7 @@
                         <ul>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/components/about-navigation/" aria-current="page">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/components/about-navigation/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -397,7 +397,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -431,332 +431,134 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      About navigation
+      Navigation markup
     </h1>
     
-      <p class="priority">
-        <strong>Priority: </strong>
-          
-              <a href="https://heydon.github.io/bulb-audit/priorities/2">2</a>
-          
-      </p>
-    
     
       
 
-  <nav class="toc" aria-labelledby="toc-heading">
-    <h2 id="toc-heading">Table of contents</h2>
-    <ol>
-      
-        <li>
-          <a href="#introduction">
-            Introduction
-          </a>
-        </li>
-      
-        <li>
-          <a href="#wcag-criteria">
-            WCAG criteria
-          </a>
-        </li>
-      
-        <li>
-          <a href="#scope-of-the-issue">
-            Scope of the issue
-          </a>
-        </li>
-      
-        <li>
-          <a href="#fixing-the-issue">
-            Fixing the issue
-          </a>
-        </li>
-      
-    </ol>
-  </nav>
-
 
     
     
 
-<h2 id="introduction">Introduction</h2>
+<p>The navigation portion of the pattern library header needs to conform to a certain markup structure for accessibility and efficiency. Here is some code to get you started, with comments to follow.</p>
 
-<p>The <strong>About</strong> pages on the marketing site are currently <em>only</em> available via a dropdown submenu  (pictured).</p>
-
-<p><img src="https://heydon.github.io/bulb-audit/images/dropdown.png" alt="Dropdown menu in navigation system" /></p>
-
-<p>Dropdown submenus are precarious interaction design patterns, prone to accessibility issues. In the case of <strong>Bulb</strong>&rsquo;s implementation (which is already keyboard accessible), there are just a few problems:</p>
-
-<ul>
-<li>The link that activates the menu does not communicate state (expanded or collapsed)</li>
-<li>The menu obscures the activating link/control (<a href="https://www.nngroup.com/articles/drop-down-menus/">see point 6 here</a>)</li>
-<li>The menu does not close when focus is moved from its last item to the adjacent (&ldquo;Blog&rdquo;) link.</li>
-<li>The nested list is not identified as a submenu which, though not crucial, would be helpful</li>
-</ul>
-
-<p>It is recommended that dropdown menus are supplemented (or even replaced) by navigation regions placed in the body of each child page. These should contain the same navigation options but do not necessitate being disclosed on click.</p>
-
-
-
-
-
-<ul class="principles ">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong>
-          <a href="https://inclusivedesignprinciples.org#offer-choice">
-            <svg class="balloon-icon" viewBox="0 0 141.73228 177.16535" aria-hidden="true" focusable="false">
-              <use xlink:href="#balloon"></use>
-            </svg>
-            Offer choice
-          </a>:
-        </strong>
-        <em>Consider providing different ways for people to complete tasks, especially those that are complex or non standard.</em>
-        
-      </li>
-    
-  
-    
-  
-    
-  
-</ul>
-
-
-<h2 id="wcag-criteria">WCAG criteria</h2>
-
-
-
-
-
-<ul class="wcag ">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#navigation-mechanisms-focus-order">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          2.4.3 Focus Order</a> (level A)
-        </strong>
-        
-      </li>
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      <li>
-        <strong><a href="https://www.w3.org/TR/WCAG20/#ensure-compat-rsv">
-          <svg class="wcag-icon" viewBox="0 0 127.09899 67.763" aria-hidden="true" focusable="false">
-            <use xlink:href="#w3c"></use>
-          </svg>
-          4.1.2 Name, Role, Value</a> (level A)
-        </strong>
-        
-      </li>
-    
-  
-</ul>
-
-
-<h2 id="scope-of-the-issue">Scope of the issue</h2>
-
-<p>The <strong>Marketing site</strong> is currently the only site that offers the <strong>About</strong> content, but see <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Inconsistency</a> where a more consistent navigation schema is recommended.</p>
-
-<h2 id="fixing-the-issue">Fixing the issue</h2>
-
-<p>It is recommended the enhancements to the dropdown menu noted in the introduction are provided, as well as providing in-page navigation menus for each <strong>About</strong> child page.</p>
-
-<h3 id="dropdown-enhancements">Dropdown enhancements</h3>
-
-<ul>
-<li>Give the top-level &ldquo;About Bulb&rdquo; link <code>role=&quot;button&quot;</code> (since it no longer functions as a link).</li>
-<li>Include <code>aria-expanded</code> on the top level &ldquo;About Bulb&rdquo; link and toggle between <code>false</code> (dropdown menu not showing) and <code>true</code> (dropdown menu showing).</li>
-<li>Move the dropdown lower so as to not obscure the top-level link/control (see the illustration below).</li>
-<li>Add <code>aria-label=&quot;submenu&quot;</code> to the dropdown&rsquo;s <code>&lt;ul&gt;</code>.</li>
-<li>Close the menu when the last item is unfocused in a forwards direction. See the pseudo-code below.</li>
-</ul>
+<p>The following shows the navigation system in the desktop configuration, with the Menu button hidden and the &ldquo;About us&rdquo; dropdown hidden also.</p>
 
 
 
 
 
 <div class="code-annotated numbered"><code>
-const lastItem = <span class='highlight'>menu.querySelector(&#39;li:last-child a&#39;)</span>
-
-lastItem.addEventListener(&#39;keydown&#39;, e =&gt; {
-  if (<span class='highlight'>!e.shiftKey &amp;&amp; e.keyCode === 9</span>) {
-    e.preventDefault()
-    <span class='highlight'>menu.hidden = true</span>
-  }
-})
+&lt;header&gt;
+  &lt;!-- skip link here (see `&lt;SkipLink/&gt;`) --&gt;
+  <span class='highlight'>&lt;div class=&#34;navigation&#34;&gt;</span>
+    &lt;div class=&#34;logo&#34;&gt;
+      &lt;a href=&#34;/&#34;&gt;
+        &lt;img src=&#34;path/to/logo.svg&#34; <span class='highlight'>alt=&#34;Bulb homepage&#34;</span> /&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    <span class='highlight'>&lt;div class=&#34;button-and-links&#34;&gt;</span>
+      <span class='highlight'>&lt;button hidden aria-expanded=&#34;false&#34; aria-haspopup=&#34;true&#34;&gt;Menu&lt;/button&gt;</span>
+      <span class='highlight'>&lt;nav&gt;</span>
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Get a quote&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;
+            &lt;a href=&#34;[url]&#34; <span class='highlight'>role=&#34;button&#34; aria-expanded=&#34;false&#34;</span>&gt;About Bulb&lt;/a&gt;
+            <span class='highlight'>&lt;ul aria-label=&#34;sub menu&#34; hidden&gt;</span>
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;About us&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Press&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Our energy&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Our service&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Careers&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Our tariff&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Bulb for business&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Help&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Sign in&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        <span class='highlight'>&lt;button aria-label=&#34;close&#34; hidden&gt;✖️&lt;/button&gt;</span>
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
 </code></div>
 
 
 <ol>
-<li>Assuming the menu container is defined as <code>menu</code>, we can use <code>querySelector</code> to get the last item&rsquo;s link</li>
-<li>We only close the menu if the user presses <kbd>Tab</kbd> without <kbd>Shift</kbd> (<kbd>Shift</kbd> + <kbd>Tab</kbd> focuses the previous interactive element — the penultimate item in the submenu, in this case)</li>
-<li>The menu is hidden via the <code>hidden</code> property.</li>
+<li>A <code>&lt;div&gt;</code> is used to group the logo and navigation landmark. This should be the child of a <code>&lt;header&gt;</code> element (as shown) which wraps all of the header content (including the <code>&lt;h1&gt;</code>).</li>
+<li>The <code>alt</code> for the logo needs to describe the purpose of the parent link</li>
+<li>This <code>&lt;div&gt;</code> is the second of two siblings that should be placed alongside eachother (Flexbox can push them to either side with <code>justify-content: space-between</code> on the parent <code>class=&quot;navigation&quot;</code> <code>&lt;div&gt;</code>)</li>
+<li>The Menu <code>&lt;button&gt;</code> is hidden on desktop.</li>
+<li>The <code>&lt;nav&gt;</code> is visible on desktop, and is important because <code>&lt;nav&gt;</code> is a discoverable region for screen reader users. <strong>IMPORTANT:</strong> there is no need to manage two <code>&lt;nav&gt;</code> regions/lists for desktop and mobile. We can just change the styling of this list at different breakpoints.</li>
+<li>The link that opens and sends focus to the mobile version of the menu needs these attributes for accessibility. <code>aria-expanded</code> needs to be toggled along with <code>open</code> (between <code>true</code> and <code>false</code>)</li>
+<li>The sub menu must be a nested list, and takes <code>aria-label=&quot;sub menu&quot;</code> to help screen reader users identify its purpose. On mobile this list would be expanded by default.</li>
+<li>The close button is not needed on desktop, so is hidden here.</li>
 </ol>
 
-<h3 id="in-page-navigation">In-page navigation</h3>
+<h2 id="mobile-configuration-open-state">Mobile configuration (open state)</h2>
 
-<p>Each page, including the generic <a href="https://bulb.co.uk/about">About Bulb</a> page found as the first option within the dropdown menu, should include a navigation region within the page and including the same options to other <strong>About</strong> pages as the dropdown menu offers. This should be placed below the page&rsquo;s main <code>&lt;h1&gt;</code> heading and include an <code>&lt;h2&gt;</code> heading of &ldquo;All About Bulb&rdquo; (or something similarly descriptive). See the markup template below for more details:</p>
+<p>With comments to follow.</p>
 
-
+<p>
 
 
 
 <div class="code-annotated numbered"><code>
-&lt;nav <span class='highlight'>aria-labelledby=&#34;in-page-nav-title&#34;</span>&gt;
-  &lt;h2 <span class='highlight'>id=&#34;in-page-nav-title&#34;</span>&gt;All About Bulb&lt;/h2&gt;
-  &lt;ul&gt;
-    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/about&#34;&gt;About Bulb&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/energy&#34; <span class='highlight'>aria-current=&#34;page&#34;</span>&gt;Our energy&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/service&#34;&gt;Our service&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/tariff&#34;&gt;Our tariff&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/careers&#34;&gt;Careers&lt;/a&gt;&lt;/li&gt;
-    &lt;li class=&#34;dd-item&#34;&gt;&lt;a href=&#34;/business&#34;&gt;Business&lt;/a&gt;&lt;/li&gt;
-  &lt;/ul&gt;
-&lt;/nav&gt;
+&lt;header&gt;
+  &lt;!-- skip link here (see `&lt;SkipLink/&gt;`) --&gt;
+  &lt;div class=&#34;navigation&#34;&gt;
+    &lt;div class=&#34;logo&#34;&gt;
+      &lt;a href=&#34;/&#34;&gt;
+        &lt;img src=&#34;path/to/logo.svg&#34; alt=&#34;Bulb homepage&#34; /&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;button-and-links&#34;&gt;
+      &lt;button hidden <span class='highlight'>aria-expanded=&#34;true&#34;</span> aria-haspopup=&#34;true&#34;&gt;Menu&lt;/button&gt;
+      &lt;nav&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Get a quote&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;
+            &lt;a href=&#34;[url]&#34; role=&#34;button&#34; aria-expanded=&#34;false&#34; <span class='highlight'>hidden</span>&gt;About Bulb&lt;/a&gt;
+            <span class='highlight'>&lt;ul aria-label=&#34;sub menu&#34;&gt;</span>
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;About us&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Press&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Our energy&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Our service&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Careers&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Our tariff&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Bulb for business&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Help&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href=&#34;[url]&#34;&gt;Sign in&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        <span class='highlight'>&lt;button aria-label=&#34;close&#34;&gt;✖️&lt;/button&gt;</span>
+      &lt;/nav&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
 </code></div>
-
+</p>
 
 <ol>
-<li>The navigation region is labeled by the&hellip;</li>
-<li>&hellip;<code>&lt;h2&gt;</code>&rsquo;s <code>id</code>. This means that entering the navigation region by <kbd>Tab</kbd> and focusing the first item will elicit screen readers to announce <em>&ldquo;navigation, about bulb, list, 6 items, About Bulb, link&rdquo;</em> (or similar, depending on the screen reader software)</li>
-<li>The <code>aria-current</code> property is an accessible way to indicate the current page/selected option (in this case, we are on the Our energy page). It will elicit <em>&ldquo;current&rdquo;</em> as part of the link information readout.</li>
+<li>In the open state, the Menu button is set to <code>aria-expanded=&quot;true&quot;</code></li>
+<li>The <code>About Bulb</code> dropdown button is <em>not needed</em> for mobile. The user can just enter directly into the list below it</li>
+<li>The list therefore is not <code>hidden</code> by default</li>
+<li>The close button is also unhidden, because it is now needed.</li>
 </ol>
 
-<p>The below is an illustration of how this in-page navigation might look, including a simple style to indicate the current page via <code>[aria-current]</code>:</p>
+<aside aria-label="warning" class="note warning">
+  <div>
+    <svg class="sign" aria-hidden="true" viewBox="0 0 48.430474 41.646302" focusable="false">
+      <use xlink:href="#warning"></use>
+    </svg>
+    <p>The mobile navigation needs certain behaviors, particularly regarding programmatic focus management, to work. They are described and demoed here: <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/components/menu-button/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Menu buttons</a>.</p>
 
-<p><img src="https://heydon.github.io/bulb-audit/images/in-page.png" alt="Our energy page with in-page navigation table of contents below the main title" /></p>
+  </div>
+</aside>
+
 
   </main>
 
