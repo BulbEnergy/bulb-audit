@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/general/">
+    <link rel="canonical" href="https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/">
     <link rel="apple-touch-icon" sizes="57x57" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="https://heydon.github.io/bulb-audit/images/apple-touch-icon-72x72.png">
@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        General issues | Bulb Audit
+        Manual Component Testing | Bulb Audit
       
     </title>
     
@@ -388,7 +388,7 @@
                             </li>
                           
                             <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/" >
+                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/" aria-current="page">
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
@@ -437,155 +437,227 @@
           
   <main id="main">
     <h1>
-      General issues
+      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+        <use xlink:href="#bookmark"></use>
+      </svg>
+      Manual Component Testing
     </h1>
-    <ul class="patterns-list">
+    
+    
       
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/color-dependence/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Color dependence
-    </a>
-  </h2>
-</li>
 
+  <nav class="toc" aria-labelledby="toc-heading">
+    <h2 id="toc-heading">Table of contents</h2>
+    <ol>
       
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Elements cannot be focused
-    </a>
-  </h2>
-</li>
+        <li>
+          <a href="#1.-keyboard">
+            1. Keyboard
+          </a>
+        </li>
+      
+        <li>
+          <a href="#2.-screen-reader">
+            2. Screen reader
+          </a>
+        </li>
+      
+    </ol>
+  </nav>
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/focus-styles/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Focus styles
-    </a>
-  </h2>
-</li>
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/form-errors/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Form errors
-    </a>
-  </h2>
-</li>
+    
+    
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/heading-structure/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Heading structure
-    </a>
-  </h2>
-</li>
+<p>The following is a guide on how to manually test new components for accessibility. No new components created for the <strong>Bulb</strong> interfaces should reach production without passing these checks.</p>
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/inconsistency/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Inconsistency
-    </a>
-  </h2>
-</li>
+<h2 id="1-keyboard">1. Keyboard</h2>
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/list-structure/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
+<p><div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-2b219a64b9ffbfe31b7c9854dc48c6fb">
+      <span class="expandable-label">Introduction</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
       </svg>
-      List structure
-    </a>
-  </h2>
-</li>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-2b219a64b9ffbfe31b7c9854dc48c6fb" hidden>
+    <p>All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to (&lsquo;focusing&rsquo;) interactive elements and activating them using keystrokes.</p>
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
+<p>The important keys for testing are:</p>
+
+<ul>
+<li><kbd>Tab</kbd> for moving focus to the next interactive element</li>
+<li><kbd>Shift</kbd> + <kbd>Tab</kbd> for moving focus to the previous interactive element</li>
+<li><kbd>Enter</kbd> and/or <knd>Space</kbd> for activating (i.e. pressing/clicking) the interactive element</li>
+<li><kbd>←</kbd> and/or <kbd>→</kbd> for moving focus within tabs and some other custom controls</li>
+<li><kbd>Esc</kbd> for closing menus, dialogs, and popups</li>
+</ul>
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-7fb688b61726ef52946be388ffc2a7f3">
+      <span class="expandable-label">Tests</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
       </svg>
-      Missing and placeholder labels
-    </a>
-  </h2>
-</li>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-7fb688b61726ef52946be388ffc2a7f3" hidden>
+    <ol>
+<li>When you move to the component using your <kbd>Tab</kbd>, does a part of the component become focused?
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/routing/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
+<ul>
+<li>If a part of the component receives focus, but the component is not intended to be interactive: <strong>Fail</strong></li>
+<li>If <em>no</em> part of the component receives focus, but the component <em>is</em> intended to be interactive: <strong>Fail</strong></li>
+</ul></li>
+<li>Can you see an indication of focus for each interactive element you move to?
+
+<ul>
+<li>No, there are no focus styles: <strong>Fail</strong></li>
+<li>Yes, but the focus styles are very faint: <strong>Fail</strong></li>
+</ul></li>
+<li>When you hit <kbd>Enter</kbd> and/or <kbd>Space</kbd> on each interactive element, does it activate as it does by mouse?
+
+<ul>
+<li>No: <strong>Fail</strong></li>
+</ul></li>
+<li>Are interactive elements focusable in a logical order (from top to bottom, left to right)?
+
+<ul>
+<li>No, the focus order through the component does not correspond to the visual layout: <strong>Fail</strong></li>
+</ul></li>
+<li>Are any invisible elements focusable, at any point during interaction?
+
+<ul>
+<li>Yes, I can focus invisible elements: <strong>Fail</strong></li>
+</ul></li>
+<li>Are any non-interactive elements focusable within the component (plain text elements, container elements, etc.)?
+
+<ul>
+<li>Yes: <strong>Fail</strong></li>
+</ul></li>
+<li>At any point, is focus &lsquo;trapped&rsquo; on one element or within a set of elements?
+
+<ul>
+<li>Yes, I am unable to move focus away from the component: <strong>Fail</strong></li>
+</ul></li>
+<li>Does focusing an element change your context (e.g. reloading the page)?
+
+<ul>
+<li>Yes, my focus is moved unexpectedly after focusing an element: <strong>Fail</strong></li>
+</ul></li>
+<li>When a popup menu is opened, is focus moved to it or, otherwise, is it next in the order of focus?
+
+<ul>
+<li>No: <strong>Fail</strong></li>
+</ul></li>
+<li>When a dialog is opened and closed, is focus moved to the dialog and back to the control that opened it respectively?
+
+<ul>
+<li>No, I&rsquo;m not able to reach the dialog and/or closing the dialog does not move focus back to where I started: <strong>Fail</strong></li>
+</ul></li>
+</ol>
+
+  </div>
+</div>
+</p>
+
+<h2 id="2-screen-reader">2. Screen reader</h2>
+
+<p><div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-6ac48867d6ef49edf4cd3f72b616ebe2">
+      <span class="expandable-label">Introduction</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
       </svg>
-      Routing
-    </a>
-  </h2>
-</li>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-6ac48867d6ef49edf4cd3f72b616ebe2" hidden>
+    <p>Many types of users, including blind users, dyslexic users, and users with low literacy, use screen reader software to help them perceive and operate digital interfaces. Screen readers offer an array of keyboard shortcuts not available to keyboard users <em>not</em> running screen reader software. Manual testing is therefore different.</p>
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/skip-links/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
+<p>Screen reader software varies greatly. The following tests are designed for use with OSX&rsquo;s in-built VoiceOver screen reader. To get set up:</p>
+
+<ul>
+<li>Open Safari</li>
+<li>Navigate to the page with the component for testing</li>
+<li>Plug in your headphones ;-)</li>
+<li>Activate VoiceOver with <kbd>Cmd</kbd> + <kbd>F5</kbd></li>
+</ul>
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-241509c0094f9cfa89455a4bce302ca7">
+      <span class="expandable-label">Tests</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
       </svg>
-      Skip links
-    </a>
-  </h2>
-</li>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-241509c0094f9cfa89455a4bce302ca7" hidden>
+    <ol>
+<li>Hold down <kbd>Ctrl</kbd> + <kbd>Alt</kbd> and use the right arrow key to move towards the component, then through each element within it (a black outline should show you where you are on the page).
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Text alternatives
-    </a>
-  </h2>
-</li>
+<ul>
+<li>Is any of the visible text mispronounced? <strong>Fail</strong></li>
+<li>Is anything not visible (that does not aide the screen reader user) announced? <strong>Fail</strong></li>
+<li>Are important element &lsquo;roles&rsquo; such as &ldquo;heading&rdquo; for headings, &ldquo;button&rdquo; for buttons, and &ldquo;link&rdquo; for links not announced where expected? <strong>Fail</strong></li>
+</ul></li>
+<li>If the component is interactive, operate it as you did when testing by keyboard (see previous section).
 
-      
-          <li>
-  <h2>
-    <a href="https://heydon.github.io/bulb-audit/patterns/general/wording/">
-      <svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-        <use xlink:href="#bookmark"></use>
-      </svg>
-      Wording
-    </a>
-  </h2>
-</li>
+<ul>
+<li>Are any form controls not identified by their role (e.g. &ldquo;input&rdquo; or &ldquo;checkbox&rdquo;)? <strong>Fail</strong></li>
+<li>When you focus form controls, do any fail to announce an associated label, such as &ldquo;email&rdquo; (or similar) for an email input? <strong>Fail</strong></li>
+<li>When focusing any invalid field, is it not identified as &ldquo;invalid&rdquo; or is the error message not announced? <strong>Fail</strong></li>
+<li>Do buttons that affect state (such as toggle buttons) fail to communicate state (&ldquo;pressed&rdquo;/&ldquo;unpressed&rdquo; or &ldquo;expanded&rdquo;/&ldquo;collapsed&rdquo;)? <strong>Fail</strong></li>
+</ul></li>
+<li>If, during the operation of the component, a notification appears such as an error message or a &ldquo;loading&rdquo; spinner&hellip;
 
-      
-    </ul>
+<ul>
+<li>Does the notification fail to announce via the screen reader upon arrival? <strong>Fail</strong></li>
+</ul></li>
+</ol>
+
+  </div>
+</div>
+</p>
+
   </main>
 
           <footer role="contentinfo">

@@ -169,7 +169,7 @@ main ol {
 main li + li {
     margin-top: 0.5rem;
 }
-main ul ul, main ol ol {
+main ul ul, main ol ol, main li ul, main li ol {
     margin-top: 0.5rem;
 }
 main dt {
