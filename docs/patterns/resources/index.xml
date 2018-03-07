@@ -37,7 +37,7 @@ The aria-level property/attribute can then be used to change the perceived level
       
       <guid>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</guid>
       <description>The following is a guide on how to manually test new components for accessibility. No new components created for the Bulb interfaces should reach production without passing these checks.
-1. Keyboard  Introduction     All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to (&amp;lsquo;focusing&amp;rsquo;) interactive elements and activating them using keystrokes.
+Keyboard  Introduction     All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to (&amp;lsquo;focusing&amp;rsquo;) interactive elements and activating them using keystrokes.
 The important keys for testing are:</description>
     </item>
     

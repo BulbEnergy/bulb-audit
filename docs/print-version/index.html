@@ -7154,7 +7154,7 @@ componentDidMount() {
 
 <p>The following is a guide on how to manually test new components for accessibility. No new components created for the <strong>Bulb</strong> interfaces should reach production without passing these checks.</p>
 
-<h2 id="1-keyboard">1. Keyboard</h2>
+<h2 id="keyboard">Keyboard</h2>
 
 <p><div class="expandable-section">
   
@@ -7192,7 +7192,7 @@ componentDidMount() {
   
     <h3>
   
-    <button aria-expanded="false" data-expands="js-expandable-7fb688b61726ef52946be388ffc2a7f3">
+    <button aria-expanded="false" data-expands="js-expandable-3a62bafdb2cc2facea6072e582065430">
       <span class="expandable-label">Tests</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -7204,67 +7204,53 @@ componentDidMount() {
   
     </h3>
   
-  <div id="js-expandable-7fb688b61726ef52946be388ffc2a7f3" hidden>
+  <div id="js-expandable-3a62bafdb2cc2facea6072e582065430" hidden>
     <ol>
 <li>When you move to the component using your <kbd>Tab</kbd>, does a part of the component become focused?
 
-<ul>
+<ol>
 <li>If a part of the component receives focus, but the component is not intended to be interactive: <strong>Fail</strong></li>
 <li>If <em>no</em> part of the component receives focus, but the component <em>is</em> intended to be interactive: <strong>Fail</strong></li>
-</ul></li>
-<li>Can you see an indication of focus for each interactive element you move to?
+</ol></li>
+<li>Move focus through the component, using the <kbd>Tab</kbd> key.
 
-<ul>
-<li>No, there are no focus styles: <strong>Fail</strong></li>
-<li>Yes, but the focus styles are very faint: <strong>Fail</strong></li>
-</ul></li>
-<li>When you hit <kbd>Enter</kbd> and/or <kbd>Space</kbd> on each interactive element, does it activate as it does by mouse?
-
-<ul>
-<li>No: <strong>Fail</strong></li>
-</ul></li>
-<li>Are interactive elements focusable in a logical order (from top to bottom, left to right)?
-
-<ul>
-<li>No, the focus order through the component does not correspond to the visual layout: <strong>Fail</strong></li>
-</ul></li>
-<li>Are any invisible elements focusable, at any point during interaction?
-
-<ul>
-<li>Yes, I can focus invisible elements: <strong>Fail</strong></li>
-</ul></li>
+<ol>
+<li>Do any visible interactive elements lack a focus style (visual indication of focus)? <strong>Fail</strong></li>
+<li>Is it possible to focus any invisible elements? <strong>Fail</strong></li>
+<li>When you hit <kbd>Enter</kbd> and/or <kbd>Space</kbd> on an interactive element, does it fail to activate as it does by mouse click? <strong>Fail</strong></li>
+</ol></li>
 <li>Are any non-interactive elements focusable within the component (plain text elements, container elements, etc.)?
 
-<ul>
+<ol>
 <li>Yes: <strong>Fail</strong></li>
-</ul></li>
+</ol></li>
 <li>At any point, is focus &lsquo;trapped&rsquo; on one element or within a set of elements?
 
-<ul>
+<ol>
 <li>Yes, I am unable to move focus away from the component: <strong>Fail</strong></li>
-</ul></li>
-<li>Does focusing an element change your context (e.g. reloading the page)?
+</ol></li>
+<li>Does focusing any element change your context (e.g. reloading the page)?
 
-<ul>
+<ol>
 <li>Yes, my focus is moved unexpectedly after focusing an element: <strong>Fail</strong></li>
-</ul></li>
-<li>When a popup menu is opened, is focus moved to it or, otherwise, is it next in the order of focus?
+</ol></li>
+<li>When a popup menu is opened, is focus moved to it or — if not — is it focused next, when you press <kbd>Tab</kbd>?
 
-<ul>
+<ol>
 <li>No: <strong>Fail</strong></li>
-</ul></li>
+</ol></li>
 <li>When a dialog is opened and closed, is focus moved to the dialog and back to the control that opened it respectively?
 
-<ul>
+<ol>
 <li>No, I&rsquo;m not able to reach the dialog and/or closing the dialog does not move focus back to where I started: <strong>Fail</strong></li>
-</ul></li>
+</ol></li>
 </ol>
 
   </div>
 </div>
 </p>
 
-<h2 id="2-screen-reader">2. Screen reader</h2>
+<h2 id="screen-reader">Screen reader</h2>
 
 <p><div class="expandable-section">
   
@@ -7301,7 +7287,7 @@ componentDidMount() {
   
     <h3>
   
-    <button aria-expanded="false" data-expands="js-expandable-241509c0094f9cfa89455a4bce302ca7">
+    <button aria-expanded="false" data-expands="js-expandable-28811a10e8f9baf0c51ea3a495cd6f2d">
       <span class="expandable-label">Tests</span>
       <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
         <g transform="translate(0 -981.5)">
@@ -7313,28 +7299,97 @@ componentDidMount() {
   
     </h3>
   
-  <div id="js-expandable-241509c0094f9cfa89455a4bce302ca7" hidden>
+  <div id="js-expandable-28811a10e8f9baf0c51ea3a495cd6f2d" hidden>
     <ol>
 <li>Hold down <kbd>Ctrl</kbd> + <kbd>Alt</kbd> and use the right arrow key to move towards the component, then through each element within it (a black outline should show you where you are on the page).
 
-<ul>
+<ol>
 <li>Is any of the visible text mispronounced? <strong>Fail</strong></li>
 <li>Is anything not visible (that does not aide the screen reader user) announced? <strong>Fail</strong></li>
 <li>Are important element &lsquo;roles&rsquo; such as &ldquo;heading&rdquo; for headings, &ldquo;button&rdquo; for buttons, and &ldquo;link&rdquo; for links not announced where expected? <strong>Fail</strong></li>
-</ul></li>
+</ol></li>
 <li>If the component is interactive, operate it as you did when testing by keyboard (see previous section).
 
-<ul>
+<ol>
 <li>Are any form controls not identified by their role (e.g. &ldquo;input&rdquo; or &ldquo;checkbox&rdquo;)? <strong>Fail</strong></li>
 <li>When you focus form controls, do any fail to announce an associated label, such as &ldquo;email&rdquo; (or similar) for an email input? <strong>Fail</strong></li>
 <li>When focusing any invalid field, is it not identified as &ldquo;invalid&rdquo; or is the error message not announced? <strong>Fail</strong></li>
 <li>Do buttons that affect state (such as toggle buttons) fail to communicate state (&ldquo;pressed&rdquo;/&ldquo;unpressed&rdquo; or &ldquo;expanded&rdquo;/&ldquo;collapsed&rdquo;)? <strong>Fail</strong></li>
-</ul></li>
+</ol></li>
 <li>If, during the operation of the component, a notification appears such as an error message or a &ldquo;loading&rdquo; spinner&hellip;
 
-<ul>
+<ol>
 <li>Does the notification fail to announce via the screen reader upon arrival? <strong>Fail</strong></li>
-</ul></li>
+</ol></li>
+</ol>
+
+  </div>
+</div>
+</p>
+
+<h2 id="zoom">Zoom</h2>
+
+<p><div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-984fe5417894b4880035fb7693eafbdc">
+      <span class="expandable-label">Introduction</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-984fe5417894b4880035fb7693eafbdc" hidden>
+    <p>Low vision users and users with motor impairments tend to &lsquo;zoom&rsquo; web pages so that the content easier to read and &lsquo;target&rsquo; with mouse gestures and touch. There are a few different ways to zoom web pages, so a number of tests are provided.</p>
+
+  </div>
+</div>
+
+<div class="expandable-section">
+  
+    <h3>
+  
+    <button aria-expanded="false" data-expands="js-expandable-a1b5a96b82d2ae9fbe7face9b14e603c">
+      <span class="expandable-label">Test</span>
+      <svg aria-hidden="true" focusable="false" viewBox="0 0 70.866142 70.866141">
+        <g transform="translate(0 -981.5)">
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="60" width="9.8985" y="987.36" x="30.051" class="up-strut" />
+          <rect style="stroke-width:0;fill:currentColor" ry="5" height="10" width="60" y="1012.4" x="5"/>
+        </g>
+      </svg>
+    </button>
+  
+    </h3>
+  
+  <div id="js-expandable-a1b5a96b82d2ae9fbe7face9b14e603c" hidden>
+    <ol>
+<li>On a Desktop or Laptop machine with a keyboard, increase &lsquo;full page zoom&rsquo; to the highest level using <kbd>Cmd</kbd> + <kbd>+</kbd> (Mac) or <kbd>Ctrl</kbd> + <kbd>+</kbd> (Windows).
+
+<ol>
+<li>Does any of the content go &lsquo;off screen&rsquo; with no way to scroll it back into view? <strong>Fail</strong></li>
+<li>Does any of the content overlap or otherwise obscure other content? <strong>Fail</strong></li>
+<li>Does any text content become truncated (e.g. &ldquo;Sign up&rdquo; becoming &ldquo;Sig&rdquo;)? <strong>Fail</strong></li>
+<li>Does any wrapping occur that makes the interface difficult to read or understand? <strong>Fail</strong></li>
+</ol></li>
+<li>Reset full page zoom with <kbd>Cmd</kbd> + <kbd>0</kbd> (Mac) or <kbd>Ctrl</kbd> + <kbd>0</kbd> (Windows). Go to Chrome&rsquo;s <code>chrome://settings/</code> and, under <strong>Appearance</strong>, change <strong>Font size</strong> to &ldquo;Very large&rdquo;
+
+<ol>
+<li>Does any of the content go &lsquo;off screen&rsquo; with no way to scroll it back into view? <strong>Fail</strong></li>
+<li>Do line heights become squashed and/or lines overlap? <strong>Fail</strong></li>
+<li>Does any text content become truncated (e.g. &ldquo;Sign up&rdquo; becoming &ldquo;Sig&rdquo;)? <strong>Fail</strong></li>
+</ol></li>
+<li>Using a touch device, such as an iPhone&hellip;
+
+<ol>
+<li>Does &lsquo;pinch zoom&rsquo; not work (i.e. can you not zoom by dragging your thumb and index finger apart)? <strong>Fail</strong></li>
+<li>With &lsquo;auto rotate&rsquo; enable, is it not possible to reorientate the content when the phone is turned on its side? <strong>Fail</strong></li>
+</ol></li>
 </ol>
 
   </div>

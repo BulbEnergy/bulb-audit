@@ -172,6 +172,12 @@ main li + li {
 main ul ul, main ol ol, main li ul, main li ol {
     margin-top: 0.5rem;
 }
+ol ol {
+  list-style: lower-latin;
+}
+ol ol ol {
+  list-style: lower-roman;
+}
 main dt {
     font-weight: bold;
 }
