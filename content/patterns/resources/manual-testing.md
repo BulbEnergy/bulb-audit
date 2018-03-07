@@ -4,9 +4,9 @@ title = "Component Testing"
 
 The following is a guide on how to manually test new components for accessibility. No new components created for the **Bulb** interfaces should reach production without passing these checks.
 
-### Keyboard
+## Keyboard
 
-{{% expandable label="Introduction" level="4" %}}
+{{% expandable label="Introduction" level="3" %}}
 All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to ('focusing') interactive elements and activating them using keystrokes.
 
 The important keys for testing are:
@@ -17,8 +17,8 @@ The important keys for testing are:
 * <kbd>←</kbd> and/or <kbd>→</kbd> for moving focus within tabs and some other custom controls
 * <kbd>Esc</kbd> for closing menus, dialogs, and popups
 {{% /expandable %}}
-{{% expandable label="Tests" level="4" %}}
-1. When you move to the component using your <kbd>Tab</kbd>, does a part of the component become focused?
+{{% expandable label="Tests" level="3" %}}
+1. When you move to the component using your <kbd>Tab</kbd> key, does a part of the component become focused?
     1. If a part of the component receives focus, but the component is not intended to be interactive: **Fail**
     2. If _no_ part of the component receives focus, but the component _is_ intended to be interactive: **Fail**
 2. Move focus through the component, using the <kbd>Tab</kbd> key.
@@ -37,9 +37,9 @@ The important keys for testing are:
     1. No, I'm not able to reach the dialog and/or closing the dialog does not move focus back to where I started: **Fail**
 {{% /expandable %}}
 
-### Screen reader
+## Screen reader
 
-{{% expandable label="Introduction" level="4" %}}
+{{% expandable label="Introduction" level="3" %}}
 Many types of users, including blind users, dyslexic users, and users with low literacy, use screen reader software to help them perceive and operate digital interfaces. Screen readers offer an array of keyboard shortcuts not available to keyboard users _not_ running screen reader software. Manual testing is therefore different.
 
 Screen reader software varies greatly. The following tests are designed for use with OSX's in-built VoiceOver screen reader. To get set up:
@@ -49,7 +49,7 @@ Screen reader software varies greatly. The following tests are designed for use 
 * Plug in your headphones ;-)
 * Activate VoiceOver with <kbd>Cmd</kbd> + <kbd>F5</kbd>
 {{% /expandable %}}
-{{% expandable label="Tests" level="4" %}}
+{{% expandable label="Tests" level="3" %}}
 1. Hold down <kbd>Ctrl</kbd> + <kbd>Alt</kbd> and use the right arrow key to move towards the component, then through each element within it (a black outline should show you where you are on the page).
     1. Is any of the visible text mispronounced? **Fail**
     2. Is anything not visible (that does not aide the screen reader user) announced? **Fail**
@@ -63,12 +63,12 @@ Screen reader software varies greatly. The following tests are designed for use 
     1. Does the notification fail to announce via the screen reader upon arrival? **Fail**
 {{% /expandable %}}
 
-### Zoom
+## Zoom
 
-{{% expandable label="Introduction" level="4" %}}
+{{% expandable label="Introduction" level="3" %}}
 Low vision users and users with motor impairments tend to 'zoom' web pages so that the content easier to read and 'target' with mouse gestures and touch. There are a few different ways to zoom web pages, so a number of tests are provided.
 {{% /expandable %}}
-{{% expandable label="Test" level="4" %}}
+{{% expandable label="Test" level="3" %}}
 1. On a Desktop or Laptop machine with a keyboard, increase 'full page zoom' to the highest level using <kbd>Cmd</kbd> + <kbd>+</kbd> (Mac) or <kbd>Ctrl</kbd> + <kbd>+</kbd> (Windows).
     1. Does any of the content go 'off screen' with no way to scroll it back into view? **Fail**
     2. Does any of the content overlap or otherwise obscure other content? **Fail**
