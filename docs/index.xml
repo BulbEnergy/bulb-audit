@@ -85,6 +85,17 @@ In each case color is used to differentiate items, a supplementary alternative m
     </item>
     
     <item>
+      <title>Component Testing</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</guid>
+      <description>The following is a guide on how to manually test new components for accessibility. No new components created for the Bulb interfaces should reach production without passing these checks.
+Keyboard  Introduction     All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to (&amp;lsquo;focusing&amp;rsquo;) interactive elements and activating them using keystrokes.
+The important keys for testing are:</description>
+    </item>
+    
+    <item>
       <title>Component checklist</title>
       <link>https://heydon.github.io/bulb-audit/patterns/resources/component-checklist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -174,17 +185,6 @@ It is appreciated that a consistent experience can be difficult to achieve when 
       <guid>https://heydon.github.io/bulb-audit/patterns/general/list-structure/</guid>
       <description>Introduction Along with headings, lists give structure to a web page. They group items together so users know they are related or equivalent.
 Assistive technology users find lists especially helpful because most software will identify a list semantically, enumerate its items, and provide shortcuts for navigating between the list items. The NVDA screen reader provides the L shortcut key for navigating between lists, and the I shortcut key for jumping between list items.</description>
-    </item>
-    
-    <item>
-      <title>Manual Component Testing</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</guid>
-      <description>The following is a guide on how to manually test new components for accessibility. No new components created for the Bulb interfaces should reach production without passing these checks.
-Keyboard  Introduction     All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to (&amp;lsquo;focusing&amp;rsquo;) interactive elements and activating them using keystrokes.
-The important keys for testing are:</description>
     </item>
     
     <item>

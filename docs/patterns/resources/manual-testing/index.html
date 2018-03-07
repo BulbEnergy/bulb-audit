@@ -31,7 +31,7 @@
     </style>
     <title>
       
-        Manual Component Testing | Bulb Audit
+        Component Testing | Bulb Audit
       
     </title>
     
@@ -370,6 +370,15 @@
                         <ul>
                           
                             <li class="pattern">
+                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/" aria-current="page">
+                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                                  <use xlink:href="#bookmark"></use>
+                                </svg>
+                                <span class="text">Component Testing</span>
+                              </a>
+                            </li>
+                          
+                            <li class="pattern">
                               <a href="https://heydon.github.io/bulb-audit/patterns/resources/component-checklist/" >
                                 <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                                   <use xlink:href="#bookmark"></use>
@@ -384,15 +393,6 @@
                                   <use xlink:href="#bookmark"></use>
                                 </svg>
                                 <span class="text">Component heading levels</span>
-                              </a>
-                            </li>
-                          
-                            <li class="pattern">
-                              <a href="https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/" aria-current="page">
-                                <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
-                                  <use xlink:href="#bookmark"></use>
-                                </svg>
-                                <span class="text">Manual Component Testing</span>
                               </a>
                             </li>
                           
@@ -440,36 +440,11 @@
       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
         <use xlink:href="#bookmark"></use>
       </svg>
-      Manual Component Testing
+      Component Testing
     </h1>
     
     
       
-
-  <nav class="toc" aria-labelledby="toc-heading">
-    <h2 id="toc-heading">Table of contents</h2>
-    <ol>
-      
-        <li>
-          <a href="#keyboard">
-            Keyboard
-          </a>
-        </li>
-      
-        <li>
-          <a href="#screen-reader">
-            Screen reader
-          </a>
-        </li>
-      
-        <li>
-          <a href="#zoom">
-            Zoom
-          </a>
-        </li>
-      
-    </ol>
-  </nav>
 
 
     
@@ -477,11 +452,11 @@
 
 <p>The following is a guide on how to manually test new components for accessibility. No new components created for the <strong>Bulb</strong> interfaces should reach production without passing these checks.</p>
 
-<h2 id="keyboard">Keyboard</h2>
+<h3 id="keyboard">Keyboard</h3>
 
 <p><div class="expandable-section">
   
-    <h3>
+    <h4>
   
     <button aria-expanded="false" data-expands="js-expandable-2b219a64b9ffbfe31b7c9854dc48c6fb">
       <span class="expandable-label">Introduction</span>
@@ -493,7 +468,7 @@
       </svg>
     </button>
   
-    </h3>
+    </h4>
   
   <div id="js-expandable-2b219a64b9ffbfe31b7c9854dc48c6fb" hidden>
     <p>All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to (&lsquo;focusing&rsquo;) interactive elements and activating them using keystrokes.</p>
@@ -513,7 +488,7 @@
 
 <div class="expandable-section">
   
-    <h3>
+    <h4>
   
     <button aria-expanded="false" data-expands="js-expandable-3a62bafdb2cc2facea6072e582065430">
       <span class="expandable-label">Tests</span>
@@ -525,7 +500,7 @@
       </svg>
     </button>
   
-    </h3>
+    </h4>
   
   <div id="js-expandable-3a62bafdb2cc2facea6072e582065430" hidden>
     <ol>
@@ -573,11 +548,11 @@
 </div>
 </p>
 
-<h2 id="screen-reader">Screen reader</h2>
+<h3 id="screen-reader">Screen reader</h3>
 
 <p><div class="expandable-section">
   
-    <h3>
+    <h4>
   
     <button aria-expanded="false" data-expands="js-expandable-6ac48867d6ef49edf4cd3f72b616ebe2">
       <span class="expandable-label">Introduction</span>
@@ -589,7 +564,7 @@
       </svg>
     </button>
   
-    </h3>
+    </h4>
   
   <div id="js-expandable-6ac48867d6ef49edf4cd3f72b616ebe2" hidden>
     <p>Many types of users, including blind users, dyslexic users, and users with low literacy, use screen reader software to help them perceive and operate digital interfaces. Screen readers offer an array of keyboard shortcuts not available to keyboard users <em>not</em> running screen reader software. Manual testing is therefore different.</p>
@@ -608,7 +583,7 @@
 
 <div class="expandable-section">
   
-    <h3>
+    <h4>
   
     <button aria-expanded="false" data-expands="js-expandable-28811a10e8f9baf0c51ea3a495cd6f2d">
       <span class="expandable-label">Tests</span>
@@ -620,7 +595,7 @@
       </svg>
     </button>
   
-    </h3>
+    </h4>
   
   <div id="js-expandable-28811a10e8f9baf0c51ea3a495cd6f2d" hidden>
     <ol>
@@ -650,11 +625,11 @@
 </div>
 </p>
 
-<h2 id="zoom">Zoom</h2>
+<h3 id="zoom">Zoom</h3>
 
 <p><div class="expandable-section">
   
-    <h3>
+    <h4>
   
     <button aria-expanded="false" data-expands="js-expandable-984fe5417894b4880035fb7693eafbdc">
       <span class="expandable-label">Introduction</span>
@@ -666,7 +641,7 @@
       </svg>
     </button>
   
-    </h3>
+    </h4>
   
   <div id="js-expandable-984fe5417894b4880035fb7693eafbdc" hidden>
     <p>Low vision users and users with motor impairments tend to &lsquo;zoom&rsquo; web pages so that the content easier to read and &lsquo;target&rsquo; with mouse gestures and touch. There are a few different ways to zoom web pages, so a number of tests are provided.</p>
@@ -676,7 +651,7 @@
 
 <div class="expandable-section">
   
-    <h3>
+    <h4>
   
     <button aria-expanded="false" data-expands="js-expandable-a1b5a96b82d2ae9fbe7face9b14e603c">
       <span class="expandable-label">Test</span>
@@ -688,7 +663,7 @@
       </svg>
     </button>
   
-    </h3>
+    </h4>
   
   <div id="js-expandable-a1b5a96b82d2ae9fbe7face9b14e603c" hidden>
     <ol>
