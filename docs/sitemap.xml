@@ -127,6 +127,10 @@
   </url>
   
   <url>
+    <loc>https://heydon.github.io/bulb-audit/patterns/general/payment-settings/</loc>
+  </url>
+  
+  <url>
     <loc>https://heydon.github.io/bulb-audit/priorities/</loc>
     <priority>0</priority>
   </url>

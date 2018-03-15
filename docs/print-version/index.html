@@ -328,6 +328,15 @@
                   </li>
                 
                   <li class="pattern">
+                    <a href="#payment-settings-issues" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Payment settings issues</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#routing" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -6106,6 +6115,187 @@ h4, .h4 {
   </div>
 </aside>
 
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="payment-settings-issues" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Payment settings issues
+            </h1>
+            
+
+<p>The following is an accessibility review of the payment settings pages found from <a href="https://account.staging.bulb.co.uk/dashboard/payments-and-statements/payment-settings">dashboard/payments-and-statements/payment-settings</a>.</p>
+
+<h2 id="heading-structure">Heading structure</h2>
+
+<h3 id="main-page">Main page</h3>
+
+<p>The heading structure is not correct. &ldquo;Payment Settings&rdquo; should be an <code>&lt;h1&gt;</code> (because it is the main heading of the page) and both &ldquo;Payment amount&rdquo;, &ldquo;Payment date&rdquo;, and &ldquo;Payment details&rdquo; should be <code>&lt;h2&gt;</code> (as subsection headings directly under &ldquo;Payment Settings&rdquo;). See below (&ldquo;Payment details&rdquo; not pictured).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/pay-set-headings.png" alt="headings diagram" /></p>
+
+<h3 id="setup-new-direct-debit-page">Setup New Direct Debit page</h3>
+
+<p>&ldquo;Setup New Direct Debit&rdquo; should be an <code>&lt;h1&gt;</code> (and &ldquo;Confirm New Direct Debit Details&rdquo; on the confirmation page). The labels are currently <code>&lt;h4&gt;</code>s, which is incorrect in terms of hierarchy. Either remove the headings and just have <code>&lt;label&gt;</code>s or mark them up as <code>&lt;h2&gt;</code> headings with <code>&lt;label&gt;</code>s inside them.</p>
+
+<p>(<strong>Note:</strong> the <code>TextInput</code> component does not currently support labels-in-headings. Should probably be possible.)</p>
+
+<h2 id="labels">Labels</h2>
+
+<p>The form markup currently does not make good use of labels to ensure screen reader users have fields identified to them on focus. This is the job of the <code>&lt;label&gt;</code> element, which takes a <code>for</code> attribute that should point to the field&rsquo;s <code>id</code>. The current mechanism of having a label followed by an input, then &ldquo;per month&rdquo; or similar is not recommended. Instead, reword the headings place labels within them. Full examples to follow, with notes.</p>
+
+<h3 id="payment-amount-example">Payment amount example</h3>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+<span class='highlight'>&lt;h2&gt;</span>
+  &lt;label <span class='highlight'>for=&#34;payment-amount&#34;</span>&gt;
+    Monthly payment amount
+    <span class='highlight'>&lt;span&gt;We recommend £168 per month&lt;/span&gt;</span>
+    <span class='highlight'>&lt;span class=&#34;visually-hidden&#34;&gt;(in pounds)&lt;/span&gt;</span>
+  &lt;/label&gt;
+&lt;/h2&gt;
+&lt;input <span class='highlight'>id=&#34;payment-amount&#34;</span> value=&#34;136.58&#34; /&gt;
+</code></div>
+
+
+<ol>
+<li>The heading should be an <code>&lt;h2&gt;</code> (See <strong>Heading structure</strong>, above).</li>
+<li>The <code>&lt;label&gt;</code> needs a <code>for</code> attribute, pointing to the input&rsquo;s <code>id</code>.</li>
+<li>The description should be above the input. Below the input is only for errors, as prescribed by the <code>TextInput</code> component.</li>
+<li>This is for clarification to screen reader users who do not have access to the <code>£</code> sign displayed. See  for the <code>class</code> that makes this work.</li>
+<li>(See 2)</li>
+</ol>
+
+<h3 id="payment-date">Payment date</h3>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;h2&gt;
+  &lt;label for=&#34;payment-date&#34;&gt;
+    Monthly payment date
+  &lt;/label&gt;
+&lt;/h2&gt;
+&lt;input id=&#34;payment-date&#34; value=&#34;136.58&#34; /&gt;
+</code></div>
+
+
+<h3 id="setup-new-direct-debit-page-1">Setup New Direct Debit page</h3>
+
+<p>The same rules as outline above should be followed for the (pictured) form elements. Be sure to adopt the new &ldquo;boxy&rdquo; input design by using the <code>TextInput</code> component from the design library.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/pay-set-debit-text.png" alt="Text inputs on debit page" /></p>
+
+<p>The sort code example (pictured) is a special case because it is a <em>group</em> of inputs. &ldquo;Sort code&rdquo; should be a group label, provided via a <code>&lt;legend&gt;</code>. The individual inputs will need their own (invisible) labels. See the code below.</p>
+
+
+
+
+
+<div class="code-annotated "><code>
+&lt;fieldset&gt;
+  <span class='highlight'>&lt;legend&gt;Sort code&lt;/legend&gt;</span>
+  &lt;div&gt;
+    <span class='highlight'>&lt;label for=&#34;first-digits&#34; class=&#34;visually-hidden&#34;&gt;First two digits&lt;/label&gt;</span>
+    &lt;input id=&#34;first-digits&#34; placeholder=&#34;00&#34; /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&#34;second-digits&#34; class=&#34;visually-hidden&#34;&gt;Second two digits&lt;/label&gt;
+    &lt;input id=&#34;second-digits&#34; placeholder=&#34;00&#34; /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&#34;third-digits&#34; class=&#34;visually-hidden&#34;&gt;Third two digits&lt;/label&gt;
+    &lt;input id=&#34;third-digits&#34; placeholder=&#34;00&#34; /&gt;
+  &lt;/div&gt;
+&lt;/fieldset&gt;
+</code></div>
+
+
+<ol>
+<li>The <code>&lt;legend&gt;</code> describes the entire group of inputs</li>
+<li>The invisible <code>&lt;label&gt;</code> clarifies what each individual input is for to screen reader users</li>
+</ol>
+
+<p>The checkbox (pictured below) should use the new <code>Checkbox</code> component (currently it appears to be accessible, but does use two labels for some reason).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/pay-set-check.png" alt="Checkbox input" /></p>
+
+<h2 id="errors">Errors</h2>
+
+<p>You should be using <code>TextInput</code> from the design library to create text inputs. This has many of the described features built in, including the accessible display of error messages, using <code>aria-describedby</code> to associate the error message to the input and <code>aria-invalid</code> to signify invalidity <em>on</em> the input.</p>
+
+<p>The following is an approximation of how <code>TextInput</code> marks this up, using &ldquo;Payment amount&rdquo; as an example.</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;h2&gt;
+  &lt;label for=&#34;payment-amount&#34;&gt;
+    Monthly payment amount
+    &lt;span&gt;We recommend £168 per month&lt;/span&gt;
+    &lt;span class=&#34;visually-hidden&#34;&gt;(in pounds)&lt;/span&gt;
+  &lt;/label&gt;
+&lt;/h2&gt;
+&lt;input id=&#34;payment-amount&#34; value=&#34;136.58&#34; <span class='highlight'>aria-invalid=&#34;true&#34;</span> <span class='highlight'>aria-describedby=&#34;payment-amount-error&#34;</span> /&gt;
+&lt;div class=&#34;error&#34; <span class='highlight'>id=&#34;payment-amount-error&#34;</span>&gt;Invalid monthly payment&lt;/div&gt;
+</code></div>
+
+
+<ol>
+<li><code>aria-invalid</code> must be applied to the invalid field</li>
+<li><code>aria-describedby</code> associates the input to the error using the error&rsquo;s <code>id</code></li>
+<li>(See 2)</li>
+</ol>
+
+<h2 id="list-structure">List structure</h2>
+
+<p>The details under &ldquo;Payment details&rdquo; (pictured) need to be marked up as a definition list.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/pay-set-def-list.png" alt="payment details definition list" /></p>
+
+<p>Lists and definition lists give structure to screen reader users, who then find the content easier to understand and navigate.</p>
+
+<p>Here&rsquo;s how the code should look:</p>
+
+
+
+
+
+<div class="code-annotated numbered"><code>
+&lt;dl&gt;
+  <span class='highlight'>&lt;dt&gt;Account holder&lt;/dt&gt;</span>
+  <span class='highlight'>&lt;dd&gt;P G &amp; C E Mccolgan&lt;/dd&gt;</span>
+  &lt;dt&gt;Account number&lt;/dt&gt;
+  &lt;dd&gt;*****879&lt;/dd&gt;
+  &lt;dt&gt;Sort code&lt;/dt&gt;
+  &lt;dd&gt;56-00-41&lt;/dd&gt;
+&lt;/dl&gt;
+</code></div>
+
+
+<ol>
+<li>The <code>&lt;dt&gt;</code> (definition title) is the key/label for the definition</li>
+<li>The <code>&lt;dd&gt;</code> (definition) is the value</li>
+</ol>
+
+<p>The confirmation page for changing the direct debit details (see below) should also use this structure (and have a similar visual design; the current one is very difficult to understand).</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/pay-set-confirm.png" alt="Debit card details" /></p>
+
+<h2 id="routing">Routing</h2>
+
+<p>You will need to manage focus between routes by focusing the <code>&lt;h1&gt;</code> on each screen and updating the <code>&lt;title&gt;</code> to something that is more descriptive of the exact screen. For example: &ldquo;Bulb Account - Confirm New Direct Debit Details&rdquo; instead of the generic &ldquo;Bulb Account — Edit Payment Details&rdquo;. More detail on routing here: <a class="pattern-link" href="https://heydon.github.io/bulb-audit/patterns/general/routing/"><svg class="bookmark" aria-hidden="true" viewBox="0 0 40 50" focusable="false"> <use xlink:href="#bookmark"></use> </svg>Routing</a>.</p>
 
           </div>
         

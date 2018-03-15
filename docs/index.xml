@@ -239,6 +239,17 @@ The following shows the navigation system in the desktop configuration, with the
     </item>
     
     <item>
+      <title>Payment settings issues</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/general/payment-settings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/general/payment-settings/</guid>
+      <description>The following is an accessibility review of the payment settings pages found from dashboard/payments-and-statements/payment-settings.
+Heading structure Main page The heading structure is not correct. &amp;ldquo;Payment Settings&amp;rdquo; should be an &amp;lt;h1&amp;gt; (because it is the main heading of the page) and both &amp;ldquo;Payment amount&amp;rdquo;, &amp;ldquo;Payment date&amp;rdquo;, and &amp;ldquo;Payment details&amp;rdquo; should be &amp;lt;h2&amp;gt; (as subsection headings directly under &amp;ldquo;Payment Settings&amp;rdquo;). See below (&amp;ldquo;Payment details&amp;rdquo; not pictured).
+Setup New Direct Debit page &amp;ldquo;Setup New Direct Debit&amp;rdquo; should be an &amp;lt;h1&amp;gt; (and &amp;ldquo;Confirm New Direct Debit Details&amp;rdquo; on the confirmation page).</description>
+    </item>
+    
+    <item>
       <title>Routing</title>
       <link>https://heydon.github.io/bulb-audit/patterns/general/routing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
