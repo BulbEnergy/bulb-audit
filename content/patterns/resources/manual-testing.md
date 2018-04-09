@@ -10,15 +10,11 @@ Before [manual testing](#manual-testing), you need to check that the component p
 
 ### Pa11y
 
-Pa11y provides a CLI for testing against single URLs, including localhost URLs. It logs errors in your console. Install it globally, then run it against your URL of choice.
+Pa11y provides a CLI for testing against single URLs, including localhost URLs such as those running off the design library's Catalog. It logs errors in your console. Install it globally, then run it against your URL of choice.
 
-{{% cmd %}}
-npm install -g pa11y-ci
-{{% /cmd %}}
+{{<cmd>}}npm install -g pa11y-ci{{</cmd>}}
 
-{{% cmd %}}
-pa11y https://bulb.co.uk
-{{% /cmd %}}
+{{<cmd>}}pa11y https://bulb.co.uk{{</cmd>}}
 
 ### Lighthouse
 
