@@ -7294,9 +7294,35 @@ componentDidMount() {
             </h1>
             
 
-<p>The following is a guide on how to manually test new components for accessibility. No new components created for the <strong>Bulb</strong> interfaces should reach production without passing these checks.</p>
+<p>The following is a guide on how to test new components for accessibility. No new components created for the <strong>Bulb</strong> interfaces should reach production without passing these checks.</p>
 
-<h2 id="keyboard">Keyboard</h2>
+<h2 id="automated-testing">Automated testing</h2>
+
+<p>Before <a href="#manual-testing">manual testing</a>, you need to check that the component passes for basic <a href="https://www.w3.org/TR/WCAG20/">WCAG (A and AA)</a> success criteria. Tools designed to detect WCAG failures differ in their scope and accuracy, so you will use a selection (see below). Where one tool reports a problem but another doesn&rsquo;t, it is more likely to be a false positive. Manual testing will help to confirm.</p>
+
+<h3 id="pa11y">Pa11y</h3>
+
+<p>Pa11y provides a CLI for testing against single URLs, including localhost URLs. It logs errors in your console. Install it globally, then run it against your URL of choice.</p>
+
+<pre class="cmd"><code>&lt;p&gt;npm install -g pa11y-ci&lt;/p&gt;</code></pre>
+
+
+<pre class="cmd"><code>&lt;p&gt;pa11y &lt;a href=&#34;https://bulb.co.uk&#34;&gt;https://bulb.co.uk&lt;/a&gt;&lt;/p&gt;</code></pre>
+
+
+<h3 id="lighthouse">Lighthouse</h3>
+
+<p>Lighthouse is an accessibility, performance, and PWA testing tool from Google. It is available as a CLI, but is probably easiest to use in its <a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en">browser extension</a> form.</p>
+
+<p>Once installed, navigate to the page with the component on it you want to test, then open developer tools and choose the <strong>Audits</strong> tab. Press the &ldquo;Perform an audit&rdquo; button and uncheck everything but accessibility.</p>
+
+<h3 id="html-code-sniffer">HTML Code Sniffer</h3>
+
+<p>This tool works as a bookmarklet and has a high degree of accuracy. Drag the <a href="http://squizlabs.github.io/HTML_CodeSniffer/">bookmarklet</a> to your bookmarks bar and click the bookmarklet on the component page you want to test. Make sure &ldquo;Standards&rdquo; is set to WCAG2AA from the dropdown. Ignore notices, but test warnings manually if you believe there may be a real issue.</p>
+
+<h2 id="manual-testing">Manual testing</h2>
+
+<h3 id="keyboard">Keyboard</h3>
 
 <p><div class="expandable-section">
   
@@ -7392,7 +7418,7 @@ componentDidMount() {
 </div>
 </p>
 
-<h2 id="screen-reader">Screen reader</h2>
+<h3 id="screen-reader">Screen reader</h3>
 
 <p><div class="expandable-section">
   
@@ -7469,7 +7495,7 @@ componentDidMount() {
 </div>
 </p>
 
-<h2 id="zoom">Zoom</h2>
+<h3 id="zoom">Zoom</h3>
 
 <p><div class="expandable-section">
   

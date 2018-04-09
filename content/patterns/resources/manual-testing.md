@@ -2,9 +2,37 @@
 title = "Component Testing"
 +++
 
-The following is a guide on how to manually test new components for accessibility. No new components created for the **Bulb** interfaces should reach production without passing these checks.
+The following is a guide on how to test new components for accessibility. No new components created for the **Bulb** interfaces should reach production without passing these checks.
 
-## Keyboard
+## Automated testing
+
+Before [manual testing](#manual-testing), you need to check that the component passes for basic [WCAG (A and AA)](https://www.w3.org/TR/WCAG20/) success criteria. Tools designed to detect WCAG failures differ in their scope and accuracy, so you will use a selection (see below). Where one tool reports a problem but another doesn't, it is more likely to be a false positive. Manual testing will help to confirm.
+
+### Pa11y
+
+Pa11y provides a CLI for testing against single URLs, including localhost URLs. It logs errors in your console. Install it globally, then run it against your URL of choice.
+
+{{% cmd %}}
+npm install -g pa11y-ci
+{{% /cmd %}}
+
+{{% cmd %}}
+pa11y https://bulb.co.uk
+{{% /cmd %}}
+
+### Lighthouse
+
+Lighthouse is an accessibility, performance, and PWA testing tool from Google. It is available as a CLI, but is probably easiest to use in its [browser extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=en) form.
+
+Once installed, navigate to the page with the component on it you want to test, then open developer tools and choose the **Audits** tab. Press the "Perform an audit" button and uncheck everything but accessibility.
+
+### HTML Code Sniffer
+
+This tool works as a bookmarklet and has a high degree of accuracy. Drag the [bookmarklet](http://squizlabs.github.io/HTML_CodeSniffer/) to your bookmarks bar and click the bookmarklet on the component page you want to test. Make sure "Standards" is set to WCAG2AA from the dropdown. Ignore notices, but test warnings manually if you believe there may be a real issue.
+
+## Manual testing
+
+### Keyboard
 
 {{% expandable label="Introduction" level="3" %}}
 All functionality that is available by mouse or touch should also be available by keyboard. Keyboard operation is possible by moving to ('focusing') interactive elements and activating them using keystrokes.
@@ -37,7 +65,7 @@ The important keys for testing are:
     1. No, I'm not able to reach the dialog and/or closing the dialog does not move focus back to where I started: **Fail**
 {{% /expandable %}}
 
-## Screen reader
+### Screen reader
 
 {{% expandable label="Introduction" level="3" %}}
 Many types of users, including blind users, dyslexic users, and users with low literacy, use screen reader software to help them perceive and operate digital interfaces. Screen readers offer an array of keyboard shortcuts not available to keyboard users _not_ running screen reader software. Manual testing is therefore different.
@@ -63,7 +91,7 @@ Screen reader software varies greatly. The following tests are designed for use 
     1. Does the notification fail to announce via the screen reader upon arrival? **Fail**
 {{% /expandable %}}
 
-## Zoom
+### Zoom
 
 {{% expandable label="Introduction" level="3" %}}
 Low vision users and users with motor impairments tend to 'zoom' web pages so that the content easier to read and 'target' with mouse gestures and touch. There are a few different ways to zoom web pages, so a number of tests are provided.
