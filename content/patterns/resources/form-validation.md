@@ -24,6 +24,8 @@ For each field, ensure that:
 3. Complex input requirements are handled with a description _inside_ the `<label>` (this should be automatic using the `<FormGroup>` component)
 4. A live region is present in the page, directly above the submit (and cancel) button (see **General error message**, below)
 
+Also ensure the parent form has the `novalidate` attribute. We are using our own validation process and do not want inconsistently implemented HTML5 validation messages to appear.
+
 ### Instant error handling
 
 Some forms provide validation for inputs as the user types. This should generally be avoided since incomplete input is typically considered as invalid, which is discouraging. It can also be distracting to screen reader users where the error message is implemented as an ARIA live region.

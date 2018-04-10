@@ -525,6 +525,8 @@
 <li>A live region is present in the page, directly above the submit (and cancel) button (see <strong>General error message</strong>, below)</li>
 </ol>
 
+<p>Also ensure the parent form has the <code>novalidate</code> attribute. We are using our own validation process and do not want inconsistently implemented HTML5 validation messages to appear.</p>
+
 <h3 id="instant-error-handling">Instant error handling</h3>
 
 <p>Some forms provide validation for inputs as the user types. This should generally be avoided since incomplete input is typically considered as invalid, which is discouraging. It can also be distracting to screen reader users where the error message is implemented as an ARIA live region.</p>
