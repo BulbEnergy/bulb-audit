@@ -41,6 +41,17 @@ The aria-level property/attribute can then be used to change the perceived level
     </item>
     
     <item>
+      <title>Form Validation</title>
+      <link>https://heydon.github.io/bulb-audit/patterns/resources/form-validation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://heydon.github.io/bulb-audit/patterns/resources/form-validation/</guid>
+      <description>The Bulb sites should each conform to the same set of prescribed form validation behaviors as set out below. These behaviors are optimized for usability and accessibility and should be implemented consistently.
+Let users submit There are a number of usability issues associated with disabled (submit) buttons.
+ Difficult to discern as disabled (especially when color blind) Do not tend to explain why they are disabled Not focusable, therefore not easily discoverable using a screen reader More here  Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise.</description>
+    </item>
+    
+    <item>
       <title>Marketing site homepage HTML</title>
       <link>https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

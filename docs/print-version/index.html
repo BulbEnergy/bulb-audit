@@ -407,6 +407,15 @@
                   </li>
                 
                   <li class="pattern">
+                    <a href="#form-validation" >
+                      <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                        <use xlink:href="#bookmark"></use>
+                      </svg>
+                      <span class="text">Form Validation</span>
+                    </a>
+                  </li>
+                
+                  <li class="pattern">
                     <a href="#marketing-site-homepage-html" >
                       <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
                         <use xlink:href="#bookmark"></use>
@@ -7611,6 +7620,88 @@ componentDidMount() {
 &lt;!-- how a screen reader perceives the MyComponent heading --&gt;
 &lt;h3&gt;Component name / main component heading text&lt;/h3&gt;
 </code></pre>
+
+          </div>
+        
+          <div class="pattern-section">
+            <h1 id="form-validation" tabindex="-1">
+              <svg class="bookmark-icon" aria-hidden="true" viewBox="0 0 40 50" focusable="false">
+                <use xlink:href="#bookmark"></use>
+              </svg>
+              Form Validation
+            </h1>
+            
+
+<p>The Bulb sites should each conform to the same set of prescribed form validation behaviors as set out below. These behaviors are optimized for usability and accessibility and should be implemented consistently.</p>
+
+<h2 id="let-users-submit">Let users submit</h2>
+
+<p>There are a number of usability issues associated with disabled (submit) buttons.</p>
+
+<ul>
+<li>Difficult to discern as disabled (especially when color blind)</li>
+<li>Do not tend to explain why they are disabled</li>
+<li>Not focusable, therefore not easily discoverable using a screen reader</li>
+<li><a href="https://axesslab.com/disabled-buttons-suck/">More here</a></li>
+</ul>
+
+<p>Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise.</p>
+
+<h2 id="before-submission">Before submission</h2>
+
+<p>For each field, ensure that:</p>
+
+<ol>
+<li><code>aria-invalid</code> is not present on any fields (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li><code>aria-required</code> is set to <code>true</code> if applicable (set it on the parent <code>fieldset</code> for radio groups where no default radio is selected)</li>
+<li>Complex input requirements are handled with a description <em>inside</em> the <code>&lt;label&gt;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>A live region is present in the page, directly above the submit (and cancel) button (see <strong>General error message</strong>, below)</li>
+</ol>
+
+<h2 id="on-submission-with-errors">On submission (with errors)</h2>
+
+<p>Only reveal errors on submission. Errors that appear while typing can be distracting and obstructive, especially assistive technology users where implemented as ARIA live regions. Where not implemented as such, they might not be detected at all.</p>
+
+<p>Instead, reveal a general error message, and also the individual error messages only after the attempted submission.</p>
+
+<h3 id="general-error-message">General error message</h3>
+
+<p>Just revealing error messages for individual fields is not enough here. Firstly, a general message announcing the presence of errors needs to be included, as a screen reader accessible live region. The <code>&lt;FormErrors&gt;</code> component is designed for this already.</p>
+
+<p>Be sure to place the <code>&lt;FormErrors&gt;</code> component directly above the submit (and cancel) buttons so that the user does not need to scroll in order to see it. See the example from the [marketing business page]() below.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/general-error.png" alt="The red error message appears above the Request A Quote button" /></p>
+
+<h3 id="individual-fields">Individual fields</h3>
+
+<p>After attempted submission, for each field ensure the following:</p>
+
+<ul>
+<li>Where the field is <strong>valid</strong>:
+
+<ol>
+<li>The field element/input has <code>aria-invalid=&quot;false&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+</ol></li>
+<li>Where the field is <strong>invalid</strong>:
+
+<ol>
+<li>The field element/input has <code>aria-invalid=&quot;true&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>An error message is associated to their input/field using <code>aria-describedby</code> with a value of the field/input&rsquo;s <code>id</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>The error message appears directly below the input in question (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>The error message should be accompanied by an error symbol (see the illustration of <code>&lt;FormGroup&gt;</code> below)</li>
+</ol></li>
+</ul>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/form_group_error.png" alt="Form Group component showing an input with an error message and error symbol" /></p>
+
+<h2 id="after-submission-no-errors">After submission (no errors)</h2>
+
+<p>If submission was successful, this needs to be clear. There are a few things to consider depending on the circumstances.</p>
+
+<ol>
+<li><strong>Does the form itself disappear (is it removed from the DOM)?</strong> You should programmatically focus a success message such as &ldquo;Password successfully updated&rdquo; (using a React <code>ref</code> and <code>focus()</code>, typically)</li>
+<li><strong>Is the user redirected to a new page?</strong> Make sure that page includes some kind of success message. The easiest way is to probably include it in the page <code>&lt;title&gt;</code> (e.g. <code>&lt;title&gt;Your account settings (you successfully changed your password)&lt;/title&gt;</code>). An additional flash message in the page (below the main title) is recommended.</li>
+</ol>
 
           </div>
         
