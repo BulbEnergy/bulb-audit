@@ -7658,11 +7658,13 @@ componentDidMount() {
 <li>A live region is present in the page, directly above the submit (and cancel) button (see <strong>General error message</strong>, below)</li>
 </ol>
 
+<h3 id="instant-error-handling">Instant error handling</h3>
+
+<p>Some forms provide validation for inputs as the user types. This should generally be avoided since incomplete input is typically considered as invalid, which is discouraging. It can also be distracting to screen reader users where the error message is implemented as an ARIA live region.</p>
+
+<p>It is permissible to validate on <code>blur</code>, but this should be done in conjunction with a &ldquo;general&rdquo; message alerting that their are errors present on <code>submit</code> (see below).</p>
+
 <h2 id="on-submission-with-errors">On submission (with errors)</h2>
-
-<p>Only reveal errors on submission. Errors that appear while typing can be distracting and obstructive, especially assistive technology users where implemented as ARIA live regions. Where not implemented as such, they might not be detected at all.</p>
-
-<p>Instead, reveal a general error message, and also the individual error messages only after the attempted submission.</p>
 
 <h3 id="general-error-message">General error message</h3>
 

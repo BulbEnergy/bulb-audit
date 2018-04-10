@@ -24,11 +24,13 @@ For each field, ensure that:
 3. Complex input requirements are handled with a description _inside_ the `<label>` (this should be automatic using the `<FormGroup>` component)
 4. A live region is present in the page, directly above the submit (and cancel) button (see **General error message**, below)
 
+### Instant error handling
+
+Some forms provide validation for inputs as the user types. This should generally be avoided since incomplete input is typically considered as invalid, which is discouraging. It can also be distracting to screen reader users where the error message is implemented as an ARIA live region.
+
+It is permissible to validate on `blur`, but this should be done in conjunction with a "general" message alerting that their are errors present on `submit` (see below).
+
 ## On submission (with errors)
-
-Only reveal errors on submission. Errors that appear while typing can be distracting and obstructive, especially assistive technology users where implemented as ARIA live regions. Where not implemented as such, they might not be detected at all.
-
-Instead, reveal a general error message, and also the individual error messages only after the attempted submission.
 
 ### General error message
 
