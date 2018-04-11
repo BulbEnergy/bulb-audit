@@ -48,7 +48,7 @@ Be sure to place the `<FormErrors>` component directly above the submit (and can
 After attempted submission, for each field ensure the following. Note that empty required fields would now be considered as invalid, and display error messages.
 
 * Where the field is **valid**:
-    1. The field element/input has `aria-invalid="false"` (this should be automatic using the `<FormGroup>` component, and will show a green tick)
+    1. The field element/input takes (or keeps including) `aria-invalid="false"` (this should be automatic using the `<FormGroup>` component, and will show a green tick)
 * Where the field is **invalid**:
     1. The field element/input has `aria-invalid="true"` (this should be automatic using the `<FormGroup>` component)
     2. An error message is associated to their input/field using `aria-describedby` with a value of the field/input's `id` (this should be automatic using the `<FormGroup>` component)
