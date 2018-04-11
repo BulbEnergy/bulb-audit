@@ -13,7 +13,7 @@ There are a number of usability issues associated with disabled (submit) buttons
 * Not focusable, therefore not easily discoverable using a screen reader
 * [More here](https://axesslab.com/disabled-buttons-suck/)
 
-Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise. It is, however, permissible to disable the submit button until all required fields have input _entered_.
+Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise.
 
 ## Before submission
 
