@@ -13,7 +13,7 @@ There are a number of usability issues associated with disabled (submit) buttons
 * Not focusable, therefore not easily discoverable using a screen reader
 * [More here](https://axesslab.com/disabled-buttons-suck/)
 
-Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise.
+Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise. It is, however, permissible to disable the submit button until all required fields have input _entered_.
 
 ## Before submission
 
@@ -30,7 +30,7 @@ Also ensure the parent form has the `novalidate` attribute. We are using our own
 
 Some forms provide validation for inputs as the user types. This should generally be avoided since incomplete input is typically considered as invalid, which is discouraging. It can also be distracting to screen reader users where the error message is implemented as an ARIA live region.
 
-It is permissible to validate on `blur`, but this should be done in conjunction with a "general" message alerting that their are errors present on `submit` (see below).
+It is permissible to validate (and show error messages) on `blur`, but this should be done in conjunction with a "general" message alerting that there are errors present on `submit` (see below).
 
 ## On submission (with errors)
 
