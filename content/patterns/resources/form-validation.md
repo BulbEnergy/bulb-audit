@@ -13,7 +13,7 @@ There are a number of usability issues associated with disabled (submit) buttons
 * Not focusable, therefore not easily discoverable using a screen reader
 * [More here](https://axesslab.com/disabled-buttons-suck/)
 
-Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise.
+Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise. By using instant error handling (see below) few users should reach the end of the form with invalid fields.
 
 ## Before submission
 
@@ -28,26 +28,27 @@ Also ensure the parent form has the `novalidate` attribute. We are using our own
 
 ### Instant error handling
 
-Some forms provide validation for inputs as the user types. This should generally be avoided since incomplete input is typically considered as invalid, which is discouraging. It can also be distracting to screen reader users where the error message is implemented as an ARIA live region.
-
-It is permissible to validate (and show error messages) on `blur`, but this should be done in conjunction with a "general" message alerting that there are errors present on `submit` (see below).
+* When you show the error message as the user types, make sure `aria-invalid` is simultaneously switched over to `false`.
+* Do not immediately invalidate inputs that do not expect a specific form of input. Names, for example, should only take `aria-invalid="true"` and display an error message _after_ the user has attempted submission (see below).
+* Always debounce input so that users get a chance to write out (for example) their whole email, or most of it, before the error message appears.
+* Instantly indicate where the input becomes valid (green tick) but _only_ where a specific form of input is required (such as email). Only show a green tick for inputs which are simply required _after_ submission (see below)
 
 ## On submission (with errors)
 
 ### General error message
 
-Just revealing error messages for individual fields is not enough here. Firstly, a general message announcing the presence of errors needs to be included, as a screen reader accessible live region. The `<FormErrors>` component is designed for this already.
+On submission, if there are still individual errors present, a general message announcing the presence of errors needs to be included, as a screen reader accessible live region. The `<FormErrors>` component is designed for this already.
 
-Be sure to place the `<FormErrors>` component directly above the submit (and cancel) buttons so that the user does not need to scroll in order to see it. See the example from the [marketing business page]() below.
+Be sure to place the `<FormErrors>` component directly above the submit (and cancel) buttons so that the user does not need to scroll in order to see it. See the example from the marketing business page below.
 
 ![The red error message appears above the Request A Quote button](/images/general-error.png)
 
 ### Individual fields
 
-After attempted submission, for each field ensure the following:
+After attempted submission, for each field ensure the following. Note that empty required fields would now be considered as invalid, and display error messages.
 
 * Where the field is **valid**:
-    1. The field element/input has `aria-invalid="false"` (this should be automatic using the `<FormGroup>` component)
+    1. The field element/input has `aria-invalid="false"` (this should be automatic using the `<FormGroup>` component, and will show a green tick)
 * Where the field is **invalid**:
     1. The field element/input has `aria-invalid="true"` (this should be automatic using the `<FormGroup>` component)
     2. An error message is associated to their input/field using `aria-describedby` with a value of the field/input's `id` (this should be automatic using the `<FormGroup>` component)

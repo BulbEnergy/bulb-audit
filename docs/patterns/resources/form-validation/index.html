@@ -512,7 +512,7 @@
 <li><a href="https://axesslab.com/disabled-buttons-suck/">More here</a></li>
 </ul>
 
-<p>Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise.</p>
+<p>Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise. By using instant error handling (see below) few users should reach the end of the form with invalid fields.</p>
 
 <h2 id="before-submission">Before submission</h2>
 
@@ -529,29 +529,32 @@
 
 <h3 id="instant-error-handling">Instant error handling</h3>
 
-<p>Some forms provide validation for inputs as the user types. This should generally be avoided since incomplete input is typically considered as invalid, which is discouraging. It can also be distracting to screen reader users where the error message is implemented as an ARIA live region.</p>
-
-<p>It is permissible to validate (and show error messages) on <code>blur</code>, but this should be done in conjunction with a &ldquo;general&rdquo; message alerting that there are errors present on <code>submit</code> (see below).</p>
+<ul>
+<li>When you show the error message as the user types, make sure <code>aria-invalid</code> is simultaneously switched over to <code>false</code>.</li>
+<li>Do not immediately invalidate inputs that do not expect a specific form of input. Names, for example, should only take <code>aria-invalid=&quot;true&quot;</code> and display an error message <em>after</em> the user has attempted submission (see below).</li>
+<li>Always debounce input so that users get a chance to write out (for example) their whole email, or most of it, before the error message appears.</li>
+<li>Instantly indicate where the input becomes valid (green tick) but <em>only</em> where a specific form of input is required (such as email). Only show a green tick for inputs which are simply required <em>after</em> submission (see below)</li>
+</ul>
 
 <h2 id="on-submission-with-errors">On submission (with errors)</h2>
 
 <h3 id="general-error-message">General error message</h3>
 
-<p>Just revealing error messages for individual fields is not enough here. Firstly, a general message announcing the presence of errors needs to be included, as a screen reader accessible live region. The <code>&lt;FormErrors&gt;</code> component is designed for this already.</p>
+<p>On submission, if there are still individual errors present, a general message announcing the presence of errors needs to be included, as a screen reader accessible live region. The <code>&lt;FormErrors&gt;</code> component is designed for this already.</p>
 
-<p>Be sure to place the <code>&lt;FormErrors&gt;</code> component directly above the submit (and cancel) buttons so that the user does not need to scroll in order to see it. See the example from the [marketing business page]() below.</p>
+<p>Be sure to place the <code>&lt;FormErrors&gt;</code> component directly above the submit (and cancel) buttons so that the user does not need to scroll in order to see it. See the example from the marketing business page below.</p>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/general-error.png" alt="The red error message appears above the Request A Quote button" /></p>
 
 <h3 id="individual-fields">Individual fields</h3>
 
-<p>After attempted submission, for each field ensure the following:</p>
+<p>After attempted submission, for each field ensure the following. Note that empty required fields would now be considered as invalid, and display error messages.</p>
 
 <ul>
 <li>Where the field is <strong>valid</strong>:
 
 <ol>
-<li>The field element/input has <code>aria-invalid=&quot;false&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>The field element/input has <code>aria-invalid=&quot;false&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component, and will show a green tick)</li>
 </ol></li>
 <li>Where the field is <strong>invalid</strong>:
 
