@@ -21,7 +21,7 @@ For each field, ensure that:
 
 1. `aria-invalid` is not present on any fields (this should be automatic using the `<FormGroup>` component)
 2. `aria-required` is set to `true` if applicable (set it on the parent `fieldset` for radio groups where no default radio is selected)
-3. Complex input requirements are handled with a description _inside_ the `<label>` (this should be automatic using the `<FormGroup>` component)
+3. Complex input requirements are handled with a description _inside_ the `<label>`, or `<legend>` for radio button fieldsets  (this should be automatic using the `<FormGroup>` component)
 4. A live region is present in the page, directly above the submit (and cancel) button (see **General error message**, below)
 
 Also ensure the parent form has the `novalidate` attribute. We are using our own validation process and do not want inconsistently implemented HTML5 validation messages to appear.
@@ -48,12 +48,32 @@ Be sure to place the `<FormErrors>` component directly above the submit (and can
 After attempted submission, for each field ensure the following. Note that empty required fields would now be considered as invalid, and display error messages.
 
 * Where the field is **valid**:
-    1. The field element/input takes (or keeps including) `aria-invalid="false"` (this should be automatic using the `<FormGroup>` component, and will show a green tick)
-* Where the field is **invalid**:
-    1. The field element/input has `aria-invalid="true"` (this should be automatic using the `<FormGroup>` component)
-    2. An error message is associated to their input/field using `aria-describedby` with a value of the field/input's `id` (this should be automatic using the `<FormGroup>` component)
-    3. The error message appears directly below the input in question (this should be automatic using the `<FormGroup>` component)
+    1. The field element/input, or `<fieldset>` for radio buttons, takes (or keeps) `aria-invalid="false"` (this should be automatic using the `<FormGroup>` component, and will show a green tick)
+* Where the field is **invalid** or **required** (including for radio button sets):
+    1. The field element/input, or `<fieldset>` for radio buttons, has `aria-invalid="true"` (this should be automatic using the `<FormGroup>` component)
+    2. An error message is associated to their input/field, or `<fieldset>` for radio buttons, using `aria-describedby` with a value of the error message element's `id` (this should be automatic using the `<FormGroup>` component)
+    3. The error message appears directly below the input or `<fieldset>` in question (this should be automatic using the `<FormGroup>` component)
     4. The error message should be accompanied by an error symbol (see the illustration of `<FormGroup>` below)
+
+#### Invalid radio button set example
+
+This is the structure needed for invalid — because a choice is required — radio button `<fieldset>`s.
+
+```html
+<fieldset aria-describedby="error" aria-required="true" aria-invalid="true">
+  <legend>Output format</legend>
+  <div>
+    <input type="radio" name="format" id="txt" value="txt"> <label for="txt">Text file</label>
+  </div>
+  <div>
+    <input type="radio" name="format" id="csv" value="csv"> <label for="csv">CSV file</label>
+  </div>
+  <div>
+    <input type="radio" name="format" id="html" value="HTML"> <label for="html">HTML file</label>
+  </div>
+  <p id="error">You must choose one option</p>
+</fieldset>
+```
 
 ![Form Group component showing an input with an error message and error symbol](/images/form_group_error.png)
 

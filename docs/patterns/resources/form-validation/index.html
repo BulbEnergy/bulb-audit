@@ -521,7 +521,7 @@
 <ol>
 <li><code>aria-invalid</code> is not present on any fields (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
 <li><code>aria-required</code> is set to <code>true</code> if applicable (set it on the parent <code>fieldset</code> for radio groups where no default radio is selected)</li>
-<li>Complex input requirements are handled with a description <em>inside</em> the <code>&lt;label&gt;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>Complex input requirements are handled with a description <em>inside</em> the <code>&lt;label&gt;</code>, or <code>&lt;legend&gt;</code> for radio button fieldsets  (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
 <li>A live region is present in the page, directly above the submit (and cancel) button (see <strong>General error message</strong>, below)</li>
 </ol>
 
@@ -554,17 +554,36 @@
 <li>Where the field is <strong>valid</strong>:
 
 <ol>
-<li>The field element/input takes (or keeps including) <code>aria-invalid=&quot;false&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component, and will show a green tick)</li>
+<li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, takes (or keeps) <code>aria-invalid=&quot;false&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component, and will show a green tick)</li>
 </ol></li>
-<li>Where the field is <strong>invalid</strong>:
+<li>Where the field is <strong>invalid</strong> or <strong>required</strong> (including for radio button sets):
 
 <ol>
-<li>The field element/input has <code>aria-invalid=&quot;true&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
-<li>An error message is associated to their input/field using <code>aria-describedby</code> with a value of the field/input&rsquo;s <code>id</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
-<li>The error message appears directly below the input in question (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, has <code>aria-invalid=&quot;true&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>An error message is associated to their input/field, or <code>&lt;fieldset&gt;</code> for radio buttons, using <code>aria-describedby</code> with a value of the error message element&rsquo;s <code>id</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>The error message appears directly below the input or <code>&lt;fieldset&gt;</code> in question (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
 <li>The error message should be accompanied by an error symbol (see the illustration of <code>&lt;FormGroup&gt;</code> below)</li>
 </ol></li>
 </ul>
+
+<h4 id="invalid-radio-button-set-example">Invalid radio button set example</h4>
+
+<p>This is the structure needed for invalid — because a choice is required — radio button <code>&lt;fieldset&gt;</code>s.</p>
+
+<pre><code class="language-html">&lt;fieldset aria-describedby=&quot;error&quot; aria-required=&quot;true&quot; aria-invalid=&quot;true&quot;&gt;
+  &lt;legend&gt;Output format&lt;/legend&gt;
+  &lt;div&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;txt&quot; value=&quot;txt&quot;&gt; &lt;label for=&quot;txt&quot;&gt;Text file&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;csv&quot; value=&quot;csv&quot;&gt; &lt;label for=&quot;csv&quot;&gt;CSV file&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;html&quot; value=&quot;HTML&quot;&gt; &lt;label for=&quot;html&quot;&gt;HTML file&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;p id=&quot;error&quot;&gt;You must choose one option&lt;/p&gt;
+&lt;/fieldset&gt;
+</code></pre>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/form_group_error.png" alt="Form Group component showing an input with an error message and error symbol" /></p>
 
