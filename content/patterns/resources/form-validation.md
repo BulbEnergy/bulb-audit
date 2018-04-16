@@ -55,21 +55,24 @@ After attempted submission, for each field ensure the following. Note that empty
     3. The error message appears directly below the input or `<fieldset>` in question (this should be automatic using the `<FormGroup>` component)
     4. The error message should be accompanied by an error symbol (see the illustration of `<FormGroup>` below)
 
-#### Invalid radio button set example
+#### Invalid radio buttons example
 
-This is the structure needed for invalid — because a choice is required — radio button `<fieldset>`s.
+This is the pattern needed for invalid — because a choice is required — radio button `<fieldset>`s.
 
 ```html
 <fieldset aria-describedby="error" aria-required="true" aria-invalid="true">
   <legend>Output format</legend>
   <div>
-    <input type="radio" name="format" id="txt" value="txt"> <label for="txt">Text file</label>
+    <input type="radio" name="format" id="txt" value="txt">
+    <label for="txt">Text file</label>
   </div>
   <div>
-    <input type="radio" name="format" id="csv" value="csv"> <label for="csv">CSV file</label>
+    <input type="radio" name="format" id="csv" value="csv">
+    <label for="csv">CSV file</label>
   </div>
   <div>
-    <input type="radio" name="format" id="html" value="HTML"> <label for="html">HTML file</label>
+    <input type="radio" name="format" id="html" value="HTML">
+    <label for="html">HTML file</label>
   </div>
   <p id="error">You must choose one option</p>
 </fieldset>

@@ -566,20 +566,23 @@
 </ol></li>
 </ul>
 
-<h4 id="invalid-radio-button-set-example">Invalid radio button set example</h4>
+<h4 id="invalid-radio-buttons-example">Invalid radio buttons example</h4>
 
-<p>This is the structure needed for invalid — because a choice is required — radio button <code>&lt;fieldset&gt;</code>s.</p>
+<p>This is the pattern needed for invalid — because a choice is required — radio button <code>&lt;fieldset&gt;</code>s.</p>
 
 <pre><code class="language-html">&lt;fieldset aria-describedby=&quot;error&quot; aria-required=&quot;true&quot; aria-invalid=&quot;true&quot;&gt;
   &lt;legend&gt;Output format&lt;/legend&gt;
   &lt;div&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;txt&quot; value=&quot;txt&quot;&gt; &lt;label for=&quot;txt&quot;&gt;Text file&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;txt&quot; value=&quot;txt&quot;&gt;
+    &lt;label for=&quot;txt&quot;&gt;Text file&lt;/label&gt;
   &lt;/div&gt;
   &lt;div&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;csv&quot; value=&quot;csv&quot;&gt; &lt;label for=&quot;csv&quot;&gt;CSV file&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;csv&quot; value=&quot;csv&quot;&gt;
+    &lt;label for=&quot;csv&quot;&gt;CSV file&lt;/label&gt;
   &lt;/div&gt;
   &lt;div&gt;
-    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;html&quot; value=&quot;HTML&quot;&gt; &lt;label for=&quot;html&quot;&gt;HTML file&lt;/label&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;format&quot; id=&quot;html&quot; value=&quot;HTML&quot;&gt;
+    &lt;label for=&quot;html&quot;&gt;HTML file&lt;/label&gt;
   &lt;/div&gt;
   &lt;p id=&quot;error&quot;&gt;You must choose one option&lt;/p&gt;
 &lt;/fieldset&gt;
