@@ -97,7 +97,7 @@ This is the pattern needed for invalid — because a choice is required — radi
 
 ## Validation flow in pictures
 
-The following diagram steps though six steps of a typical form validation flow. Each numbered step is described below the diagram.
+The following diagram steps though eight steps of a typical form validation flow. Each numbered step is described below the diagram.
 
 ![six steps to validation, described below](/images/form-process.svg)
 
