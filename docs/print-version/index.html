@@ -7652,32 +7652,44 @@ componentDidMount() {
 <p>For each field, ensure that:</p>
 
 <ol>
-<li><code>aria-invalid</code> is not present on any fields (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
-<li><code>aria-required</code> is set to <code>true</code> if applicable (set it on the parent <code>fieldset</code> for radio groups where no default radio is selected)</li>
-<li>Complex input requirements are handled with a description <em>inside</em> the <code>&lt;label&gt;</code>, or <code>&lt;legend&gt;</code> for radio button fieldsets  (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li><code>aria-invalid</code> is not present on any fields</li>
+<li><code>aria-required</code> is set to <code>true</code> if applicable (set it on the parent <code>fieldset</code> for radio groups where no default radio is selected). In some circumstances, you may want to append the label with an asterisk; a conventional way to show it is required. However, since optional fields are less common, it is more important to pick them out, by appending <em>&rdquo;(optional)&rdquo;</em>.</li>
+<li>Complex input requirements are handled with a description <em>inside</em> the <code>&lt;label&gt;</code>, or <code>&lt;legend&gt;</code> for radio button fieldsets</li>
 <li>A live region is present in the page, directly above the submit (and cancel) button (see <strong>General error message</strong>, below)</li>
 </ol>
 
 <p>Also ensure the parent form has the <code>novalidate</code> attribute. We are using our own validation process and do not want inconsistently implemented HTML5 validation messages to appear.</p>
 
-<h3 id="instant-error-handling">Instant error handling</h3>
+<h3 id="no-instant-error-handling">No instant error handling</h3>
 
-<ul>
-<li>When you show the error message as the user types, make sure <code>aria-invalid</code> is simultaneously switched over to <code>false</code>.</li>
-<li>Do not immediately invalidate inputs that do not expect a specific form of input. Names, for example, should only take <code>aria-invalid=&quot;true&quot;</code> and display an error message <em>after</em> the user has attempted submission (see below).</li>
-<li>Always debounce input so that users get a chance to write out (for example) their whole email, or most of it, before the error message appears.</li>
-<li>Instantly indicate where the input becomes valid (green tick) but <em>only</em> where a specific form of input is required (such as email). Only show a green tick for inputs which are simply required <em>after</em> submission (see below)</li>
-</ul>
+<p>We have deemed instant error handling — as the user types — aggressive and distracting. In some cases, such as positive validation on a name field after one character has been typed, it can also be confusing (especially to users with cognitive impairments).</p>
+
+<p>Instead, fields that are set to validate and display error (and/or) success messages/icons should only do so when the field is blurred. While screen reader users will not be aware of the validation error until they refocus the field, they will know to do so having received the <strong>general error message</strong> after attempted submission (defined below).</p>
 
 <h2 id="on-submission-with-errors">On submission (with errors)</h2>
 
 <h3 id="general-error-message">General error message</h3>
 
-<p>On submission, if there are still individual errors present, a general message announcing the presence of errors needs to be included, as a screen reader accessible live region. The <code>&lt;FormErrors&gt;</code> component is designed for this already.</p>
+<p>On submission, if there are still individual errors present, a general message announcing the presence of errors needs to be included, as a screen reader accessible live region.</p>
 
-<p>Be sure to place the <code>&lt;FormErrors&gt;</code> component directly above the submit (and cancel) buttons so that the user does not need to scroll in order to see it. See the example from the marketing business page below.</p>
+<p>Be sure to place this message component directly above the submit (and cancel) buttons so that the user does not need to scroll in order to see it. See the example from the marketing business page below.</p>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/general-error.png" alt="The red error message appears above the Request A Quote button" /></p>
+
+<p>Note that the live region that makes this message accessible should already exist in the page. The message is inserted <em>inside</em> the live region for it to announce correctly in screen readers. If you include the live region <em>with</em> the message, it will not work.</p>
+
+<pre><code class="language-html">&lt;!-- before insertion --&gt;
+&lt;div role=&quot;alert&quot; aria-live=&quot;assertive&quot;&gt;
+&lt;/div&gt;
+
+&lt;!-- after triggering --&gt;
+&lt;div role=&quot;alert&quot; aria-live=&quot;assertive&quot;&gt;
+  &lt;p class=&quot;message&quot;&gt;
+    &lt;svg aria-label=&quot;error&quot;&gt;...&lt;/svg&gt;
+    Oops! Your form has some errors. Please fix them before continuing.
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
 
 <h3 id="individual-fields">Individual fields</h3>
 
@@ -7687,14 +7699,14 @@ componentDidMount() {
 <li>Where the field is <strong>valid</strong>:
 
 <ol>
-<li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, takes (or keeps) <code>aria-invalid=&quot;false&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component, and will show a green tick)</li>
+<li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, takes (or keeps) <code>aria-invalid=&quot;false&quot;</code></li>
 </ol></li>
 <li>Where the field is <strong>invalid</strong> or <strong>required</strong> (including for radio button sets):
 
 <ol>
-<li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, has <code>aria-invalid=&quot;true&quot;</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
-<li>An error message is associated to their input/field, or <code>&lt;fieldset&gt;</code> for radio buttons, using <code>aria-describedby</code> with a value of the error message element&rsquo;s <code>id</code> (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
-<li>The error message appears directly below the input or <code>&lt;fieldset&gt;</code> in question (this should be automatic using the <code>&lt;FormGroup&gt;</code> component)</li>
+<li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, has <code>aria-invalid=&quot;true&quot;</code></li>
+<li>An error message is associated to their input/field, or <code>&lt;fieldset&gt;</code> for radio buttons, using <code>aria-describedby</code> with a value of the error message element&rsquo;s <code>id</code></li>
+<li>The error message appears directly below the input or <code>&lt;fieldset&gt;</code> in question</li>
 <li>The error message should be accompanied by an error symbol (see the illustration of <code>&lt;FormGroup&gt;</code> below)</li>
 </ol></li>
 </ul>
@@ -7722,6 +7734,23 @@ componentDidMount() {
 </code></pre>
 
 <p><img src="https://heydon.github.io/bulb-audit/images/form_group_error.png" alt="Form Group component showing an input with an error message and error symbol" /></p>
+
+<h2 id="validation-flow-in-pictures">Validation flow in pictures</h2>
+
+<p>The following diagram steps though six steps of a typical form validation flow. Each numbered step is described below the diagram.</p>
+
+<p><img src="https://heydon.github.io/bulb-audit/images/form-process.svg" alt="six steps to validation, described below" /></p>
+
+<ol>
+<li>The first (required) field is focused, showing the blue focus style.</li>
+<li>When the field is blurred after the user has not entered input, the error style and message appears. <code>aria-invalid=&quot;true&quot;</code> is applied to the input, and the error message is associated with the input&rsquo;s <code>id</code> using <code>aria-describedby=&quot;[the id]&quot;</code>.</li>
+<li>The user could go back up straight away to fix the field, but in this case continues to fill out the second field which has now been focused.</li>
+<li>When this <strong>Last name</strong> field (which is simply required and has been filled out) is blurred, the success style and icon is applied, as well as <code>aria-invalid=&quot;false&quot;</code>. The final field is focused and the user begins to fill this field out.</li>
+<li>The field is filled out correctly (a valid email format is used). So, when the user focuses the submit button, it has already successfully validated.</li>
+<li>When the submit button is pressed, there are still errors in the form. In which case, the <strong>general error message</strong> (inserted in an ARIA live region, see above) appears. This alerts sighted and blind users to move back up the form to fix the errors.</li>
+<li>The user moves focus up through the valid fields (which will be announced in screen readers as valid due to <code>aria-invalid=&quot;false&quot;</code>) and focuses the first, invalid field. The focus style overrides the error style <em>but</em> the message remains to help instruct the user in fixing the error. This is particularly important for fields expecting a certain format and requiring specific instructions.</li>
+<li>When the corrected field is blurred, the success style and icon is applied, as well as <code>aria-invalid=&quot;false&quot;</code>. The <strong>general error message</strong> disappears because it is no longer applicable. The user is free to submit. Pictured: the second field is focused on the (keyboard) user&rsquo;s way down to the submit button.</li>
+</ol>
 
 <h2 id="after-submission-no-errors">After submission (no errors)</h2>
 
