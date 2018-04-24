@@ -1,6 +1,6 @@
 # Bulb Inclusive Design Audit
 
-[This site](https://bulbenergy.github.io/bulb-audit/) represents the report for the inclusive deign audit, carried out by Heydon Pickering for **Bulb**. The purpose of this report is to identify and provide advice for fixing and improving accessibility and inclusive design across three key **Bulb** sites:
+[This site](https://bulbenergy.github.io/bulb-audit/) represents the report for the inclusive design audit, carried out by Heydon Pickering for **Bulb**. The purpose of this report is to identify and provide advice for fixing and improving accessibility and inclusive design across three key **Bulb** sites:
 
 * The marketing site ([https://bulb.co.uk/](https://bulb.co.uk/))
 * The 'join' site ([https://join.bulb.co.uk](https://join.bulb.co.uk))
