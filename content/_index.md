@@ -6,7 +6,7 @@ This site represents the report for the inclusive deign audit, carried out by He
 
 * The marketing site ([https://bulb.co.uk/](https://bulb.co.uk/))
 * The 'join' site ([https://join.bulb.co.uk](https://join.bulb.co.uk))
-* The 'My Bulb' account application ([https://my.bulb.co.uk](https://my.bulb.co.uk))
+* The 'Bulb Account' account application ([https://account.bulb.co.uk](https://account.bulb.co.uk))
 
 The precise scope for the testing and evaluation carried out is detailed in {{% pattern "Scope" %}}.
 
