@@ -173,7 +173,7 @@ Included
 
 URL
 :  
-[https://my.bulb.co.uk/login/password](https://my.bulb.co.uk/login/password)
+[https://account.bulb.co.uk/login/password](https://account.bulb.co.uk/login/password)
 
 Included
 :  

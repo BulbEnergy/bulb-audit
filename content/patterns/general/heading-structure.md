@@ -48,7 +48,7 @@ Headings are relied upon by assistive technology users such as screen reader use
 
 ### Account dashboard
 
-* [Login page](https://my.bulb.co.uk/login/password) (✖️ There is no `<h1>`; "Sign into your Bulb account" acts as the `<h1>` but is marked up as a `<p>`.)
+* [Login page](https://account.bulb.co.uk/login/password) (✖️ There is no `<h1>`; "Sign into your Bulb account" acts as the `<h1>` but is marked up as a `<p>`.)
 * [Dashboard](https://my.staging.bulb.co.uk/dashboard) (✖️ There is a lack of heading structure past the main `<h1>` heading, despite a number of subsections — the green boxes — being included)
 * [My usage](https://my.staging.bulb.co.uk/dashboard/usage) (✖️ The main `<h1>` contains the "Back to Bulb" link, breaking its label; the "Meter readings" heading is an `<h4>`, when it should be an `<h2>`)
 * [Tariff info](https://my.staging.bulb.co.uk/dashboard/statements) (✖️ The main `<h1>` contains the "Back to Bulb" link, breaking its label)
