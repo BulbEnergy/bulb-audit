@@ -1,6 +1,6 @@
 languageCode = "en-us"
 title = "Bulb Audit"
-baseURL = "https://heydon.github.io/bulb-audit/"
+baseURL = "https://bulbenergy.github.io/bulb-audit/"
 canonifyURLs = true
 theme = "cupper"
 publishDir = "docs"
