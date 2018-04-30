@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1 on Bulb Audit</title>
-    <link>https://heydon.github.io/bulb-audit/priorities/1/</link>
+    <link>https://bulbenergy.github.io/bulb-audit/priorities/1/</link>
     <description>Recent content in 1 on Bulb Audit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://heydon.github.io/bulb-audit/priorities/1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bulbenergy.github.io/bulb-audit/priorities/1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Answer choices</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/answer-choices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/answer-choices/</guid>
       <description>Introduction The Join site&amp;rsquo;s question screens include custom radio button-like components for selecting an answer. For example, the &amp;ldquo;My home uses&amp;rdquo; page offers a choice between &amp;ldquo;Gas &amp;amp; Electricity&amp;rdquo; and &amp;ldquo;Electricity only&amp;rdquo; (pictured).
 Despite having the appearance of radio buttons (the familiar encircled dot design is used), these are custom components, built in Angular from &amp;lt;div&amp;gt; and &amp;lt;span&amp;gt; elements. A number of issues emerge:
  The controls do not offer any semantic information (role, state etc.</description>
@@ -23,10 +23,10 @@ Despite having the appearance of radio buttons (the familiar encircled dot desig
     
     <item>
       <title>Bedrooms stepper</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/bedroom-stepper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/bedroom-stepper/</guid>
       <description>Introduction The Join Site provides a &amp;ldquo;stepper&amp;rdquo; component for incrementing and decrementing the number of bedrooms the user&amp;rsquo;s house or flat contains (pictured).
 There are a number of issues relating to this implementation:
  The plus and minus buttons do not have focus styles The plus and minus buttons do not have labels The purpose of the controls is not reported to screen readers The updating of the number of bedrooms is not reported to screen readers  It is also unintuitive that the values &amp;lsquo;cycle&amp;rsquo;.</description>
@@ -34,10 +34,10 @@ There are a number of issues relating to this implementation:
     
     <item>
       <title>Dialogs</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/dialogs/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/dialogs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/dialogs/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/dialogs/</guid>
       <description>Introduction Dialogs typically serve one of two purposes:
  To give the user a choice at a critical juncture To alert the user to important information without (entirely) changing their context  Custom dialogs are common, and commonly marked up inaccessibly. For a maximal number of users to be able to perceive and operate dialogs, the following must be catered for:
  The dialog must have the dialog or alertdialog role (on its container).</description>
@@ -45,60 +45,60 @@ There are a number of issues relating to this implementation:
     
     <item>
       <title>Elements cannot be focused</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</guid>
       <description>Introduction All interactive elements — buttons, links, form controls — need to be focusable by keyboard. If they cannot be focused they cannot be activated, meaning users who depend on the keyboard for navigation will miss out on functionality.
 Common mistakes include using &amp;lt;div&amp;gt; or &amp;lt;span&amp;gt; elements as substitutes for &amp;lt;button&amp;gt;s and links. Or using a link as a button and omitting its href which makes it a &amp;lsquo;placeholder link&amp;rsquo; that does not receive focus.</description>
     </item>
     
     <item>
       <title>Focus styles</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/focus-styles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/focus-styles/</guid>
       <description>Introduction Focus styling, provided by user agents by default, is used to indicate which element is currently being focused by keyboard. Typically, focus is achieved by pressing the Tab key. Pressing Tab should focus the next interactive element in the source, invoking the focus style.
 Users who rely on the keyboard for page navigation include those with motor impairments due to long term ailments (such as rheumatism) or temporary injuries (like a broken wrist).</description>
     </item>
     
     <item>
       <title>Heading structure</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/heading-structure/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/heading-structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/heading-structure/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/heading-structure/</guid>
       <description>Introduction Heading elements are often chosen according to the perceived importance of the text they contain and the sections they introduce. The more &amp;lsquo;important&amp;rsquo; the heading, the higher the heading level and — typically — the larger the font size. An &amp;lt;h3&amp;gt; might be 1.5rem and an &amp;lt;h1&amp;gt; 3rem.
 However, headings levels do not simply denote importance, but a hierarchy of page subsections. There are certain rules to creating a hierarchy (or &amp;lsquo;document outline&amp;rsquo;) that should not be broken:</description>
     </item>
     
     <item>
       <title>Menu buttons</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/menu-button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/menu-button/</guid>
       <description>Introduction A mainstay in responsive design, the &amp;ldquo;hamburger&amp;rdquo; menu button secretes a menu of navigation options that can be revealed on click, press, or — more likely — tap. There is some concern over the usability of hamburger menus meaning they should only be employed where absolutely necessary. If only a few navigation items are provided, simply rearranging them for small screens is probably preferable.
 Where menu buttons are included, they need to conform to accessibility standards like any other control.</description>
     </item>
     
     <item>
       <title>Missing and placeholder labels</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/placeholder-labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/placeholder-labels/</guid>
       <description>Introduction All form elements need labels associated to them. Where a label is not associated, the screen reader user is not informed of the field&amp;rsquo;s purpose upon focusing that field. Screen reader users typically traverse forms by focus, not &amp;lsquo;virtual cursor&amp;rsquo; (element by element).
 The placeholder attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.</description>
     </item>
     
     <item>
       <title>Text alternatives</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/textual-alternatives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/textual-alternatives/</guid>
       <description>Introduction For blind users, textual alternatives of important visual information must be provided. Composing that text effectively is a question of context.
 For example, a logo that is intended as a study in logo design should include a textual alternative — typically via an &amp;lt;img&amp;gt; tag&amp;rsquo;s alt attribute — that describes the features of the logo, such as the colors and typography. For Bulb&amp;rsquo;s logo this might read something like, &amp;rdquo; expressive, hand written text, in white, and featuring hooped ascenders&amp;rdquo;.</description>
     </item>

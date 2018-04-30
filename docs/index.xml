@@ -2,40 +2,40 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bulb Inclusive Design Audit on Bulb Audit</title>
-    <link>https://heydon.github.io/bulb-audit/</link>
+    <link>https://bulbenergy.github.io/bulb-audit/</link>
     <description>Recent content in Bulb Inclusive Design Audit on Bulb Audit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Jan 2018 17:11:56 +0000</lastBuildDate>
     
-	<atom:link href="https://heydon.github.io/bulb-audit/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bulbenergy.github.io/bulb-audit/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cupper</title>
-      <link>https://heydon.github.io/bulb-audit/print-version/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/print-version/</link>
       <pubDate>Tue, 02 Jan 2018 17:11:56 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/print-version/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/print-version/</guid>
       <description>You don&amp;rsquo;t want to edit this file :-)</description>
     </item>
     
     <item>
       <title>Scope</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/scope/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/scope/</link>
       <pubDate>Tue, 02 Jan 2018 17:11:55 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/scope/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/scope/</guid>
       <description>Introduction This document sets out the scope for the testing and evaluation of the Bulb websites. For efficient reporting, not every page and component is included in the scope. However, samples are chosen such that each important design pattern is covered.
 In the report, issues are divided into General and Components categories. General issues may include problems with — for example — document structure, or absence of focus styles. Components issues organize advice by isolated component, such as a tab interface or dialog window.</description>
     </item>
     
     <item>
       <title>About navigation</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/about-navigation/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/about-navigation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/about-navigation/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/about-navigation/</guid>
       <description>Introduction The About pages on the marketing site are currently only available via a dropdown submenu (pictured).
 Dropdown submenus are precarious interaction design patterns, prone to accessibility issues. In the case of Bulb&amp;rsquo;s implementation (which is already keyboard accessible), there are just a few problems:
  The link that activates the menu does not communicate state (expanded or collapsed) The menu obscures the activating link/control (see point 6 here) The menu does not close when focus is moved from its last item to the adjacent (&amp;ldquo;Blog&amp;rdquo;) link.</description>
@@ -43,10 +43,10 @@ Dropdown submenus are precarious interaction design patterns, prone to accessibi
     
     <item>
       <title>Answer choices</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/answer-choices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/answer-choices/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/answer-choices/</guid>
       <description>Introduction The Join site&amp;rsquo;s question screens include custom radio button-like components for selecting an answer. For example, the &amp;ldquo;My home uses&amp;rdquo; page offers a choice between &amp;ldquo;Gas &amp;amp; Electricity&amp;rdquo; and &amp;ldquo;Electricity only&amp;rdquo; (pictured).
 Despite having the appearance of radio buttons (the familiar encircled dot design is used), these are custom components, built in Angular from &amp;lt;div&amp;gt; and &amp;lt;span&amp;gt; elements. A number of issues emerge:
  The controls do not offer any semantic information (role, state etc.</description>
@@ -54,10 +54,10 @@ Despite having the appearance of radio buttons (the familiar encircled dot desig
     
     <item>
       <title>Bedrooms stepper</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/bedroom-stepper/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/bedroom-stepper/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/bedroom-stepper/</guid>
       <description>Introduction The Join Site provides a &amp;ldquo;stepper&amp;rdquo; component for incrementing and decrementing the number of bedrooms the user&amp;rsquo;s house or flat contains (pictured).
 There are a number of issues relating to this implementation:
  The plus and minus buttons do not have focus styles The plus and minus buttons do not have labels The purpose of the controls is not reported to screen readers The updating of the number of bedrooms is not reported to screen readers  It is also unintuitive that the values &amp;lsquo;cycle&amp;rsquo;.</description>
@@ -65,20 +65,20 @@ There are a number of issues relating to this implementation:
     
     <item>
       <title>Collapsible sections</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/collapsible-sections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/collapsible-sections/</guid>
       <description>Introduction Collapsible sections are one of the simpler interaction design primitives. All they do is toggle the appearance of the flow content they introduce. The advantage of having collapsed section in the first place is that the user is afforded an overview of the page structure without necessitating scrolling through large quantities of content.
 Despite the simplicity, there are a number of provisions to ensure collapsible sections are accessible:</description>
     </item>
     
     <item>
       <title>Color dependence</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/color-dependence/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/color-dependence/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/color-dependence/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/color-dependence/</guid>
       <description>Introduction Color makes interfaces attractive and can sometimes help to reinforce meaning. For example, red is associated with danger in many Western cultures, and may form part of a &amp;lsquo;delete&amp;rsquo; button&amp;rsquo;s design.
 But dependence on color alone to communicate important information runs the risk of alienating a range of users, including those with forms of color blindness, and others with monochrome displays.
 In each case color is used to differentiate items, a supplementary alternative method of differentiation should also be present.</description>
@@ -86,40 +86,40 @@ In each case color is used to differentiate items, a supplementary alternative m
     
     <item>
       <title>Component Testing</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/manual-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/manual-testing/</guid>
       <description>The following is a guide on how to test new components for accessibility. No new components created for the Bulb interfaces should reach production without passing these checks.
 Automated testing Before manual testing, you need to check that the component passes for basic WCAG (A and AA) success criteria. Tools designed to detect WCAG failures differ in their scope and accuracy, so you will use a selection (see below). Where one tool reports a problem but another doesn&amp;rsquo;t, it is more likely to be a false positive.</description>
     </item>
     
     <item>
       <title>Component checklist</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/component-checklist/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/component-checklist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/component-checklist/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/component-checklist/</guid>
       <description>Before any component can be included in the pattern library, ensure it passes all of the following tests:
 Each visible interactive element can receive focus and be activated by keyboard, and no invisible elements can be focused using the keyboard No non-interactive elements can be focused by keyboard Interactive elements have focus styles and receive focus in a logical order Each element has the appropriate role — preferably implicitly because it is the correct element (e.</description>
     </item>
     
     <item>
       <title>Component heading levels</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/level-prop/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/level-prop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/level-prop/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/level-prop/</guid>
       <description>Reusable components will appear in different contexts, at different levels in the document heading structure (see  Heading structure). It should therefore be possible to change the heading level of the component&amp;rsquo;s main heading via a level prop.
 The aria-level property/attribute can then be used to change the perceived level in assistive technologies. Note that aria-level only works on heading elements (&amp;lt;h1&amp;gt; — &amp;lt;h6&amp;gt;) or elements with role=&amp;quot;heading&amp;quot;. It is recommended the default prop value is 2, since most components will start at that level.</description>
     </item>
     
     <item>
       <title>Dialogs</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/dialogs/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/dialogs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/dialogs/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/dialogs/</guid>
       <description>Introduction Dialogs typically serve one of two purposes:
  To give the user a choice at a critical juncture To alert the user to important information without (entirely) changing their context  Custom dialogs are common, and commonly marked up inaccessibly. For a maximal number of users to be able to perceive and operate dialogs, the following must be catered for:
  The dialog must have the dialog or alertdialog role (on its container).</description>
@@ -127,30 +127,30 @@ The aria-level property/attribute can then be used to change the perceived level
     
     <item>
       <title>Elements cannot be focused</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/elements-cannot-be-focused/</guid>
       <description>Introduction All interactive elements — buttons, links, form controls — need to be focusable by keyboard. If they cannot be focused they cannot be activated, meaning users who depend on the keyboard for navigation will miss out on functionality.
 Common mistakes include using &amp;lt;div&amp;gt; or &amp;lt;span&amp;gt; elements as substitutes for &amp;lt;button&amp;gt;s and links. Or using a link as a button and omitting its href which makes it a &amp;lsquo;placeholder link&amp;rsquo; that does not receive focus.</description>
     </item>
     
     <item>
       <title>Focus styles</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/focus-styles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/focus-styles/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/focus-styles/</guid>
       <description>Introduction Focus styling, provided by user agents by default, is used to indicate which element is currently being focused by keyboard. Typically, focus is achieved by pressing the Tab key. Pressing Tab should focus the next interactive element in the source, invoking the focus style.
 Users who rely on the keyboard for page navigation include those with motor impairments due to long term ailments (such as rheumatism) or temporary injuries (like a broken wrist).</description>
     </item>
     
     <item>
       <title>Form Validation</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/form-validation/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/form-validation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/form-validation/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/form-validation/</guid>
       <description>The Bulb sites should each conform to the same set of prescribed form validation behaviors as set out below. These behaviors are optimized for usability and accessibility and should be implemented consistently.
 Let users submit There are a number of usability issues associated with disabled (submit) buttons.
  Difficult to discern as disabled (especially when color blind) Do not tend to explain why they are disabled Not focusable, therefore not easily discoverable using a screen reader More here  Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise.</description>
@@ -158,10 +158,10 @@ Let users submit There are a number of usability issues associated with disabled
     
     <item>
       <title>Form errors</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/form-errors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/form-errors/</guid>
       <description>Introduction As users attempt to complete forms, it is important they are notified promptly and clearly when they make errors, and are provided with assistance in fixing those errors.
 For assistive technology users, completing forms can be especially arduous where one or more of the following are true.
  The invalid state of a field is not communicated The error message is not associated with the field The presence of errors is not communicated on submission  The careful wording of error messages and descriptions is also important, as well as indicating which text is error text without relying entirely on color (see  Color dependence).</description>
@@ -169,80 +169,80 @@ For assistive technology users, completing forms can be especially arduous where
     
     <item>
       <title>Heading structure</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/heading-structure/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/heading-structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/heading-structure/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/heading-structure/</guid>
       <description>Introduction Heading elements are often chosen according to the perceived importance of the text they contain and the sections they introduce. The more &amp;lsquo;important&amp;rsquo; the heading, the higher the heading level and — typically — the larger the font size. An &amp;lt;h3&amp;gt; might be 1.5rem and an &amp;lt;h1&amp;gt; 3rem.
 However, headings levels do not simply denote importance, but a hierarchy of page subsections. There are certain rules to creating a hierarchy (or &amp;lsquo;document outline&amp;rsquo;) that should not be broken:</description>
     </item>
     
     <item>
       <title>Inconsistency</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/inconsistency/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/inconsistency/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/inconsistency/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/inconsistency/</guid>
       <description>Introduction An important inclusive design principle, is &amp;ldquo;Be consistent&amp;rdquo;. Interfaces that fail to do so present unnecessary burdens of comprehension to users — especially those who consume HTML semantics, such as screen reader users. In particular, inconsistent navigation schema and page structure can make the user feel disoriented and unsure.
 It is appreciated that a consistent experience can be difficult to achieve when managing three separate projects, built on separate technologies, and it is noted that a design system is currently being developed to help diminish the issue.</description>
     </item>
     
     <item>
       <title>List structure</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/list-structure/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/list-structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/list-structure/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/list-structure/</guid>
       <description>Introduction Along with headings, lists give structure to a web page. They group items together so users know they are related or equivalent.
 Assistive technology users find lists especially helpful because most software will identify a list semantically, enumerate its items, and provide shortcuts for navigating between the list items. The NVDA screen reader provides the L shortcut key for navigating between lists, and the I shortcut key for jumping between list items.</description>
     </item>
     
     <item>
       <title>Marketing site homepage HTML</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/homepage-template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/homepage-template/</guid>
       <description>The following is a template for the marketing site&amp;rsquo;s HTML documents, using the homepage content to describe an example structure. Each page in the marketing site should follow the prescribed &amp;lt;title&amp;gt; pattern, include lang on the HTML element, and a skip link etc.
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;[Site name] | [Page name]&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;a href=&amp;quot;#main&amp;quot;&amp;gt;skip to content&amp;lt;/a&amp;gt; &amp;lt;header&amp;gt; &amp;lt;a href=&amp;quot;/&amp;quot; aria-label=&amp;quot;Bulb homepage&amp;quot;&amp;gt; &amp;lt;svg&amp;gt;&amp;lt;!</description>
     </item>
     
     <item>
       <title>Menu buttons</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/menu-button/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/menu-button/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/menu-button/</guid>
       <description>Introduction A mainstay in responsive design, the &amp;ldquo;hamburger&amp;rdquo; menu button secretes a menu of navigation options that can be revealed on click, press, or — more likely — tap. There is some concern over the usability of hamburger menus meaning they should only be employed where absolutely necessary. If only a few navigation items are provided, simply rearranging them for small screens is probably preferable.
 Where menu buttons are included, they need to conform to accessibility standards like any other control.</description>
     </item>
     
     <item>
       <title>Missing and placeholder labels</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/placeholder-labels/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/placeholder-labels/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/placeholder-labels/</guid>
       <description>Introduction All form elements need labels associated to them. Where a label is not associated, the screen reader user is not informed of the field&amp;rsquo;s purpose upon focusing that field. Screen reader users typically traverse forms by focus, not &amp;lsquo;virtual cursor&amp;rsquo; (element by element).
 The placeholder attribute is intended for providing supplemental hints and examples for completing a form. It should be used in conjunction with a standard and persistent label, conventionally placed above the input in question.</description>
     </item>
     
     <item>
       <title>My Usage chart</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/usage-chart/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/usage-chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/usage-chart/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/usage-chart/</guid>
       <description>Introduction The Bulb sites use a number of charts and graphs, primarily to illustrate fairly simple concepts. However, the energy usage chart found in the Account dashboard&amp;rsquo;s My usage screen communicates critical, detailed information. It — or an alternative for it — therefore needs to communicate the information it represents in a detailed and structured way.
 Commonly, complex charts are accompanied by invisible data tables, intended for blind screen reader users.</description>
     </item>
     
     <item>
       <title>Navigation markup</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/navigation-markup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/navigation-markup/</guid>
       <description>The navigation portion of the pattern library header needs to conform to a certain markup structure for accessibility and efficiency. Here is some code to get you started, with comments to follow.
 The following shows the navigation system in the desktop configuration, with the Menu button hidden and the &amp;ldquo;About us&amp;rdquo; dropdown hidden also.
  &amp;lt;header&amp;gt; &amp;lt;!-- skip link here (see `&amp;lt;SkipLink/&amp;gt;`) --&amp;gt; &amp;lt;div class=&amp;#34;navigation&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;logo&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;/&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;path/to/logo.</description>
@@ -250,10 +250,10 @@ The following shows the navigation system in the desktop configuration, with the
     
     <item>
       <title>Payment settings issues</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/payment-settings/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/payment-settings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/payment-settings/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/payment-settings/</guid>
       <description>The following is an accessibility review of the payment settings pages found from dashboard/payments-and-statements/payment-settings.
 Heading structure Main page The heading structure is not correct. &amp;ldquo;Payment Settings&amp;rdquo; should be an &amp;lt;h1&amp;gt; (because it is the main heading of the page) and both &amp;ldquo;Payment amount&amp;rdquo;, &amp;ldquo;Payment date&amp;rdquo;, and &amp;ldquo;Payment details&amp;rdquo; should be &amp;lt;h2&amp;gt; (as subsection headings directly under &amp;ldquo;Payment Settings&amp;rdquo;). See below (&amp;ldquo;Payment details&amp;rdquo; not pictured).
 Setup New Direct Debit page &amp;ldquo;Setup New Direct Debit&amp;rdquo; should be an &amp;lt;h1&amp;gt; (and &amp;ldquo;Confirm New Direct Debit Details&amp;rdquo; on the confirmation page).</description>
@@ -261,20 +261,20 @@ Setup New Direct Debit page &amp;ldquo;Setup New Direct Debit&amp;rdquo; should 
     
     <item>
       <title>Routing</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/routing/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/routing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/routing/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/routing/</guid>
       <description>Introduction Single-page applications present some unique challenges for accessibility, particularly in regard to routing and the navigation of views.
 Views (or &amp;lsquo;screens&amp;rsquo;) in single-page applications attempt to emulate pages in more traditional multi-page sites. Visually, the experience is similar (some content is replace with some other content). However, when replacing content by manipulating the DOM in situ, the experience for screen reader and keyboard users is lacking. Unlike when a page is loaded, a switch in views does not announce the page&amp;rsquo;s &amp;lt;title&amp;gt;.</description>
     </item>
     
     <item>
       <title>Show password</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/show-password/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/show-password/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/show-password/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/show-password/</guid>
       <description>Introduction The option to &amp;ldquo;show password&amp;rdquo; when one is writing it is a sound inclusive design feature, helping users to compose or check their writing of passwords. However, a &amp;ldquo;show password&amp;rdquo; button that is not technically accessible fails some of the users who may want to take advantage of it.
 The pictured show password control ahs a number of problems that need addressing:
  It functions as a button, but is marked up as a link It is not focusable by keyboard (because, as a link, it is missing an href) Were it focusable, upon clicking it, focus would be lost — because it is actually two controls, with one always hidden It appears before the field to which it relates, which is somewhat confusing visually and represents a backwards reading order non-visually.</description>
@@ -282,30 +282,30 @@ The pictured show password control ahs a number of problems that need addressing
     
     <item>
       <title>Skip links</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/skip-links/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/skip-links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/skip-links/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/skip-links/</guid>
       <description>Introduction WCAG 2.0 mandates a &amp;lsquo;bypass&amp;rsquo; mechanism to enable users that navigate web pages by keyboard to skip over introductory content and go directly to the main (unique) content of the page. Without such a provision, accessing page content can be time consuming and arduous.
 With the introduction of landmark elements like &amp;lt;main&amp;gt;, it has become easier for screen reader users to navigate between the larger sections of the page using software-specific shortcuts.</description>
     </item>
     
     <item>
       <title>Text alternatives</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/textual-alternatives/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/textual-alternatives/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/textual-alternatives/</guid>
       <description>Introduction For blind users, textual alternatives of important visual information must be provided. Composing that text effectively is a question of context.
 For example, a logo that is intended as a study in logo design should include a textual alternative — typically via an &amp;lt;img&amp;gt; tag&amp;rsquo;s alt attribute — that describes the features of the logo, such as the colors and typography. For Bulb&amp;rsquo;s logo this might read something like, &amp;rdquo; expressive, hand written text, in white, and featuring hooped ascenders&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Visually hidden class</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/visually-hidden/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/visually-hidden/</guid>
       <description> In some circumstances, you will want to provide clarifying text to screen reader users which is not necessary for sighted users. The following .visually-hidden class hides text visually without silencing its element&amp;rsquo;s content in screen readers.
 Use it judiciously, since in most cases sighted and unsighted users should be able to read the same content, as part of the same experience.
 .visually-hidden { clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }  Example usage &amp;lt;p class=&amp;quot;visually-hidden&amp;quot;&amp;gt;This text is not visible but will be read out in screen reader software&amp;lt;/p&amp;gt;  </description>
@@ -313,10 +313,10 @@ Use it judiciously, since in most cases sighted and unsighted users should be ab
     
     <item>
       <title>Wording</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/wording/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/wording/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/wording/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/wording/</guid>
       <description>Introduction It&amp;rsquo;s not enough that elements in a web page&amp;rsquo;s HTML are marked up correctly. Where they provide textual labels, these labels need to be readable and descriptive.
  Headings must clearly describe the sections they introduce Labels for links, buttons and form elements must clearly describe the purpose of those controls Page titles must sufficiently describe the page and its purpose  Since headings and links are aggregated into lists by screen reader software, it is important they make sense independent of context.</description>
     </item>

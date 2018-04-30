@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>2 on Bulb Audit</title>
-    <link>https://heydon.github.io/bulb-audit/priorities/2/</link>
+    <link>https://bulbenergy.github.io/bulb-audit/priorities/2/</link>
     <description>Recent content in 2 on Bulb Audit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://heydon.github.io/bulb-audit/priorities/2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bulbenergy.github.io/bulb-audit/priorities/2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About navigation</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/about-navigation/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/about-navigation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/about-navigation/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/about-navigation/</guid>
       <description>Introduction The About pages on the marketing site are currently only available via a dropdown submenu (pictured).
 Dropdown submenus are precarious interaction design patterns, prone to accessibility issues. In the case of Bulb&amp;rsquo;s implementation (which is already keyboard accessible), there are just a few problems:
  The link that activates the menu does not communicate state (expanded or collapsed) The menu obscures the activating link/control (see point 6 here) The menu does not close when focus is moved from its last item to the adjacent (&amp;ldquo;Blog&amp;rdquo;) link.</description>
@@ -23,20 +23,20 @@ Dropdown submenus are precarious interaction design patterns, prone to accessibi
     
     <item>
       <title>Collapsible sections</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/collapsible-sections/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/collapsible-sections/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/collapsible-sections/</guid>
       <description>Introduction Collapsible sections are one of the simpler interaction design primitives. All they do is toggle the appearance of the flow content they introduce. The advantage of having collapsed section in the first place is that the user is afforded an overview of the page structure without necessitating scrolling through large quantities of content.
 Despite the simplicity, there are a number of provisions to ensure collapsible sections are accessible:</description>
     </item>
     
     <item>
       <title>Form errors</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/form-errors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/form-errors/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/form-errors/</guid>
       <description>Introduction As users attempt to complete forms, it is important they are notified promptly and clearly when they make errors, and are provided with assistance in fixing those errors.
 For assistive technology users, completing forms can be especially arduous where one or more of the following are true.
  The invalid state of a field is not communicated The error message is not associated with the field The presence of errors is not communicated on submission  The careful wording of error messages and descriptions is also important, as well as indicating which text is error text without relying entirely on color (see  Color dependence).</description>
@@ -44,30 +44,30 @@ For assistive technology users, completing forms can be especially arduous where
     
     <item>
       <title>List structure</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/list-structure/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/list-structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/list-structure/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/list-structure/</guid>
       <description>Introduction Along with headings, lists give structure to a web page. They group items together so users know they are related or equivalent.
 Assistive technology users find lists especially helpful because most software will identify a list semantically, enumerate its items, and provide shortcuts for navigating between the list items. The NVDA screen reader provides the L shortcut key for navigating between lists, and the I shortcut key for jumping between list items.</description>
     </item>
     
     <item>
       <title>My Usage chart</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/components/usage-chart/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/components/usage-chart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/components/usage-chart/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/components/usage-chart/</guid>
       <description>Introduction The Bulb sites use a number of charts and graphs, primarily to illustrate fairly simple concepts. However, the energy usage chart found in the Account dashboard&amp;rsquo;s My usage screen communicates critical, detailed information. It — or an alternative for it — therefore needs to communicate the information it represents in a detailed and structured way.
 Commonly, complex charts are accompanied by invisible data tables, intended for blind screen reader users.</description>
     </item>
     
     <item>
       <title>Routing</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/general/routing/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/general/routing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/general/routing/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/general/routing/</guid>
       <description>Introduction Single-page applications present some unique challenges for accessibility, particularly in regard to routing and the navigation of views.
 Views (or &amp;lsquo;screens&amp;rsquo;) in single-page applications attempt to emulate pages in more traditional multi-page sites. Visually, the experience is similar (some content is replace with some other content). However, when replacing content by manipulating the DOM in situ, the experience for screen reader and keyboard users is lacking. Unlike when a page is loaded, a switch in views does not announce the page&amp;rsquo;s &amp;lt;title&amp;gt;.</description>
     </item>

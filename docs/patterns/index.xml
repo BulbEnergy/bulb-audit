@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Patterns on Bulb Audit</title>
-    <link>https://heydon.github.io/bulb-audit/patterns/</link>
+    <link>https://bulbenergy.github.io/bulb-audit/patterns/</link>
     <description>Recent content in Patterns on Bulb Audit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 02 Jan 2018 17:11:55 +0000</lastBuildDate>
     
-	<atom:link href="https://heydon.github.io/bulb-audit/patterns/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bulbenergy.github.io/bulb-audit/patterns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Scope</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/scope/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/scope/</link>
       <pubDate>Tue, 02 Jan 2018 17:11:55 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/scope/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/scope/</guid>
       <description>Introduction This document sets out the scope for the testing and evaluation of the Bulb websites. For efficient reporting, not every page and component is included in the scope. However, samples are chosen such that each important design pattern is covered.
 In the report, issues are divided into General and Components categories. General issues may include problems with — for example — document structure, or absence of focus styles. Components issues organize advice by isolated component, such as a tab interface or dialog window.</description>
     </item>

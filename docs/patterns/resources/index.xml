@@ -2,50 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Resources on Bulb Audit</title>
-    <link>https://heydon.github.io/bulb-audit/patterns/resources/</link>
+    <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/</link>
     <description>Recent content in Resources on Bulb Audit</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://heydon.github.io/bulb-audit/patterns/resources/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://bulbenergy.github.io/bulb-audit/patterns/resources/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Component Testing</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/manual-testing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/manual-testing/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/manual-testing/</guid>
       <description>The following is a guide on how to test new components for accessibility. No new components created for the Bulb interfaces should reach production without passing these checks.
 Automated testing Before manual testing, you need to check that the component passes for basic WCAG (A and AA) success criteria. Tools designed to detect WCAG failures differ in their scope and accuracy, so you will use a selection (see below). Where one tool reports a problem but another doesn&amp;rsquo;t, it is more likely to be a false positive.</description>
     </item>
     
     <item>
       <title>Component checklist</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/component-checklist/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/component-checklist/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/component-checklist/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/component-checklist/</guid>
       <description>Before any component can be included in the pattern library, ensure it passes all of the following tests:
 Each visible interactive element can receive focus and be activated by keyboard, and no invisible elements can be focused using the keyboard No non-interactive elements can be focused by keyboard Interactive elements have focus styles and receive focus in a logical order Each element has the appropriate role — preferably implicitly because it is the correct element (e.</description>
     </item>
     
     <item>
       <title>Component heading levels</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/level-prop/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/level-prop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/level-prop/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/level-prop/</guid>
       <description>Reusable components will appear in different contexts, at different levels in the document heading structure (see  Heading structure). It should therefore be possible to change the heading level of the component&amp;rsquo;s main heading via a level prop.
 The aria-level property/attribute can then be used to change the perceived level in assistive technologies. Note that aria-level only works on heading elements (&amp;lt;h1&amp;gt; — &amp;lt;h6&amp;gt;) or elements with role=&amp;quot;heading&amp;quot;. It is recommended the default prop value is 2, since most components will start at that level.</description>
     </item>
     
     <item>
       <title>Form Validation</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/form-validation/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/form-validation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/form-validation/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/form-validation/</guid>
       <description>The Bulb sites should each conform to the same set of prescribed form validation behaviors as set out below. These behaviors are optimized for usability and accessibility and should be implemented consistently.
 Let users submit There are a number of usability issues associated with disabled (submit) buttons.
  Difficult to discern as disabled (especially when color blind) Do not tend to explain why they are disabled Not focusable, therefore not easily discoverable using a screen reader More here  Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise.</description>
@@ -53,20 +53,20 @@ Let users submit There are a number of usability issues associated with disabled
     
     <item>
       <title>Marketing site homepage HTML</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/homepage-template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/homepage-template/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/homepage-template/</guid>
       <description>The following is a template for the marketing site&amp;rsquo;s HTML documents, using the homepage content to describe an example structure. Each page in the marketing site should follow the prescribed &amp;lt;title&amp;gt; pattern, include lang on the HTML element, and a skip link etc.
 &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot;&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width, initial-scale=1.0&amp;quot;&amp;gt; &amp;lt;meta http-equiv=&amp;quot;X-UA-Compatible&amp;quot; content=&amp;quot;IE=edge&amp;quot;&amp;gt; &amp;lt;title&amp;gt;[Site name] | [Page name]&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;a href=&amp;quot;#main&amp;quot;&amp;gt;skip to content&amp;lt;/a&amp;gt; &amp;lt;header&amp;gt; &amp;lt;a href=&amp;quot;/&amp;quot; aria-label=&amp;quot;Bulb homepage&amp;quot;&amp;gt; &amp;lt;svg&amp;gt;&amp;lt;!</description>
     </item>
     
     <item>
       <title>Navigation markup</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/navigation-markup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/navigation-markup/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/navigation-markup/</guid>
       <description>The navigation portion of the pattern library header needs to conform to a certain markup structure for accessibility and efficiency. Here is some code to get you started, with comments to follow.
 The following shows the navigation system in the desktop configuration, with the Menu button hidden and the &amp;ldquo;About us&amp;rdquo; dropdown hidden also.
  &amp;lt;header&amp;gt; &amp;lt;!-- skip link here (see `&amp;lt;SkipLink/&amp;gt;`) --&amp;gt; &amp;lt;div class=&amp;#34;navigation&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;logo&amp;#34;&amp;gt; &amp;lt;a href=&amp;#34;/&amp;#34;&amp;gt; &amp;lt;img src=&amp;#34;path/to/logo.</description>
@@ -74,10 +74,10 @@ The following shows the navigation system in the desktop configuration, with the
     
     <item>
       <title>Visually hidden class</title>
-      <link>https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/</link>
+      <link>https://bulbenergy.github.io/bulb-audit/patterns/resources/visually-hidden/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://heydon.github.io/bulb-audit/patterns/resources/visually-hidden/</guid>
+      <guid>https://bulbenergy.github.io/bulb-audit/patterns/resources/visually-hidden/</guid>
       <description> In some circumstances, you will want to provide clarifying text to screen reader users which is not necessary for sighted users. The following .visually-hidden class hides text visually without silencing its element&amp;rsquo;s content in screen readers.
 Use it judiciously, since in most cases sighted and unsighted users should be able to read the same content, as part of the same experience.
 .visually-hidden { clip-path: inset(100%); clip: rect(1px, 1px, 1px, 1px); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px; }  Example usage &amp;lt;p class=&amp;quot;visually-hidden&amp;quot;&amp;gt;This text is not visible but will be read out in screen reader software&amp;lt;/p&amp;gt;  </description>
