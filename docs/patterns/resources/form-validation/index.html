@@ -537,7 +537,13 @@
 
 <p>We have deemed instant error handling — as the user types — aggressive and distracting. In some cases, such as positive validation on a name field after one character has been typed, it can also be confusing (especially to users with cognitive impairments).</p>
 
-<p>Instead, fields that are set to validate and display error (and/or) success messages/icons should only do so when the field is blurred. While screen reader users will not be aware of the validation error until they refocus the field, they will know to do so having received the <strong>general error message</strong> after attempted submission (defined below).</p>
+<p>Instead, fields that are set to validate and display error (and/or) success messages/icons should only do so when the field is blurred. As standard, no positive validation should occur on <code>blur</code>; only mistakes should be highlighted. In some cases, where a very specific form of input is required, positive validation <em>can be</em> performed on <code>blur</code>. Usually this is where a number of fields need to match up mutually, such as a password and password confirmation fields, or a set of bank details.</p>
+
+<p><img src="https://bulbenergy.github.io/bulb-audit/images/positive_val.png" alt="positive validation of card number and sort code, showing ticks" /></p>
+
+<p>See <a href="https://www.figma.com/file/QVXX2E8G1IXhduyMhrnIMTvQ/V02_Bulb-Design-Kit?node-id=0%3A768">the design kit</a> for the standard and positive validation flows illustrated.</p>
+
+<p>While screen reader users will not be aware of the validation error until they refocus the field, they will know to do so having received the <strong>general error message</strong> after attempted submission (defined below).</p>
 
 <h2 id="on-submission-with-errors">On submission (with errors)</h2>
 
@@ -572,9 +578,9 @@
 <li>Where the field is <strong>valid</strong>:
 
 <ol>
-<li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, takes (or keeps) <code>aria-invalid=&quot;false&quot;</code></li>
+<li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, has no <code>aria-invalid</code> attribute</li>
 </ol></li>
-<li>Where the field is <strong>invalid</strong> or <strong>required</strong> (including for radio button sets):
+<li>Where the field is <strong>invalid</strong> or empty but <strong>required</strong> (including for radio button sets):
 
 <ol>
 <li>The field element/input, or <code>&lt;fieldset&gt;</code> for radio buttons, has <code>aria-invalid=&quot;true&quot;</code></li>
@@ -618,11 +624,11 @@
 <li>The first (required) field is focused, showing the blue focus style.</li>
 <li>When the field is blurred after the user has not entered input, the error style and message appears. <code>aria-invalid=&quot;true&quot;</code> is applied to the input, and the error message is associated with the input&rsquo;s <code>id</code> using <code>aria-describedby=&quot;[the id]&quot;</code>.</li>
 <li>The user could go back up straight away to fix the field, but in this case continues to fill out the second field which has now been focused.</li>
-<li>When this <strong>Last name</strong> field (which is simply required and has been filled out) is blurred, the success style and icon is applied, as well as <code>aria-invalid=&quot;false&quot;</code>. The final field is focused and the user begins to fill this field out.</li>
-<li>The field is filled out correctly (a valid email format is used). So, when the user focuses the submit button, it has already successfully validated.</li>
+<li>When this <strong>Last name</strong> field (which is simply required and has been filled out) is blurred, showing no successful message as it is not needed, and the user begins to type into the email field.</li>
+<li>The field is filled out correctly (a valid email format is used).</li>
 <li>When the submit button is pressed, there are still errors in the form. In which case, the <strong>general error message</strong> (inserted in an ARIA live region, see above) appears. This alerts sighted and blind users to move back up the form to fix the errors.</li>
-<li>The user moves focus up through the valid fields (which will be announced in screen readers as valid due to <code>aria-invalid=&quot;false&quot;</code>) and focuses the first, invalid field. The focus style overrides the error style <em>but</em> the message remains to help instruct the user in fixing the error. This is particularly important for fields expecting a certain format and requiring specific instructions.</li>
-<li>When the corrected field is blurred, the success style and icon is applied, as well as <code>aria-invalid=&quot;false&quot;</code>. The <strong>general error message</strong> disappears because it is no longer applicable. The user is free to submit. Pictured: the second field is focused on the (keyboard) user&rsquo;s way down to the submit button.</li>
+<li>The user moves focus up through the successfully completed fields and focuses the first, invalid field. The focus style overrides the error style <em>but</em> the message remains to help instruct the user in fixing the error. This is particularly important for fields expecting a certain format and requiring specific instructions.</li>
+<li>When the corrected field is blurred, the error style is removed, as well as <code>aria-invalid=&quot;true&quot;</code>. The <strong>general error message</strong> disappears because it is no longer applicable. The user is free to submit. Pictured: the second field is focused on the (keyboard) user&rsquo;s way down to the submit button.</li>
 </ol>
 
 <h2 id="after-submission-no-errors">After submission (no errors)</h2>
