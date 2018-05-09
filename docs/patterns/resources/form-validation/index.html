@@ -475,6 +475,12 @@
         </li>
       
         <li>
+          <a href="#types-descriptions-and-placeholders">
+            Types, descriptions, and placeholders
+          </a>
+        </li>
+      
+        <li>
           <a href="#before-submission">
             Before submission
           </a>
@@ -519,6 +525,29 @@
 </ul>
 
 <p>Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise. By using instant error handling (see below) few users should reach the end of the form with invalid fields.</p>
+
+<h2 id="types-descriptions-and-placeholders">Types, descriptions, and placeholders</h2>
+
+<p>Ideally, we don&rsquo;t want to be throwing and communicating errors at all. So it is important to guide the user from the outset and help them not make mistakes. Using correct input types, descriptions, and placeholders should mitigate error handling.</p>
+
+<ul>
+<li><strong>Types:</strong> Using an appropriate type has benefits such as suppressing the entry of incorrect characters, and displaying an appropriate virtual keyboard configuration. Use <code>type=&quot;number&quot;</code> for fields expecting numbers only.</li>
+<li><strong>Descriptions:</strong> These should appear inside the <code>&lt;label&gt;</code> element, below the main label text and above the input itself. Use a sentence or two to explain what input is expected. Not necessary for common fields such as name or email. The <code>&lt;TextInput&gt;</code> component in the pattern library comes with a <code>description</code> prop.</li>
+<li><strong>Placeholder:</strong> Avoid using the <code>placeholder</code> element as a substitute for the <code>&lt;label&gt;</code>. Instead, where appropriate, provide an example of valid entry. For example: <code>e.g. Heydon666</code> for a username field. The &ldquo;e.g.&rdquo; prefix is important because it makes it explicit that it is a suggestion only, and not a prepopulated value.</li>
+</ul>
+
+<h3 id="example">Example</h3>
+
+<p>By making the description part of the <code>&lt;label&gt;</code> it is available to assistive technologies upon focusing the field. In the following example, the description is demarcated using a <code>&lt;small&gt;</code> element. This would most likely be set to <code>display: block</code>.</p>
+
+<pre><code class="language-html">&lt;label for=&quot;discount-code&quot;&gt;
+  Discount code
+  &lt;small&gt;The five digit code sent to you by email.&lt;/small&gt;
+&lt;/label&gt;
+&lt;input type=&quot;number&quot; id=&quot;discount-code&quot; name=&quot;discount-code&quot; placeholder=&quot;e.g. 56291&quot; /&gt;
+</code></pre>
+
+<p>Note that the least important part of the above example is the <code>placeholder</code> which can be omitted in most cases. The <code>description</code> takes precedence for inputs that need explaining.</p>
 
 <h2 id="before-submission">Before submission</h2>
 

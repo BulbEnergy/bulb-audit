@@ -15,6 +15,28 @@ There are a number of usability issues associated with disabled (submit) buttons
 
 Instead of disabling the submit button until the form is valid, we should allow users to attempt submission and tell them there are errors where they arise. By using instant error handling (see below) few users should reach the end of the form with invalid fields.
 
+## Types, descriptions, and placeholders
+
+Ideally, we don't want to be throwing and communicating errors at all. So it is important to guide the user from the outset and help them not make mistakes. Using correct input types, descriptions, and placeholders should mitigate error handling.
+
+* **Types:** Using an appropriate type has benefits such as suppressing the entry of incorrect characters, and displaying an appropriate virtual keyboard configuration. Use `type="number"` for fields expecting numbers only.
+* **Descriptions:** These should appear inside the `<label>` element, below the main label text and above the input itself. Use a sentence or two to explain what input is expected. Not necessary for common fields such as name or email. The `<TextInput>` component in the pattern library comes with a `description` prop.
+* **Placeholder:** Avoid using the `placeholder` element as a substitute for the `<label>`. Instead, where appropriate, provide an example of valid entry. For example: `e.g. Heydon666` for a username field. The "e.g." prefix is important because it makes it explicit that it is a suggestion only, and not a prepopulated value.
+
+### Example
+
+By making the description part of the `<label>` it is available to assistive technologies upon focusing the field. In the following example, the description is demarcated using a `<small>` element. This would most likely be set to `display: block`.
+
+```html
+<label for="discount-code">
+  Discount code
+  <small>The five digit code sent to you by email.</small>
+</label>
+<input type="number" id="discount-code" name="discount-code" placeholder="e.g. 56291" />
+```
+
+Note that the least important part of the above example is the `placeholder` which can be omitted in most cases. The `description` takes precedence for inputs that need explaining.
+
 ## Before submission
 
 For each field, ensure that:
